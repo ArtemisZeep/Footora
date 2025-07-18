@@ -1,0 +1,132 @@
+.footer {
+  background-color: var(--color-primary);
+  width: 100%;
+}
+
+.container {
+  padding: 56px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.navLink {
+  color: var(--color-lightgray);
+  font-size: 18px;
+  font-weight: 300;
+  transition: color 0.2s;
+  margin-bottom: 14px;
+}
+
+.navLink:hover {
+  color: var(--color-white);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone {
+  color: var(--color-accent);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 0.92;
+  margin-bottom: 16px;
+}
+
+.address {
+  color: var(--color-lightgray);
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.email {
+  color: var(--color-accent);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 0.92;
+}
+
+.socialLinks {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+.socialLinksList {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLink {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.copyrightText {
+  color: var(--color-lightgray);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.companyInfo {
+  color: var(--color-lightgray);
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 8px;
+}
+
+.privacyLink {
+  margin-top: 16px;
+  color: var(--color-lightgray);
+  font-size: 14px;
+  font-weight: 300;
+  transition: color 0.2s;
+}
+
+.privacyLink:hover {
+  color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 5fr 7fr;
+  }
+  
+  .contactInfo {
+    align-items: flex-end;
+  }
+  
+  .socialLinks {
+    justify-content: flex-start;
+  }
+  
+  .copyright {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .companyInfo {
+    margin-top: 0;
+  }
+} 

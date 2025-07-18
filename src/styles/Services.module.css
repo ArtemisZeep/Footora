@@ -1,0 +1,124 @@
+.services {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.serviceCard {
+  position: relative;
+  width: 100%;
+  height: 514px;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.cardContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.cardContentLeft {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 120px;
+}
+
+.cardContentRight {
+  align-items: flex-end;
+  text-align: right;
+  padding-right: 120px;
+}
+
+.cardTitle {
+  color: var(--color-white);
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  max-width: 530px;
+}
+
+.cardDescription {
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 70px;
+  max-width: 530px;
+  line-height: 1.5;
+}
+
+.cardButton {
+  border: 1px solid;
+  color: var(--color-accent);
+  background-color: transparent;
+  border-radius: 64px;
+  padding: 20px 0;
+  width: 310px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.cardButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.titleOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.largeTitle {
+  text-align: center;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 60px;
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+.ampersand {
+  color: var(--color-white);
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 50px;
+  margin: 10px 0;
+}
+
+.description {
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 64px 0;
+}
+
+.descriptionText {
+  color: var(--color-primary);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .descriptionText {
+    font-size: 28px;
+  }
+} 
