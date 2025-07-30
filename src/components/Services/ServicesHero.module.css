@@ -1,0 +1,109 @@
+.heroSection {
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  height: 803px;
+  margin: 0;
+  background: url('/images/services/background.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+
+.infoGroup {
+  position: absolute;
+  width: 658px;
+  height: 278px;
+  left: 70px;
+  top: 239px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.mainTitle {
+  font-family: 'Tenor Sans', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 68px;
+  color: #283433;
+  margin-bottom: 32px;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 150%;
+  color: #283433;
+}
+
+.chairImage {
+  position: absolute;
+  right: 70px;
+  bottom: 0;
+  width: 600px;
+  height: 750px;
+  background: url('/images/services/service-image.png') bottom right/contain no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    height: 680px;
+    min-width: 100vw;
+    background: url('/images/services/background.png') right bottom/contain no-repeat;
+  }
+  .infoGroup {
+    width: 494px;
+    height: 180px;
+    left: 41px;
+    top: 174px;
+    padding: 0;
+  }
+  .mainTitle {
+    width: 425px;
+    height: 70px;
+    font-size: 60px;
+    line-height: 70px;
+    margin-bottom: 32px;
+  }
+  .description {
+    width: 494px;
+    font-size: 24px;
+    line-height: 150%;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroSection {
+    height: 628.5px;
+    min-width: 100vw;
+    background: url('/images/services/background.png') right bottom no-repeat;
+    background-size: 180% auto;
+    padding: 0;
+    display: block;
+  }
+  .infoGroup {
+    position: absolute;
+    width: 299.29px;
+    height: 161.61px;
+    left: 10.74px;
+    top: 112.98px;
+    padding: 0;
+  }
+  .mainTitle {
+    width: 93.78px;
+    height: 33.92px;
+    font-size: 28px;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .description {
+    width: 299.29px;
+    font-size: 18px;
+    line-height: 150%;
+  }
+} 

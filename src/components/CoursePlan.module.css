@@ -1,0 +1,155 @@
+.planSection {
+  background: #ffffff;
+  padding: 77px 0 120px 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.planTitle {
+  font-family: 'Tenor Sans', serif;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 68px;
+  color: #334258;
+  text-align: center;
+  margin: 0 0 121px 0;
+}
+
+.planContent {
+  max-width: 866px;
+  margin: 0 auto;
+}
+
+.planList {
+  display: flex;
+  flex-direction: column;
+}
+
+.planItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 2px;
+  min-height: 60px;
+}
+
+.itemContent {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.itemTitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000000;
+}
+
+.itemNumber {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #CAD3E6;
+  min-width: 37px;
+  text-align: right;
+}
+
+.itemSeparator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #CAD3E6;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .planSection {
+    padding: 60px 0 80px 0;
+  }
+  
+  .container {
+    padding: 0 40px;
+  }
+  
+  .planTitle {
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 80px;
+  }
+  
+  .planContent {
+    max-width: 100%;
+  }
+  
+  .planItem {
+    padding: 12px 0;
+    min-height: 50px;
+  }
+  
+  .itemContent {
+    padding-right: 30px;
+  }
+  
+  .itemTitle {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  .itemNumber {
+    font-size: 18px;
+    line-height: 27px;
+    min-width: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .planSection {
+    padding: 40px 0 60px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .planTitle {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .planItem {
+    padding: 10px 0;
+    min-height: 44px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .itemContent {
+    padding-right: 0;
+    width: 100%;
+  }
+  
+  .itemTitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .itemNumber {
+    font-size: 16px;
+    line-height: 24px;
+    min-width: auto;
+    text-align: left;
+    align-self: flex-end;
+  }
+} 

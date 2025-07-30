@@ -1,0 +1,245 @@
+/* Team Page Styles */
+.team-section {
+  width: 100%;
+  min-height: 809px;
+  padding: 90px 0;
+}
+
+.team-section.bg-gradient {
+  background: linear-gradient(180deg, #a3a9aa 0%, #f4f4f4 41.83%);
+  position: relative;
+  margin-top: -120px; /* увеличил перекрытие header */
+  z-index: 10;
+  box-shadow: 0 -40px 80px 0 rgba(74, 74, 74, 0.18);
+  padding-top: 210px; /* увеличил верхний отступ */
+}
+
+.team-section.bg-gradient::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px; /* увеличил высоту затемнения */
+  background: linear-gradient(to bottom, rgba(74, 74, 74, 0.18), transparent 80%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.team-section.bg-gradient .team-content {
+  position: relative;
+  z-index: 3;
+}
+
+.team-section.bg-lightgray {
+  background: #f4f4f4;
+}
+
+.team-section.bg-white {
+  background: #ffffff;
+}
+
+.team-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.team-content--reversed {
+  flex-direction: row-reverse;
+}
+
+.team-image {
+  flex-shrink: 0;
+  width: 500px;
+}
+
+.team-photo {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  aspect-ratio: 5/7;
+}
+
+.team-info {
+  flex: 1;
+  max-width: 900px;
+}
+
+.team-name {
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+
+.team-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 1.44px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 40px;
+}
+
+.team-services {
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 60px;
+  margin-bottom: 30px;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.service-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 150%;
+  color: var(--color-secondary);
+}
+
+.team-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 150%;
+  color: var(--color-black);
+  margin-bottom: 40px;
+  white-space: pre-line;
+}
+
+/* Button override for team page */
+.team-section .btn {
+  width: 266px;
+  height: 64px;
+  border-radius: 64px;
+  border: 1px solid var(--color-secondary);
+  background: transparent;
+  color: var(--color-secondary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.team-section .btn:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .team-content {
+    gap: 60px;
+    padding: 0 40px;
+  }
+
+  .team-photo {
+    width: 350px;
+    height: 525px;
+  }
+}
+
+@media (max-width: 992px) {
+  .team-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-content--reversed {
+    flex-direction: column;
+  }
+
+  .team-photo {
+    width: 300px;
+    height: 450px;
+  }
+
+  .team-name {
+    font-size: 48px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 60px 0;
+  }
+
+  .team-content {
+    padding: 0 20px;
+  }
+
+  .team-photo {
+    width: 280px;
+    height: 420px;
+  }
+
+  .team-name {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .team-title {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .service-text {
+    font-size: 18px;
+  }
+
+  .team-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .team-name {
+    font-size: 32px;
+  }
+
+  .service-text {
+    font-size: 16px;
+  }
+
+  .team-description {
+    font-size: 16px;
+  }
+}

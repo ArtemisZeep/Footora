@@ -1,0 +1,532 @@
+.overviewSection {
+  position: relative;
+  margin-top: -50px;
+  z-index: 10;
+  padding: 0 0 90px 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.courseCard {
+  background: #F5F5F5;
+  width: 100%;
+  height: auto;
+  min-height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  position: absolute;
+  top: 89px;
+  right: 70px;
+  display: flex;
+  gap: 32px;
+  z-index: 20;
+}
+
+.navArrow {
+  background: #F5F5F5;
+  border: none;
+  width: 44px;
+  height: 12px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.navArrow:hover {
+  opacity: 0.7;
+}
+
+.courseType {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #506888;
+  position: absolute;
+  top: 90px;
+  left: 90px;
+}
+
+.courseContent {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 90px;
+  gap: 60px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+  max-width: 260px;
+  flex-shrink: 0;
+}
+
+.courseTitle {
+  font-family: 'Tenor Sans', serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 68px;
+  color: #506888;
+  margin: 0 0 32px 0;
+  white-space: pre-line;
+}
+
+.courseNumber {
+  font-family: 'Tenor Sans', serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 62px;
+  color: #CAD3E6;
+  margin-top: auto;
+}
+
+.middleColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 60px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.courseDescription {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000000;
+  margin: 0 0 auto 0;
+  white-space: pre-line;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.detailsBtn {
+  flex: 1;
+  max-width: 280px;
+  height: 64px;
+  background: #CAD3E6;
+  border: none;
+  border-radius: 64px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #283433;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detailsBtn:hover {
+  background: #B5C4DD;
+}
+
+.purchaseBtn {
+  flex: 1;
+  max-width: 280px;
+  height: 64px;
+  background: #506888;
+  border: none;
+  border-radius: 64px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.purchaseBtn:hover {
+  background: #3D5066;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 180px;
+  max-width: 220px;
+  flex-shrink: 0;
+}
+
+.priceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.priceItem {
+  text-align: right;
+}
+
+.priceLabel {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #506888;
+  margin-bottom: 4px;
+}
+
+.priceValue {
+  font-family: 'Tenor Sans', serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 34px;
+  color: #506888;
+}
+
+/* Large Tablet */
+@media (max-width: 1200px) {
+  .courseContent {
+    padding: 80px 50px;
+    gap: 40px;
+  }
+  
+  .leftColumn {
+    min-width: 220px;
+    max-width: 220px;
+  }
+  
+  .rightColumn {
+    min-width: 160px;
+    max-width: 180px;
+  }
+  
+  .courseTitle {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  
+  .courseNumber {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  
+  .courseDescription {
+    font-size: 17px;
+    line-height: 26px;
+  }
+  
+  .detailsBtn,
+  .purchaseBtn {
+    font-size: 17px;
+    max-width: 240px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .overviewSection {
+    margin-top: -30px;
+    padding: 0 0 60px 0;
+  }
+  
+  .container {
+    padding: 0 40px;
+  }
+  
+  .courseCard {
+    height: auto;
+    min-height: 400px;
+    padding: 20px 0;
+  }
+  
+  .navigation {
+    top: 40px;
+    right: 40px;
+    gap: 20px;
+  }
+  
+  .courseType {
+    top: 40px;
+    left: 40px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .courseContent {
+    padding: 70px 30px 40px 30px;
+    gap: 25px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .leftColumn {
+    min-width: auto;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-shrink: 1;
+  }
+  
+  .courseTitle {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .courseNumber {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0;
+    margin-left: 20px;
+  }
+  
+  .middleColumn {
+    padding-top: 0;
+    height: auto;
+    order: 2;
+  }
+  
+  .courseDescription {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .buttonGroup {
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  
+  .detailsBtn,
+  .purchaseBtn {
+    flex: 1;
+    height: 56px;
+    font-size: 18px;
+    max-width: none;
+  }
+  
+  .rightColumn {
+    align-items: flex-start;
+    min-width: auto;
+    max-width: 100%;
+    width: 100%;
+    order: 3;
+    margin-top: 20px;
+    flex-shrink: 1;
+  }
+  
+  .priceSection {
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .priceItem {
+    text-align: left;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+  .overviewSection {
+    margin-top: -25px;
+  }
+  
+  .courseCard {
+    min-height: 350px;
+  }
+  
+  .courseContent {
+    padding: 70px 30px 35px 30px;
+  }
+  
+  .leftColumn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .courseTitle {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: left;
+  }
+  
+  .courseNumber {
+    font-size: 28px;
+    line-height: 36px;
+    align-self: flex-end;
+    margin-left: 0;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .detailsBtn,
+  .purchaseBtn {
+    width: 100%;
+    flex: none;
+  }
+  
+  .rightColumn {
+    align-items: center;
+  }
+  
+  .priceSection {
+    justify-content: center;
+  }
+  
+  .priceItem {
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .overviewSection {
+    margin-top: -20px;
+    padding: 0 0 40px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .courseCard {
+    min-height: auto;
+    padding: 15px 0;
+  }
+  
+  .navigation {
+    top: 30px;
+    right: 20px;
+    gap: 16px;
+  }
+  
+  .courseType {
+    top: 30px;
+    left: 20px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+  
+  .courseContent {
+    padding: 70px 20px 30px 20px;
+    gap: 20px;
+    flex-direction: column;
+  }
+  
+  .leftColumn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .courseTitle {
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .courseNumber {
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+    align-self: flex-end;
+  }
+  
+  .middleColumn {
+    order: 2;
+  }
+  
+  .courseDescription {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .detailsBtn,
+  .purchaseBtn {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    flex: none;
+  }
+  
+  .rightColumn {
+    order: 1;
+    margin-top: 0;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .priceSection {
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .priceItem {
+    text-align: center;
+    min-width: 120px;
+  }
+  
+  .priceLabel {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .priceValue {
+    font-size: 20px;
+    line-height: 26px;
+  }
+} 

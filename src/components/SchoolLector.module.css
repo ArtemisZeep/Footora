@@ -1,0 +1,160 @@
+.lectorSection {
+  background: #334258;
+  padding: 90px 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+  display: flex;
+  gap: 130px;
+  align-items: flex-start;
+}
+
+.imageCol {
+  width: 420px;
+  min-width: 420px;
+  height: 603px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.textCol {
+  flex: 1;
+  max-width: 749px;
+  padding-top: 0;
+}
+
+.badge {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 44px;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 150%;
+  color: #ffffff;
+  margin-bottom: 76px;
+}
+
+.detailsBtn {
+  width: 310px;
+  height: 64px;
+  background: transparent;
+  border: 1px solid #CAD3E6;
+  border-radius: 64px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #CAD3E6;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailsBtn:hover {
+  background: #CAD3E6;
+  color: #334258;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .lectorSection {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 40px;
+    gap: 44px;
+    flex-direction:row-reverse;
+  }
+  
+  .imageCol {
+    min-width: 0;
+    height: 500px;
+    order: 2;
+  }
+  
+  .textCol {
+    max-width: 100%;
+    order: 1;
+  }
+  
+  .badge {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 32px;
+  }
+  
+  .title {
+    font-size: 28px;
+    line-height: 150%;
+    margin-bottom: 44px;
+  }
+  
+  .detailsBtn {
+    width: 303px;
+    height: 60px;
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+  .lectorSection {
+    padding: 40px 0;
+    
+  }
+  
+  .container {
+    padding: 0 10px;
+    gap: 32px;
+    flex-direction:column-reverse ;
+    align-items: center;
+  }
+  
+  .imageCol {
+    width: 80%;
+  }
+  
+  .badge {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 24px;
+  }
+  
+  .title {
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 32px;
+  }
+  
+  .detailsBtn {
+    width: 100%;
+    height: 52px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .textCol {
+    max-width: 80%;
+  }
+} 

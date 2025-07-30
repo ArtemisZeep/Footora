@@ -1,0 +1,236 @@
+.benefitsSection {
+  background: #F5F5F5;
+  padding: 78px 0 115px 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+  text-align: center;
+}
+
+.benefitsTitle {
+  font-family: 'Tenor Sans', serif;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 68px;
+  color: #334258;
+  margin: 0 0 65px 0;
+}
+
+.benefitsGrid {
+  display: flex;
+  justify-content: center;
+  gap: 107px;
+  margin-bottom: 90px;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  max-width: 476px;
+  text-align: left;
+}
+
+.benefitIcon {
+  min-width: 97px;
+  height: 97px;
+  border: 2px solid #506888;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefitContent {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.benefitTitle {
+  font-family: 'Tenor Sans', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+  color: #334258;
+  margin: 0 0 17px 0;
+}
+
+.benefitDescription {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000000;
+  margin: 0;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.detailsBtn {
+  width: 309px;
+  height: 64px;
+  background: #506888;
+  border: none;
+  border-radius: 64px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.detailsBtn:hover {
+  background: #3D5066;
+}
+
+.purchaseBtn {
+  width: 309px;
+  height: 64px;
+  background: #CAD3E6;
+  border: none;
+  border-radius: 64px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #334258;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.purchaseBtn:hover {
+  background: #B5C4DD;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .benefitsSection {
+    padding: 60px 0 80px 0;
+  }
+  
+  .container {
+    padding: 0 40px;
+  }
+  
+  .benefitsTitle {
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 50px;
+  }
+  
+  .benefitsGrid {
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 60px;
+    align-items: center;
+  }
+  
+  .benefitItem {
+    gap: 24px;
+    max-width: 600px;
+  }
+  
+  .benefitIcon {
+    min-width: 80px;
+    height: 80px;
+  }
+  
+  .benefitTitle {
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 12px;
+  }
+  
+  .benefitDescription {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .detailsBtn,
+  .purchaseBtn {
+    width: 100%;
+    max-width: 400px;
+    height: 56px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .benefitsSection {
+    padding: 40px 0 60px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .benefitsTitle {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .benefitsGrid {
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .benefitItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    max-width: 100%;
+  }
+  
+  .benefitIcon {
+    min-width: 70px;
+    height: 70px;
+    align-self: center;
+  }
+  
+  .benefitContent {
+    padding-top: 0;
+  }
+  
+  .benefitTitle {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 8px;
+  }
+  
+  .benefitDescription {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .buttonGroup {
+    gap: 16px;
+  }
+  
+  .detailsBtn,
+  .purchaseBtn {
+    height: 48px;
+    font-size: 16px;
+  }
+} 

@@ -1,0 +1,78 @@
+.aboutSection {
+  padding: 85px 0;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 180px;
+  text-align: center;
+}
+
+.badge {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #506888;
+  margin-bottom: 57px;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 150%;
+  color: #283433;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .aboutSection {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 40px;
+  }
+  
+  .badge {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .description {
+    font-size: 20px;
+    line-height: 150%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .aboutSection {
+    padding: 40px 0;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .badge {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 32px;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: left;
+    max-width: 80%;
+  }
+} 

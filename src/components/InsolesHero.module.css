@@ -1,0 +1,202 @@
+.heroSection {
+  position: relative;
+  width: 100vw;
+  height: 803px;
+  background-image: url('/images/insoles/hero-background.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.3) 100%);
+  z-index: 1;
+  display: none;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  max-width: 658px;
+}
+
+.badge {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #283433;
+  margin-bottom: 43px;
+}
+
+.title {
+  font-family: 'Tenor Sans', serif;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 68px;
+  color: #283433;
+  margin-bottom: 64px;
+}
+
+.buttonsGroup {
+  display: flex;
+  gap: 30px;
+}
+
+.detailsBtn {
+  width: 310px;
+  height: 64px;
+  background: transparent;
+  border: 1px solid #4D5C4D;
+  border-radius: 64px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #4D5C4D;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailsBtn:hover {
+  background: #4D5C4D;
+  color: #ffffff;
+}
+
+.bookBtn {
+  width: 310px;
+  height: 64px;
+  background: #ffffff;
+  border: none;
+  border-radius: 64px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #283433;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookBtn:hover {
+  background: #f0f0f0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .heroSection {
+    height: 680px;
+  }
+  
+  .heroSection::before {
+    display: block;
+  }
+  
+  .container {
+    padding: 0 40px;
+  }
+  
+  .content {
+    max-width: 494px;
+  }
+  
+  .badge {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 32px;
+  }
+  
+  .title {
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 44px;
+  }
+  
+  .buttonsGroup {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .detailsBtn,
+  .bookBtn {
+    width: 303px;
+    height: 60px;
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .heroSection {
+    height: 628px;
+    background-position: right bottom;
+    background-size: auto;
+  }
+  
+  .heroSection::before {
+    display: block;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.4) 100%);
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .content {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .badge {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 24px;
+  }
+  
+  .title {
+    font-size: 28px;
+    line-height: 120%;
+    margin-bottom: 32px;
+  }
+  
+  .buttonsGroup {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .detailsBtn,
+  .bookBtn {
+    width: 100%;
+    height: 52px;
+    font-size: 18px;
+    line-height: 21px;
+    
+  }
+  .detailsBtn:first-child {
+    background-color: #B8C8BA;
+  }
+} 
