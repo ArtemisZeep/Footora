@@ -58,7 +58,7 @@ export const coursesData: Course[] = [
     },
     description: {
       text: "Текст - подробное описание курса.",
-      image: "/images/school/course-unibrace.jpg"
+      image: "/images/school/course-unibrace.png"
     },
     plan: {
       hasPlan: true,
@@ -95,7 +95,7 @@ export const coursesData: Course[] = [
     },
     description: {
       text: "Текст - подробное описание курса.",
-      image: "/images/school/course-ingrown.jpg"
+      image: "/images/school/course-ingrown.png"
     },
     plan: {
       hasPlan: true,

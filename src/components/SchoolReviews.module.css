@@ -1,0 +1,318 @@
+.reviewsSection {
+  background: #ffffff;
+  padding: 90px 0;
+  width: 100vw;
+  position: relative;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+  position: relative;
+}
+
+.reviewsContent {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.reviewCard {
+  width: 639px;
+  min-height: 317px;
+  padding: 30px 25px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.leftCard {
+  background: #CAD3E6;
+}
+
+.rightCard {
+  background: #F5F5F5;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 51px;
+}
+
+.avatarWrapper {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 87px;
+  height: 87px;
+  border-radius: 50%;
+  border: 2px solid #506888;
+  background: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.reviewInfo {
+  flex: 1;
+}
+
+.reviewerName {
+  font-family: 'Tenor Sans', serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #334258;
+  margin: 0 0 17px 0;
+}
+
+.reviewerRole {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 13px;
+  color: #506888;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.reviewText {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #000000;
+  margin: 0 0 25px 0;
+}
+
+.reviewLink {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #506888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.reviewLink:hover {
+  color: #334258;
+}
+
+.navigation {
+  position: absolute;
+  top: 100%;
+  right: 70px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 32px;
+  z-index: 10;
+}
+
+.navButton {
+  background: #ffffff;
+  border: none;
+  width: 44px;
+  height: 12px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.navButton:hover {
+  opacity: 0.7;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 44px;
+}
+
+.indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  background: #CAD3E6;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.indicator.active {
+  background: #506888;
+}
+
+.indicator:hover {
+  background: #506888;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .reviewsSection {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 40px;
+  }
+  
+  .reviewsContent {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .reviewCard {
+    width: 100%;
+    max-width: 600px;
+    min-height: auto;
+    padding: 25px 20px;
+  }
+  
+  .reviewHeader {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .avatar svg {
+    width: 32px;
+    height: 46px;
+  }
+  
+  .reviewerName {
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .reviewerRole {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  
+  .reviewText {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .reviewLink {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .navigation {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 24px;
+  }
+  
+  .indicators {
+    margin-top: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .reviewsSection {
+    padding: 40px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .reviewCard {
+    max-width: none;
+    padding: 20px 16px;
+  }
+  
+  .reviewHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .avatar svg {
+    width: 28px;
+    height: 40px;
+  }
+  
+  .reviewerName {
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .reviewerRole {
+    font-size: 11px;
+    line-height: 11px;
+  }
+  
+  .reviewText {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  
+  .reviewLink {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .navigation {
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .navButton {
+    width: 36px;
+    height: 10px;
+  }
+  
+  .navButton svg {
+    width: 36px;
+    height: 1px;
+  }
+  
+  .indicators {
+    margin-top: 24px;
+    gap: 6px;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+  }
+}

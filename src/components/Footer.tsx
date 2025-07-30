@@ -11,13 +11,30 @@ const FooterLink: React.FC<{href: string; children: React.ReactNode}> = ({ href,
   );
 };
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  variant?: 'default' | 'school';
+}
+
+const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
   return (
-    <footer className={styles.footer}>
-      <div className={`container ${styles.container}`}>
-        <div className={styles.grid}>
+    <footer className={`${styles.footer} ${variant === 'school' ? styles.schoolVariant : ''}`}>
+      <div className={styles.container}>
+        <div className={styles.mainGrid}>
+          {/* Logo */}
+          <div className={styles.logoSection}>
+            <div className={styles.logoContainer}>
+              <Image 
+                src="/images/logo_footura.png" 
+                alt="FOOTURA" 
+                width={200} 
+                height={112}
+                className={styles.logo}
+              />
+            </div>
+          </div>
+          
           {/* Navigation Links */}
-          <div>
+          <div className={styles.navigationSection}>
             <nav className={styles.navLinks}>
               <FooterLink href="/about">О центре подологии</FooterLink>
               <FooterLink href="/team">Команда</FooterLink>
@@ -30,41 +47,27 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Contact Information */}
-          <div className={styles.contactInfo}>
-            <div className={styles.phone}>+420 731 394 090</div>
+          <div className={styles.contactSection}>
             <div className={styles.address}>Na Rybníčku - 1329/5. Praha 2</div>
+            <div className={styles.phone}>+420 731 394 090</div>
             <div className={styles.email}>info@footura.cz</div>
           </div>
         </div>
         
-        {/* Social Media Links */}
-        <div className={styles.socialLinks}>
-          <div className={styles.socialLinksList}>
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-              <Link key={num} href="#" className={styles.socialLink}>
-                <Image 
-                  src={`/images/social${num}.svg`} 
-                  alt={`Social media ${num}`} 
-                  width={24} 
-                  height={24}
-                />
-              </Link>
-            ))}
+        {/* Bottom Section */}
+        <div className={styles.bottomSection}>
+          <div className={styles.leftBottom}>
+            <div className={styles.copyrightText}>© 2025 All Right Reserved</div>
+            <Link href="/privacy" className={styles.privacyLink}>
+              Политика конфиденциальности
+            </Link>
           </div>
-        </div>
-        
-        {/* Copyright and Policies */}
-        <div className={styles.copyright}>
-          <div className={styles.copyrightText}>© 2025 All Right Reserved</div>
-          <div className={styles.companyInfo}>
-            Nataliia Rotar, Pýchavková 282/7, Praha, 104 00, Česká republika, IČ: 06883869
+          
+          <div className={styles.rightBottom}>
+            <div className={styles.companyInfo}>
+              Nataliia Rotar, Pýchavková 282/7, Praha, 104 00, Česká republika, IČ: 06883869
+            </div>
           </div>
-        </div>
-        
-        <div>
-          <Link href="/privacy" className={styles.privacyLink}>
-            Политика конфиденциальности
-          </Link>
         </div>
       </div>
     </footer>

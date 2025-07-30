@@ -18,7 +18,6 @@ export default function CourseBlocks() {
       />
       <CourseDescription currentCourseIndex={currentCourseIndex} />
       <CoursePlan currentCourseIndex={currentCourseIndex} />
-      <CourseBenefits />
     </>
   );
 } 

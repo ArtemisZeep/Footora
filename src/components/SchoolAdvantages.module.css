@@ -1,0 +1,192 @@
+.advantagesSection {
+  background: #ffffff;
+  padding: 0;
+  width: 100vw;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  font-family: 'Tenor Sans', serif;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 68px;
+  color: #334258;
+  text-align: center;
+  margin: 0;
+  padding: 78px 0 69px 0;
+}
+
+.advantagesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 333px 331px;
+  gap: 0;
+  width: 100%;
+}
+
+.advantageCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.solidCard {
+  background: #334258;
+}
+
+.imageCard {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.practicalCard {
+  background-image: url('/images/school/practical-background.png');
+}
+
+.techCard {
+  background-image: url('/images/school/tech-background.png');
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(46, 76, 86, 0) 0%,
+    rgba(46, 76, 86, 0.6) 50%,
+    rgba(46, 76, 86, 0) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+.cardTitle {
+  font-family: 'Tenor Sans', serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  max-width: 530px;
+}
+
+/* Large Tablet/Small Desktop */
+@media (max-width: 1440px) and (min-width: 1200px) {
+  .advantagesGrid {
+    grid-template-rows: 300px 300px;
+  }
+  
+  .cardTitle {
+    font-size: 42px;
+    line-height: 46px;
+    max-width: 450px;
+  }
+}
+
+/* Medium Tablet */
+@media (max-width: 1199px) and (min-width: 1025px) {
+  .title {
+    font-size: 52px;
+    line-height: 60px;
+    padding: 70px 0 60px 0;
+  }
+  
+  .advantagesGrid {
+    grid-template-rows: 280px 280px;
+  }
+  
+  .advantageCard {
+    padding: 30px;
+  }
+  
+  .cardTitle {
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 400px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 48px;
+    line-height: 56px;
+    padding: 60px 40px 50px 40px;
+  }
+  
+  .advantagesGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .advantageCard {
+    min-height: 280px;
+    padding: 60px 40px;
+  }
+  
+  .cardTitle {
+    font-size: 36px;
+    line-height: 42px;
+    max-width: 100%;
+  }
+  
+  .imageOverlay {
+    background: linear-gradient(
+      180deg,
+      rgba(46, 76, 86, 0.3) 0%,
+      rgba(46, 76, 86, 0.7) 50%,
+      rgba(46, 76, 86, 0.3) 100%
+    );
+  }
+  
+  /* Меняем порядок блоков на мобильных */
+  .techOrder {
+    order: 4;
+  }
+  
+  .individualOrder {
+    order: 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+    padding: 40px 20px 30px 20px;
+  }
+  
+  .advantageCard {
+    min-height: 200px;
+    padding: 40px 20px;
+  }
+  
+  .cardTitle {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  .imageOverlay {
+    background: linear-gradient(
+      180deg,
+      rgba(46, 76, 86, 0.5) 0%,
+      rgba(46, 76, 86, 0.8) 50%,
+      rgba(46, 76, 86, 0.5) 100%
+    );
+  }
+}
