@@ -3,12 +3,12 @@
   width: 100%;
   min-height: 809px;
   padding: 90px 0;
-}
+} 
 
 .team-section.bg-gradient {
   background: linear-gradient(180deg, #a3a9aa 0%, #f4f4f4 41.83%);
   position: relative;
-  margin-top: -120px; /* увеличил перекрытие header */
+  margin-top: 0px; /* увеличил перекрытие header */
   z-index: 10;
   box-shadow: 0 -40px 80px 0 rgba(74, 74, 74, 0.18);
   padding-top: 210px; /* увеличил верхний отступ */
@@ -150,15 +150,55 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 1025px) {
   .team-content {
-    gap: 60px;
-    padding: 0 40px;
+    gap: 50px;
+    padding: 0 50px;
+  }
+
+  .team-image {
+    width: 450px;
   }
 
   .team-photo {
-    width: 350px;
-    height: 525px;
+    width: 100%;
+    height: 550px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .team-content {
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  .team-image {
+    width: 400px;
+  }
+
+  .team-photo {
+    width: 100%;
+    height: 500px;
+  }
+
+  .team-info {
+    max-width: 700px;
+  }
+
+  .team-name {
+    font-size: 48px;
+  }
+
+  .services-grid {
+    gap: 20px 40px;
+  }
+
+  .service-text {
+    font-size: 18px;
+  }
+
+  .team-description {
+    font-size: 18px;
   }
 }
 
