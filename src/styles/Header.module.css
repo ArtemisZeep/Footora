@@ -187,6 +187,29 @@
   z-index: 1000;
 }
 
+/* Fixed position for burger button when menu is open */
+.burgerBtn.burgerOpen {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+/* Responsive positioning for fixed burger button */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .burgerBtn.burgerOpen {
+    top: 25px;
+    right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .burgerBtn.burgerOpen {
+    top: 15px;
+    right: 15px;
+  }
+}
+
 .burgerBtn span {
   width: 24px;
   height: 2px;

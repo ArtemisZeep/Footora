@@ -1,0 +1,168 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(40, 52, 51, 0.7) 0%,
+    rgba(40, 52, 51, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  z-index: 3;
+}
+
+.content {
+  max-width: 800px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.author,
+.date,
+.readTime {
+  color: #B8C8BA;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.author {
+  font-weight: 500;
+}
+
+.meta span:not(:last-child)::after {
+  content: '•';
+  margin-left: 16px;
+  color: #B8C8BA;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 56px;
+  margin: 0 0 20px 0;
+}
+
+.description {
+  color: #F5F5F5;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero {
+    height: 500px;
+  }
+  
+  .container {
+    padding: 0 30px;
+  }
+  
+  .title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  
+  .description {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .meta {
+    gap: 12px;
+  }
+  
+  .author,
+  .date,
+  .readTime {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .meta span:not(:last-child)::after {
+    margin-left: 12px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero {
+    height: 350px;
+  }
+  
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

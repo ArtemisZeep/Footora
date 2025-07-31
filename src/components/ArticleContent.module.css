@@ -1,0 +1,660 @@
+.articleContent {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Common styles for all blocks */
+.textBlock,
+.imageBlock,
+.textImageBlock,
+.imageTextBlock,
+.quoteBlock,
+.listBlock {
+  margin-bottom: 60px;
+}
+
+.textBlock:last-child,
+.imageBlock:last-child,
+.textImageBlock:last-child,
+.imageTextBlock:last-child,
+.quoteBlock:last-child,
+.listBlock:last-child {
+  margin-bottom: 0;
+}
+
+/* Text Block */
+.blockTitle {
+  color: #283433;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 40px;
+  margin: 0 0 24px 0;
+}
+
+.blockText {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+}
+
+/* Image Block */
+.imageBlock {
+  text-align: center;
+}
+
+.figure {
+  margin: 0;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Full width image block */
+.imageBlock .imageContainer {
+  aspect-ratio: 16/9;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 450px; /* Добавляем минимальную высоту */
+}
+
+/* Side images in text-image layouts */
+.textImageBlock .imageContainer,
+.imageTextBlock .imageContainer {
+  aspect-ratio: 4/3;
+  width: 100%;
+  min-height: 300px; /* Добавляем минимальную высоту */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.caption {
+  color: #666666;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Text + Image Layout */
+.textImageBlock,
+.imageTextBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+  min-height: 300px;
+}
+
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.imageColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.imageColumn .imageContainer {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Quote Block */
+.quoteBlock {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.quote {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #F8F9FA;
+  border-radius: 12px;
+  border-left: 4px solid #B8C8BA;
+}
+
+.quoteText {
+  color: #283433;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 36px;
+  font-style: italic;
+  margin: 0 0 16px 0;
+}
+
+.quoteAuthor {
+  color: #666666;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* List Block */
+.orderedList,
+.unorderedList {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.listItem {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 12px;
+}
+
+.listItem:last-child {
+  margin-bottom: 0;
+}
+
+.unorderedList .listItem {
+  list-style-type: disc;
+}
+
+.orderedList .listItem {
+  list-style-type: decimal;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .container {
+    padding: 0 30px;
+  }
+  
+  .textImageBlock,
+  .imageTextBlock {
+    gap: 40px;
+  }
+  
+  .blockTitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .blockText,
+  .listItem {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  
+  .quoteText {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .articleContent {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .textBlock,
+  .imageBlock,
+  .textImageBlock,
+  .imageTextBlock,
+  .quoteBlock,
+  .listBlock {
+    margin-bottom: 40px;
+  }
+  
+  .textImageBlock,
+  .imageTextBlock {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    min-height: auto;
+  }
+  
+  .textColumn,
+  .imageColumn {
+    height: auto;
+  }
+  
+  .imageColumn .imageContainer {
+    max-width: 100%;
+  }
+  
+  .blockTitle {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .blockText,
+  .listItem {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .quoteText {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  
+  .quote {
+    padding: 30px 20px;
+  }
+  
+  .quoteBlock {
+    padding: 30px 0;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .blockTitle {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  
+  .blockText,
+  .listItem {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  
+  .quoteText {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+/* Новые блоки */
+
+/* Галерея */
+.galleryBlock {
+  margin: 40px 0;
+}
+
+.gallery {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.galleryItem {
+  margin: 0;
+}
+
+.galleryItem .imageContainer {
+  aspect-ratio: 4/3;
+  min-height: 200px;
+}
+
+/* Видео блок */
+.videoBlock {
+  margin: 40px 0;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: 20px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.videoDescription {
+  margin-top: 15px;
+  color: #666666;
+  font-style: italic;
+  text-align: center;
+}
+
+/* CTA блок */
+.ctaBlock {
+  margin: 50px 0;
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  border: 1px solid #dee2e6;
+}
+
+.ctaTitle {
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #212529;
+}
+
+.ctaDescription {
+  margin: 0 0 25px 0;
+  font-size: 16px;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ctaButton.primary {
+  background: #4d5c4d;
+  color: white;
+}
+
+.ctaButton.primary:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.ctaButton.secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.ctaButton.secondary:hover {
+  background: #545b62;
+}
+
+.ctaButton.outline {
+  background: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.ctaButton.outline:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Разделители */
+.dividerBlock {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider.line {
+  width: 100%;
+  height: 1px;
+  background: #dee2e6;
+}
+
+.divider.dashed {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #dee2e6 50%, transparent 50%);
+  background-size: 10px 1px;
+}
+
+.divider.space {
+  width: 100%;
+  height: 1px;
+  background: transparent;
+}
+
+.divider.decorative {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  border-radius: 2px;
+}
+
+.divider.small {
+  transform: scaleY(0.5);
+}
+
+.divider.medium {
+  transform: scaleY(1);
+}
+
+.divider.large {
+  transform: scaleY(2);
+}
+
+/* Уведомления */
+.alertBlock {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.alertBlock.info {
+  background: #e7f3ff;
+  border-color: #007bff;
+  color: #004085;
+}
+
+.alertBlock.success {
+  background: #4d5c4d;
+  border-color: #b8c8ba;
+  color: #ffffff;
+}
+
+.alertBlock.warning {
+  background: #fff3cd;
+  border-color: #ffc107;
+  color: #856404;
+}
+
+.alertBlock.error {
+  background: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.alertBlock.tip {
+  background: #e2e3e5;
+  border-color: #6c757d;
+  color: #383d41;
+}
+
+.alertTitle {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.alertMessage {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* FAQ блок */
+.faqBlock {
+  margin: 40px 0;
+}
+
+.faqItems {
+  margin-top: 20px;
+}
+
+.faqItem {
+  margin-bottom: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faqQuestion {
+  padding: 20px;
+  background: #f8f9fa;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  background: #e9ecef;
+}
+
+.faqAnswer {
+  padding: 20px;
+  background: white;
+  line-height: 1.6;
+  color: #495057;
+}
+
+/* Таблица */
+.tableBlock {
+  margin: 40px 0;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.tableHeader {
+  padding: 15px;
+  background: #f8f9fa;
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.tableCell {
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+  vertical-align: top;
+}
+
+.table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+/* Блок кода */
+.codeBlock {
+  margin: 40px 0;
+}
+
+.codeContainer {
+  margin: 20px 0 0 0;
+  padding: 25px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.code {
+  color: #495057;
+  background: none;
+}
+
+/* Мобильные стили для новых блоков */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .carousel {
+    gap: 15px;
+  }
+  
+  .galleryItem .imageContainer {
+    min-height: 150px;
+  }
+  
+  .ctaBlock {
+    padding: 30px 20px;
+    margin: 30px 0;
+  }
+  
+  .ctaTitle {
+    font-size: 24px;
+  }
+  
+  .ctaButton {
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+  
+  .faqQuestion {
+    padding: 15px;
+    font-size: 15px;
+  }
+  
+  .faqAnswer {
+    padding: 15px;
+  }
+  
+  .tableHeader,
+  .tableCell {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .codeContainer {
+    padding: 20px;
+    font-size: 13px;
+  }
+}

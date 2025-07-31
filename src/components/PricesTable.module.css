@@ -1,0 +1,161 @@
+.pricesSection {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.sectionTitle {
+  color: #283433;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 68px;
+  text-align: center;
+  margin: 0 0 80px 0;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.subgroup {
+  margin-bottom: 40px;
+}
+
+.subgroupTitle {
+  padding: 20px 0;
+}
+
+.subgroupTitleText {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.serviceName {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+.servicePrice {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #B8C8BA;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .container {
+    padding: 0 80px;
+  }
+  
+  .sectionTitle {
+    font-size: 40px;
+    line-height: 56px;
+    margin-bottom: 60px;
+  }
+  
+  .tableRow {
+    gap: 30px;
+  }
+  
+  .serviceName,
+  .servicePrice {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  
+  .subgroupTitleText {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .pricesSection {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .tableRow {
+
+    gap: 8px;
+    padding: 16px 0;
+  }
+  
+  .serviceName {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .servicePrice {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    
+  }
+  
+  .subgroupTitleText {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .subgroup {
+    margin-bottom: 32px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .serviceName,
+  .servicePrice,
+  .subgroupTitleText {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

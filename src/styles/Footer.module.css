@@ -1,8 +1,6 @@
 .footer {
   background-color: #283433;
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 .schoolVariant {
@@ -14,7 +12,8 @@
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  background: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Main Grid Layout */
@@ -22,9 +21,7 @@
   display: grid;
   grid-template-columns: 200px 167px 1fr;
   gap: 174px;
-  height: 152px;
-  margin-bottom: 64px;
-  background: transparent;
+  margin-bottom: 30px;
 }
 
 /* Logo Section */
@@ -33,19 +30,11 @@
   align-items: flex-start;
 }
 
-.logoContainer {
+.logoImage {
   width: 200px;
-  height: 112px;
-  position: relative;
-}
-
-.logo {
-  width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
 }
-
-
 
 /* Navigation Section */
 .navigationSection {
@@ -101,24 +90,25 @@
   line-height: 29px;
 }
 
+/* Legal Section */
+.legalSection {
+  margin-bottom: 20px;
+}
+
+.companyInfo {
+  color: #F5F5F5;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  text-align: right;
+}
+
 /* Bottom Section */
 .bottomSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: flex-end;
-  height: 32px;
-  background: transparent;
-}
-
-.leftBottom {
   display: flex;
-  flex-direction: column;
-  gap: 21px;
-}
-
-.rightBottom {
-  display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
 }
 
 .copyrightText {
@@ -141,121 +131,22 @@
   color: var(--color-white);
 }
 
-.companyInfo {
-  color: #F5F5F5;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 14px;
-}
 
-/* Responsive Design */
+
 @media (max-width: 1200px) {
   .mainGrid {
     gap: 100px;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
-  .container {
-    padding: 40px 40px;
-  }
-  
+/* Responsive Design */
+@media (max-width: 900px) {
   .mainGrid {
-    grid-template-columns: 150px 140px 1fr;
-    gap: 60px;
-    height: auto;
-    margin-bottom: 40px;
-  }
-  
-  .logoContainer {
-    width: 150px;
-    height: 84px;
-  }
-  
-  .navLink {
-    font-size: 16px;
-    line-height: 16px;
-  }
-  
-  .address {
-    font-size: 24px;
-    line-height: 24px;
-  }
-  
-  .phone,
-  .email {
-    font-size: 20px;
-    line-height: 20px;
-  }
-  
-  .contactSection {
-    gap: 20px;
-  }
-  
-  .bottomSection {
-    height: auto;
-    gap: 20px;
-  }
-  
-  .copyrightText,
-  .privacyLink,
-  .companyInfo {
-    font-size: 12px;
-    line-height: 12px;
+    gap: 30px;
   }
 }
 
-@media (max-width: 768px) and (min-width: 601px) {
-  .container {
-    padding: 30px 30px;
-  }
-  
-  .mainGrid {
-    grid-template-columns: 120px 120px 1fr;
-    gap: 40px;
-    height: auto;
-    margin-bottom: 30px;
-  }
-  
-  .logoContainer {
-    width: 120px;
-    height: 67px;
-  }
-  
-  .navLink {
-    font-size: 14px;
-    line-height: 14px;
-  }
-  
-  .address {
-    font-size: 20px;
-    line-height: 20px;
-  }
-  
-  .phone,
-  .email {
-    font-size: 18px;
-    line-height: 18px;
-  }
-  
-  .contactSection {
-    gap: 16px;
-  }
-  
-  .bottomSection {
-    height: auto;
-    gap: 16px;
-  }
-  
-  .copyrightText,
-  .privacyLink,
-  .companyInfo {
-    font-size: 11px;
-    line-height: 11px;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .container {
     padding: 40px 20px;
   }
@@ -263,13 +154,11 @@
   .mainGrid {
     grid-template-columns: 1fr;
     gap: 32px;
-    height: auto;
     margin-bottom: 32px;
   }
   
-  .logoContainer {
+  .logoImage {
     width: 150px;
-    height: 84px;
   }
   
   .contactSection {
@@ -287,13 +176,40 @@
     line-height: 22px;
   }
   
-  .bottomSection {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    height: auto;
+  .companyInfo {
+    text-align: left;
   }
   
-  .rightBottom {
-    justify-content: flex-start;
+  .bottomSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
-} 
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 15px;
+  }
+  
+  .mainGrid {
+    gap: 24px;
+  }
+  
+  .address {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .phone,
+  .email {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
+  .companyInfo,
+  .copyrightText,
+  .privacyLink {
+    font-size: 12px;
+  }
+}

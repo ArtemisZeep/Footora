@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Footer.module.css';
 
@@ -22,15 +21,7 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
         <div className={styles.mainGrid}>
           {/* Logo */}
           <div className={styles.logoSection}>
-            <div className={styles.logoContainer}>
-              <Image 
-                src="/images/logo_footura.png" 
-                alt="FOOTURA" 
-                width={200} 
-                height={112}
-                className={styles.logo}
-              />
-            </div>
+            <img src="/images/logo_footura.png" alt="Footura Logo" className={styles.logoImage} />
           </div>
           
           {/* Navigation Links */}
@@ -54,24 +45,22 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
           </div>
         </div>
         
+        <div className={styles.legalSection}>
+          <div className={styles.companyInfo}>
+            Nataliia Rotar, Pýchavková 282/7, Praha, 104 00, Česká republika, IČ: 06883869
+          </div>
+        </div>
+        
         {/* Bottom Section */}
         <div className={styles.bottomSection}>
-          <div className={styles.leftBottom}>
-            <div className={styles.copyrightText}>© 2025 All Right Reserved</div>
-            <Link href="/privacy" className={styles.privacyLink}>
-              Политика конфиденциальности
-            </Link>
-          </div>
-          
-          <div className={styles.rightBottom}>
-            <div className={styles.companyInfo}>
-              Nataliia Rotar, Pýchavková 282/7, Praha, 104 00, Česká republika, IČ: 06883869
-            </div>
-          </div>
+          <div className={styles.copyrightText}>© 2025 All Right Reserved</div>
+          <Link href="/privacy" className={styles.privacyLink}>
+            Политика конфиденциальности
+          </Link>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;
