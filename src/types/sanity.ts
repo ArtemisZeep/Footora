@@ -88,3 +88,12 @@ export interface SanityArticle {
   featured?: boolean
   tags?: string[]
 }
+
+// Настройки сайта
+export interface SanitySiteSettings {
+  _id: string
+  title: string
+  featuredArticle?: SanityArticle
+  blogHeroTitle?: string
+  blogHeroDescription?: string
+}

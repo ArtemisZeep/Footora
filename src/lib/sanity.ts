@@ -100,4 +100,26 @@ export const queries = {
     readTime,
     published
   }`,
+
+  // Получить настройки сайта с основной статьей для блога
+  siteSettings: `*[_type == "siteSettings"][0] {
+    _id,
+    title,
+    featuredArticle-> {
+      _id,
+      title,
+      slug,
+      description,
+      heroImage {
+        asset,
+        alt
+      },
+      author,
+      publishedAt,
+      readTime,
+      published
+    },
+    blogHeroTitle,
+    blogHeroDescription
+  }`,
 }
