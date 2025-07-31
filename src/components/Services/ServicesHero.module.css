@@ -4,6 +4,8 @@
   min-width: 100vw;
   height: 803px;
   margin: 0;
+  margin-top: 0px; /* Наложение на Header */
+  padding-top: 140px; /* Компенсация для контента */
   background: url('/images/services/background.png') center/cover no-repeat;
   display: flex;
   align-items: center;

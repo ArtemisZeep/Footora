@@ -3,6 +3,11 @@
   width: 100vw;
   background: #F4F4F4;
   padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.variant2 {
+ padding-top: 0;
 }
 .serviceBlockContent {
   max-width: 1440px;
@@ -92,6 +97,11 @@ height: 100%;
   border: none;
   transition: background 0.2s;
 }
+
+.variant2 .signUpBtn{
+    background-color: #ffffff;
+}
+
 .signUpBtn:hover {
   background: #A0B6A2;
 }
@@ -176,14 +186,40 @@ height: 100%;
   text-align: left;
 }
 
+.variant2 .textCol {
+    padding-top: 100px;
+}
+
+@media (min-width: 1440px) {
+    .variant2 .itemsList{
+        max-width: 1300px;
+        margin: 0  auto;
+        padding-top: 64px;
+    }
+}
+
 @media (max-width: 1200px) {
   .serviceBlock {
     width: 100vw;
     padding: 90px 0 0 0;
   }
+
+  .variant2{
+    padding: 0 !important;
+  }
   .topRow {
     align-items: flex-start;
     padding: 0 24px;
+  }
+
+  .variant2 .topRow {
+    align-items: flex-start;
+ padding-left: 70px;
+  }
+
+  .variant2 .description{
+ font-size: 24px;
+ max-width: 500px;
   }
   .textCol {
     max-width: 100%;
@@ -254,7 +290,53 @@ height: 100%;
   }
 }
 
+/* Стили для экранов больше 1440px - убираем белые края у variant2 */
+@media (min-width: 1441px) {
+  .variant2 .serviceBlockContent {
+    max-width: 100vw;
+  }
+  
+  .variant2 .topRow {
+    padding: 0 70px;
+  }
+}
+
+/* Стили для экранов больше 1024px - прижимаем изображение к правому краю для variant2 */
+@media (min-width: 1025px) {
+  .variant2 .imageCol {
+    margin-right: -70px; /* Компенсируем padding контейнера */
+    width: 490px; /* Увеличиваем ширину для лучшего эффекта */
+    min-width: 490px;
+    height: 470px;
+    overflow: hidden;
+  }
+  
+  .variant2 .image {
+    width: 490px;
+    height: 470px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  
+}
+
+/* Специальные стили для variant2 на размерах 812-1024px - убираем белые края */
+@media (max-width: 1024px) and (min-width: 813px) {
+  .variant2 .serviceBlockContent {
+    max-width: 100vw;
+    padding: 0;
+  }
+  
+  .variant2 .topRow {
+    padding: 0 40px;
+  }
+}
+
 @media (max-width: 1024px) {
+    .variant2 {
+        padding-top: 0 !important;
+       }
   .serviceBlock {
     width: 100vw;
     padding: 90px 0 0 0;
@@ -300,6 +382,55 @@ height: 100%;
     max-width: 100%;
     object-fit: cover;
   }
+  
+  /* Специальные стили для variant2 на экранах ≤1024px */
+  .variant2 .topRow {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+  }
+  
+  .variant2 .textCol {
+    max-width: 450px;
+    width: 450px;
+    padding-right: 20px;
+    padding-left: 70px;
+  }
+  
+  .variant2 .imageCol {
+    width: 350px;
+    min-width: 350px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .variant2 .image {
+    width: 350px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+  }
+  
+  .variant2 .title {
+    font-size: 32px;
+    line-height: 120%;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .variant2 .description {
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 24px;
+    width: 100%;
+  }
   .signUpBtn {
     width: 303px;
     height: 60px;
@@ -335,6 +466,10 @@ height: 100%;
     line-height: 150%;
     font-weight: 500;
   }
+
+  .variant2 .itemsList{
+    padding: 0 50px;
+  }
 }
 
 @media (max-width: 812px) {
@@ -365,6 +500,11 @@ height: 100%;
     justify-content: center;
     align-items: center;
   }
+
+  .variant2 .imageCol {
+    margin-left: 0;
+    width:100%;
+  }
   .image {
     width: 100vw;
     height: 30vh !important;
@@ -373,12 +513,22 @@ height: 100%;
     display: block;
     margin-bottom: 90px;
   }
+  .variant2  .image {
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
   .textCol {
     max-width: 80vw;
     width: 100vw;
     padding: 0 10px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .variant2 .textCol{
+    margin: 0 auto;
+    padding: 7vj0px 0 0 0;
   }
   .title {
     font-size: 28px;
@@ -402,6 +552,13 @@ height: 100%;
     border-radius: 64px;
   }
   .itemsList {
+    margin: 32px 0 0 0;
+    padding: 0 10px;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .variant2 .itemsList {
     margin: 32px 0 0 0;
     padding: 0 10px;
     max-width: 90vw;
@@ -439,5 +596,10 @@ height: 100%;
     line-height: 150%;
     font-weight: 400;
     color: #283433;
+  }
+  
+  /* Для variant2 на мобильных устройствах - такой же как variant1, но с зеленым фоном */
+  .variant2 .topRow {
+    background: #B8C8BA !important; /* Сохраняем зеленый фон */
   }
 } 

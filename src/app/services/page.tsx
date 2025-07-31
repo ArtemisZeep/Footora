@@ -1,11 +1,15 @@
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import ServicesHero from '../../components/Services/ServicesHero';
 import ServiceGroups from '../../components/ServiceGroups';
 import ServiceBlock from '../../components/ServiceBlock';
 
 export default function ServicesPage() {
   return (
-    <main>
-      <ServicesHero />
+    <>
+      <Header />
+      <main>
+        <ServicesHero />
       <ServiceGroups />
       <ServiceBlock
         title="Ортониксия"
@@ -98,6 +102,8 @@ export default function ServicesPage() {
           }
         ]}
       />
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 } 
