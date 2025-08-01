@@ -1,0 +1,38 @@
+/* Blog Page Styles */
+
+.blogPlaceholder {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.blogPlaceholder h1 {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #283433;
+  margin-bottom: 20px;
+}
+
+.blogPlaceholder p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #000;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blogPlaceholder {
+    padding: 60px 20px;
+  }
+
+  .blogPlaceholder h1 {
+    font-size: 36px;
+  }
+
+  .blogPlaceholder p {
+    font-size: 16px;
+  }
+} 

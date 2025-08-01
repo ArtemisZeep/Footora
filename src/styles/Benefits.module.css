@@ -220,14 +220,18 @@
   }
   
   .bgWrap {
-    height: 300px;
+    height: 400px;
+  }
+
+  .bgImage {
+    object-position: center 70%;
   }
   
   .title {
-    font-size: 24px;
+    font-size: 28px;
     width: 90vw;
     height: auto;
-    top: 20px;
+    top: 30px;
     line-height: 1.2;
   }
   
@@ -294,3 +298,9 @@
     display: none;
   }
 } 
+
+@media (max-width: 600px) {
+  .bgImage {
+    object-position: center 100%;
+  }
+}

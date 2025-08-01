@@ -262,12 +262,11 @@
 .standardsSection {
   width: 100%;
   background: #283433;
-  min-height: 757px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   position: relative;
-  padding: 0;
+  padding: 40px 0;
 }
 
 .standardsContent {
@@ -275,10 +274,10 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  height: 757px;
+  min-height: auto;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   padding: 0 70px;
   box-sizing: border-box;
@@ -429,6 +428,39 @@
   background: #eee;
 }
 
+/* Image styles */
+.aboutHeroImage img {
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.standardsImage img {
+  object-fit: cover;
+}
+
+.certificateImage img,
+.certificateImageSecond img {
+  object-fit: cover;
+}
+
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .standardsContent {
+    align-items: center;
+  }
+
+  .standardsRight {
+    margin-top: 0;
+    margin-left: 50px;
+    bottom: 0;
+  }
+
+  .standardsText {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .aboutHeroContent {
@@ -465,14 +497,44 @@
 
   .standardsContent {
     padding: 0 40px;
+    height: auto;
+    min-height: auto;
+    gap: 40px;
+    align-items: flex-end;
+  }
+
+  .standardsLeft {
+    width: 45%;
+    margin-top: 40px;
   }
 
   .standardsTitle {
-    font-size: 48px;
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 40px;
+  }
+
+  .standardsImage {
+    width: 100%;
+    height: 280px;
+    margin-top: 40px;
+  }
+
+  .standardsRight {
+    width: 50%;
+    margin-top: 40px;
+    gap: 30px;
+    padding-bottom: 0px;
   }
 
   .standardsText {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .standardsSubText {
+    font-size: 18px;
+    line-height: 26px;
   }
 
   .qualificationContent {
@@ -481,6 +543,46 @@
 
   .qualificationTitle {
     font-size: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .standardsContent {
+    padding: 0 30px;
+    gap: 30px;
+    min-height: auto;
+    align-items: flex-end;
+  }
+
+  .standardsLeft {
+    width: 48%;
+    margin-top: 30px;
+  }
+
+  .standardsTitle {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .standardsImage {
+    height: 250px;
+  }
+
+  .standardsRight {
+    width: 48%;
+    margin-top: 30px;
+    gap: 25px;
+    padding-bottom: 0px;
+  }
+
+  .standardsText {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .standardsSubText {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -527,18 +629,25 @@
     font-size: 20px;
   }
 
+  .descriptionSection {
+    min-height: auto;
+    padding: 0;
+  }
+
   .descriptionContent {
     flex-direction: column;
-    padding: 0 20px;
+    padding: 40px 20px;
     height: auto;
-    min-height: 400px;
+    min-height: auto;
+    gap: 30px;
   }
 
   .descriptionText,
   .descriptionTextSecond {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     font-size: 16px;
+    line-height: 1.4;
   }
 
   .approachTitle {

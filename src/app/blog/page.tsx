@@ -7,6 +7,7 @@ import { client, queries } from '../../lib/sanity';
 import { SanitySiteSettings } from '../../types/sanity';
 import { urlFor } from '../../lib/sanity';
 import { getPublishedArticles } from '../../lib/blogApi';
+import styles from './blog.module.css';
 
 // Функция для получения настроек сайта с основной статьей
 async function getSiteSettings(): Promise<SanitySiteSettings | null> {
@@ -31,7 +32,7 @@ const BlogPage: React.FC = async () => {
       <>
         <Header />
         <main>
-          <div style={{ padding: '100px 20px', textAlign: 'center' }}>
+          <div className={styles.blogPlaceholder}>
             <h1>Блог</h1>
             <p>Настройте основную статью в Sanity Studio для отображения hero блока.</p>
             <p>Перейдите в "⚙️ Настройки сайта" и выберите статью для главной страницы блога.</p>

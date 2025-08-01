@@ -1,46 +1,46 @@
 /* Team Page Styles */
-.team-section {
+.teamSection {
   width: 100%;
   min-height: 809px;
   padding: 90px 0;
 } 
 
-.team-section.bg-gradient {
+.teamSection.bgGradient {
   background: linear-gradient(180deg, #a3a9aa 0%, #f4f4f4 41.83%);
   position: relative;
-  margin-top: 0px; /* увеличил перекрытие header */
+  margin-top: 0px;
   z-index: 10;
   box-shadow: 0 -40px 80px 0 rgba(74, 74, 74, 0.18);
-  padding-top: 210px; /* увеличил верхний отступ */
+  padding-top: 210px;
 }
 
-.team-section.bg-gradient::before {
+.teamSection.bgGradient::before {
   content: '';
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 160px; /* увеличил высоту затемнения */
+  height: 160px;
   background: linear-gradient(to bottom, rgba(74, 74, 74, 0.18), transparent 80%);
   z-index: 2;
   pointer-events: none;
 }
 
-.team-section.bg-gradient .team-content {
+.teamSection.bgGradient .teamContent {
   position: relative;
   z-index: 3;
 }
 
-.team-section.bg-lightgray {
+.teamSection.bgLightgray {
   background: #f4f4f4;
 }
 
-.team-section.bg-white {
+.teamSection.bgWhite {
   background: #ffffff;
 }
 
-.team-content {
+.teamContent {
   display: flex;
   align-items: flex-start;
   gap: 48px;
@@ -48,28 +48,28 @@
   margin: 0 auto;
 }
 
-.team-content--reversed {
+.teamContentReversed {
   flex-direction: row-reverse;
 }
 
-.team-image {
+.teamImage {
   flex-shrink: 0;
   width: 500px;
 }
 
-.team-photo {
+.teamPhoto {
   width: 100%;
   height: 700px;
   object-fit: cover;
   aspect-ratio: 5/7;
 }
 
-.team-info {
+.teamInfo {
   flex: 1;
   max-width: 900px;
 }
 
-.team-name {
+.teamName {
   font-family: "Tenor Sans", sans-serif;
   font-size: 58px;
   font-weight: 400;
@@ -78,7 +78,7 @@
   margin-bottom: 24px;
 }
 
-.team-title {
+.teamTitle {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -89,29 +89,29 @@
   margin-bottom: 40px;
 }
 
-.team-services {
+.teamServices {
   margin-bottom: 40px;
 }
 
-.services-grid {
+.servicesGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px 60px;
   margin-bottom: 30px;
 }
 
-.service-item {
+.serviceItem {
   display: flex;
   align-items: flex-start;
   gap: 16px;
 }
 
-.service-check {
+.serviceCheck {
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-.service-text {
+.serviceText {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -119,7 +119,7 @@
   color: var(--color-secondary);
 }
 
-.team-description {
+.teamDescription {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 300;
@@ -129,8 +129,7 @@
   white-space: pre-line;
 }
 
-/* Button override for team page */
-.team-section .btn {
+.teamButton {
   width: 266px;
   height: 64px;
   border-radius: 64px;
@@ -142,88 +141,89 @@
   line-height: 120%;
   text-align: center;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.team-section .btn:hover {
+.teamButton:hover {
   background-color: var(--color-secondary);
   color: white;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) and (min-width: 1025px) {
-  .team-content {
+  .teamContent {
     gap: 50px;
     padding: 0 50px;
   }
 
-  .team-image {
+  .teamImage {
     width: 450px;
   }
 
-  .team-photo {
+  .teamPhoto {
     width: 100%;
     height: 550px;
   }
 }
 
 @media (max-width: 1024px) {
-  .team-content {
+  .teamContent {
     gap: 40px;
     padding: 0 40px;
   }
 
-  .team-image {
+  .teamImage {
     width: 400px;
   }
 
-  .team-photo {
+  .teamPhoto {
     width: 100%;
     height: 500px;
   }
 
-  .team-info {
+  .teamInfo {
     max-width: 700px;
   }
 
-  .team-name {
+  .teamName {
     font-size: 48px;
   }
 
-  .services-grid {
+  .servicesGrid {
     gap: 20px 40px;
   }
 
-  .service-text {
+  .serviceText {
     font-size: 18px;
   }
 
-  .team-description {
+  .teamDescription {
     font-size: 18px;
   }
 }
 
 @media (max-width: 992px) {
-  .team-content {
+  .teamContent {
     flex-direction: column;
     gap: 40px;
     align-items: center;
     text-align: center;
   }
 
-  .team-content--reversed {
+  .teamContentReversed {
     flex-direction: column;
   }
 
-  .team-photo {
+  .teamPhoto {
     width: 300px;
     height: 450px;
   }
 
-  .team-name {
+  .teamName {
     font-size: 48px;
   }
 
-  .services-grid {
+  .servicesGrid {
     grid-template-columns: 1fr;
     gap: 20px;
     text-align: left;
@@ -231,55 +231,55 @@
 }
 
 @media (max-width: 768px) {
-  .team-section {
+  .teamSection {
     padding: 60px 0;
   }
 
-  .team-content {
+  .teamContent {
     padding: 0 20px;
   }
 
-  .team-photo {
+  .teamPhoto {
     width: 280px;
     height: 420px;
   }
 
-  .team-name {
+  .teamName {
     font-size: 36px;
     margin-bottom: 20px;
   }
 
-  .team-title {
+  .teamTitle {
     font-size: 14px;
     margin-bottom: 30px;
   }
 
-  .service-text {
+  .serviceText {
     font-size: 18px;
   }
 
-  .team-description {
+  .teamDescription {
     font-size: 18px;
     margin-bottom: 30px;
   }
 }
 
 @media (max-width: 480px) {
-  .team-photo {
+  .teamPhoto {
     width: 100%;
     max-width: 300px;
     height: auto;
   }
 
-  .team-name {
+  .teamName {
     font-size: 32px;
   }
 
-  .service-text {
+  .serviceText {
     font-size: 16px;
   }
 
-  .team-description {
+  .teamDescription {
     font-size: 16px;
   }
-}
+} 

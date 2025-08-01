@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import styles from './ReviewsBlock.module.css';
 
 const reviews = [
   {
@@ -21,19 +22,9 @@ const reviews = [
 
 function Avatar({ photo }: { photo: string | null }) {
   return (
-    <div style={{
-      width: 100,
-      height: 100,
-      borderRadius: '50%',
-      background: '#EDF1EE',
-      border: '2px solid #57694C',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      overflow: 'hidden',
-    }}>
+    <div className={styles.avatar}>
       {photo ? (
-        <Image src={photo} alt="avatar" width={100} height={100} style={{ objectFit: 'cover' }} />
+        <Image src={photo} alt="avatar" width={100} height={100} />
       ) : (
         <svg width="47" height="68" viewBox="0 0 47 68" fill="none" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="23.5" cy="20.5" rx="16.5" ry="16.5" stroke="#57694C" strokeWidth="2" />
@@ -52,108 +43,40 @@ export default function ReviewsBlock() {
   const visible = reviews.slice(start, start + perPage);
 
   return (
-    <section style={{
-      width: 1440,
-      height: 536,
-      background: '#fff',
-      margin: '0 auto',
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      boxSizing: 'border-box',
-    }}>
-      <div style={{
-        width: 1299,
-        height: 358,
-        display: 'flex',
-        flexDirection: 'row',
-        gap: 20,
-        margin: '86px auto 0 auto',
-        position: 'relative',
-      }}>
+    <section className={styles.reviewsSection}>
+      <div className={styles.reviewsContainer}>
         {visible.map((review, i) => (
-          <div key={i} style={{
-            width: 639 + i, // 639px левая, 640px правая
-            height: 317,
-            background: '#B8C8BA',
-            opacity: i === 0 ? 0.5 : 0.25,
-            borderRadius: 0,
-            position: 'relative',
-            padding: '40px 40px 0 40px',
-            boxSizing: 'border-box',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-start',
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 32 }}>
+          <div key={i} className={styles.reviewCard}>
+            <div className={styles.reviewHeader}>
               <Avatar photo={review.photo} />
-              <div>
-                <div style={{
-                  fontFamily: 'Roboto, sans-serif',
-                  fontWeight: 400,
-                  fontSize: 26,
-                  lineHeight: '90%',
-                  color: '#001E09',
-                  marginBottom: 4,
-                }}>{review.name}</div>
-                <div style={{
-                  fontFamily: 'Roboto, sans-serif',
-                  fontWeight: 400,
-                  fontSize: 14,
-                  lineHeight: '90%',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: '#57694C',
-                  marginBottom: 0,
-                }}>{review.status}</div>
+              <div className={styles.clientInfo}>
+                <div className={styles.clientName}>{review.name}</div>
+                <div className={styles.clientStatus}>{review.status}</div>
               </div>
             </div>
-            <div style={{
-              fontFamily: 'Roboto, sans-serif',
-              fontWeight: 300,
-              fontSize: 16,
-              lineHeight: '150%',
-              color: '#000',
-              marginTop: 32,
-              marginBottom: 24,
-              width: 592,
-              minHeight: 48,
-            }}>{review.text}</div>
-            <a href={review.link} style={{
-              fontFamily: 'Roboto, sans-serif',
-              fontWeight: 300,
-              fontSize: 14,
-              lineHeight: '150%',
-              color: '#4D5C4D',
-              textDecoration: 'underline',
-            }}>ссылка на отзыв</a>
+            <div className={styles.reviewText}>{review.text}</div>
+            <a href={review.link} className={styles.reviewLink}>ссылка на отзыв</a>
           </div>
         ))}
       </div>
       {/* Точки-пагинация */}
-      <div style={{ position: 'absolute', left: '50%', bottom: 60, transform: 'translateX(-50%)', display: 'flex', gap: 12 }}>
+      <div className={styles.pagination}>
         {Array.from({ length: pageCount }).map((_, i) => (
-          <span key={i} style={{
-            width: 14,
-            height: 14,
-            borderRadius: '50%',
-            background: i === page ? '#B8C8BA' : '#DDE6DE',
-            display: 'inline-block',
-          }}></span>
+          <span 
+            key={i} 
+            className={`${styles.paginationDot} ${i === page ? styles.active : styles.inactive}`}
+          ></span>
         ))}
       </div>
       {/* Стрелки */}
-      <div style={{ position: 'absolute', right: 60, bottom: 60, display: 'flex', gap: 32 }}>
-        <button onClick={() => setPage(Math.max(0, page - 1))} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+      <div className={styles.arrowsContainer}>
+        <button onClick={() => setPage(Math.max(0, page - 1))} className={styles.arrowButton}>
           <svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="41" y1="8" x2="2" y2="8" stroke="#4D5C4D" strokeWidth="1.6" />
             <polyline points="16,1 2,8 16,15" stroke="#4D5C4D" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-        <button onClick={() => setPage(Math.min(pageCount - 1, page + 1))} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+        <button onClick={() => setPage(Math.min(pageCount - 1, page + 1))} className={styles.arrowButton}>
           <svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="2" y1="8" x2="41" y2="8" stroke="#4D5C4D" strokeWidth="1.6" />
             <polyline points="27,1 41,8 27,15" stroke="#4D5C4D" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>

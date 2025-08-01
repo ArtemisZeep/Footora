@@ -104,7 +104,6 @@ export default function AboutPage() {
               src="/images/about1.png"
               alt="О центре Footura фото"
               fill
-              style={{ objectFit: 'cover', borderRadius: 0 }}
               sizes="(max-width: 1440px) 100vw, 641px"
               priority
             />
@@ -131,16 +130,16 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section style={{ width: '100%', background: '#F5F5F5', minHeight: 963, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', padding: 0 }}>
-        <div style={{ width: '100%', maxWidth: 1440, margin: '0 auto', position: 'relative', height: 963, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: 82 }}>
-          <h2 style={{ color: '#283433', fontFamily: 'Tenor Sans, sans-serif', fontSize: 58, fontWeight: 300, textAlign: 'center', marginBottom: 40, width: 767, maxWidth: '90vw', marginLeft: 'auto', marginRight: 'auto' }}>
+      <section className={aboutStyles.approachSection}>
+        <div className={aboutStyles.approachContent}>
+          <h2 className={aboutStyles.approachTitle}>
             Комплексный подход
           </h2>
-          <div style={{ color: '#000', fontFamily: 'Roboto, sans-serif', fontSize: 20, fontWeight: 300, textAlign: 'center', width: 859, maxWidth: '90vw', margin: '0 auto', marginBottom: 60 }}>
+          <div className={aboutStyles.approachDescription}>
             Мы предоставляем полный спектр услуг ухода за ногтями и кожей стоп, включая:
           </div>
-          <div style={{ position: 'relative', width: '100%', maxWidth: 860, margin: '0 auto', minHeight: 549, display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: '0 10px' }}>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, width: '100%', display: 'flex', flexDirection: 'column', gap: 0 }}>
+          <div className={aboutStyles.approachList}>
+            <ul className={aboutStyles.approachListUl}>
               {[
                 'Аппаратный гигиенический педикюр',
                 'Подологическая обработка стоп и ногтей',
@@ -151,57 +150,57 @@ export default function AboutPage() {
                 'Ведение клиента/реабилитация после операции на ногтевом аппарате в сотрудничестве с хирургом',
                 'Пилинг и массаж стоп',
               ].map((text, i) => (
-                <li key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontFamily: 'Roboto, sans-serif', fontWeight: 300, fontSize: 20, color: '#000', lineHeight: '30px', minHeight: 61, borderBottom: i < 7 ? '1px solid #B8C8BA' : 'none', padding: '15px 0' }}>
-                  <span style={{ flex: 1, marginRight: 24 }}>{text}</span>
-                  <span style={{ minWidth: 32, textAlign: 'right', fontFamily: 'Tenor Sans, sans-serif', fontWeight: 300, fontSize: 20, color: '#B8C8BA' }}>{String(i+1).padStart(2, '0')}</span>
+                <li key={i} className={aboutStyles.approachListItem}>
+                  <span className={aboutStyles.approachListItemText}>{text}</span>
+                  <span className={aboutStyles.approachListItemNumber}>{String(i+1).padStart(2, '0')}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </section>
-      <section style={{ width: '100%', background: '#283433', minHeight: 757, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', padding: 0 }}>
-        <div style={{ width: '100%', maxWidth: 1440, margin: '0 auto', position: 'relative', height: 757, display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', padding: '0 70px', boxSizing: 'border-box' }}>
-          <div style={{ width: 628, marginTop: 78 }}>
-            <h2 style={{ color: '#B8C8BA', fontFamily: 'Tenor Sans, sans-serif', fontSize: 58, fontWeight: 400, lineHeight: '68px', marginBottom: 60 }}>
+      <section className={aboutStyles.standardsSection}>
+        <div className={aboutStyles.standardsContent}>
+          <div className={aboutStyles.standardsLeft}>
+            <h2 className={aboutStyles.standardsTitle}>
               Мировые стандарты в вашем городе
             </h2>
-            <div style={{ width: 530, height: 378, background: '#B8C8BA22', borderRadius: 0, marginTop: 60, marginLeft: 0, position: 'relative', overflow: 'hidden' }}>
-              <Image src="/images/unibrace.png" alt="Unibrace" fill style={{ objectFit: 'cover' }} />
+            <div className={aboutStyles.standardsImage}>
+              <Image src="/images/unibrace.png" alt="Unibrace" fill />
             </div>
           </div>
-          <div style={{ width: 638, marginTop: 272, display: 'flex', flexDirection: 'column', gap: 34 }}>
-            <div style={{ color: '#fff', fontFamily: 'Roboto, sans-serif', fontWeight: 300, fontSize: 28, lineHeight: '42px', marginBottom: 0 }}>
+          <div className={aboutStyles.standardsRight}>
+            <div className={aboutStyles.standardsText}>
               Мы являемся официальными представителями системы Unibrace, что позволяет нам применять современные и безопасные технологии коррекции ногтевой пластины.
             </div>
-            <div style={{ color: '#fff', fontFamily: 'Roboto, sans-serif', fontWeight: 300, fontSize: 20, lineHeight: '30px' }}>
+            <div className={aboutStyles.standardsSubText}>
               Мы — команда профессионалов, которая постоянно совершенствуется, посещая крупнейшие международные выставки, семинары и конференции. Мы активно участвуем в профессиональных событиях, перенимаем передовой опыт и внедряем его в свою работу, чтобы предоставлять нашим клиентам лучшие решения.
             </div>
           </div>
         </div>
       </section>
-      <section style={{ width: '100%', background: '#fff', minHeight: 656, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', padding: 0 }}>
-        <div style={{ width: '100%', maxWidth: 1440, margin: '0 auto', position: 'relative', height: 656, display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', padding: '0 70px', boxSizing: 'border-box' }}>
-          <div style={{ width: 426, marginTop: 90, display: 'flex', flexDirection: 'column', gap: 40 }}>
-            <h2 style={{ color: '#283433', fontFamily: 'Tenor Sans, sans-serif', fontSize: 58, fontWeight: 400, lineHeight: '68px', marginBottom: 40 }}>
+      <section className={aboutStyles.qualificationSection}>
+        <div className={aboutStyles.qualificationContent}>
+          <div className={aboutStyles.qualificationLeft}>
+            <h2 className={aboutStyles.qualificationTitle}>
               Квалификация
             </h2>
-            <div style={{ color: '#000', fontFamily: 'Roboto, sans-serif', fontWeight: 300, fontSize: 20, lineHeight: '30px', marginBottom: 0 }}>
+            <div className={aboutStyles.qualificationText}>
               Наши Специалисты регулярно подтверждают свою квалификацию на международном уровне. Дипломы и сертификаты служат гарантией профессионализма и высоких стандартов обслуживания.
             </div>
             <button
-              style={{ width: 349, height: 64, border: '1px solid #4D5C4D', borderRadius: 64, background: '#fff', color: '#283433', fontFamily: 'Roboto, sans-serif', fontWeight: 400, fontSize: 20, lineHeight: '23px', textAlign: 'center', marginTop: 60, cursor: 'pointer', boxSizing: 'border-box' }}
+              className={aboutStyles.qualificationButton}
               onClick={openPopup}
             >
               Посмотреть все сертификаты
             </button>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'row', gap: 56, marginTop: 94 }}>
-            <div style={{ width: 329, height: 461, border: '6px solid #fff', boxShadow: '0px 4px 24px rgba(0,0,0,0.15)', position: 'relative', overflow: 'hidden', background: '#eee' }}>
-              <Image src="/images/Tezza-2723.png" alt="Сертификат 1" fill style={{ objectFit: 'cover' }} />
+          <div className={aboutStyles.qualificationRight}>
+            <div className={aboutStyles.certificateImage}>
+              <Image src="/images/Tezza-2723.png" alt="Сертификат 1" fill />
             </div>
-            <div style={{ width: 337, height: 461, border: '6px solid #fff', boxShadow: '0px 4px 24px rgba(0,0,0,0.15)', position: 'relative', overflow: 'hidden', background: '#eee' }}>
-              <Image src="/images/Tezza-7138.png" alt="Сертификат 2" fill style={{ objectFit: 'cover' }} />
+            <div className={aboutStyles.certificateImageSecond}>
+              <Image src="/images/Tezza-7138.png" alt="Сертификат 2" fill />
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./team.css";
+import styles from "./team.module.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -19,13 +19,13 @@ const CheckIcon = () => (
 );
 
 const ServicesList = ({ services }: { services: string[] }) => (
-  <div className="services-grid">
+  <div className={styles.servicesGrid}>
     {services.map((service, index) => (
-      <div key={index} className="service-item">
-        <div className="service-check">
+      <div key={index} className={styles.serviceItem}>
+        <div className={styles.serviceCheck}>
           <CheckIcon />
         </div>
-        <span className="service-text">{service}</span>
+        <span className={styles.serviceText}>{service}</span>
       </div>
     ))}
   </div>
@@ -40,7 +40,7 @@ const TeamMember = ({
   imageAlt,
   isReversed = false,
   showButton = false,
-  backgroundClass = "bg-lightgray",
+  backgroundClass = "bgLightgray",
 }: {
   name: string;
   title: string;
@@ -52,29 +52,29 @@ const TeamMember = ({
   showButton?: boolean;
   backgroundClass?: string;
 }) => (
-  <section className={`team-section ${backgroundClass}`}>
+  <section className={`${styles.teamSection} ${styles[backgroundClass]}`}>
     <div className="container">
       <div
-        className={`team-content ${isReversed ? "team-content--reversed" : ""}`}
+        className={`${styles.teamContent} ${isReversed ? styles.teamContentReversed : ""}`}
       >
         {/* Image */}
-        <div className="team-image">
-          <img src={imageSrc} alt={imageAlt} className="team-photo" />
+        <div className={styles.teamImage}>
+          <img src={imageSrc} alt={imageAlt} className={styles.teamPhoto} />
         </div>
 
         {/* Content */}
-        <div className="team-info">
-          <h2 className="team-name">{name}</h2>
+        <div className={styles.teamInfo}>
+          <h2 className={styles.teamName}>{name}</h2>
 
-          <p className="team-title">{title}</p>
+          <p className={styles.teamTitle}>{title}</p>
 
-          <div className="team-services">
+          <div className={styles.teamServices}>
             <ServicesList services={services} />
           </div>
 
-          <p className="team-description">{description}</p>
+          <p className={styles.teamDescription}>{description}</p>
 
-          {showButton && <button className="btn">Подробнее</button>}
+          {showButton && <button className={styles.teamButton}>Подробнее</button>}
         </div>
       </div>
     </div>
@@ -135,7 +135,7 @@ export default function TeamPage() {
           imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/b8f2facd3cc9db08b050911179ac0f94bf3b1196?width=838"
           imageAlt="Наталия Ротарь"
           showButton={true}
-          backgroundClass="bg-gradient"
+          backgroundClass="bgGradient"
           isReversed={true}
         />
 
@@ -148,7 +148,7 @@ export default function TeamPage() {
           imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/34e569de84f0691dcb3c41f64282bcadfdaadfab?width=838"
           imageAlt="Диана Степичева"
           
-          backgroundClass="bg-white"
+          backgroundClass="bgWhite"
         />
 
         {/* Elena - Pedicure and Manicure Specialist */}
@@ -162,7 +162,7 @@ export default function TeamPage() {
           services={elenaServices}
           imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/ca4f7eae59b616ad96e5d00ae7180bbb04753304?width=838"
           imageAlt="Елена Павлова"
-          backgroundClass="bg-lightgray"
+          backgroundClass="bgLightgray"
           isReversed={true}
         />
 
@@ -175,7 +175,7 @@ export default function TeamPage() {
           imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/8bed7758a5f60f641d2334b4cb92bf3994881c20?width=836"
           imageAlt="Кристина Сидорчук"
           
-          backgroundClass="bg-white"
+          backgroundClass="bgWhite"
         />
 
         {/* Marianna - Pedicure with Podology Basics */}
@@ -186,7 +186,7 @@ export default function TeamPage() {
           services={mariannaServices}
           imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/425827757dcb741c69d7633d451a2dea7ee50b89?width=838"
           imageAlt="Марианна Шпайло"
-          backgroundClass="bg-lightgray"
+          backgroundClass="bgLightgray"
           isReversed={true}
         />
       </main>

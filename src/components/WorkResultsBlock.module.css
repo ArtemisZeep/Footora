@@ -1,0 +1,195 @@
+/* WorkResultsBlock Styles */
+
+.workResultsSection {
+  width: 100vw;
+  min-height: 862px;
+  background: #F4F4F4;
+  position: relative;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.workResultsTitle {
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 120%;
+  color: #283433;
+  text-align: center;
+  width: 767px;
+  margin: 85px auto 0 auto;
+  letter-spacing: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workResultsCard {
+  width: 1300px;
+  height: 527px;
+  background: #fff;
+  position: relative;
+  margin-top: 55px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.workResultsLeft {
+  width: 600px;
+  height: 100%;
+  position: relative;
+  padding-left: 51px;
+}
+
+.problemTitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #4D5C4D;
+  margin-top: 41px;
+  margin-bottom: 18px;
+  width: 216px;
+  height: 18px;
+}
+
+.photosContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  margin-bottom: 0;
+}
+
+.photoWrapper {
+  width: 281px;
+  height: 375px;
+  position: relative;
+  background: none;
+}
+
+.photoWrapper img {
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.workResultsRight {
+  width: 449px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-left: 70px;
+  padding-bottom: 48px;
+}
+
+.workResultsDescription {
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+  color: #283433;
+  text-align: left;
+  width: 449px;
+  height: auto;
+}
+
+.arrowsContainer {
+  position: absolute;
+  top: 41px;
+  right: 51px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.arrowButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .workResultsTitle {
+    font-size: 48px;
+    width: 90vw;
+  }
+
+  .workResultsCard {
+    width: 90vw;
+    height: auto;
+    min-height: 400px;
+    flex-direction: column;
+  }
+
+  .workResultsLeft {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .workResultsRight {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .workResultsDescription {
+    width: 100%;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .workResultsTitle {
+    font-size: 36px;
+    margin: 40px auto 0 auto;
+  }
+
+  .workResultsCard {
+    margin-top: 30px;
+  }
+
+  .workResultsLeft {
+    padding: 15px;
+  }
+
+  .problemTitle {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .photosContainer {
+    gap: 10px;
+  }
+
+  .photoWrapper {
+    width: 150px;
+    height: 200px;
+  }
+
+  .workResultsRight {
+    padding: 15px;
+  }
+
+  .workResultsDescription {
+    font-size: 24px;
+  }
+
+  .arrowsContainer {
+    top: 20px;
+    right: 20px;
+    gap: 15px;
+  }
+} 

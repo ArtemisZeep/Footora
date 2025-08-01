@@ -1,0 +1,201 @@
+/* CertificatesPopup Styles */
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(40,52,51,0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupContainer {
+  position: relative;
+  width: min(1301px, 95vw);
+  height: min(792px, 90vh);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupContent {
+  position: relative;
+  width: 1080px;
+  height: 731px;
+  max-width: 80vw;
+  max-height: 80vh;
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  margin: 0 auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 29px;
+  height: 29px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prevButton {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nextButton {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doubleVerticalContainer {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.singleImageContainer {
+  position: relative;
+  width: 756px; /* 70% от 1080px */
+  height: 584.8px; /* 80% от 731px */
+  margin: 0 auto;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doubleImageContainer {
+  position: relative;
+  width: 362px; /* (756px - 32px) / 2 */
+  height: 584.8px; /* 80% от 731px */
+  background: transparent;
+  flex: 0 0 362px;
+}
+
+.singleImageContainer img,
+.doubleImageContainer img {
+  object-fit: contain;
+}
+
+.pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.paginationDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.paginationDot.active {
+  background: #B8C8BA;
+}
+
+.paginationDot.inactive {
+  background: #F4F4F4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .popupContent {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .singleImageContainer {
+    width: 70%;
+    height: 80%;
+  }
+
+  .doubleImageContainer {
+    width: calc(35% - 16px);
+    height: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .popupContent {
+    width: 95vw;
+    height: 80vh;
+  }
+
+  .closeButton {
+    top: 20px;
+    right: 20px;
+  }
+
+  .prevButton,
+  .nextButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .prevButton {
+    left: 16px;
+  }
+
+  .nextButton {
+    right: 16px;
+  }
+
+  .singleImageContainer {
+    width: 85%;
+    height: 75%;
+  }
+
+  .doubleImageContainer {
+    width: calc(42.5% - 16px);
+    height: 75%;
+  }
+
+  .pagination {
+    bottom: 20px;
+  }
+} 

@@ -146,6 +146,14 @@
   .ampersand {
     font-size: 40px;
   }
+
+  .cardContentRight {
+    padding-right: 40px;
+  }
+
+  .cardContentLeft {
+    padding-left: 40px;
+  }
 }
 
 /* Десктопные стили (больше 1024px) */
@@ -193,6 +201,7 @@
     text-align: center;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 70px;
   }
 
   .cardTitle {
