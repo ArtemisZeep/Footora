@@ -20,7 +20,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ article }) => {
   };
 
   return (
-    <Link href={`/blog/${article.slug}`} className={styles.post}>
+    <Link href={`/article/${article.slug}`} className={styles.post}>
       <div className={styles.imageContainer}>
         <Image 
           src={article.heroImage.src} 
