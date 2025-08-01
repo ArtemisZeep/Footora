@@ -55,7 +55,94 @@
   margin-top: 24px;
 }
 
-@media (min-width: 768px) {
+/* Планшетные стили (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .aboutFounder {
+    padding: 80px 20px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr 1.5fr;
+    display: grid;
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 32px;
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 20px;
+  }
+
+  .imageContainer {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .content {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .description {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .secondaryImageContainer {
+    width: 200px;
+    height: 250px;
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Средние экраны (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .aboutFounder {
+    padding: 100px 40px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr 2fr;
+    display: grid;
+    gap: 50px;
+  }
+
+  .title {
+    font-size: 36px;
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 24px;
+  }
+
+  .imageContainer {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .content {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .description {
+    font-size: 19px;
+    margin-bottom: 35px;
+  }
+
+  .secondaryImageContainer {
+    width: 220px;
+    height: 280px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Большие экраны (больше 1440px) */
+@media (min-width: 1441px) {
   .aboutFounder {
     padding: 120px 0;
   }
@@ -63,6 +150,7 @@
   .grid {
     grid-template-columns: 1fr 2fr;
     display: grid;
+    gap: 60px;
   }
 
   .title {
