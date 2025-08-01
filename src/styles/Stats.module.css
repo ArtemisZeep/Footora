@@ -67,16 +67,25 @@
   .grid {
     flex-direction: column;
     gap: 0;
-    max-width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
   }
   
   .statItem {
     padding: 30px 0;
-    border-bottom: 1px solid #B8C8BA;
+    position: relative;
+    text-align: center;
   }
   
-  .statItem:last-child {
-    border-bottom: none;
+  .statItem:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background-color: #B8C8BA;
   }
   
   .statValue {
