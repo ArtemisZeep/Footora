@@ -84,18 +84,26 @@
     gap: 20px;
   }
 
-  /* Меняем порядок: сначала title, потом imageContainer */
+  /* Меняем порядок: заголовок, изображение, остальной контент */
   .grid {
     display: flex;
     flex-direction: column;
   }
 
-  .content {
+  .title {
     order: 1;
   }
 
   .imageContainer {
     order: 2;
+  }
+
+  .description {
+    order: 3;
+  }
+
+  .button {
+    order: 4;
   }
 
   /* Скрываем второе изображение на мобильной версии */
