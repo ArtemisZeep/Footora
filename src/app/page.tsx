@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import IntroSection from '@/components/IntroSection';
-import ServicesSection from '@/components/ServicesSection';
+import ServicesGrid from '@/components/ServicesGrid';
 import StatsSection from '@/components/StatsSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import AboutFounderSection from '@/components/AboutFounderSection';
@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <IntroSection />
-      <ServicesSection />
+      <ServicesGrid />
       <StatsSection />
       <BenefitsSection />
       <AboutFounderSection />
