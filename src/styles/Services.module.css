@@ -113,12 +113,50 @@
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+/* Планшетные стили (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  
+  .serviceCard {
+    height: 400px;
+  }
+  
+  .largeTitle {
+    font-size: 48px;
+  }
+  
+  .ampersand {
+    font-size: 40px;
   }
   
   .descriptionText {
-    font-size: 28px;
+    font-size: 24px;
+    padding: 0 20px;
+  }
+}
+
+/* Мобильные стили (до 768px) */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .serviceCard {
+    height: 300px;
+  }
+  
+  .largeTitle {
+    font-size: 36px;
+  }
+  
+  .ampersand {
+    font-size: 30px;
+  }
+  
+  .descriptionText {
+    font-size: 20px;
+    padding: 0 16px;
   }
 } 

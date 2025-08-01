@@ -106,38 +106,42 @@
   }
 }
 
-@media (max-width: 1024px) {
+/* Планшетные стили (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
   .serviceGroupsSection {
-    width: 750px;
+    width: 100vw;
     margin: -60px auto 0 auto;
+    padding: 0 20px;
   }
   .grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 0;
   }
   .card {
     min-width: 0;
-    width: 375px;
-    min-height: 332px;
-    padding: 32px 16px;
+    width: 100%;
+    min-height: 400px;
+    padding: 40px 24px;
   }
   .title {
     font-family: 'Tenor Sans', serif;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 120%;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   .description {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 150%;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
+    max-width: 600px;
   }
   .button {
-    width: 303px;
-    height: 60px;
-    padding: 18px 20px;
-    font-size: 20px;
-    line-height: 23px;
+    width: 280px;
+    height: 56px;
+    padding: 16px 32px;
+    font-size: 18px;
+    line-height: 21px;
     border-radius: 64px;
     background: #fff;
     border: 1px solid #fff;
@@ -145,7 +149,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
   }
   .buttonLightGreen {
     border-color: #fff;
@@ -162,27 +165,29 @@
   }
 }
 
-@media (max-width: 750px) {
+/* Мобильные стили (до 768px) */
+@media (max-width: 768px) {
   .serviceGroupsSection {
     width: 100vw;
     margin: -40px 0 0 0;
-    padding: 0 0 0 0;
+    padding: 0;
   }
   .grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 0;
   }
   .card {
     width: 100vw;
     min-width: 0;
-    min-height: 288px;
-    padding: 24px 12px 0 12px;
+    min-height: 350px;
+    padding: 32px 16px;
     margin: 0;
     box-sizing: border-box;
   }
   .title {
     font-family: 'Tenor Sans', serif;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 120%;
     margin-bottom: 16px;
     text-align: center;
@@ -191,18 +196,18 @@
   .description {
     font-size: 16px;
     line-height: 150%;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     text-align: center;
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    max-width: 320px;
   }
   .button {
     width: 100%;
-    height: 52px;
-    padding: 18px 20px;
-    font-size: 18px;
-    line-height: 21px;
+    max-width: 280px;
+    height: 48px;
+    padding: 14px 24px;
+    font-size: 16px;
+    line-height: 19px;
     border-radius: 64px;
     background: #fff;
     border: 1px solid #fff;
@@ -210,8 +215,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 0 0 24px 0;
   }
   .buttonLightGreen {
     border-color: #fff;
