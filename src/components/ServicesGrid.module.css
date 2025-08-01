@@ -11,6 +11,29 @@
   flex-direction: column;
 }
 
+/* Десктопные стили (больше 1024px) */
+@media (min-width: 1025px) {
+  .servicesGrid {
+    width: 1300px;
+    margin: -80px auto 0 auto;
+  }
+
+  .serviceBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+  }
+
+  .imageSection {
+    height: 514px;
+  }
+
+  .textSection {
+    min-height: 514px;
+  }
+}
+
 .imageSection {
   position: relative;
   width: 100%;
