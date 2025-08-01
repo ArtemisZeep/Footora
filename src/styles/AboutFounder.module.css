@@ -76,22 +76,31 @@
 /* Мобильные стили (до 768px) */
 @media (max-width: 767px) {
   .aboutFounder {
-    padding: 60px 0;
+    padding: 60px 20px;
   }
-
+  
   .grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 20px;
   }
 
-  /* Скрываем основное изображение на мобильной версии */
-  .imageContainer {
-    display: none;
+  /* Меняем порядок: сначала title, потом imageContainer */
+  .grid {
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Меняем порядок элементов - заголовок сверху */
   .content {
-    order: -1;
+    order: 1;
+  }
+
+  .imageContainer {
+    order: 2;
+  }
+
+  /* Скрываем второе изображение на мобильной версии */
+  .secondaryImageContainer {
+    display: none;
   }
 
   .title {
@@ -104,14 +113,6 @@
     font-size: 16px;
     margin-bottom: 30px;
     text-align: center;
-    max-width: 100%;
-  }
-
-  .secondaryImageContainer {
-    width: 100%;
-    height: 200px;
-    float: none;
-    margin: 0 0 20px 0;
   }
 
   .button {
