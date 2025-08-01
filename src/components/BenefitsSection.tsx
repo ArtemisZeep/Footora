@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Benefits.module.css';
@@ -55,7 +57,7 @@ const BenefitsSection: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const imageSrc = isMobile ? "/images/team_mob.jpg" : "/images/team.jpg";
+  const imageSrc = isMobile ? "/images/team_mob.png" : "/images/team.jpg";
 
   return (
     <section className={styles.benefits} id="benefits">
