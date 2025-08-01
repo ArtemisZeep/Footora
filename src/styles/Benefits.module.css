@@ -197,9 +197,8 @@
 
 /* Адаптивность для скобок */
 @media (max-width: 1024px) {
-  .grid {
-    flex-direction: column;
-    align-items: center;
+  .benefitDescription{
+    font-size: 16px;
   }
   .column {
     max-width: 100%;
@@ -221,27 +220,77 @@
   }
   
   .bgWrap {
-    height: 400px;
+    height: 300px;
   }
   
   .title {
-    font-size: 28px;
+    font-size: 24px;
     width: 90vw;
     height: auto;
-    top: 32px;
+    top: 20px;
+    line-height: 1.2;
   }
   
   .benefitsBox {
-    margin-top: -100px;
+    margin-top: -60px;
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
   }
   
+  .grid {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .column {
+    max-width: 100%;
+    gap: 0;
+  }
+
+  .benefitItem,
+  .benefitItemWithBrackets {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 40px;
+    min-height: auto;
+  }
+
   .benefitNumber {
-    font-size: 28px;
-    min-width: 28px;
+    font-size: 32px;
+    min-width: auto;
+    margin-top: 0;
+    align-self: flex-start;
+    color: #fff;
   }
-  
-  .benefitText {
+
+  .benefitTextBlock {
+    max-width: 100%;
+  }
+
+  .benefitTitle {
     font-size: 16px;
-    min-height: 80px;
+    margin-bottom: 8px;
+  }
+
+  .benefitDescription {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .benefitText {
+    font-size: 14px;
+    min-height: auto;
+    width: 100%;
+    line-height: 1.4;
+  }
+
+  .squareBracketLeft,
+  .squareBracketRight {
+    display: none;
   }
 } 
