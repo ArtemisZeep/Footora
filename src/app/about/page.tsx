@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import styles from '../../styles/Hero.module.css';
+import aboutStyles from '../../styles/About.module.css';
 import CertificatesPopup, { Certificate } from '@/components/CertificatesPopup';
 import WorkResultsBlock from '@/components/WorkResultsBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
@@ -87,18 +88,18 @@ export default function AboutPage() {
         />
         <div className={styles.content}></div>
       </section>
-      <section style={{ width: '100%', background: '#F5F5F5', minHeight: 641, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-        <div style={{ display: 'flex', width: '100%', maxWidth: 1440, margin: '0 auto', padding: '0 70px', boxSizing: 'border-box', alignItems: 'center', justifyContent: 'space-between', height: 641 }}>
-          <div style={{ maxWidth: 530 }}>
-            <h2 style={{ color: '#283433', fontFamily: 'Tenor Sans, sans-serif', fontSize: 48, fontWeight: 300, marginBottom: 60, marginTop: 0 }}>О центре</h2>
-            <div style={{ color: '#283433', fontFamily: 'Roboto, sans-serif', fontSize: 24, fontWeight: 300, marginBottom: 30, lineHeight: 1.3 }}>
+      <section className={aboutStyles.aboutHero}>
+        <div className={aboutStyles.aboutHeroContent}>
+          <div className={aboutStyles.aboutHeroText}>
+            <h2 className={aboutStyles.aboutHeroTitle}>О центре</h2>
+            <div className={aboutStyles.aboutHeroDescription}>
               FOOTURA— команда узкопрофильных специалистов в области ухода за стопами, работающая под руководством Натальи Ротарь, эксперта с 18-летним опытом
             </div>
-            <div style={{ color: '#000', fontFamily: 'Roboto, sans-serif', fontSize: 20, fontWeight: 300, lineHeight: 1.3 }}>
+            <div className={aboutStyles.aboutHeroSubDescription}>
               Наш центр предлагает профессиональный комплексный уход за стопами и ногтями с использованием инновационных технологий в области подологии.
             </div>
           </div>
-          <div style={{ flex: '0 0 641px', height: 461, position: 'relative', marginLeft: 70 }}>
+          <div className={aboutStyles.aboutHeroImage}>
             <Image
               src="/images/about1.png"
               alt="О центре Footura фото"
@@ -110,22 +111,22 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section style={{ width: '100%', background: '#B8C8BA', minHeight: 430, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', padding: 0 }}>
-        <div style={{ width: 1440, maxWidth: '100%', margin: '0 auto', position: 'relative', height: 430, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ width: 1080, maxWidth: '90vw', color: '#283433', fontFamily: 'Roboto, sans-serif', fontSize: 36, fontWeight: 300, textAlign: 'center', lineHeight: 1.3, margin: '0 auto', marginBottom: 40, marginTop: 0 }}>
+      <section className={aboutStyles.missionSection}>
+        <div className={aboutStyles.missionContent}>
+          <div className={aboutStyles.missionText}>
             Наша миссия – возвращать легкость движения, <br />ведь движение – это основа жизни, <br />которая начинается со здоровых ног
           </div>
-          <button style={{ width: 310, height: 64, background: '#fff', borderRadius: 64, border: 'none', color: '#283433', fontFamily: 'Tenor Sans, sans-serif', fontSize: 24, fontWeight: 300, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto' }}>
+          <button className={aboutStyles.missionButton}>
             Записаться
           </button>
         </div>
       </section>
-      <section style={{ width: '100%', background: '#fff', minHeight: 346, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', padding: 0 }}>
-        <div style={{ width: 1440, maxWidth: '100%', margin: '0 auto', position: 'relative', height: 346, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: '0 70px', boxSizing: 'border-box' }}>
-          <div style={{ width: 595, color: '#000', fontFamily: 'Roboto, sans-serif', fontSize: 20, fontWeight: 300, lineHeight: 1.3 }}>
+      <section className={aboutStyles.descriptionSection}>
+        <div className={aboutStyles.descriptionContent}>
+          <div className={aboutStyles.descriptionText}>
             Наш подологический центр предоставляет комплексные решения как для устранения острых проблем ногтей и стоп, так и для профилактики их развития. Мы стремимся минимизировать риск осложнений в будущем, предлагая широкий спектр услуг — от решения конкретных локальных проблем до регулярного ухода за стопами.
           </div>
-          <div style={{ width: 596, color: '#000', fontFamily: 'Roboto, sans-serif', fontSize: 20, fontWeight: 300, lineHeight: 1.3 }}>
+          <div className={aboutStyles.descriptionTextSecond}>
             В случае выявления более глубоких или системных патологий наши специалисты направляют пациентов к профильным экспертам — хирургам, дерматологам, ортопедам, флебологам и т.д. По завершении/вовремя основного лечения пациенты продолжают наблюдение и поддерживающий уход в нашем центре.
           </div>
         </div>
