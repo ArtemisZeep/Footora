@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
@@ -9,6 +9,19 @@ import WorkResultsBlock from '@/components/WorkResultsBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 
 export default function AboutPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 831);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Сертификаты: пример
   const certificates: Certificate[] = [
     {
@@ -66,7 +79,7 @@ export default function AboutPage() {
       <Header />
       <section className={styles.hero}>
         <Image
-          src="/images/hero_about.png"
+          src={isMobile ? "/images/hero_about_mob.png" : "/images/hero_about.png"}
           alt="О центре Footura"
           fill
           className={styles.bgImage}
