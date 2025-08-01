@@ -166,6 +166,15 @@
     gap: 0;
   }
 
+  /* Меняем местами 3-й и 4-й блоки на мобильной версии */
+  .serviceCard:nth-child(3) {
+    order: 4;
+  }
+
+  .serviceCard:nth-child(4) {
+    order: 3;
+  }
+
   .serviceCard {
     height: auto;
     min-height: 300px;
