@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Benefits.module.css';
 
@@ -42,11 +42,26 @@ const benefits = [
 ];
 
 const BenefitsSection: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const imageSrc = isMobile ? "/images/team_mob.jpg" : "/images/team.jpg";
+
   return (
     <section className={styles.benefits} id="benefits">
       <div className={styles.bgWrap}>
       <Image
-        src="/images/team.jpg"
+        src={imageSrc}
         alt="Footura team"
         fill
         className={styles.bgImage}
