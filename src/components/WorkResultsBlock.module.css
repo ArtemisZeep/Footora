@@ -41,6 +41,7 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .workResultsLeft {
@@ -76,11 +77,18 @@
   height: 375px;
   position: relative;
   background: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.photoWrapper:hover {
+  transform: scale(1.02);
 }
 
 .photoWrapper img {
   object-fit: cover;
   border-radius: 0;
+  transition: transform 0.3s ease;
 }
 
 .workResultsRight {
@@ -117,57 +125,59 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 5px;
+  transition: opacity 0.3s ease;
+  border-radius: 4px;
+}
+
+.arrowButton:hover {
+  opacity: 0.7;
+  background: rgba(77, 92, 77, 0.1);
+}
+
+.arrowButton:active {
+  transform: scale(0.95);
+}
+
+.arrowButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.arrowButton:disabled:hover {
+  background: none;
+  transform: none;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+
+/* Для размеров 1024px - 1440px */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .workResultsSection {
+    min-height: 720px;
+  }
+
   .workResultsTitle {
-    font-size: 48px;
-    width: 90vw;
+    font-size: 50px;
+    width: 90%;
+    margin: 70px auto 0 auto;
   }
 
   .workResultsCard {
-    width: 90vw;
-    height: auto;
-    min-height: 400px;
-    flex-direction: column;
+    width: 95%;
+    max-width: 1200px;
+    height: 480px;
+    margin-top: 45px;
   }
 
   .workResultsLeft {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .workResultsRight {
-    width: 100%;
-    margin-left: 0;
-    padding: 20px;
-  }
-
-  .workResultsDescription {
-    width: 100%;
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .workResultsTitle {
-    font-size: 36px;
-    margin: 40px auto 0 auto;
-  }
-
-  .workResultsCard {
-    margin-top: 30px;
-  }
-
-  .workResultsLeft {
-    padding: 15px;
+    width: 560px;
+    padding-left: 40px;
   }
 
   .problemTitle {
+    margin-top: 35px;
     font-size: 14px;
-    margin-top: 20px;
   }
 
   .photosContainer {
@@ -175,21 +185,253 @@
   }
 
   .photoWrapper {
-    width: 150px;
-    height: 200px;
+    width: 260px;
+    height: 340px;
+  }
+
+  .workResultsRight {
+    width: 420px;
+    margin-left: 50px;
+    padding-bottom: 40px;
+  }
+
+  .workResultsDescription {
+    width: 420px;
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  .arrowsContainer {
+    top: 35px;
+    right: 40px;
+    gap: 20px;
+  }
+}
+
+/* Для размеров 900px - 1024px */
+@media (min-width: 900px) and (max-width: 1024px) {
+  .workResultsSection {
+    min-height: 650px;
+  }
+
+  .workResultsTitle {
+    font-size: 46px;
+    width: 90%;
+    margin: 60px auto 0 auto;
+  }
+
+  .workResultsCard {
+    width: 90%;
+    height: 420px;
+    margin-top: 40px;
+  }
+
+  .workResultsLeft {
+    width: 50%;
+    padding-left: 35px;
+  }
+
+  .problemTitle {
+    margin-top: 30px;
+    font-size: 13px;
+  }
+
+  .photosContainer {
+    gap: 8px;
+  }
+
+  .photoWrapper {
+    width: 230px;
+    height: 300px;
+  }
+
+  .workResultsRight {
+    width: 45%;
+    margin-left: 40px;
+    padding-bottom: 35px;
+  }
+
+  .workResultsDescription {
+    width: 100%;
+    font-size: 26px;
+    line-height: 135%;
+  }
+
+  .arrowsContainer {
+    top: 30px;
+    right: 35px;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .workResultsTitle {
+    font-size: 42px;
+    width: 90vw;
+    margin: 50px auto 0 auto;
+  }
+
+  .workResultsCard {
+    width: 90vw;
+    height: auto;
+    min-height: 400px;
+    flex-direction: column;
+    margin-top: 35px;
+  }
+
+  .workResultsLeft {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .problemTitle {
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  .photosContainer {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .photoWrapper {
+    width: 180px;
+    height: 240px;
+  }
+
+  .workResultsRight {
+    width: 100%;
+    margin-left: 0;
+    padding: 25px;
+    padding-top: 15px;
+  }
+
+  .workResultsDescription {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .arrowsContainer {
+    top: 25px;
+    right: 25px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .workResultsSection {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .workResultsTitle {
+    font-size: 32px;
+    margin: 0 auto 30px auto;
+    height: auto;
+    line-height: 1.2;
+  }
+
+  .workResultsCard {
+    margin-top: 20px;
+    min-height: 350px;
+  }
+
+  .workResultsLeft {
+    padding: 20px;
+  }
+
+  .problemTitle {
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .photosContainer {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .photoWrapper {
+    width: 140px;
+    height: 180px;
+  }
+
+  .workResultsRight {
+    padding: 20px;
+    padding-top: 10px;
+  }
+
+  .workResultsDescription {
+    font-size: 22px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .arrowsContainer {
+    top: 15px;
+    right: 15px;
+    gap: 12px;
+  }
+
+  .arrowButton svg {
+    width: 35px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workResultsSection {
+    padding: 30px 0;
+  }
+
+  .workResultsTitle {
+    font-size: 28px;
+    margin: 0 auto 25px auto;
+  }
+
+  .workResultsCard {
+    width: 95vw;
+    margin-top: 15px;
+    min-height: 320px;
+  }
+
+  .workResultsLeft {
+    padding: 15px;
+  }
+
+  .problemTitle {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .photosContainer {
+    gap: 6px;
+  }
+
+  .photoWrapper {
+    width: 120px;
+    height: 150px;
   }
 
   .workResultsRight {
     padding: 15px;
+    padding-top: 8px;
   }
 
   .workResultsDescription {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 1.25;
   }
 
   .arrowsContainer {
-    top: 20px;
-    right: 20px;
-    gap: 15px;
+    top: 12px;
+    right: 12px;
+    gap: 10px;
+  }
+
+  .arrowButton svg {
+    width: 30px;
+    height: 12px;
   }
 } 

@@ -10,11 +10,13 @@ import WorkResultsBlock from '@/components/WorkResultsBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 
 export default function AboutPage() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileHero, setIsMobileHero] = useState(false);
+  const [isMobilePopup, setIsMobilePopup] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 831);
+      setIsMobileHero(window.innerWidth <= 831);
+      setIsMobilePopup(window.innerWidth < 600);
     };
     
     checkMobile();
@@ -46,8 +48,13 @@ export default function AboutPage() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupIndex, setPopupIndex] = useState(0);
 
-  // Логика перехода: если два вертикальных подряд, шаг +2, иначе +1
+  // Логика перехода: если два вертикальных подряд, шаг +2, иначе +1 (только на больших экранах)
   const getNextIndex = (current: number) => {
+    if (isMobilePopup) {
+      // На мобильных всегда по одному
+      return Math.min(current + 1, certificates.length - 1);
+    }
+    
     if (
       certificates[current]?.orientation === 'vertical' &&
       certificates[current + 1]?.orientation === 'vertical'
@@ -56,7 +63,13 @@ export default function AboutPage() {
     }
     return Math.min(current + 1, certificates.length - 1);
   };
+  
   const getPrevIndex = (current: number) => {
+    if (isMobilePopup) {
+      // На мобильных всегда по одному
+      return Math.max(current - 1, 0);
+    }
+    
     // Ищем предыдущий индекс с учётом двойных вертикальных
     if (current === 0) return 0;
     // Если предыдущие два вертикальных
@@ -80,7 +93,7 @@ export default function AboutPage() {
       <Header />
       <section className={styles.hero}>
         <Image
-          src={isMobile ? "/images/hero_about_mob.png" : "/images/hero_about.png"}
+          src={isMobileHero ? "/images/hero_about_mob.png" : "/images/hero_about.png"}
           alt="О центре Footura"
           fill
           className={styles.bgImage}

@@ -266,7 +266,7 @@
   align-items: flex-end;
   justify-content: center;
   position: relative;
-  padding: 40px 0;
+  padding: 100px 0;
 }
 
 .standardsContent {
@@ -277,7 +277,7 @@
   min-height: auto;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   padding: 0 70px;
   box-sizing: border-box;
@@ -285,7 +285,7 @@
 
 .standardsLeft {
   width: 628px;
-  margin-top: 78px;
+  margin-top:0px;
 }
 
 .standardsTitle {
@@ -310,7 +310,6 @@
 
 .standardsRight {
   width: 638px;
-  margin-top: 272px;
   display: flex;
   flex-direction: column;
   gap: 34px;
@@ -336,12 +335,11 @@
 .qualificationSection {
   width: 100%;
   background: #fff;
-  min-height: 656px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
-  padding: 0;
+  padding: 120px 0;
 }
 
 .qualificationContent {
@@ -349,7 +347,7 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  height: 656px;
+  min-height: auto;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -360,7 +358,7 @@
 
 .qualificationLeft {
   width: 426px;
-  margin-top: 90px;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -405,7 +403,7 @@
   display: flex;
   flex-direction: row;
   gap: 56px;
-  margin-top: 94px;
+  margin-top: 0;
 }
 
 .certificateImage {
@@ -446,18 +444,73 @@
 
 @media (min-width: 1024px) and (max-width: 1440px) {
   .standardsContent {
-    align-items: center;
+    align-items: flex-end;
+  }
+
+  .standardsLeft {
+    align-self: flex-end;
   }
 
   .standardsRight {
     margin-top: 0;
     margin-left: 50px;
-    bottom: 0;
+    align-self: flex-end;
   }
 
   .standardsText {
     font-size: 20px;
     line-height: 30px;
+  }
+
+  /* Qualification Section */
+  .qualificationContent {
+    padding: 0 40px;
+    height: auto;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .qualificationLeft {
+    width: 45%;
+    margin-top: 0;
+    gap: 30px;
+  }
+
+  .qualificationTitle {
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 30px;
+  }
+
+  .qualificationText {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .qualificationButton {
+    width: 320px;
+    height: 56px;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+
+  .qualificationRight {
+    gap: 40px;
+    margin-top: 0;
+  }
+
+  .certificateImage {
+    width: 280px;
+    height: 390px;
+  }
+
+  .certificateImageSecond {
+    width: 285px;
+    height: 390px;
+  }
+
+  .aboutHeroImage {
+    flex: 0 0 441px;
   }
 }
 
@@ -539,10 +592,48 @@
 
   .qualificationContent {
     padding: 0 40px;
+    height: auto;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .qualificationLeft {
+    width: 48%;
+    margin-top: 0;
+    gap: 25px;
   }
 
   .qualificationTitle {
-    font-size: 48px;
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 25px;
+  }
+
+  .qualificationText {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .qualificationButton {
+    width: 280px;
+    height: 52px;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+
+  .qualificationRight {
+    gap: 30px;
+    margin-top: 0;
+  }
+
+  .certificateImage {
+    width: 220px;
+    height: 310px;
+  }
+
+  .certificateImageSecond {
+    width: 225px;
+    height: 310px;
   }
 }
 
@@ -583,6 +674,52 @@
   .standardsSubText {
     font-size: 16px;
     line-height: 24px;
+  }
+
+  .qualificationContent {
+    padding: 0 30px;
+    height: auto;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .qualificationLeft {
+    width: 50%;
+    margin-top: 0;
+    gap: 20px;
+  }
+
+  .qualificationTitle {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 20px;
+  }
+
+  .qualificationText {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .qualificationButton {
+    width: 260px;
+    height: 48px;
+    font-size: 15px;
+    margin-top: 25px;
+  }
+
+  .qualificationRight {
+    gap: 25px;
+    margin-top: 0;
+  }
+
+  .certificateImage {
+    width: 180px;
+    height: 250px;
+  }
+
+  .certificateImageSecond {
+    width: 185px;
+    height: 250px;
   }
 }
 
@@ -704,11 +841,13 @@
     padding: 0 20px;
     height: auto;
     min-height: 500px;
+    align-items: center;
   }
 
   .qualificationLeft {
     width: 100%;
     margin-top: 40px;
+    align-items: center;
   }
 
   .qualificationTitle {

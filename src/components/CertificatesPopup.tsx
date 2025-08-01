@@ -27,13 +27,32 @@ const GAP = 32;
 const CertificatesPopup: React.FC<CertificatesPopupProps> = ({ open, certificates, currentIndex, onClose, onNext, onPrev }) => {
   if (!open) return null;
 
-  // Определяем, показываем ли два вертикальных подряд
+  // Проверяем размер экрана
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // Определяем, показываем ли два вертикальных подряд (только для больших экранов)
   const isDoubleVertical =
+    !isMobile &&
     certificates[currentIndex]?.orientation === 'vertical' &&
     certificates[currentIndex + 1]?.orientation === 'vertical';
 
-  // Для пагинации: если два вертикальных, шаг +2, иначе +1
+  // Для пагинации: если два вертикальных, шаг +2, иначе +1 (только для больших экранов)
   const getPageCount = () => {
+    if (isMobile) {
+      // На мобильных всегда по одному сертификату
+      return certificates.length;
+    }
+    
     let count = 0;
     for (let i = 0; i < certificates.length;) {
       if (
@@ -52,6 +71,11 @@ const CertificatesPopup: React.FC<CertificatesPopupProps> = ({ open, certificate
 
   // Текущий номер страницы
   const getCurrentPage = () => {
+    if (isMobile) {
+      // На мобильных страница = индекс сертификата
+      return currentIndex;
+    }
+    
     let page = 0;
     for (let i = 0; i < certificates.length;) {
       if (i === currentIndex) return page;
@@ -59,6 +83,7 @@ const CertificatesPopup: React.FC<CertificatesPopupProps> = ({ open, certificate
         certificates[i]?.orientation === 'vertical' &&
         certificates[i + 1]?.orientation === 'vertical'
       ) {
+        if (i + 1 === currentIndex) return page;
         i += 2;
       } else {
         i += 1;
