@@ -7,6 +7,10 @@ const AboutFounderSection: React.FC = () => {
     <section className={styles.aboutFounder}>
       <div className="container">
         <div className={styles.grid}>
+          <h2 className={styles.title}>
+            Наталия Ротарь – <br/>основательница центра
+          </h2>
+          
           <div className={styles.imageContainer}>
             <Image
               src="/images/natalia_1.jpg"
@@ -18,10 +22,6 @@ const AboutFounderSection: React.FC = () => {
           </div>
           
           <div className={styles.content}>
-            <h2 className={styles.title}>
-              Наталия Ротарь – <br/>основательница центра
-            </h2>
-            
             <p className={styles.description}>
               Наталия Ротарь – признанный эксперт в области ухода за стопами с 18-летним опытом практической работы, основатель и руководитель подологического центра FOOTURA, автор уникальных методик обучения и вдохновляющий пример для специалистов, которые стремятся достичь высочайших стандартов в профессии.
             </p>

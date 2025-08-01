@@ -62,10 +62,24 @@
   
   .grid {
     grid-template-columns: 1fr 2fr;
+    display: grid;
   }
-  
+
   .title {
     font-size: 40px;
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 24px;
+  }
+
+  .imageContainer {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .content {
+    grid-column: 2;
+    grid-row: 2;
   }
   
   .description {
@@ -84,7 +98,7 @@
     gap: 20px;
   }
 
-  /* Меняем порядок: заголовок, изображение, остальной контент */
+  /* Мобильная версия: заголовок, изображение, контент */
   .grid {
     display: flex;
     flex-direction: column;
@@ -92,18 +106,16 @@
 
   .title {
     order: 1;
+    margin-bottom: 20px;
   }
 
   .imageContainer {
     order: 2;
+    margin-bottom: 20px;
   }
 
-  .description {
+  .content {
     order: 3;
-  }
-
-  .button {
-    order: 4;
   }
 
   /* Скрываем второе изображение на мобильной версии */
