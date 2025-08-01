@@ -1,43 +1,48 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '../styles/Blog.module.css';
+import { getPublishedArticles } from '../lib/blogApi';
+import { BlogArticle } from '../lib/blogApi';
 
 type BlogPostProps = {
-  date: string;
-  title: string;
-  description: string;
-  image: string;
+  article: BlogArticle;
 };
 
-const BlogPost: React.FC<BlogPostProps> = ({ date, title, description, image }) => {
+const BlogPost: React.FC<BlogPostProps> = ({ article }) => {
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('ru-RU', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+  };
+
   return (
-    <div className={styles.post}>
+    <Link href={`/blog/${article.slug}`} className={styles.post}>
       <div className={styles.imageContainer}>
         <Image 
-          src={image} 
-          alt={title} 
+          src={article.heroImage.src} 
+          alt={article.heroImage.alt} 
           fill 
           className={styles.postImage}
         />
       </div>
       
       <div className={styles.postContent}>
-        <span className={styles.date}>{date}</span>
-        <h3 className={styles.postTitle}>{title}</h3>
-        <p className={styles.postDescription}>{description}</p>
+        <span className={styles.date}>{formatDate(article.publishedAt)}</span>
+        <h3 className={styles.postTitle}>{article.title}</h3>
+        <p className={styles.postDescription}>{article.description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
-const BlogSection: React.FC = () => {
-  // Placeholder images (in a real app these would be actual blog post images)
-  const blogImages = [
-    "/images/podology.jpg", 
-    "/images/pedicure.jpg",
-    "/images/natalia_2.jpg",
-    "/images/team.jpg"
-  ];
+const BlogSection: React.FC = async () => {
+  // Получаем 4 последние статьи из Sanity
+  const allArticles = await getPublishedArticles();
+  const latestArticles = allArticles.slice(0, 4);
 
   return (
     <section className={styles.blog}>
@@ -46,17 +51,28 @@ const BlogSection: React.FC = () => {
           Блог
         </h2>
         
-        <div className={styles.grid}>
-          {[1, 2, 3, 4].map((item, index) => (
-            <BlogPost 
-              key={index}
-              date="12.04.2024"
-              title="Заголовок"
-              description="Описание на три строки текст текст текст. Описание на три строки текст текст текст. Описание на три строки."
-              image={blogImages[index]}
-            />
-          ))}
-        </div>
+        {latestArticles.length > 0 ? (
+          <>
+            <div className={styles.grid}>
+              {latestArticles.map((article) => (
+                <BlogPost 
+                  key={article._id}
+                  article={article}
+                />
+              ))}
+            </div>
+            
+            <div className={styles.viewAllContainer}>
+              <Link href="/blog" className={styles.viewAllButton}>
+                Смотреть все статьи
+              </Link>
+            </div>
+          </>
+        ) : (
+          <div className={styles.noArticles}>
+            <p>Статьи пока не добавлены</p>
+          </div>
+        )}
       </div>
     </section>
   );

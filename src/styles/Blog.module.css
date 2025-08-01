@@ -58,6 +58,43 @@
   font-weight: 300;
 }
 
+.post {
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-4px);
+}
+
+.viewAllContainer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.viewAllButton {
+  display: inline-block;
+  padding: 16px 32px;
+  background-color: var(--color-secondary);
+  color: white;
+  text-decoration: none;
+  border-radius: 64px;
+  font-size: 18px;
+  font-weight: 400;
+  transition: background-color 0.2s ease;
+}
+
+.viewAllButton:hover {
+  background-color: var(--color-primary);
+}
+
+.noArticles {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-gray);
+  font-size: 18px;
+}
+
 @media (min-width: 768px) {
   .blog {
     padding: 120px 0;
