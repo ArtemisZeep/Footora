@@ -1,0 +1,139 @@
+.heroSection {
+  position: relative;
+  width: 100vw;
+  height: 803px;
+  background-image: url('/images/natalia_1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.content {
+  max-width: 711px;
+}
+
+.title {
+  font-family: 'Tenor Sans', serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 73px;
+  color: #283340;
+  margin-bottom: 64px;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 42px;
+  color: #283340;
+  max-width: 711px;
+}
+
+/* Планшет */
+@media (max-width: 1024px) {
+  .heroSection {
+    height: 800px;
+    background-image: url('/images/natalia_2.png');
+  }
+  
+  .container {
+    padding: 0 40px;
+  }
+  
+  .title {
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 48px;
+  }
+  
+  .description {
+    font-size: 20px;
+    line-height: 36px;
+    max-width: 400px;
+  }
+}
+
+/* Мобайл */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 600px;
+    background-image: url('/images/natalia_2.png');
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .content {
+    max-width: 100%;
+  }
+  
+  .title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 32px;
+  }
+  
+  /* Скрываем description в hero на мобайле */
+  .description {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    height: 400px;
+  }
+  
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+/* Мобильный текстовый блок */
+.mobileTextSection {
+  display: none;
+  background-color: white;
+  padding: 40px 0;
+}
+
+.mobileContainer {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mobileDescription {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #283340;
+  margin: 0;
+}
+
+/* Показываем мобильный текстовый блок только на мобайле */
+@media (max-width: 768px) {
+  .mobileTextSection {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileDescription {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

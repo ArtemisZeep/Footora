@@ -56,7 +56,7 @@
   text-transform: uppercase;
   color: #506888;
   position: absolute;
-  top: 90px;
+  top: 40px;
   left: 90px;
 }
 
@@ -86,6 +86,22 @@
   color: #506888;
   margin: 0 0 32px 0;
   white-space: pre-line;
+}
+
+/* Адаптивные размеры для длинных названий */
+.courseTitle.medium {
+  font-size: 40px;
+  line-height: 56px;
+}
+
+.courseTitle.small {
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.courseTitle.extraSmall {
+  font-size: 28px;
+  line-height: 38px;
 }
 
 .courseNumber {
@@ -305,6 +321,22 @@
     flex: 1;
   }
   
+  /* Адаптивные размеры для длинных названий на планшетах */
+  .courseTitle.medium {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .courseTitle.small {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .courseTitle.extraSmall {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  
   .courseNumber {
     font-size: 32px;
     line-height: 40px;
@@ -389,6 +421,22 @@
     text-align: left;
   }
   
+  /* Адаптивные размеры для длинных названий на мобильных */
+  .courseTitle.medium {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .courseTitle.small {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .courseTitle.extraSmall {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
   .courseNumber {
     font-size: 28px;
     line-height: 36px;
@@ -467,6 +515,22 @@
     line-height: 32px;
     margin: 0;
     text-align: left;
+  }
+  
+  /* Адаптивные размеры для длинных названий на очень маленьких экранах */
+  .courseTitle.medium {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .courseTitle.small {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
+  .courseTitle.extraSmall {
+    font-size: 16px;
+    line-height: 24px;
   }
   
   .courseNumber {

@@ -16,7 +16,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
   return (
-    <footer className={`${styles.footer} ${variant === 'school' ? styles.schoolVariant : ''}`}>
+    <footer id="contacts" className={`${styles.footer} ${variant === 'school' ? styles.schoolVariant : ''}`}>
       <div className={styles.container}>
         <div className={styles.mainGrid}>
           {/* Logo */}
@@ -32,8 +32,9 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
               <FooterLink href="/services">Услуги</FooterLink>
               <FooterLink href="/prices">Цены</FooterLink>
               <FooterLink href="/natalia">Наталия Ротарь</FooterLink>
-              <FooterLink href="/shop">Магазин</FooterLink>
+              <FooterLink href="/insoles">Стельки</FooterLink>
               <FooterLink href="/school">Школа Footura</FooterLink>
+              <FooterLink href="/blog">Блог</FooterLink>
             </nav>
           </div>
           

@@ -50,9 +50,9 @@ export default function CourseBenefits() {
           <button className={styles.detailsBtn}>Подробнее о курсе</button>
           <button className={styles.purchaseBtn}>
             Купить курс
-            <svg width="40" height="1" viewBox="0 0 40 1" fill="none">
-              <path d="M0 0.5L40 0.5" stroke="#334258" strokeWidth="1.6"/>
-            </svg>
+            <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
+                <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#506888" strokeWidth="1.6"/>
+              </svg>
           </button>
         </div>
       </div>

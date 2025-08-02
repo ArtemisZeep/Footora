@@ -1,0 +1,257 @@
+.achievementsSection {
+  background: url('/images/n-background.png') center/cover no-repeat;
+  background-attachment: fixed;
+  padding: 80px 0 100px;
+  width: 100%;
+  position: relative;
+  min-height: 961px;
+  display: flex;
+  align-items: center;
+}
+
+/* Темный оверлей для лучшей читаемости */
+.achievementsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(40, 52, 51, 0.7);
+  z-index: 1;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.textContent {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #B8C8BA;
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #FFFFFF;
+  margin: 0 auto;
+  max-width: 1082px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 47px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.achievementCard {
+  background-color: #283433;
+  padding: 40px 36px;
+  min-height: 490px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievementCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cardNumber {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 41px;
+  color: #B8C8BA;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cardTitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 38px;
+  color: #FFFFFF;
+  margin: 0 0 40px 0;
+  text-align: center;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardDescription {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* Планшет */
+@media (max-width: 1024px) {
+  .achievementsSection {
+    padding: 60px 0 80px;
+    background-attachment: scroll;
+  }
+
+  .container {
+    padding: 0 50px;
+  }
+
+  .textContent {
+    margin-bottom: 60px;
+  }
+
+  .description {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .cardsGrid {
+    gap: 30px;
+  }
+
+  .achievementCard {
+    padding: 35px 30px;
+    min-height: 450px;
+  }
+
+  .cardTitle {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+
+  .cardDescription {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+/* Мобайл */
+@media (max-width: 768px) {
+  .achievementsSection {
+    background: #4D5C4D; /* Убираем изображение, оставляем только цвет */
+    padding: 40px 0 60px;
+    min-height: auto;
+  }
+
+  .achievementsSection::before {
+    display: none; /* Убираем оверлей на мобильной */
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .textContent {
+    margin-bottom: 40px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .achievementCard {
+    padding: 30px 25px;
+    min-height: 300px;
+  }
+
+  .cardNumber {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 15px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    min-height: auto;
+  }
+
+  .cardDescription {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+/* Анимации появления */
+.achievementCard {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.achievementCard:nth-child(1) { animation-delay: 0.1s; }
+.achievementCard:nth-child(2) { animation-delay: 0.2s; }
+.achievementCard:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Дополнительные эффекты для десктопа */
+@media (min-width: 769px) {
+  .achievementCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #B8C8BA 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .achievementCard:hover::before {
+    opacity: 1;
+  }
+
+
+}

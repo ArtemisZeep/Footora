@@ -51,14 +51,14 @@ export default function SchoolReviews() {
 
         <div className={styles.navigation}>
           <button className={styles.navButton} onClick={prevReview} aria-label="Предыдущий отзыв">
-            <svg width="43" height="1" viewBox="0 0 43 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M43 0.5L0 0.5" stroke="#334258" strokeWidth="1.6"/>
-            </svg>
+          <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
+                <path d="M43 6L1 6M1 6L6 1M1 6L6 11" stroke="#506888" strokeWidth="1.6"/>
+              </svg>
           </button>
           <button className={styles.navButton} onClick={nextReview} aria-label="Следующий отзыв">
-            <svg width="43" height="1" viewBox="0 0 43 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0.5L43 0.5" stroke="#334258" strokeWidth="1.6"/>
-            </svg>
+          <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
+                <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#506888" strokeWidth="1.6"/>
+              </svg>
           </button>
         </div>
 

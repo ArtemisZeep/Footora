@@ -14,6 +14,15 @@ export default function CourseOverview({
 }: CourseOverviewProps) {
   const currentCourse = coursesData[currentCourseIndex];
 
+  // Функция для определения размера шрифта в зависимости от длины названия
+  const getTitleSizeClass = (title: string) => {
+    const length = title.length;
+    if (length <= 30) return '';
+    if (length <= 45) return styles.medium;
+    if (length <= 60) return styles.small;
+    return styles.extraSmall;
+  };
+
   const nextCourse = () => {
     const nextIndex = (currentCourseIndex + 1) % coursesData.length;
     onCourseChange?.(nextIndex);
@@ -49,7 +58,7 @@ export default function CourseOverview({
           <div className={styles.courseContent}>
             {/* Left Column */}
             <div className={styles.leftColumn}>
-              <h2 className={styles.courseTitle}>{currentCourse.overview.title}</h2>
+              <h2 className={`${styles.courseTitle} ${getTitleSizeClass(currentCourse.overview.title)}`}>{currentCourse.overview.title}</h2>
               <div className={styles.courseNumber}>{currentCourse.overview.number}</div>
             </div>
 
@@ -57,12 +66,14 @@ export default function CourseOverview({
             <div className={styles.middleColumn}>
               <p className={styles.courseDescription}>{currentCourse.overview.description}</p>
               <div className={styles.buttonGroup}>
-                <button className={styles.detailsBtn}>Подробнее о курсе</button>
+                {!currentCourse.overview.noButton && (
+                  <button className={styles.detailsBtn}>Подробнее о курсе</button>
+                )}
                 <button className={styles.purchaseBtn}>
-                  Купить курс
-                  <svg width="40" height="1" viewBox="0 0 40 1" fill="none">
-                    <path d="M0 0.5L40 0.5" stroke="white" strokeWidth="1.6"/>
-                  </svg>
+                  {currentCourse.overview.noButton ? "Купить" : "Купить курс"}
+                  <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
+                <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#FFFFFF" strokeWidth="1.6"/>
+              </svg>
                 </button>
               </div>
             </div>

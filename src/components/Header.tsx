@@ -32,9 +32,11 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
               <div className={styles.dropdown}>
                 <button className={styles.dropdownBtn}>Центр подологии</button>
                 <div className={styles.dropdownContent}>
-                  <Link href="/about">О центре</Link>
-                  <Link href="/team">Команда</Link>
-                  <Link href="/services">Услуги</Link>
+                  <div>
+                    <Link href="/about">О центре</Link>
+                    <Link href="/team">Команда</Link>
+                    <Link href="/services">Услуги</Link>
+                  </div>
                 </div>
               </div>
               <Link href="/services" className={styles.navLink}>Услуги</Link>
@@ -57,9 +59,9 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
             
             {/* Right Navigation */}
             <div className={styles.rightNav}>
-              <Link href="/footura-school" className={styles.navLink}>Школа Footura</Link>
-              <Link href="/shop" className={styles.navLink}>Магазин</Link>
-              <Link href="/contacts" className={styles.navLink}>Контакты</Link>
+              <Link href="/school" className={styles.navLink}>Школа Footura</Link>
+              <span className={styles.navLink} style={{cursor: 'not-allowed', opacity: 0.6}}>Магазин</span>
+              <Link href="#contacts" className={styles.navLink}>Контакты</Link>
               
               <div className={styles.langSwitcher}>
                 <button className={styles.langButton}>CZ</button>
@@ -121,9 +123,9 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                     <Link href="/services" onClick={closeMenu}>Услуги</Link>
                     <Link href="/prices" onClick={closeMenu}>Цены</Link>
                     <Link href="/natalia" onClick={closeMenu}>Наталия Ротарь</Link>
-                    <Link href="/footura-school" onClick={closeMenu}>Школа Footura</Link>
-                    <Link href="/shop" onClick={closeMenu}>Магазин</Link>
-                    <Link href="/contacts" onClick={closeMenu}>Контакты</Link>
+                    <Link href="/school" onClick={closeMenu}>Школа Footura</Link>
+                    <span style={{cursor: 'not-allowed', opacity: 0.6, padding: '10px 0', display: 'block'}}>Магазин</span>
+                    <Link href="#contacts" onClick={closeMenu}>Контакты</Link>
                   </div>
                   
                   <div className={styles.mobileMenuSection}>

@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import styles from './ServiceBlock.module.css';
 
 export interface ServiceBlockItem {
@@ -16,6 +19,7 @@ export interface ServiceBlockProps {
   variant?: 1 | 2;
   items?: ServiceBlockItem[];
   extraText?: string;
+  isPhotoLeft?: boolean;
 }
 
 export default function ServiceBlock({
@@ -28,7 +32,28 @@ export default function ServiceBlock({
   variant = 1,
   items = [],
   extraText,
+  isPhotoLeft = false,
 }: ServiceBlockProps) {
+  const [screenWidth, setScreenWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    // Устанавливаем начальное значение
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // На экранах менее 812px всегда используем isPhotoLeft = false
+  const effectiveIsPhotoLeft = screenWidth < 812 ? false : isPhotoLeft;
+
   return (
     <section className={
       styles.serviceBlock +
@@ -36,22 +61,44 @@ export default function ServiceBlock({
       ' ' + (variant === 2 ? styles.variant2 : styles.variant1)
     }>
       <div className={styles.serviceBlockContent}>
-        <div className={styles.topRow}>
-          <div className={styles.textCol}>
-            <h2 className={styles.title}>{title}</h2>
-            <p className={styles.description}>{description}</p>
-            <div className={styles.buttonsRow}>
-              {signUpUrl && (
-                <a href={signUpUrl} className={styles.signUpBtn}>Записаться</a>
-              )}
-              {detailsUrl && (
-                <a href={detailsUrl} className={styles.detailsBtn}>Подробнее</a>
-              )}
-            </div>
-          </div>
-          <div className={styles.imageCol}>
-            <img src={image} alt={title} className={styles.image} />
-          </div>
+        <div className={`${styles.topRow} ${effectiveIsPhotoLeft ? styles.photoLeft : ''}`}>
+          {!effectiveIsPhotoLeft ? (
+            <>
+              <div className={styles.textCol}>
+                <h2 className={styles.title}>{title}</h2>
+                <p className={styles.description}>{description}</p>
+                <div className={styles.buttonsRow}>
+                  {signUpUrl && (
+                    <a href={signUpUrl} className={styles.signUpBtn}>Записаться</a>
+                  )}
+                  {detailsUrl && (
+                    <a href={detailsUrl} className={styles.detailsBtn}>Подробнее</a>
+                  )}
+                </div>
+              </div>
+              <div className={styles.imageCol}>
+                <img src={image} alt={title} className={styles.image} />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={styles.imageCol}>
+                <img src={image} alt={title} className={styles.image} />
+              </div>
+              <div className={styles.textCol}>
+                <h2 className={styles.title}>{title}</h2>
+                <p className={styles.description}>{description}</p>
+                <div className={styles.buttonsRow}>
+                  {signUpUrl && (
+                    <a href={signUpUrl} className={styles.signUpBtn}>Записаться</a>
+                  )}
+                  {detailsUrl && (
+                    <a href={detailsUrl} className={styles.detailsBtn}>Подробнее</a>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
         </div>
         {items.length > 0 && (
           <div className={styles.itemsList}>

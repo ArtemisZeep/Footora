@@ -1,8 +1,42 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import styles from '../styles/Hero.module.css';
 
 const HeroSection: React.FC = () => {
+  // Варианты анимации для разных элементов
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6 }
+    }
+  };
+
+  const logoVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.8 }
+    }
+  };
+
   return (
     <section className={styles.hero}>
       <Image 
@@ -13,8 +47,16 @@ const HeroSection: React.FC = () => {
         priority
       />
       
-      <div className={`container ${styles.content}`}>
-        <div className={styles.logo}>
+      <motion.div 
+        className={`container ${styles.content}`}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div 
+          className={styles.logo}
+          variants={logoVariants}
+        >
           {/* Logo */}
           <Image 
             src="/images/logo_part.svg" 
@@ -22,31 +64,54 @@ const HeroSection: React.FC = () => {
             fill
             className="object-contain"
           />
-        </div>
+        </motion.div>
 
-        <h1 className={styles.title}>
+        <motion.h1 
+          className={styles.title}
+          variants={itemVariants}
+        >
           Здоровые ноги – движение, <br />
           а движение это жизнь
-        </h1>
+        </motion.h1>
 
-        <div className={styles.buttons}>
-          <button className={`${styles.button} ${styles.buttonOutline}`}>Подробнее</button>
-          <button className={`${styles.button} ${styles.buttonPrimary}`}>Записаться</button>
-        </div>
+        <motion.div 
+          className={styles.buttons}
+          variants={itemVariants}
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link href="/about" className={`${styles.button} ${styles.buttonOutline}`}>Подробнее</Link>
+          </motion.div>
+          <motion.button 
+            className={`${styles.button} ${styles.buttonPrimary}`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Записаться
+          </motion.button>
+        </motion.div>
 
-        <div className={styles.onlineBooking}>
+        <motion.div 
+          className={styles.onlineBooking}
+          variants={itemVariants}
+        >
           <span className={styles.onlineBookingText}>
             Онлайн-<br />запись
           </span>
-        </div>
+        </motion.div>
         
         {/* Pagination dots */}
-        <div className={styles.pagination}>
+        <motion.div 
+          className={styles.pagination}
+          variants={itemVariants}
+        >
           <span className={styles.dot}></span>
           <span className={styles.dot}></span>
           <span className={styles.dot}></span>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

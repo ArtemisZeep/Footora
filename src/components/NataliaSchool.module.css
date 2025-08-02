@@ -1,0 +1,172 @@
+.schoolSection {
+  background-color: #FFFFFF;
+  padding: 85px 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 140px;
+}
+
+.titleColumn {
+  flex: 0 0 310px;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 73px;
+  color: #4D5C4D;
+  margin: 0;
+}
+
+.textColumn {
+  flex: 1;
+  max-width: 860px;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000000;
+  margin: 0 0 69px 0;
+}
+
+.button {
+  background: transparent;
+  border: 1px solid #4D5C4D;
+  border-radius: 64px;
+  padding: 20px 63px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #283433;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #4D5C4D;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(77, 92, 77, 0.2);
+}
+
+/* Планшет */
+@media (max-width: 1024px) {
+  .schoolSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 50px;
+  }
+
+  .content {
+    gap: 100px;
+  }
+
+  .titleColumn {
+    flex: 0 0 250px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 50px;
+  }
+
+  .button {
+    padding: 18px 50px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+/* Мобайл */
+@media (max-width: 768px) {
+  .schoolSection {
+    padding: 44px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .titleColumn {
+    flex: none;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .textColumn {
+    width: 100%;
+    max-width: none;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 44px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+/* Анимации появления */
+.titleColumn {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.textColumn {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: slideInRight 0.8s ease 0.2s forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

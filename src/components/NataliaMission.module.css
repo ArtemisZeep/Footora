@@ -1,0 +1,108 @@
+.missionSection {
+  background-color: #4D5C4D;
+  padding: 85px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #B8C8BA;
+  margin: 0 0 60px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mission {
+  font-family: 'Roboto', sans-serif;
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 68px;
+  color: #B8C8BA;
+  margin: 0;
+  max-width: 972px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Планшет */
+@media (max-width: 1024px) {
+  .missionSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 50px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 50px;
+  }
+
+  .mission {
+    font-size: 48px;
+    line-height: 52px;
+    max-width: 750px;
+  }
+}
+
+/* Мобайл */
+@media (max-width: 768px) {
+  .missionSection {
+    padding: 44px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 41px;
+  }
+
+  .mission {
+    font-size: 32px;
+    line-height: 42px;
+    max-width: 80%;
+  }
+}
+
+/* Анимации появления */
+.subtitle {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.mission {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

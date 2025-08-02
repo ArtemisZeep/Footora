@@ -605,4 +605,7 @@ height: 100%;
   .variant2 .topRow {
     background: #B8C8BA !important; /* Сохраняем зеленый фон */
   }
+  .variant2 .itemsList{
+    padding-bottom: 100px;
+  }
 } 

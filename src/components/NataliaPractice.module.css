@@ -1,0 +1,208 @@
+.practiceSection {
+  background-color: #B8C8BA;
+  padding: 80px 0 100px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 68px;
+  color: #283433;
+  text-align: center;
+  margin: 0 0 80px 0;
+}
+
+.practiceList {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.practiceItem {
+  position: relative;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #FFFFFF;
+  margin-bottom: 0;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  padding: 27px 0 40px;
+  gap: 50px;
+}
+
+.yearColumn {
+  min-width: 250px;
+  flex-shrink: 0;
+}
+
+.year {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 48px;
+  color: #FFFFFF;
+}
+
+.activitiesColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.activityItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.activityName {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000000;
+  margin: 0;
+}
+
+.activityPlace {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #999999;
+  margin: 0;
+}
+
+/* Планшет */
+@media (max-width: 1024px) {
+  .practiceSection {
+    padding: 60px 0 80px;
+  }
+
+  .container {
+    padding: 0 50px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 56px;
+    margin-bottom: 60px;
+  }
+
+  .content {
+    gap: 40px;
+    padding: 25px 0 35px;
+  }
+
+  .yearColumn {
+    min-width: 200px;
+  }
+
+  .year {
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .activityName {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .activityPlace {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+/* Мобайл */
+@media (max-width: 768px) {
+  .practiceSection {
+    padding: 40px 0 60px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0 30px;
+  }
+
+  .yearColumn {
+    min-width: auto;
+  }
+
+  .year {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .activityName {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .activityPlace {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .activitiesColumn {
+    gap: 20px;
+  }
+
+  .activityItem {
+    gap: 6px;
+  }
+}
+
+/* Анимации появления */
+.practiceItem {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.practiceItem:nth-child(1) { animation-delay: 0.1s; }
+.practiceItem:nth-child(2) { animation-delay: 0.2s; }
+.practiceItem:nth-child(3) { animation-delay: 0.3s; }
+.practiceItem:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Эффект при наведении */
+.practiceItem:hover .content {
+  transform: translateX(10px);
+  transition: transform 0.3s ease;
+}
+
+.practiceItem .content {
+  transition: transform 0.3s ease;
+}

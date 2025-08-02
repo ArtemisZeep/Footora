@@ -1,14 +1,46 @@
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from '../hooks/useInView';
 import styles from './SchoolBenefits.module.css';
 
 export default function SchoolBenefits() {
+  const { ref, isInView } = useInView({ threshold: 0.3 });
+
+  const benefitVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: (delay: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        delay
+      }
+    })
+  };
+
   return (
-    <section className={styles.benefitsSection}>
+    <section className={styles.benefitsSection} ref={ref}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Что вы получаете</h2>
+        <motion.h2 
+          className={styles.title}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+        >
+          Что вы получаете
+        </motion.h2>
         
         <div className={styles.benefitsGrid}>
           {/* Сертификат */}
-          <div className={styles.benefitItem}>
+          <motion.div 
+            className={styles.benefitItem}
+            variants={benefitVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={0.2}
+          >
             <div className={styles.iconWrapper}>
               <div className={styles.iconCircle}>
                 <img 
@@ -24,10 +56,16 @@ export default function SchoolBenefits() {
                 Сертификат о повышении квалификации по теме "Вросший ноготь"
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Профессиональные материалы */}
-          <div className={styles.benefitItem}>
+          <motion.div 
+            className={styles.benefitItem}
+            variants={benefitVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={0.4}
+          >
             <div className={styles.iconWrapper}>
               <div className={styles.iconCircle}>
                 <img 
@@ -43,23 +81,36 @@ export default function SchoolBenefits() {
                 Печатные учебные материалы, перечень рекомендуемых инструментов и препаратов
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className={styles.buttonGroup}>
-          <button className={styles.detailsBtn}>
+        <motion.div 
+          className={styles.buttonGroup}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <motion.button 
+            className={styles.detailsBtn}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Подробнее о курсе
-            <svg width="41" height="1" viewBox="0 0 41 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0.5L40.762 0.5" stroke="white" strokeWidth="1.6"/>
-            </svg>
-          </button>
-          <button className={styles.purchaseBtn}>
+            <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
+                <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#FFFFFF" strokeWidth="1.6"/>
+              </svg>
+          </motion.button>
+          <motion.button 
+            className={styles.purchaseBtn}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Купить курс
-            <svg width="41" height="1" viewBox="0 0 41 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0.5L40.762 0.5" stroke="#334258" strokeWidth="1.6"/>
-            </svg>
-          </button>
-        </div>
+            <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
+                <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#506888" strokeWidth="1.6"/>
+              </svg>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
