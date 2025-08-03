@@ -1,11 +1,8 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import ruTranslations from '../locales/ru.json';
-import csTranslations from '../locales/cs.json';
 
 export type Language = 'ru' | 'cs';
-type Translations = { [key: string]: any };
 
 interface LanguageContextType {
   language: Language;
@@ -21,43 +18,35 @@ interface LanguageProviderProps {
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
   const [language, setLanguageState] = useState<Language>('ru');
-  const [translations, setTranslations] = useState<Translations>(ruTranslations);
-  const [mounted, setMounted] = useState(false);
+  const [translations, setTranslations] = useState<Record<string, any>>({});
 
-  // Инициализация после монтирования компонента
+  // Загружаем язык из localStorage при инициализации
   useEffect(() => {
-    setMounted(true);
-    
-    // Проверяем localStorage только на клиенте
-    if (typeof window !== 'undefined') {
-      const savedLanguage = localStorage.getItem('language') as Language;
-      if (savedLanguage && (savedLanguage === 'ru' || savedLanguage === 'cs')) {
-        setLanguageState(savedLanguage);
-      }
+    const savedLanguage = localStorage.getItem('language') as Language;
+    if (savedLanguage && (savedLanguage === 'ru' || savedLanguage === 'cs')) {
+      setLanguageState(savedLanguage);
     }
   }, []);
 
-  // Обновление переводов при изменении языка
+  // Загружаем переводы при изменении языка
   useEffect(() => {
-    switch (language) {
-      case 'ru':
-        setTranslations(ruTranslations);
-        break;
-      case 'cs':
-        setTranslations(csTranslations);
-        break;
-      default:
-        setTranslations(ruTranslations);
-    }
+    const loadTranslations = async () => {
+      try {
+        const translationsModule = await import(`../locales/${language}.json`);
+        setTranslations(translationsModule.default);
+      } catch (error) {
+        console.error('Error loading translations:', error);
+        // Fallback на пустой объект если файл не найден
+        setTranslations({});
+      }
+    };
+
+    loadTranslations();
   }, [language]);
 
   const setLanguage = (newLanguage: Language) => {
     setLanguageState(newLanguage);
-    
-    // Сохраняем только на клиенте после монтирования
-    if (mounted && typeof window !== 'undefined') {
-      localStorage.setItem('language', newLanguage);
-    }
+    localStorage.setItem('language', newLanguage);
   };
 
   // Функция для получения перевода по ключу
