@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone()
-  
-  // Специальная обработка для Sanity Studio
-  if (url.pathname.startsWith('/blogmaker')) {
+  // Разрешаем доступ к Sanity Studio
+  if (request.nextUrl.pathname.startsWith('/blogmaker')) {
     return NextResponse.next()
   }
 
@@ -13,7 +11,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Только для blogmaker пути
-    '/blogmaker/:path*',
+    // Исключаем статические файлы и API routes
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 }

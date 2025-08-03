@@ -11,14 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  eslint: {
-    // Временно для деплоя
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    // Временно для деплоя
-    ignoreBuildErrors: true,
-  },
 };
 
 export default nextConfig;

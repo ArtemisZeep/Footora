@@ -9,9 +9,9 @@ import { convertSanityArticle } from '../../../lib/sanityAdapter';
 import { sampleArticle } from '../../../data/articleData';
 
 interface ArticlePageProps {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 }
 
 async function getArticle(slug: string) {
