@@ -66,7 +66,6 @@ const ServicesSection: React.FC = () => {
   // Figma colors
   const podologyGreen = "#4D5C4D"; // rgb(77, 92, 77)
   const pedicureGreen = "#283433"; // rgb(40, 52, 51)
-  const accentColor = "#B8C8BA"; // rgb(184, 200, 186)
 
   return (
     <section className={styles.services}>

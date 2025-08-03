@@ -76,7 +76,7 @@ const BenefitsSection: React.FC = () => {
         <div className={styles.container}>
           <div className={styles.grid}>
             <div className={styles.column}>
-              {benefits.slice(0, 3).map((b, i) => (
+              {benefits.slice(0, 3).map((b) => (
                 <div className={styles.benefitItem} key={b.number}>
                   <div className={styles.benefitNumber}>{b.number}</div>
                   <div className={styles.benefitTextBlock}>
@@ -87,7 +87,7 @@ const BenefitsSection: React.FC = () => {
               ))}
             </div>
             <div className={styles.column}>
-              {benefits.slice(3, 6).map((b, i) => (
+              {benefits.slice(3, 6).map((b) => (
                 <div className={styles.benefitItem} key={b.number}>
                   <div className={styles.benefitNumber}>{b.number}</div>
                   <div className={styles.benefitTextBlock}>
