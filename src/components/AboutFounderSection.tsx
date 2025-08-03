@@ -1,20 +1,25 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/AboutFounder.module.css';
 
 const AboutFounderSection: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.aboutFounder}>
       <div className="container">
         <div className={styles.grid}>
           <h2 className={styles.title}>
-            Наталия Ротарь – <br/>основательница центра
+            {t('aboutFounder.title')} – <br/>{t('aboutFounder.subtitle')}
           </h2>
           
           <div className={styles.imageContainer}>
             <Image
               src="/images/natalia_1.jpg"
-              alt="Наталия Ротарь"
+              alt={t('aboutFounder.title')}
               width={640}
               height={909}
               className={styles.founderImage}
@@ -23,20 +28,20 @@ const AboutFounderSection: React.FC = () => {
           
           <div className={styles.content}>
             <p className={styles.description}>
-              Наталия Ротарь – признанный эксперт в области ухода за стопами с 18-летним опытом практической работы, основатель и руководитель подологического центра FOOTURA, автор уникальных методик обучения и вдохновляющий пример для специалистов, которые стремятся достичь высочайших стандартов в профессии.
+              {t('aboutFounder.description')}
             </p>
             
             <div className={styles.secondaryImageContainer}>
               <Image
                 src="/images/natalia_2.jpg"
-                alt="Наталия Ротарь"
+                alt={t('aboutFounder.title')}
                 fill
                 className="object-cover"
               />
             </div>
             
             <button className={`btn btn-outline ${styles.button}`}>
-              Подробнее о Наталии Ротарь
+              {t('aboutFounder.learnMore')}
             </button>
           </div>
         </div>

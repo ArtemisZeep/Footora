@@ -24,30 +24,43 @@
   "services": {
     "title": "SLUŽBY",
     "subtitle": "Komplexní přístup ke zdraví nohou",
-    "viewAll": "Zobrazit všechny služby"
+    "viewAll": "Zobrazit všechny služby",
+    "podology": {
+      "title": "Podologie",
+      "titleEn": "Podology",
+      "description": "Profesionální komplexní diagnostika, korekce a ošetření nohou a nehtů s využitím inovativních technologií v oblasti podologie"
+    },
+    "pedicure": {
+      "title": "Pedikúra a manikúra",
+      "titleEn": "Pedicure & Manicure",
+      "description": "Profesionální preventivní ošetření nohou a nehtů s využitím přístrojových technik"
+    },
+    "booking": "Rezervovat",
+    "description": "Používáme moderní metody diagnostiky, korekce a prevence, pomáháme nejen odstranit následek problému, ale také odhalit příčinu"
   },
   "aboutFounder": {
-    "subtitle": "Zakladatelka centra",
-    "title": "NATÁLIE ROTAROVÁ",
-    "description": "Expertka v oblasti podologie s mnohaletými zkušenostmi. Specializuje se na léčbu problémů nohou a nehtů, stejně jako na školení specialistů. Autorka vlastních metodik a zakladatelka kliniky FOOTURA.",
-    "learnMore": "Více o Natálii"
+    "title": "Natálie Rotarová",
+    "subtitle": "zakladatelka centra",
+    "description": "Natálie Rotarová – uznávaná expertka v oblasti péče o nohy s 18letými praktickými zkušenostmi, zakladatelka a ředitelka podologického centra FOOTURA, autorka unikátních vzdělávacích metodik a inspirující příklad pro specialisty, kteří se snaží dosáhnout nejvyšších standardů v profesi.",
+    "learnMore": "Více o Natálii Rotarové"
   },
   "stats": {
-    "experience": {
-      "number": "10+",
-      "text": "let zkušeností"
-    },
-    "clients": {
-      "number": "5000+", 
-      "text": "spokojených klientů"
-    },
+    "title": "footura v číslech",
     "procedures": {
-      "number": "15000+",
-      "text": "provedených procedur"
+      "number": "16 000+",
+      "text": "Procedur"
     },
-    "students": {
-      "number": "500+",
-      "text": "vyškolených specialistů"
+    "returns": {
+      "number": "80%",
+      "text": "Návratů"
+    },
+    "recoveries": {
+      "number": "90%",
+      "text": "Uzdravení"
+    },
+    "experience": {
+      "number": "18",
+      "text": "Let zkušeností"
     }
   },
   "blog": {

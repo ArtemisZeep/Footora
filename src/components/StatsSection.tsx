@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/Stats.module.css';
 
 type StatItemProps = {
@@ -80,6 +81,7 @@ const StatItem: React.FC<StatItemProps> = ({ value, label, isInView, delay = 0 }
 
 const StatsSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.3 });
+  const { t } = useLanguage();
   
   // Figma colors
   const accentColor = "#B8C8BA"; // rgb(184, 200, 186)
@@ -95,17 +97,17 @@ const StatsSection: React.FC = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          footura в цифрах
+          {t('stats.title')}
         </motion.h2>
         
         <div className={styles.grid}>
-          <StatItem value="16 000+" label="Процедур" isInView={isInView} delay={0.2} />
+          <StatItem value={t('stats.procedures.number')} label={t('stats.procedures.text')} isInView={isInView} delay={0.2} />
           <div className={styles.verticalDivider}></div>
-          <StatItem value="80%" label="Возвращений" isInView={isInView} delay={0.4} />
+          <StatItem value={t('stats.returns.number')} label={t('stats.returns.text')} isInView={isInView} delay={0.4} />
           <div className={styles.verticalDivider}></div>
-          <StatItem value="90%" label="Восстановлений" isInView={isInView} delay={0.6} />
+          <StatItem value={t('stats.recoveries.number')} label={t('stats.recoveries.text')} isInView={isInView} delay={0.6} />
           <div className={styles.verticalDivider}></div>
-          <StatItem value="18" label="Лет опыта" isInView={isInView} delay={0.8} />
+          <StatItem value={t('stats.experience.number')} label={t('stats.experience.text')} isInView={isInView} delay={0.8} />
         </div>
       </div>
     </section>

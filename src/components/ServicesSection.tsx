@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/Services.module.css';
 
 const ServiceCard = ({ 
@@ -58,6 +61,8 @@ const LargeTitle: React.FC<{children: React.ReactNode}> = ({ children }) => {
 };
 
 const ServicesSection: React.FC = () => {
+  const { t } = useLanguage();
+  
   // Figma colors
   const podologyGreen = "#4D5C4D"; // rgb(77, 92, 77)
   const pedicureGreen = "#283433"; // rgb(40, 52, 51)
@@ -69,11 +74,11 @@ const ServicesSection: React.FC = () => {
         {/* Top Left - Podology Image */}
         <div className={styles.serviceCard}>
           <div className={styles.titleOverlay}>
-            <LargeTitle>Podology</LargeTitle>
+            <LargeTitle>{t('services.podology.titleEn')}</LargeTitle>
           </div>
           <Image 
             src="/images/podology.jpg" 
-            alt="Podology" 
+            alt={t('services.podology.title')} 
             fill
             className={styles.cardImage}
           />
@@ -81,18 +86,18 @@ const ServicesSection: React.FC = () => {
         
         {/* Top Right - Green Background */}
         <ServiceCard 
-          title="Подология"
-          description="Профессиональная комплексная диагностика, коррекция и обработка стоп и ногтей с использованием инновационных технологий в области подологии"
-          buttonText="Записаться"
+          title={t('services.podology.title')}
+          description={t('services.podology.description')}
+          buttonText={t('services.booking')}
           backgroundColor={podologyGreen}
           textPosition="right"
         />
         
         {/* Bottom Left - Dark Green Background */}
         <ServiceCard 
-          title="Педикюр и маникюр"
-          description="Профессиональная профилактическая обработка стоп и ногтей с использованием аппаратных техник"
-          buttonText="Записаться"
+          title={t('services.pedicure.title')}
+          description={t('services.pedicure.description')}
+          buttonText={t('services.booking')}
           backgroundColor={pedicureGreen}
           textPosition="left"
         />
@@ -106,7 +111,7 @@ const ServicesSection: React.FC = () => {
           </div>
           <Image 
             src="/images/pedicure.jpg" 
-            alt="Pedicure & Manicure" 
+            alt={t('services.pedicure.title')} 
             fill
             className={styles.cardImage}
           />
@@ -116,7 +121,7 @@ const ServicesSection: React.FC = () => {
       <div className={styles.description}>
         <div className="container">
           <p className={styles.descriptionText}>
-            Мы используем современные методы диагностики, коррекции и профилактики, помогая не только устранить следствие проблемы, но и выявить причину
+            {t('services.description')}
           </p>
         </div>
       </div>
