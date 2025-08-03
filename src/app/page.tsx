@@ -6,7 +6,7 @@ import ServicesSection from '@/components/ServicesSection';
 import StatsSection from '@/components/StatsSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import AboutFounderSection from '@/components/AboutFounderSection';
-import BlogSection from '@/components/BlogSection';
+import BlogSectionWrapper from '@/components/BlogSectionWrapper';
 import Footer from '@/components/Footer';
 
 export default async function Home() {
@@ -19,7 +19,7 @@ export default async function Home() {
       <StatsSection />
       <BenefitsSection />
       <AboutFounderSection />
-      <BlogSection />
+      <BlogSectionWrapper />
       <Footer />
     </main>
   );

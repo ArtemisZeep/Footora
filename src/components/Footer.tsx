@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/Footer.module.css';
 
 const FooterLink: React.FC<{href: string; children: React.ReactNode}> = ({ href, children }) => {
@@ -15,6 +18,8 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
+  const { t } = useLanguage();
+
   return (
     <footer id="contacts" className={`${styles.footer} ${variant === 'school' ? styles.schoolVariant : ''}`}>
       <div className={styles.container}>
@@ -27,14 +32,14 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
           {/* Navigation Links */}
           <div className={styles.navigationSection}>
             <nav className={styles.navLinks}>
-              <FooterLink href="/about">О центре подологии</FooterLink>
-              <FooterLink href="/team">Команда</FooterLink>
-              <FooterLink href="/services">Услуги</FooterLink>
-              <FooterLink href="/prices">Цены</FooterLink>
-              <FooterLink href="/natalia">Наталия Ротарь</FooterLink>
-              <FooterLink href="/insoles">Стельки</FooterLink>
-              <FooterLink href="/school">Школа Footura</FooterLink>
-              <FooterLink href="/blog">Блог</FooterLink>
+              <FooterLink href="/about">{t('footer.about')}</FooterLink>
+              <FooterLink href="/team">{t('footer.team')}</FooterLink>
+              <FooterLink href="/services">{t('footer.services')}</FooterLink>
+              <FooterLink href="/prices">{t('footer.prices')}</FooterLink>
+              <FooterLink href="/natalia">{t('footer.natalia')}</FooterLink>
+              <FooterLink href="/insoles">{t('footer.insoles')}</FooterLink>
+              <FooterLink href="/school">{t('footer.school')}</FooterLink>
+              <FooterLink href="/blog">{t('footer.blog')}</FooterLink>
             </nav>
           </div>
           
@@ -54,9 +59,9 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
         
         {/* Bottom Section */}
         <div className={styles.bottomSection}>
-          <div className={styles.copyrightText}>© 2025 All Right Reserved</div>
+          <div className={styles.copyrightText}>{t('footer.copyright')}</div>
           <Link href="/privacy" className={styles.privacyLink}>
-            Политика конфиденциальности
+            {t('footer.privacy')}
           </Link>
         </div>
       </div>

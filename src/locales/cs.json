@@ -64,19 +64,20 @@
     }
   },
   "blog": {
-    "title": "BLOG",
-    "subtitle": "Užitečné články o zdraví nohou",
-    "readMore": "Číst článek",
-    "viewAll": "Všechny články blogu"
+    "title": "Blog",
+    "viewAll": "Zobrazit všechny články",
+    "noArticles": "Články zatím nebyly přidány"
   },
   "footer": {
-    "description": "Profesionální centrum zdraví nohou. Moderní metody léčby a prevence onemocnění nohou.",
-    "contacts": "Kontakty",
+    "about": "O centru podologie",
+    "team": "Tým",
     "services": "Služby",
-    "about": "O centru",
+    "prices": "Ceny",
+    "natalia": "Natálie Rotarová",
+    "insoles": "Vložky",
+    "school": "Škola Footura",
     "blog": "Blog",
-    "education": "Vzdělání",
-    "policy": "Zásady ochrany osobních údajů",
-    "terms": "Podmínky použití"
+    "copyright": "© 2025 All Right Reserved",
+    "privacy": "Zásady ochrany osobních údajů"
   }
 }

@@ -1,18 +1,25 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/Blog.module.css';
-import { getPublishedArticles } from '../lib/blogApi';
 import { BlogArticle } from '../lib/blogApi';
 
 type BlogPostProps = {
   article: BlogArticle;
+  locale: string;
 };
 
-const BlogPost: React.FC<BlogPostProps> = ({ article }) => {
+type BlogSectionClientProps = {
+  articles: BlogArticle[];
+};
+
+const BlogPost: React.FC<BlogPostProps> = ({ article, locale }) => {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('ru-RU', {
+    return date.toLocaleDateString(locale === 'cs' ? 'cs-CZ' : 'ru-RU', {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric'
@@ -39,38 +46,37 @@ const BlogPost: React.FC<BlogPostProps> = ({ article }) => {
   );
 };
 
-const BlogSection: React.FC = async () => {
-  // Получаем 4 последние статьи из Sanity
-  const allArticles = await getPublishedArticles();
-  const latestArticles = allArticles.slice(0, 4);
+const BlogSectionClient: React.FC<BlogSectionClientProps> = ({ articles }) => {
+  const { t, language } = useLanguage();
 
   return (
     <section className={styles.blog}>
       <div className="container">
         <h2 className={styles.title}>
-          Блог
+          {t('blog.title')}
         </h2>
         
-        {latestArticles.length > 0 ? (
+        {articles.length > 0 ? (
           <>
             <div className={styles.grid}>
-              {latestArticles.map((article) => (
+              {articles.map((article) => (
                 <BlogPost 
                   key={article._id}
                   article={article}
+                  locale={language}
                 />
               ))}
             </div>
             
             <div className={styles.viewAllContainer}>
               <Link href="/blog" className={styles.viewAllButton}>
-                Смотреть все статьи
+                {t('blog.viewAll')}
               </Link>
             </div>
           </>
         ) : (
           <div className={styles.noArticles}>
-            <p>Статьи пока не добавлены</p>
+            <p>{t('blog.noArticles')}</p>
           </div>
         )}
       </div>
@@ -78,4 +84,4 @@ const BlogSection: React.FC = async () => {
   );
 };
 
-export default BlogSection; 
+export default BlogSectionClient; 
