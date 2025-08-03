@@ -2,49 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/Benefits.module.css';
 
-const benefits = [
-  {
-    number: '01',
-    title: 'Безопасность',
-    description: 'Мы обеспечиваем высокий уровень стерилизации инструмента и его хранение. Используем исключительно одноразовые расходные материалы.',
-    brackets: false
-  },
-  {
-    number: '02',
-    title: 'Передовые технологии',
-    description: 'Используем современное оборудование, регулярно совершенствуем технику и навыки, обмениваемся международным опытом для эффективности результатов',
-    brackets: false
-  },
-  {
-    number: '03',
-    title: 'Лучшие специалисты',
-    description: 'Вся команда прошла обучение под руководством Наталии Ротарь, сочетая свой опыт с высочайшей квалификацией',
-    brackets: true
-  },
-  {
-    number: '04',
-    title: 'Комплексное сотрудничество',
-    description: 'Работаем с медицинскими центрами и врачами смежных специализаций для решения и контроля более сложных заболеваний стоп',
-    brackets: false
-  },
-  {
-    number: '05',
-    title: 'Индивидуальный подход',
-    description: 'Учитываем индивидуальные особенности каждого клиента, предлагая персонализированные решения для эффективного восстановления и профилактики',
-    brackets: false
-  },
-  {
-    number: '06',
-    title: 'Приватность',
-    description: 'Процедуры проводятся в отдельных комфортабельных кабинетах, что обеспечивает максимальное удобство и приватность для каждого клиента',
-    brackets: true
-  }
-];
+
 
 const BenefitsSection: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -58,6 +23,13 @@ const BenefitsSection: React.FC = () => {
   }, []);
 
   const imageSrc = isMobile ? "/images/team_mob.png" : "/images/team.jpg";
+  
+  // Получаем переводы для преимуществ
+  const benefits = t('benefits.items') as Array<{
+    number: string;
+    title: string;
+    description: string;
+  }>;
 
   return (
     <section className={styles.benefits} id="benefits">
@@ -70,7 +42,7 @@ const BenefitsSection: React.FC = () => {
         priority
       />
       <h2 className={styles.title}>
-        Почему выбирают нас
+        {t('benefits.title')}
       </h2>
       </div>
       <div className={styles.benefitsBox}>

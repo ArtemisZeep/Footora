@@ -68,6 +68,41 @@
     "viewAll": "Zobrazit všechny články",
     "noArticles": "Články zatím nebyly přidány"
   },
+  "benefits": {
+    "title": "Proč si nás vybírají",
+    "items": [
+      {
+        "number": "01",
+        "title": "Bezpečnost",
+        "description": "Zajišťujeme vysokou úroveň sterilizace nástrojů a jejich skladování. Používáme výhradně jednorázové spotřební materiály."
+      },
+      {
+        "number": "02",
+        "title": "Pokročilé technologie",
+        "description": "Používáme moderní vybavení, pravidelně zdokonalujeme techniky a dovednosti, vyměňujeme si mezinárodní zkušenosti pro efektivní výsledky"
+      },
+      {
+        "number": "03",
+        "title": "Nejlepší specialisté",
+        "description": "Celý tým prošel školením pod vedením Natálie Rotarové, kombinující své zkušenosti s nejvyšší kvalifikací"
+      },
+      {
+        "number": "04",
+        "title": "Komplexní spolupráce",
+        "description": "Spolupracujeme s lékařskými centry a lékaři příbuzných specializací pro řešení a kontrolu složitějších onemocnění nohou"
+      },
+      {
+        "number": "05",
+        "title": "Individuální přístup",
+        "description": "Zohledňujeme individuální potřeby každého klienta a nabízíme personalizovaná řešení pro efektivní obnovu a prevenci"
+      },
+      {
+        "number": "06",
+        "title": "Soukromí",
+        "description": "Procedury probíhají v samostatných komfortních kabinetech, což zajišťuje maximální pohodlí a soukromí pro každého klienta"
+      }
+    ]
+  },
   "footer": {
     "about": "O centru podologie",
     "team": "Tým",
