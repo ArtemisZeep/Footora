@@ -25,11 +25,38 @@ const BenefitsSection: React.FC = () => {
   const imageSrc = isMobile ? "/images/team_mob.png" : "/images/team.jpg";
   
   // Получаем переводы для преимуществ
-  const benefits = t('benefits.items') as Array<{
-    number: string;
-    title: string;
-    description: string;
-  }>;
+  const benefits = [
+    {
+      number: t('benefits.items.0.number'),
+      title: t('benefits.items.0.title'),
+      description: t('benefits.items.0.description')
+    },
+    {
+      number: t('benefits.items.1.number'),
+      title: t('benefits.items.1.title'),
+      description: t('benefits.items.1.description')
+    },
+    {
+      number: t('benefits.items.2.number'),
+      title: t('benefits.items.2.title'),
+      description: t('benefits.items.2.description')
+    },
+    {
+      number: t('benefits.items.3.number'),
+      title: t('benefits.items.3.title'),
+      description: t('benefits.items.3.description')
+    },
+    {
+      number: t('benefits.items.4.number'),
+      title: t('benefits.items.4.title'),
+      description: t('benefits.items.4.description')
+    },
+    {
+      number: t('benefits.items.5.number'),
+      title: t('benefits.items.5.title'),
+      description: t('benefits.items.5.description')
+    }
+  ];
 
   return (
     <section className={styles.benefits} id="benefits">
