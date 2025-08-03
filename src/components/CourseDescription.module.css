@@ -8,6 +8,14 @@
   margin: 0 auto;
   display: flex;
   height: 449px;
+  position: relative;
+  overflow: hidden;
+}
+
+.animatedContent {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 .imageColumn {
@@ -47,6 +55,11 @@
     flex-direction: column;
     height: auto;
   }
+
+  .animatedContent {
+    flex-direction: column;
+    height: auto;
+  }
   
   .imageColumn {
     width: 100%;
@@ -69,6 +82,11 @@
 
 /* Mobile */
 @media (max-width: 600px) {
+  .animatedContent {
+    flex-direction: column;
+    height: auto;
+  }
+
   .imageColumn {
     height: 200px;
   }

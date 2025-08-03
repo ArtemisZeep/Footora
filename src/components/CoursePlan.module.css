@@ -22,6 +22,12 @@
 .planContent {
   max-width: 866px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.animatedContent {
+  width: 100%;
 }
 
 .planList {

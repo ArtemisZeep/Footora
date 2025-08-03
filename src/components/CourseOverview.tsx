@@ -1,21 +1,22 @@
 "use client";
 
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { coursesData, Course } from '../data/coursesData';
 import styles from './CourseOverview.module.css';
 
 interface CourseOverviewProps {
   currentCourseIndex?: number;
-  onCourseChange?: (index: number) => void;
+  onCourseChange?: (index: number, direction: 'left' | 'right') => void;
+  direction?: 'left' | 'right';
+  isAnimating?: boolean;
 }
 
 export default function CourseOverview({ 
   currentCourseIndex = 0, 
-  onCourseChange 
+  onCourseChange,
+  direction = 'right',
+  isAnimating = false
 }: CourseOverviewProps) {
-  const [direction, setDirection] = useState<'left' | 'right'>('right');
-  const [isAnimating, setIsAnimating] = useState(false);
   const currentCourse = coursesData[currentCourseIndex];
 
   // Функция для определения размера шрифта в зависимости от длины названия
@@ -29,24 +30,14 @@ export default function CourseOverview({
 
   const nextCourse = () => {
     if (isAnimating) return;
-    setDirection('right');
-    setIsAnimating(true);
     const nextIndex = (currentCourseIndex + 1) % coursesData.length;
-    setTimeout(() => {
-      onCourseChange?.(nextIndex);
-      setIsAnimating(false);
-    }, 150);
+    onCourseChange?.(nextIndex, 'right');
   };
 
   const prevCourse = () => {
     if (isAnimating) return;
-    setDirection('left');
-    setIsAnimating(true);
     const prevIndex = (currentCourseIndex - 1 + coursesData.length) % coursesData.length;
-    setTimeout(() => {
-      onCourseChange?.(prevIndex);
-      setIsAnimating(false);
-    }, 150);
+    onCourseChange?.(prevIndex, 'left');
   };
 
   // Варианты анимации для контента
