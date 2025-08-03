@@ -171,6 +171,12 @@
   opacity: 0.8;
 }
 
+.langButton.langActive {
+  opacity: 1;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
 .langButton:first-child {
   margin-right: 16px;
 }
@@ -348,6 +354,12 @@
 
 .mobileLangButton:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.mobileLangButton.langActive {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
 }
 
 /* Responsive Styles */

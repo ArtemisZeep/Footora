@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Domů",
+    "about": "O nás", 
+    "services": "Služby",
+    "natalia": "Natálie",
+    "school": "Škola",
+    "team": "Tým",
+    "prices": "Ceny",
+    "blog": "Blog",
+    "contacts": "Kontakty"
+  },
+  "hero": {
+    "title": "Zdravé nohy jsou pohyb,\na pohyb je život",
+    "learnMore": "Zjistit více",
+    "booking": "Rezervovat",
+    "onlineBooking": "Online\nrezervace"
+  },
+  "intro": {
+    "subtitle": "Vítejte ve světě zdravých nohou",
+    "title": "FOOTURA —\nto jsou praktičtí\nspecialisté s velkými\nzkušenostmi",
+    "description": "Centrum FOOTURA — tým úzce specializovaných specialistů v oblasti péče o nohy, kde se péče o jejich zdraví dostává na novou úroveň"
+  },
+  "services": {
+    "title": "SLUŽBY",
+    "subtitle": "Komplexní přístup ke zdraví nohou",
+    "viewAll": "Zobrazit všechny služby"
+  },
+  "aboutFounder": {
+    "subtitle": "Zakladatelka centra",
+    "title": "NATÁLIE ROTAROVÁ",
+    "description": "Expertka v oblasti podologie s mnohaletými zkušenostmi. Specializuje se na léčbu problémů nohou a nehtů, stejně jako na školení specialistů. Autorka vlastních metodik a zakladatelka kliniky FOOTURA.",
+    "learnMore": "Více o Natálii"
+  },
+  "stats": {
+    "experience": {
+      "number": "10+",
+      "text": "let zkušeností"
+    },
+    "clients": {
+      "number": "5000+", 
+      "text": "spokojených klientů"
+    },
+    "procedures": {
+      "number": "15000+",
+      "text": "provedených procedur"
+    },
+    "students": {
+      "number": "500+",
+      "text": "vyškolených specialistů"
+    }
+  },
+  "blog": {
+    "title": "BLOG",
+    "subtitle": "Užitečné články o zdraví nohou",
+    "readMore": "Číst článek",
+    "viewAll": "Všechny články blogu"
+  },
+  "footer": {
+    "description": "Profesionální centrum zdraví nohou. Moderní metody léčby a prevence onemocnění nohou.",
+    "contacts": "Kontakty",
+    "services": "Služby",
+    "about": "O centru",
+    "blog": "Blog",
+    "education": "Vzdělání",
+    "policy": "Zásady ochrany osobních údajů",
+    "terms": "Podmínky použití"
+  }
+}

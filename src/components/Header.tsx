@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/Header.module.css';
 
 interface HeaderProps {
@@ -11,6 +12,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,6 +20,10 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleLanguageChange = (lang: 'ru' | 'cs') => {
+    setLanguage(lang);
   };
 
   return (
@@ -30,18 +36,18 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
             {/* Left Navigation */}
             <div className={styles.leftNav}>
               <div className={styles.dropdown}>
-                <button className={styles.dropdownBtn}>Центр подологии</button>
+                <button className={styles.dropdownBtn}>{t('nav.about')}</button>
                 <div className={styles.dropdownContent}>
                   <div>
-                    <Link href="/about">О центре</Link>
-                    <Link href="/team">Команда</Link>
-                    <Link href="/services">Услуги</Link>
+                    <Link href="/about">{t('nav.about')}</Link>
+                    <Link href="/team">{t('nav.team')}</Link>
+                    <Link href="/services">{t('nav.services')}</Link>
                   </div>
                 </div>
               </div>
-              <Link href="/services" className={styles.navLink}>Услуги</Link>
-              <Link href="/prices" className={styles.navLink}>Цены</Link>
-              <Link href="/natalia" className={styles.navLink}>Наталия Ротарь</Link>
+              <Link href="/services" className={styles.navLink}>{t('nav.services')}</Link>
+              <Link href="/prices" className={styles.navLink}>{t('nav.prices')}</Link>
+              <Link href="/natalia" className={styles.navLink}>{t('nav.natalia')}</Link>
             </div>
             
             {/* Center Logo */}
@@ -59,13 +65,23 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
             
             {/* Right Navigation */}
             <div className={styles.rightNav}>
-              <Link href="/school" className={styles.navLink}>Школа Footura</Link>
+              <Link href="/school" className={styles.navLink}>{t('nav.school')}</Link>
               <span className={styles.navLink} style={{cursor: 'not-allowed', opacity: 0.6}}>Магазин</span>
-              <Link href="#contacts" className={styles.navLink}>Контакты</Link>
+              <Link href="#contacts" className={styles.navLink}>{t('nav.contacts')}</Link>
               
               <div className={styles.langSwitcher}>
-                <button className={styles.langButton}>CZ</button>
-                <button className={styles.langButton}>RU</button>
+                <button 
+                  className={`${styles.langButton} ${language === 'cs' ? styles.langActive : ''}`}
+                  onClick={() => handleLanguageChange('cs')}
+                >
+                  CZ
+                </button>
+                <button 
+                  className={`${styles.langButton} ${language === 'ru' ? styles.langActive : ''}`}
+                  onClick={() => handleLanguageChange('ru')}
+                >
+                  RU
+                </button>
               </div>
             </div>
           </div>
@@ -113,25 +129,35 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                 
                 <nav className={styles.mobileMenuContent}>
                   <div className={styles.mobileMenuSection}>
-                    <h3>Центр подологии</h3>
-                    <Link href="/about" onClick={closeMenu}>О центре</Link>
-                    <Link href="/team" onClick={closeMenu}>Команда</Link>
-                    <Link href="/services" onClick={closeMenu}>Услуги</Link>
+                    <h3>{t('nav.about')}</h3>
+                    <Link href="/about" onClick={closeMenu}>{t('nav.about')}</Link>
+                    <Link href="/team" onClick={closeMenu}>{t('nav.team')}</Link>
+                    <Link href="/services" onClick={closeMenu}>{t('nav.services')}</Link>
                   </div>
                   
                   <div className={styles.mobileMenuSection}>
-                    <Link href="/services" onClick={closeMenu}>Услуги</Link>
-                    <Link href="/prices" onClick={closeMenu}>Цены</Link>
-                    <Link href="/natalia" onClick={closeMenu}>Наталия Ротарь</Link>
-                    <Link href="/school" onClick={closeMenu}>Школа Footura</Link>
+                    <Link href="/services" onClick={closeMenu}>{t('nav.services')}</Link>
+                    <Link href="/prices" onClick={closeMenu}>{t('nav.prices')}</Link>
+                    <Link href="/natalia" onClick={closeMenu}>{t('nav.natalia')}</Link>
+                    <Link href="/school" onClick={closeMenu}>{t('nav.school')}</Link>
                     <span style={{cursor: 'not-allowed', opacity: 0.6, padding: '10px 0', display: 'block'}}>Магазин</span>
-                    <Link href="#contacts" onClick={closeMenu}>Контакты</Link>
+                    <Link href="#contacts" onClick={closeMenu}>{t('nav.contacts')}</Link>
                   </div>
                   
                   <div className={styles.mobileMenuSection}>
                     <div className={styles.mobileLangSwitcher}>
-                      <button className={styles.mobileLangButton}>CZ</button>
-                      <button className={styles.mobileLangButton}>RU</button>
+                      <button 
+                        className={`${styles.mobileLangButton} ${language === 'cs' ? styles.langActive : ''}`}
+                        onClick={() => handleLanguageChange('cs')}
+                      >
+                        CZ
+                      </button>
+                      <button 
+                        className={`${styles.mobileLangButton} ${language === 'ru' ? styles.langActive : ''}`}
+                        onClick={() => handleLanguageChange('ru')}
+                      >
+                        RU
+                      </button>
                     </div>
                   </div>
                 </nav>

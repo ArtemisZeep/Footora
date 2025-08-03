@@ -4,9 +4,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/Hero.module.css';
 
 const HeroSection: React.FC = () => {
+  const { t } = useLanguage();
+  
   // Варианты анимации для разных элементов
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -70,8 +73,7 @@ const HeroSection: React.FC = () => {
           className={styles.title}
           variants={itemVariants}
         >
-          Здоровые ноги – движение, <br />
-          а движение это жизнь
+          {t('hero.title')}
         </motion.h1>
 
         <motion.div 
@@ -82,14 +84,14 @@ const HeroSection: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link href="/about" className={`${styles.button} ${styles.buttonOutline}`}>Подробнее</Link>
+            <Link href="/about" className={`${styles.button} ${styles.buttonOutline}`}>{t('hero.learnMore')}</Link>
           </motion.div>
           <motion.button 
             className={`${styles.button} ${styles.buttonPrimary}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Записаться
+            {t('hero.booking')}
           </motion.button>
         </motion.div>
 
@@ -98,7 +100,7 @@ const HeroSection: React.FC = () => {
           variants={itemVariants}
         >
           <span className={styles.onlineBookingText}>
-            Онлайн-<br />запись
+            {t('hero.onlineBooking')}
           </span>
         </motion.div>
         
