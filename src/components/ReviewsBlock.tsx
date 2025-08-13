@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { reviewsData, getReviewsByLanguage } from '@/data/reviewsData';
 import styles from './ReviewsBlock.module.css';
 
 function Avatar({ photo }: { photo: string | null }) {
@@ -20,14 +21,20 @@ function Avatar({ photo }: { photo: string | null }) {
 }
 
 export default function ReviewsBlock() {
-  const { tData } = useLanguage();
+  const { language } = useLanguage();
   const [page, setPage] = useState(0);
   
-  const reviews = tData('reviews.reviews') as Array<{
-    name: string;
-    status: string;
-    text: string;
-  }> || [];
+  // Получаем отзывы для текущего языка
+  const currentLanguage = language as 'ru' | 'cs' | 'en';
+  const languageReviews = getReviewsByLanguage(currentLanguage);
+  
+  // Если нет отзывов для текущего языка, показываем все отзывы
+  const reviews = languageReviews.length > 0 ? languageReviews : reviewsData;
+  
+  // Сбрасываем страницу при смене языка
+  React.useEffect(() => {
+    setPage(0);
+  }, [language]);
   
   const perPage = 2;
   const pageCount = Math.ceil(reviews.length / perPage);
@@ -46,15 +53,24 @@ export default function ReviewsBlock() {
           transition={{ duration: 0.4 }}
         >
           {visible.map((review, i) => (
-            <motion.div key={i} className={styles.reviewCard} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.05 }}>
+            <motion.div key={review.id} className={styles.reviewCard} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.05 }}>
               <div className={styles.reviewHeader}>
                 <Avatar photo={null} />
                 <div className={styles.clientInfo}>
                   <div className={styles.clientName}>{review.name}</div>
-                  <div className={styles.clientStatus}>{review.status}</div>
+                  <div className={styles.clientStatus}>
+                    {review.language === 'ru' ? 'клиент' : review.language === 'cs' ? 'klient' : 'client'}
+                  </div>
                 </div>
               </div>
               <div className={styles.reviewText}>{review.text}</div>
+              {review.link && (
+                <div className={styles.reviewLink}>
+                  <a href={review.link} target="_blank" rel="noopener noreferrer" className={styles.linkButton}>
+                    {review.language === 'ru' ? 'Читать полностью' : review.language === 'cs' ? 'Číst celé' : 'Read full review'}
+                  </a>
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>

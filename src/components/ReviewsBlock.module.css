@@ -121,16 +121,24 @@
 }
 
 .reviewLink {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.linkButton {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 150%;
-  color: #4D5C4D;
+  color: #57694C;
   text-decoration: underline;
-  margin-top: 8px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  flex-shrink: 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  color: #4D5C4D;
+  text-decoration: none;
 }
 
 .pagination {

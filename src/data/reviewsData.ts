@@ -1,35 +1,45 @@
-export interface ReviewData {
+export interface Review {
   id: string;
   name: string;
-  role: string;
   text: string;
-  link: string;
-  avatar?: string;
+  link?: string | null;
+  language: 'ru' | 'cs' | 'en';
 }
 
-export const reviewsData: ReviewData[] = [
-  {
-    id: "review-1",
-    name: "Наталья Воронина",
-    role: "подолог",
-    text: "Хочу поблагодарить подологический центр за профессионализм и качественное обслуживание! Обратилась с проблемой вросшего ногтя, которая мучила несколько месяцев. Врач подробно объяснил причину, предложил эффективное лечение и дал рекомендации ...",
-    link: "ссылка на отзыв",
-    avatar: "/images/school/avatar-1.jpg"
-  },
-  {
-    id: "review-2", 
-    name: "Ольга Иванова",
-    role: "подолог",
-    text: "Хочу поблагодарить подологический центр за профессионализм и качественное обслуживание! Обратилась с проблемой вросшего ногтя, которая мучила несколько месяцев. Врач подробно объяснил причину, предложил эффективное лечение и дал рекомендации ...",
-    link: "ссылка на отзыв",
-    avatar: "/images/school/avatar-2.jpg"
-  },
-  {
-    id: "review-3",
-    name: "Алина",
-    role: "клиент", 
-    text: "Сегодня была у мастера Кристины на педикюре во второй раз. Мастер Кристина действительно мастер своего дела. Советую всем. Работает очень аккуратно и старается сделать свою работу на 100%. А также очень приятная девушка и дает полезные советы по уходу.",
-    link: "ссылка на отзыв",
-    avatar: "/images/school/avatar-3.jpg"
+// Импортируем данные из JSON и преобразуем в типизированный массив
+import reviewsJson from './r_center.json';
+
+export const reviewsData: Review[] = reviewsJson.map((review, index) => {
+  // Определяем язык отзыва на основе содержания
+  const detectLanguage = (text: string): 'ru' | 'cs' | 'en' => {
+    // Проверяем на русский язык
+    if (/[а-яё]/i.test(text)) return 'ru';
+    // Проверяем на чешский язык (специфические буквы)
+    if (/[áčďéěíňóřšťúůýž]/i.test(text)) return 'cs';
+    // По умолчанию английский
+    return 'en';
+  };
+
+  return {
+    id: `review-${index + 1}`,
+    name: review.name,
+    text: review.review,
+    link: review['link '] || null, // Обратите внимание на пробел в ключе
+    language: detectLanguage(review.review)
+  };
+});
+
+// Функции для фильтрации отзывов по языку
+export const getReviewsByLanguage = (language: 'ru' | 'cs' | 'en'): Review[] => {
+  return reviewsData.filter(review => review.language === language);
+};
+
+// Статистика отзывов
+export const reviewsStats = {
+  total: reviewsData.length,
+  byLanguage: {
+    ru: reviewsData.filter(r => r.language === 'ru').length,
+    cs: reviewsData.filter(r => r.language === 'cs').length,
+    en: reviewsData.filter(r => r.language === 'en').length,
   }
-];
+};
