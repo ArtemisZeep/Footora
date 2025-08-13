@@ -32,7 +32,16 @@ export default function ReviewsBlock() {
     setPage(0);
   }, [language]);
   
-  const perPage = 3;
+  // Адаптивное количество отзывов на странице
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+  
+  React.useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  const perPage = windowWidth <= 480 ? 1 : windowWidth <= 768 ? 2 : 3;
   const pageCount = Math.ceil(reviews.length / perPage);
   const start = page * perPage;
   const visible = reviews.slice(start, start + perPage);
