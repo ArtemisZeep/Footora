@@ -6,7 +6,7 @@ import Image from 'next/image';
 import styles from '../../styles/Hero.module.css';
 import aboutStyles from '../../styles/About.module.css';
 import CertificatesPopup, { Certificate } from '@/components/CertificatesPopup';
-import BeforeAfterBlock from '@/components/BeforeAfterBlock';
+import WorkResultsBlock from '@/components/WorkResultsBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 
 export default function AboutPage() {
