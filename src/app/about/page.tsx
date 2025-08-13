@@ -6,7 +6,6 @@ import Image from 'next/image';
 import styles from '../../styles/Hero.module.css';
 import aboutStyles from '../../styles/About.module.css';
 import CertificatesPopup, { Certificate } from '@/components/CertificatesPopup';
-import WorkResultsBlock from '@/components/WorkResultsBlock';
 import BeforeAfterBlock from '@/components/BeforeAfterBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 
@@ -228,7 +227,6 @@ export default function AboutPage() {
           onPrev={() => setPopupIndex(getPrevIndex(popupIndex))}
         />
       </section>
-      <WorkResultsBlock />
       <BeforeAfterBlock 
         title="Результаты нашей работы"
         subtitle="Примеры успешного лечения и восстановления наших пациентов"

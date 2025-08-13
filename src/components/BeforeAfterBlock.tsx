@@ -38,6 +38,16 @@ const BeforeAfterBlock: React.FC<BeforeAfterBlockProps> = ({
 
   const displayData = getData();
 
+  // Отладка - добавим console.log
+  console.log('BeforeAfterBlock debug:', {
+    beforeAfterDataLength: beforeAfterData.length,
+    displayDataLength: displayData.length,
+    selectedCategory,
+    category,
+    maxItems,
+    firstItem: beforeAfterData[0]
+  });
+
   const categories = [
     { key: 'all' as const, label: 'Все случаи' },
     { key: 'ingrown_nail' as const, label: 'Вросший ноготь' },
@@ -125,6 +135,9 @@ const BeforeAfterBlock: React.FC<BeforeAfterBlockProps> = ({
         {displayData.length === 0 && (
           <div className={styles.noResults}>
             <p>В данной категории пока нет примеров работ</p>
+            <p>Отладка: beforeAfterData.length = {beforeAfterData.length}</p>
+            <p>selectedCategory = {selectedCategory}</p>
+            <p>category prop = {category || 'undefined'}</p>
           </div>
         )}
 
