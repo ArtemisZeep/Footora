@@ -83,7 +83,7 @@ export default function SchoolReviews() {
                   <a href={review.link} target="_blank" rel="noopener noreferrer" className={styles.reviewLink}>
                     {review.language === 'ru' ? 'Читать полностью' : 
                      review.language === 'cs' ? 'Číst celé' : 
-                     review.language === 'ua' ? 'Читати повністю' : 'Read full review'}
+                     review.language === 'ua' ? 'Читать полностью' : 'Read full review'}
                   </a>
                 )}
               </motion.div>
