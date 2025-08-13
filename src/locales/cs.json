@@ -121,7 +121,81 @@
     "problemName": "NÁZEV PROBLÉMU",
     "before": "Před",
     "after": "Po",
-    "description": "Spolupráce s chirurgem.\nObnovení nehtové ploténky po úrazu"
+    "description": "Spolupráce s chirurgem.\nObnovení nehtové ploténky po úrazu",
+    "cases": {
+      "restoration_panarytsiya": {
+        "title": "Obnovení nehtové ploténky po panarícii",
+        "description": "Komplexní terapie pro obnovení poškozené nehtové ploténky po podnehnovém panarícii s použitím moderních metodik."
+      },
+      "ingrown_nail_1": {
+        "title": "Korekce zarostlého nehtu",
+        "description": "Bezbolestná léčba zarostlého nehtu s použitím ortonyxie a profesionálních korekčních technik."
+      },
+      "ingrown_nail_surgery_cooperation": {
+        "title": "Spolupráce s chirurgem při léčbě zarostlého nehtu",
+        "description": "Komplexní přístup k léčbě složitých případů zarostlého nehtu ve spolupráci s chirurgem."
+      },
+      "ingrown_nail_2": {
+        "title": "Léčba zarostlého nehtu druhého stupně",
+        "description": "Profesionální korekce zarostlého nehtu se zánětlivým procesem metodou ortonyxie."
+      },
+      "ingrown_nail_3": {
+        "title": "Korekce zarostlého nehtu s deformací",
+        "description": "Oprava zarostlého nehtu s výraznou deformací nehtové ploténky."
+      },
+      "ingrown_nail_4": {
+        "title": "Léčba chronického zarostlého nehtu",
+        "description": "Komplexní terapie chronického zarostlého nehtu s použitím moderních metodik."
+      },
+      "ingrown_nail_6": {
+        "title": "Korekce zarostlého nehtu u dospělých",
+        "description": "Účinná léčba zarostlého nehtu u dospělého pacienta s rychlým uzdravením."
+      },
+      "ingrown_nail_7": {
+        "title": "Léčba zarostlého nehtu s komplikacemi",
+        "description": "Profesionální korekce komplikovaného zarostlého nehtu s úplným obnovením."
+      },
+      "ingrown_nail_8": {
+        "title": "Korekce recidivujícího zarostlého nehtu",
+        "description": "Léčba opakovaně se vyskytujícího zarostlého nehtu s použitím speciálních technik."
+      },
+      "nail_correction_deformation": {
+        "title": "Korekce deformovaného nehtu",
+        "description": "Komplexní korekce zarostlého a deformovaného nehtu s obnovením správného tvaru."
+      },
+      "onychomycosis_1": {
+        "title": "Léčba onychomykózy",
+        "description": "Účinná terapie mykotického postižení nehtu s úplným obnovením zdravého vzhledu."
+      },
+      "onychomycosis_2": {
+        "title": "Komplexní léčba onychomykózy",
+        "description": "Profesionální terapie pokročilého mykotického postižení nehtové ploténky."
+      },
+      "rehabilitation_surgery_1": {
+        "title": "Rehabilitace po operaci",
+        "description": "Specializovaná rehabilitace a obnovení nehtové ploténky po chirurgickém zákroku."
+      },
+      "rehabilitation_surgery_orthonyxia": {
+        "title": "Rehabilitace s ortonyxií",
+        "description": "Komplexní rehabilitace po operaci s použitím ortonyxie pro korekci růstu nehtu."
+      },
+      "nail_restoration_trauma": {
+        "title": "Obnovení nehtu po úrazu",
+        "description": "Profesionální obnovení nehtové ploténky po traumatickém poškození."
+      },
+      "rehabilitation_post_surgery_1": {
+        "title": "Pooperační rehabilitace",
+        "description": "Specializovaná péče a rehabilitace nehtového aparátu v pooperačním období."
+      },
+      "rehabilitation_post_intervention": {
+        "title": "Rehabilitace po chirurgickém zákroku",
+        "description": "Komplexní rehabilitace a obnovení po chirurgické léčbě onemocnění nohy."
+      },
+      "surgeon_cooperation_rehabilitation": {
+        "title": "Společná rehabilitace s chirurgem",
+        "description": "Mezioborový přístup k rehabilitaci pacientů po chirurgické léčbě nohy."
+      }
+    }
   },
   "reviews": {
     "client": "KLIENT",

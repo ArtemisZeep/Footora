@@ -61,9 +61,7 @@
   color: #4D5C4D;
   margin-top: 41px;
   margin-bottom: 18px;
-  width: 500px;
   height: auto;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -294,7 +292,7 @@
   .problemTitle {
     margin-top: 0;
     font-size: 13px;
-    width: 100%;
+    width: 60%;
     white-space: normal;
   }
 
@@ -354,7 +352,7 @@
     font-size: 12px;
     margin-top: 0;
     margin-bottom: 15px;
-    width: 100%;
+    width: 60%;
     white-space: normal;
   }
 
@@ -414,7 +412,7 @@
   .problemTitle {
     font-size: 11px;
     margin-bottom: 12px;
-    width: 100%;
+    width: 60%;
     white-space: normal;
   }
 

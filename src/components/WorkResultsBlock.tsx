@@ -6,10 +6,23 @@ import { beforeAfterData } from '@/data/beforeAfterData';
 import styles from './WorkResultsBlock.module.css';
 
 export default function WorkResultsBlock() {
-  const { t } = useLanguage();
+  const { t, tData } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const currentCase = beforeAfterData[currentIndex];
+  
+  // Получаем переводы для текущего кейса
+  const getCaseTitle = (caseItem: typeof currentCase) => {
+    if (!caseItem) return t('workResults.problemName');
+    const translatedCase = tData(`workResults.cases.${caseItem.id}`);
+    return translatedCase?.title || caseItem.title;
+  };
+  
+  const getCaseDescription = (caseItem: typeof currentCase) => {
+    if (!caseItem) return t('workResults.description');
+    const translatedCase = tData(`workResults.cases.${caseItem.id}`);
+    return translatedCase?.description || caseItem.description;
+  };
   
   const nextCase = () => {
     setCurrentIndex((prev) => (prev + 1) % beforeAfterData.length);
@@ -42,7 +55,7 @@ export default function WorkResultsBlock() {
         <div className={styles.workResultsLeft}>
           {/* Название проблемы */}
           <div className={styles.problemTitle}>
-            {currentCase?.title || 'Название проблемы'}
+            {getCaseTitle(currentCase)}
           </div>
           {/* Фото до/после */}
           <div className={styles.photosContainer}>
@@ -55,7 +68,7 @@ export default function WorkResultsBlock() {
             >
               <Image 
                 src={currentCase?.beforeImage || '/images/default-before.jpg'} 
-                alt={`До лечения - ${currentCase?.title}`} 
+                alt={`${t('workResults.before')} - ${getCaseTitle(currentCase)}`} 
                 fill 
               />
             </motion.div>
@@ -68,7 +81,7 @@ export default function WorkResultsBlock() {
             >
               <Image 
                 src={currentCase?.afterImage || '/images/default-after.jpg'} 
-                alt={`После лечения - ${currentCase?.title}`} 
+                alt={`${t('workResults.after')} - ${getCaseTitle(currentCase)}`} 
                 fill 
               />
             </motion.div>
@@ -77,7 +90,7 @@ export default function WorkResultsBlock() {
         {/* Правая часть: описание */}
         <div className={styles.workResultsRight}>
           <div className={styles.workResultsDescription}>
-            {currentCase?.description || 'Описание случая лечения'}
+            {getCaseDescription(currentCase)}
           </div>
         </div>
         {/* Стрелки */}
