@@ -1,8 +1,10 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from '../../styles/Hero.module.css';
 import aboutStyles from '../../styles/About.module.css';
 import CertificatesPopup, { Certificate } from '@/components/CertificatesPopup';
@@ -10,6 +12,7 @@ import WorkResultsBlock from '@/components/WorkResultsBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 
 export default function AboutPage() {
+  const { t, tArray } = useLanguage();
   const [isMobileHero, setIsMobileHero] = useState(false);
   const [isMobilePopup, setIsMobilePopup] = useState(false);
 
@@ -30,17 +33,22 @@ export default function AboutPage() {
     {
       src: '/images/Tezza-2723.png',
       orientation: 'vertical',
-      alt: 'Сертификат 1',
+      alt: `${t('about.certificate')} 1`,
     },
     {
       src: '/images/Tezza-7138.png',
       orientation: 'vertical',
-      alt: 'Сертификат 2',
+      alt: `${t('about.certificate')} 2`,
     },
     {
       src: '/images/Tezza-4150 1.png',
       orientation: 'horizontal',
-      alt: 'Сертификат 3',
+      alt: `${t('about.certificate')} 3`,
+    },
+    {
+      src: '/images/cetif3.jpeg',
+      orientation: 'vertical',
+      alt: `${t('about.certificate')} 4`,
     },
   ];
 
@@ -94,7 +102,7 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <Image
           src={isMobileHero ? "/images/hero_about_mob.png" : "/images/hero_about.png"}
-          alt="О центре Footura"
+          alt={t('about.heroAlt')}
           fill
           className={styles.bgImage}
           priority
@@ -102,71 +110,75 @@ export default function AboutPage() {
         <div className={styles.content}></div>
       </section>
       <section className={aboutStyles.aboutHero}>
-        <div className={aboutStyles.aboutHeroContent}>
+        <motion.div 
+          className={aboutStyles.aboutHeroContent}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={aboutStyles.aboutHeroText}>
-            <h2 className={aboutStyles.aboutHeroTitle}>О центре</h2>
-            <div className={aboutStyles.aboutHeroDescription}>
-              FOOTURA— команда узкопрофильных специалистов в области ухода за стопами, работающая под руководством Натальи Ротарь, эксперта с 18-летним опытом
-            </div>
-            <div className={aboutStyles.aboutHeroSubDescription}>
-              Наш центр предлагает профессиональный комплексный уход за стопами и ногтями с использованием инновационных технологий в области подологии.
-            </div>
+            <motion.h2 className={aboutStyles.aboutHeroTitle} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>{t('about.title')}</motion.h2>
+            <motion.div className={aboutStyles.aboutHeroDescription} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
+              {t('about.heroDescription')}
+            </motion.div>
+            <motion.div className={aboutStyles.aboutHeroSubDescription} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
+              {t('about.heroSubDescription')}
+            </motion.div>
           </div>
-          <div className={aboutStyles.aboutHeroImage}>
+          <motion.div className={aboutStyles.aboutHeroImage} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             <Image
               src="/images/about1.png"
-              alt="О центре Footura фото"
+              alt={t('about.heroAlt')}
               fill
               sizes="(max-width: 1440px) 100vw, 641px"
               priority
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
       <section className={aboutStyles.missionSection}>
-        <div className={aboutStyles.missionContent}>
+        <motion.div className={aboutStyles.missionContent} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <div className={aboutStyles.missionText}>
-            Наша миссия – возвращать легкость движения, <br />ведь движение – это основа жизни, <br />которая начинается со здоровых ног
+            {t('about.mission')}
           </div>
-          <button className={aboutStyles.missionButton}>
-            Записаться
-          </button>
-        </div>
+          <motion.button className={aboutStyles.missionButton} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.98 }}>
+            {t('about.booking')}
+          </motion.button>
+        </motion.div>
       </section>
       <section className={aboutStyles.descriptionSection}>
         <div className={aboutStyles.descriptionContent}>
-          <div className={aboutStyles.descriptionText}>
-            Наш подологический центр предоставляет комплексные решения как для устранения острых проблем ногтей и стоп, так и для профилактики их развития. Мы стремимся минимизировать риск осложнений в будущем, предлагая широкий спектр услуг — от решения конкретных локальных проблем до регулярного ухода за стопами.
-          </div>
-          <div className={aboutStyles.descriptionTextSecond}>
-            В случае выявления более глубоких или системных патологий наши специалисты направляют пациентов к профильным экспертам — хирургам, дерматологам, ортопедам, флебологам и т.д. По завершении/вовремя основного лечения пациенты продолжают наблюдение и поддерживающий уход в нашем центре.
-          </div>
+          <motion.div className={aboutStyles.descriptionText} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            {t('about.description1')}
+          </motion.div>
+          <motion.div className={aboutStyles.descriptionTextSecond} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
+            {t('about.description2')}
+          </motion.div>
         </div>
       </section>
       <section className={aboutStyles.approachSection}>
         <div className={aboutStyles.approachContent}>
-          <h2 className={aboutStyles.approachTitle}>
-            Комплексный подход
-          </h2>
-          <div className={aboutStyles.approachDescription}>
-            Мы предоставляем полный спектр услуг ухода за ногтями и кожей стоп, включая:
-          </div>
+          <motion.h2 className={aboutStyles.approachTitle} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            {t('about.approachTitle')}
+          </motion.h2>
+          <motion.div className={aboutStyles.approachDescription} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
+            {t('about.approachDescription')}
+          </motion.div>
           <div className={aboutStyles.approachList}>
             <ul className={aboutStyles.approachListUl}>
-              {[
-                'Аппаратный гигиенический педикюр',
-                'Подологическая обработка стоп и ногтей',
-                'Обработка трещин, локальных гиперкератозов, стрежневых мозолей',
-                'Коррекция вросших и деформированных ногтей',
-                'Профилактическая обработка стоп и ногтей клиентов с диагнозом сахарный диабет',
-                'Обработка ногтей пораженных грибковой инфекцией и последующее восстановление в сотрудничестве со сторонним дерматологом',
-                'Ведение клиента/реабилитация после операции на ногтевом аппарате в сотрудничестве с хирургом',
-                'Пилинг и массаж стоп',
-              ].map((text, i) => (
-                <li key={i} className={aboutStyles.approachListItem}>
+              {tArray('about.services').map((text: string, i: number) => (
+                <motion.li 
+                  key={i} 
+                  className={aboutStyles.approachListItem}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                >
                   <span className={aboutStyles.approachListItemText}>{text}</span>
                   <span className={aboutStyles.approachListItemNumber}>{String(i+1).padStart(2, '0')}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -174,48 +186,50 @@ export default function AboutPage() {
       </section>
       <section className={aboutStyles.standardsSection}>
         <div className={aboutStyles.standardsContent}>
-          <div className={aboutStyles.standardsLeft}>
+          <motion.div className={aboutStyles.standardsLeft} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <h2 className={aboutStyles.standardsTitle}>
-              Мировые стандарты в вашем городе
+              {t('about.standardsTitle')}
             </h2>
-            <div className={aboutStyles.standardsImage}>
+            <motion.div className={aboutStyles.standardsImage} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
               <Image src="/images/unibrace.png" alt="Unibrace" fill />
-            </div>
-          </div>
-          <div className={aboutStyles.standardsRight}>
+            </motion.div>
+          </motion.div>
+          <motion.div className={aboutStyles.standardsRight} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
             <div className={aboutStyles.standardsText}>
-              Мы являемся официальными представителями системы Unibrace, что позволяет нам применять современные и безопасные технологии коррекции ногтевой пластины.
+              {t('about.standardsText')}
             </div>
             <div className={aboutStyles.standardsSubText}>
-              Мы — команда профессионалов, которая постоянно совершенствуется, посещая крупнейшие международные выставки, семинары и конференции. Мы активно участвуем в профессиональных событиях, перенимаем передовой опыт и внедряем его в свою работу, чтобы предоставлять нашим клиентам лучшие решения.
+              {t('about.standardsSubText')}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section className={aboutStyles.qualificationSection}>
         <div className={aboutStyles.qualificationContent}>
-          <div className={aboutStyles.qualificationLeft}>
+          <motion.div className={aboutStyles.qualificationLeft} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <h2 className={aboutStyles.qualificationTitle}>
-              Квалификация
+              {t('about.qualificationTitle')}
             </h2>
             <div className={aboutStyles.qualificationText}>
-              Наши Специалисты регулярно подтверждают свою квалификацию на международном уровне. Дипломы и сертификаты служат гарантией профессионализма и высоких стандартов обслуживания.
+              {t('about.qualificationText')}
             </div>
-            <button
+            <motion.button
               className={aboutStyles.qualificationButton}
               onClick={openPopup}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Посмотреть все сертификаты
-            </button>
-          </div>
-          <div className={aboutStyles.qualificationRight}>
-            <div className={aboutStyles.certificateImage}>
-              <Image src="/images/Tezza-2723.png" alt="Сертификат 1" fill />
-            </div>
-            <div className={aboutStyles.certificateImageSecond}>
-              <Image src="/images/Tezza-7138.png" alt="Сертификат 2" fill />
-            </div>
-          </div>
+              {t('about.viewCertificates')}
+            </motion.button>
+          </motion.div>
+          <motion.div className={aboutStyles.qualificationRight} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
+            <motion.div className={aboutStyles.certificateImage} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+              <Image src="/images/Tezza-2723.png" alt={`${t('about.certificate')} 1`} fill />
+            </motion.div>
+            <motion.div className={aboutStyles.certificateImageSecond} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
+              <Image src="/images/Tezza-7138.png" alt={`${t('about.certificate')} 2`} fill />
+            </motion.div>
+          </motion.div>
         </div>
         {/* Попап сертификатов */}
         <CertificatesPopup

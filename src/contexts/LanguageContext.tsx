@@ -8,6 +8,8 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
   t: (key: string) => string;
+  tArray: (key: string) => string[];
+  tData: (key: string) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -65,8 +67,40 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     return typeof value === 'string' ? value : key;
   };
 
+  // Функция для получения массива переводов
+  const tArray = (key: string): string[] => {
+    const keys = key.split('.');
+    let value: any = translations;
+    
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        return []; // Возвращаем пустой массив если перевод не найден
+      }
+    }
+    
+    return Array.isArray(value) ? value : [];
+  };
+
+  // Функция для получения любых данных
+  const tData = (key: string): any => {
+    const keys = key.split('.');
+    let value: any = translations;
+    
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        return null; // Возвращаем null если перевод не найден
+      }
+    }
+    
+    return value;
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, tArray, tData }}>
       {children}
     </LanguageContext.Provider>
   );

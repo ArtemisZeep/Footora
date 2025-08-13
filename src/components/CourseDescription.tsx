@@ -1,21 +1,61 @@
 "use client";
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { coursesData } from '../data/coursesData';
 import styles from './CourseDescription.module.css';
+
+interface CoursePrice {
+  name: string;
+  price: string;
+}
+
+interface CourseOverviewData {
+  type: string;
+  title: string;
+  description: string;
+  prices: CoursePrice[];
+  courseLink: string;
+  purchaseLink: string;
+  number: string;
+  noButton?: boolean;
+}
+
+interface CourseDescriptionData {
+  text: string;
+  image: string;
+}
+
+interface CoursePlanItem {
+  number: string;
+  title: string;
+}
+
+interface CoursePlanData {
+  hasPlan: boolean;
+  items: CoursePlanItem[];
+}
+
+interface Course {
+  id: string;
+  overview: CourseOverviewData;
+  description: CourseDescriptionData;
+  plan: CoursePlanData;
+}
 
 interface CourseDescriptionProps {
   currentCourseIndex?: number;
   direction?: 'left' | 'right';
   isAnimating?: boolean;
+  coursesData: Course[];
 }
 
 export default function CourseDescription({ 
   currentCourseIndex = 0,
   direction = 'right',
-  isAnimating = false
+  coursesData
 }: CourseDescriptionProps) {
   const currentCourse = coursesData[currentCourseIndex];
+  
+  if (!currentCourse) return null;
 
   // Варианты анимации для контента
   const slideVariants = {
@@ -36,7 +76,7 @@ export default function CourseDescription({
   };
 
   return (
-    <section className={styles.descriptionSection}>
+    <section id="course-details" className={styles.descriptionSection}>
       <div className={styles.container}>
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div 

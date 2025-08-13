@@ -1,12 +1,17 @@
+"use client";
+
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './NataliaMission.module.css';
 
 export default function NataliaMission() {
+  const { t } = useLanguage();
+  
   return (
     <section className={styles.missionSection}>
       <div className={styles.container}>
-        <h3 className={styles.subtitle}>МИССИЯ И ФИЛОСОФИЯ</h3>
+        <h3 className={styles.subtitle}>{t('nataliaPage.mission.subtitle')}</h3>
         <h2 className={styles.mission}>
-          Здоровые ноги — основа движения, а движение это жизнь
+          {t('nataliaPage.mission.mission')}
         </h2>
       </div>
     </section>

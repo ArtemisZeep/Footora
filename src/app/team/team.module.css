@@ -130,6 +130,9 @@
 }
 
 .teamButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 266px;
   height: 64px;
   border-radius: 64px;
@@ -140,6 +143,7 @@
   font-weight: 400;
   line-height: 120%;
   text-align: center;
+  text-decoration: none;
   transition: all 0.2s ease;
   cursor: pointer;
 }

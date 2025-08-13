@@ -25,8 +25,6 @@ const MAX_IMG_WIDTH = 0.7 * CONTAINER_WIDTH;   // 70%
 const GAP = 32;
 
 const CertificatesPopup: React.FC<CertificatesPopupProps> = ({ open, certificates, currentIndex, onClose, onNext, onPrev }) => {
-  if (!open) return null;
-
   // Проверяем размер экрана
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -39,6 +37,8 @@ const CertificatesPopup: React.FC<CertificatesPopupProps> = ({ open, certificate
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
+
+  if (!open) return null;
 
   // Определяем, показываем ли два вертикальных подряд (только для больших экранов)
   const isDoubleVertical =

@@ -1,21 +1,63 @@
 "use client";
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { coursesData } from '../data/coursesData';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './CoursePlan.module.css';
+
+interface CoursePrice {
+  name: string;
+  price: string;
+}
+
+interface CourseOverviewData {
+  type: string;
+  title: string;
+  description: string;
+  prices: CoursePrice[];
+  courseLink: string;
+  purchaseLink: string;
+  number: string;
+  noButton?: boolean;
+}
+
+interface CourseDescriptionData {
+  text: string;
+  image: string;
+}
+
+interface CoursePlanItem {
+  number: string;
+  title: string;
+}
+
+interface CoursePlanData {
+  hasPlan: boolean;
+  items: CoursePlanItem[];
+}
+
+interface Course {
+  id: string;
+  overview: CourseOverviewData;
+  description: CourseDescriptionData;
+  plan: CoursePlanData;
+}
 
 interface CoursePlanProps {
   currentCourseIndex?: number;
   direction?: 'left' | 'right';
   isAnimating?: boolean;
+  coursesData: Course[];
 }
 
 export default function CoursePlan({ 
   currentCourseIndex = 0,
   direction = 'right',
-  isAnimating = false
+  coursesData
 }: CoursePlanProps) {
+  const { t } = useLanguage();
   const currentCourse = coursesData[currentCourseIndex];
+  
+  if (!currentCourse) return null;
 
   if (!currentCourse.plan.hasPlan) {
     return null;
@@ -49,7 +91,7 @@ export default function CoursePlan({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.4 }}
         >
-          План курса
+          {t('schoolPage.coursePlanTitle')}
         </motion.h2>
         <div className={styles.planContent}>
           <AnimatePresence mode="wait" custom={direction}>
@@ -68,7 +110,7 @@ export default function CoursePlan({
               className={styles.animatedContent}
             >
               <div className={styles.planList}>
-                {currentCourse.plan.items.map((item, index) => (
+                {currentCourse.plan.items.map((item: CoursePlanItem, index: number) => (
                   <motion.div 
                     key={index} 
                     className={styles.planItem}

@@ -1,47 +1,62 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './WorkResultsBlock.module.css';
 
-const photos = [
-  {
-    src: '/images/file-1681162744334.png', // замените на реальный путь
-    alt: 'До',
-  },
-  {
-    src: '/images/file-1700502093549.png', // замените на реальный путь
-    alt: 'После',
-  },
-];
-
 export default function WorkResultsBlock() {
+  const { t } = useLanguage();
+  
+  const photos = [
+    {
+      src: '/images/file-1681162744334.png',
+      alt: t('workResults.before'),
+    },
+    {
+      src: '/images/file-1700502093549.png',
+      alt: t('workResults.after'),
+    },
+  ];
   return (
     <section className={styles.workResultsSection}>
       {/* Заголовок */}
-      <h2 className={styles.workResultsTitle}>
-        Результаты работы
-      </h2>
+      <motion.h2 
+        className={styles.workResultsTitle}
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        {t('workResults.title')}
+      </motion.h2>
       {/* Белая карточка */}
-      <div className={styles.workResultsCard}>
+      <motion.div 
+        className={styles.workResultsCard}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         {/* Левая часть: фото и подписи */}
         <div className={styles.workResultsLeft}>
           {/* Название проблемы */}
           <div className={styles.problemTitle}>
-            НАЗВАНИЕ ПРОБЛЕМЫ
+            {t('workResults.problemName')}
           </div>
           {/* Фото до/после */}
           <div className={styles.photosContainer}>
-            <div className={styles.photoWrapper}>
+            <motion.div className={styles.photoWrapper} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <Image src={photos[0].src} alt={photos[0].alt} fill />
-            </div>
-            <div className={styles.photoWrapper}>
+            </motion.div>
+            <motion.div className={styles.photoWrapper} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
               <Image src={photos[1].src} alt={photos[1].alt} fill />
-            </div>
+            </motion.div>
           </div>
         </div>
         {/* Правая часть: описание */}
         <div className={styles.workResultsRight}>
           <div className={styles.workResultsDescription}>
-            Сотрудничество с хирургом.<br />Восстановление ногтевой пластины после травмы
+            {t('workResults.description')}
           </div>
         </div>
         {/* Стрелки */}
@@ -59,7 +74,7 @@ export default function WorkResultsBlock() {
             </svg>
           </button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 } 

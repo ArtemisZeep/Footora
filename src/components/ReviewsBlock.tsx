@@ -1,24 +1,8 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './ReviewsBlock.module.css';
-
-const reviews = [
-  {
-    name: 'Алина',
-    status: 'КЛИЕНТ',
-    text: 'Сегодня была у мастера Кристины на педикюре во второй раз. Мастер Кристина действительно мастер своего дела. Советую всем. Работает очень аккуратно и старается сделать свою работу на 100%. А также очень приятная девушка и дает полезные советы по уходу за ногами.',
-    link: '#',
-    photo: null,
-  },
-  {
-    name: 'Eugene Butch',
-    status: 'CLIENT',
-    text: 'Excellent professional Natalia for two month cured my nail, which I thought it was impossible to return to a full healthy state. I recommend her to everyone.',
-    link: '#',
-    photo: null,
-  },
-  // Добавьте больше отзывов по необходимости
-];
 
 function Avatar({ photo }: { photo: string | null }) {
   return (
@@ -36,7 +20,15 @@ function Avatar({ photo }: { photo: string | null }) {
 }
 
 export default function ReviewsBlock() {
+  const { tData } = useLanguage();
   const [page, setPage] = useState(0);
+  
+  const reviews = tData('reviews.reviews') as Array<{
+    name: string;
+    status: string;
+    text: string;
+  }> || [];
+  
   const perPage = 2;
   const pageCount = Math.ceil(reviews.length / perPage);
   const start = page * perPage;
@@ -44,44 +36,53 @@ export default function ReviewsBlock() {
 
   return (
     <section className={styles.reviewsSection}>
-      <div className={styles.reviewsContainer}>
-        {visible.map((review, i) => (
-          <div key={i} className={styles.reviewCard}>
-            <div className={styles.reviewHeader}>
-              <Avatar photo={review.photo} />
-              <div className={styles.clientInfo}>
-                <div className={styles.clientName}>{review.name}</div>
-                <div className={styles.clientStatus}>{review.status}</div>
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={page}
+          className={styles.reviewsContainer}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -16 }}
+          transition={{ duration: 0.4 }}
+        >
+          {visible.map((review, i) => (
+            <motion.div key={i} className={styles.reviewCard} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.05 }}>
+              <div className={styles.reviewHeader}>
+                <Avatar photo={null} />
+                <div className={styles.clientInfo}>
+                  <div className={styles.clientName}>{review.name}</div>
+                  <div className={styles.clientStatus}>{review.status}</div>
+                </div>
               </div>
-            </div>
-            <div className={styles.reviewText}>{review.text}</div>
-            <a href={review.link} className={styles.reviewLink}>ссылка на отзыв</a>
-          </div>
-        ))}
-      </div>
+              <div className={styles.reviewText}>{review.text}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
       {/* Точки-пагинация */}
       <div className={styles.pagination}>
         {Array.from({ length: pageCount }).map((_, i) => (
-          <span 
+          <motion.span 
             key={i} 
             className={`${styles.paginationDot} ${i === page ? styles.active : styles.inactive}`}
-          ></span>
+            whileHover={{ scale: 1.2 }}
+          />
         ))}
       </div>
       {/* Стрелки */}
       <div className={styles.arrowsContainer}>
-        <button onClick={() => setPage(Math.max(0, page - 1))} className={styles.arrowButton}>
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setPage(Math.max(0, page - 1))} className={styles.arrowButton}>
           <svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="41" y1="8" x2="2" y2="8" stroke="#4D5C4D" strokeWidth="1.6" />
             <polyline points="16,1 2,8 16,15" stroke="#4D5C4D" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-        </button>
-        <button onClick={() => setPage(Math.min(pageCount - 1, page + 1))} className={styles.arrowButton}>
+        </motion.button>
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setPage(Math.min(pageCount - 1, page + 1))} className={styles.arrowButton}>
           <svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="2" y1="8" x2="41" y2="8" stroke="#4D5C4D" strokeWidth="1.6" />
             <polyline points="27,1 41,8 27,15" stroke="#4D5C4D" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-        </button>
+        </motion.button>
       </div>
     </section>
   );

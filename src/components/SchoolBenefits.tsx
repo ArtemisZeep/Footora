@@ -3,10 +3,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './SchoolBenefits.module.css';
 
 export default function SchoolBenefits() {
+  const { t, tData } = useLanguage();
   const { ref, isInView } = useInView({ threshold: 0.3 });
+  
+  const benefitsItems = tData('schoolPage.benefits.items') as Array<{
+    title: string;
+    description: string;
+  }> || [];
 
   const benefitVariants = {
     hidden: { opacity: 0, x: -30 },
@@ -29,59 +36,36 @@ export default function SchoolBenefits() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          Что вы получаете
+          {t('schoolPage.benefits.title')}
         </motion.h2>
         
         <div className={styles.benefitsGrid}>
-          {/* Сертификат */}
-          <motion.div 
-            className={styles.benefitItem}
-            variants={benefitVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            custom={0.2}
-          >
-            <div className={styles.iconWrapper}>
-              <div className={styles.iconCircle}>
-                <img 
-                  src="/images/school/Icon1.png" 
-                  alt="Сертификат" 
-                  className={styles.iconImage}
-                />
+          {benefitsItems.map((item, index) => (
+            <motion.div 
+              key={index}
+              className={styles.benefitItem}
+              variants={benefitVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              custom={0.2 + (index * 0.2)}
+            >
+              <div className={styles.iconWrapper}>
+                <div className={styles.iconCircle}>
+                  <img 
+                    src={`/images/school/Icon${index + 1}.png`}
+                    alt={item.title}
+                    className={styles.iconImage}
+                  />
+                </div>
               </div>
-            </div>
-            <div className={styles.textContent}>
-              <h3 className={styles.benefitTitle}>Сертификат школы Footura</h3>
-              <p className={styles.benefitDescription}>
-                Сертификат о повышении квалификации по теме "Вросший ноготь"
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Профессиональные материалы */}
-          <motion.div 
-            className={styles.benefitItem}
-            variants={benefitVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            custom={0.4}
-          >
-            <div className={styles.iconWrapper}>
-              <div className={styles.iconCircle}>
-                <img 
-                  src="/images/school/Icon2.png" 
-                  alt="Профессиональные материалы" 
-                  className={styles.iconImage}
-                />
+              <div className={styles.textContent}>
+                <h3 className={styles.benefitTitle}>{item.title}</h3>
+                <p className={styles.benefitDescription}>
+                  {item.description}
+                </p>
               </div>
-            </div>
-            <div className={styles.textContent}>
-              <h3 className={styles.benefitTitle}>Профессиональные материалы</h3>
-              <p className={styles.benefitDescription}>
-                Печатные учебные материалы, перечень рекомендуемых инструментов и препаратов
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div 
@@ -90,22 +74,23 @@ export default function SchoolBenefits() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <motion.button 
+          <motion.a
+            href="#course-details"
             className={styles.detailsBtn}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Подробнее о курсе
+            {t('schoolPage.benefits.detailsButton')}
             <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
                 <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#FFFFFF" strokeWidth="1.6"/>
               </svg>
-          </motion.button>
+          </motion.a>
           <motion.button 
             className={styles.purchaseBtn}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Купить курс
+            {t('schoolPage.benefits.purchaseButton')}
             <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
                 <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#506888" strokeWidth="1.6"/>
               </svg>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -9,6 +9,67 @@ import styles from '../styles/Hero.module.css';
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
+
+  const [isVideoReady, setIsVideoReady] = useState<boolean>(false);
+  const [shouldUseVideo, setShouldUseVideo] = useState<boolean>(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    // Respect user preference for reduced motion
+    const mediaQuery = typeof window !== 'undefined'
+      ? window.matchMedia('(prefers-reduced-motion: reduce)')
+      : null;
+    const prefersReduced = mediaQuery?.matches ?? false;
+    setShouldUseVideo(!prefersReduced);
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      setShouldUseVideo(!event.matches);
+    };
+    if (mediaQuery) {
+      mediaQuery.addEventListener('change', handleChange);
+    }
+
+    return () => {
+      if (mediaQuery) {
+        mediaQuery.removeEventListener('change', handleChange);
+      }
+    };
+  }, []);
+
+  const tryPlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      void video.play().catch(() => {
+        // Autoplay may be blocked. We'll still reveal the first frame.
+      });
+    }
+  };
+
+  const handleVideoLoadedData = () => {
+    setIsVideoReady(true);
+    tryPlay();
+  };
+
+  const handleVideoCanPlay = () => {
+    setIsVideoReady(true);
+    tryPlay();
+  };
+
+  const handleVideoCanPlayThrough = () => {
+    setIsVideoReady(true);
+    tryPlay();
+  };
+
+  const handleVideoPlaying = () => {
+    setIsVideoReady(true);
+  };
+
+  const handleVideoError = () => {
+    // If video fails to load, keep the image background
+    setIsVideoReady(false);
+    setShouldUseVideo(false);
+  };
   
   // Варианты анимации для разных элементов
   const containerVariants = {
@@ -42,14 +103,44 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className={styles.hero}>
-      <Image 
-        src="/images/hero_image.jpg" 
-        alt="Footura - центр подологии" 
+      {/* Background image placeholder while the video is loading or disabled */}
+      <Image
+        src="/images/hero_image.jpg"
+        alt="Footura - центр подологии"
         fill
-        className={styles.bgImage}
+        className={`${styles.bgImage} ${isVideoReady ? styles.bgImageHidden : ''}`}
         priority
       />
-      
+
+      {/* Background video (will fade in once ready) */}
+      {shouldUseVideo && (
+        <video
+          ref={videoRef}
+          className={`${styles.bgVideo} ${isVideoReady ? styles.bgVideoVisible : ''}`}
+          playsInline
+          muted
+          loop
+          autoPlay
+          preload="auto"
+          poster="/images/hero_image.jpg"
+          onLoadedData={handleVideoLoadedData}
+          onCanPlay={handleVideoCanPlay}
+          onCanPlayThrough={handleVideoCanPlayThrough}
+          onPlaying={handleVideoPlaying}
+          onError={handleVideoError}
+        >
+          <source src="/video/hero_main.mp4" type="video/mp4" />
+          <source src="/video/hero_main.mov" type="video/quicktime" />
+        </video>
+      )}
+
+      {/* Subtle dark overlay only when video is active */}
+      <div
+        className={`${styles.overlay} ${
+          isVideoReady && shouldUseVideo ? styles.overlayVisible : ''
+        }`}
+      />
+
       <motion.div 
         className={`container ${styles.content}`}
         variants={containerVariants}
@@ -95,14 +186,7 @@ const HeroSection: React.FC = () => {
           </motion.button>
         </motion.div>
 
-        <motion.div 
-          className={styles.onlineBooking}
-          variants={itemVariants}
-        >
-          <span className={styles.onlineBookingText}>
-            {t('hero.onlineBooking')}
-          </span>
-        </motion.div>
+        {/* Floating online booking button moved to app layout to appear on all pages */}
         
         {/* Pagination dots */}
         <motion.div 

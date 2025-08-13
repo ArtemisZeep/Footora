@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './ServiceBlock.module.css';
 
 export interface ServiceBlockItem {
@@ -34,6 +36,7 @@ export default function ServiceBlock({
   extraText,
   isPhotoLeft = false,
 }: ServiceBlockProps) {
+  const { t } = useLanguage();
   const [screenWidth, setScreenWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
   useEffect(() => {
@@ -54,46 +57,64 @@ export default function ServiceBlock({
   // На экранах менее 812px всегда используем isPhotoLeft = false
   const effectiveIsPhotoLeft = screenWidth < 812 ? false : isPhotoLeft;
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.96 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.1 } }
+  };
+
+  const buttonWhile = { hover: { scale: 1.03 }, tap: { scale: 0.98 } } as const;
+
   return (
     <section className={
       styles.serviceBlock +
       ' ' + (isReversed ? styles.reversed : '') +
       ' ' + (variant === 2 ? styles.variant2 : styles.variant1)
     }>
-      <div className={styles.serviceBlockContent}>
+      <motion.div 
+        className={styles.serviceBlockContent}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className={`${styles.topRow} ${effectiveIsPhotoLeft ? styles.photoLeft : ''}`}>
           {!effectiveIsPhotoLeft ? (
             <>
               <div className={styles.textCol}>
-                <h2 className={styles.title}>{title}</h2>
-                <p className={styles.description}>{description}</p>
+                <motion.h2 className={styles.title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}>{title}</motion.h2>
+                <motion.p className={styles.description} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.05 }}>{description}</motion.p>
                 <div className={styles.buttonsRow}>
                   {signUpUrl && (
-                    <a href={signUpUrl} className={styles.signUpBtn}>Записаться</a>
+                    <motion.a href={signUpUrl} className={styles.signUpBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.bookButton')}</motion.a>
                   )}
                   {detailsUrl && (
-                    <a href={detailsUrl} className={styles.detailsBtn}>Подробнее</a>
+                    <motion.a href={detailsUrl} className={styles.detailsBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>Подробнее</motion.a>
                   )}
                 </div>
               </div>
-              <div className={styles.imageCol}>
+              <motion.div className={styles.imageCol} variants={imageVariants}>
                 <img src={image} alt={title} className={styles.image} />
-              </div>
+              </motion.div>
             </>
           ) : (
             <>
-              <div className={styles.imageCol}>
+              <motion.div className={styles.imageCol} variants={imageVariants}>
                 <img src={image} alt={title} className={styles.image} />
-              </div>
+              </motion.div>
               <div className={styles.textCol}>
-                <h2 className={styles.title}>{title}</h2>
-                <p className={styles.description}>{description}</p>
+                <motion.h2 className={styles.title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}>{title}</motion.h2>
+                <motion.p className={styles.description} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.05 }}>{description}</motion.p>
                 <div className={styles.buttonsRow}>
                   {signUpUrl && (
-                    <a href={signUpUrl} className={styles.signUpBtn}>Записаться</a>
+                    <motion.a href={signUpUrl} className={styles.signUpBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.bookButton')}</motion.a>
                   )}
                   {detailsUrl && (
-                    <a href={detailsUrl} className={styles.detailsBtn}>Подробнее</a>
+                    <motion.a href={detailsUrl} className={styles.detailsBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>Подробнее</motion.a>
                   )}
                 </div>
               </div>
@@ -104,7 +125,7 @@ export default function ServiceBlock({
           <div className={styles.itemsList}>
             <div className={styles.divider} />
             {items.map((item, idx) => (
-              <div key={item.title + idx}>
+              <motion.div key={item.title + idx} initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: 0.05 * idx }}>
                 <div className={styles.itemRow}>
                   <div className={styles.itemTitle}>{item.title}</div>
                   {item.isBold ? (
@@ -114,11 +135,11 @@ export default function ServiceBlock({
                   )}
                 </div>
                 {idx !== items.length - 1 && <div className={styles.divider} />}
-              </div>
+              </motion.div>
             ))}
           </div>
         )}
-      </div>
+      </motion.div>
       {extraText && <div className={styles.extraText}>{extraText}</div>}
     </section>
   );

@@ -1,25 +1,28 @@
+"use client";
+
+import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './NataliaSchool.module.css';
 
 export default function NataliaSchool() {
+  const { t } = useLanguage();
+  
   return (
     <section className={styles.schoolSection}>
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.titleColumn}>
-            <h2 className={styles.title}>ШКОЛА FOOTURA</h2>
+            <h2 className={styles.title}>{t('nataliaPage.school.title')}</h2>
           </div>
           
           <div className={styles.textColumn}>
             <p className={styles.description}>
-              Наталия Ротарь — не только практикующий эксперт, но и вдохновляющий преподаватель. 
-              В своей школе она делится опытом с начинающими и опытными специалистами, помогая им 
-              достичь профессиональных высот. Авторские программы обучения Натальи сочетают теорию, 
-              практику и индивидуальный подход, делая особый акцент на отработку практических навыков.
+              {t('nataliaPage.school.description')}
             </p>
             
-            <button className={styles.button}>
-              Подробнее о школе
-            </button>
+            <Link href="/school" className={styles.button}>
+              {t('nataliaPage.school.button')}
+            </Link>
           </div>
         </div>
       </div>

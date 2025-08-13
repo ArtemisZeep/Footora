@@ -1,23 +1,64 @@
 "use client";
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { coursesData, Course } from '../data/coursesData';
 import styles from './CourseOverview.module.css';
+
+interface CoursePrice {
+  name: string;
+  price: string;
+}
+
+interface CourseOverviewData {
+  type: string;
+  title: string;
+  description: string;
+  prices: CoursePrice[];
+  courseLink: string;
+  purchaseLink: string;
+  number: string;
+  noButton?: boolean;
+}
+
+interface CourseDescriptionData {
+  text: string;
+  image: string;
+}
+
+interface CoursePlanItem {
+  number: string;
+  title: string;
+}
+
+interface CoursePlanData {
+  hasPlan: boolean;
+  items: CoursePlanItem[];
+}
+
+interface Course {
+  id: string;
+  overview: CourseOverviewData;
+  description: CourseDescriptionData;
+  plan: CoursePlanData;
+}
 
 interface CourseOverviewProps {
   currentCourseIndex?: number;
   onCourseChange?: (index: number, direction: 'left' | 'right') => void;
   direction?: 'left' | 'right';
   isAnimating?: boolean;
+  coursesData: Course[];
 }
 
 export default function CourseOverview({ 
   currentCourseIndex = 0, 
   onCourseChange,
   direction = 'right',
-  isAnimating = false
+  isAnimating = false,
+  coursesData
 }: CourseOverviewProps) {
   const currentCourse = coursesData[currentCourseIndex];
+  
+  if (!currentCourse) return null;
 
   // Функция для определения размера шрифта в зависимости от длины названия
   const getTitleSizeClass = (title: string) => {
@@ -64,7 +105,7 @@ export default function CourseOverview({
   // Убираем переменную transition
 
   return (
-    <section className={styles.overviewSection}>
+    <section id="overviewSection" className={styles.overviewSection}>
       <div className={styles.container}>
         <div className={styles.courseCard}>
           {/* Navigation Arrows */}
@@ -134,20 +175,21 @@ export default function CourseOverview({
                   <p className={styles.courseDescription}>{currentCourse.overview.description}</p>
                   <div className={styles.buttonGroup}>
                     {!currentCourse.overview.noButton && (
-                      <motion.button 
+                      <motion.a
+                        href="#course-details"
                         className={styles.detailsBtn}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
                         Подробнее о курсе
-                      </motion.button>
+                      </motion.a>
                     )}
                     <motion.button 
                       className={styles.purchaseBtn}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      {currentCourse.overview.noButton ? "Купить" : "Купить курс"}
+                      {currentCourse.overview.noButton ? "Купить" : "Купить"}
                       <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
                         <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#FFFFFF" strokeWidth="1.6"/>
                       </svg>
@@ -158,7 +200,7 @@ export default function CourseOverview({
                 {/* Right Column */}
                 <div className={styles.rightColumn}>
                   <div className={styles.priceSection}>
-                    {currentCourse.overview.prices.map((price, index) => (
+                    {currentCourse.overview.prices.map((price: CoursePrice, index: number) => (
                       <motion.div 
                         key={index} 
                         className={styles.priceItem}

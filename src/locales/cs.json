@@ -21,23 +21,7 @@
     "title": "FOOTURA —\nto jsou praktičtí\nspecialisté s velkými\nzkušenostmi",
     "description": "Centrum FOOTURA — tým úzce specializovaných specialistů v oblasti péče o nohy, kde se péče o jejich zdraví dostává na novou úroveň"
   },
-  "services": {
-    "title": "SLUŽBY",
-    "subtitle": "Komplexní přístup ke zdraví nohou",
-    "viewAll": "Zobrazit všechny služby",
-    "podology": {
-      "title": "Podologie",
-      "titleEn": "Podology",
-      "description": "Profesionální komplexní diagnostika, korekce a ošetření nohou a nehtů s využitím inovativních technologií v oblasti podologie"
-    },
-    "pedicure": {
-      "title": "Pedikúra a manikúra",
-      "titleEn": "Pedicure & Manicure",
-      "description": "Profesionální preventivní ošetření nohou a nehtů s využitím přístrojových technik"
-    },
-    "booking": "Rezervovat",
-    "description": "Používáme moderní metody diagnostiky, korekce a prevence, pomáháme nejen odstranit následek problému, ale také odhalit příčinu"
-  },
+
   "aboutFounder": {
     "title": "Natálie Rotarová",
     "subtitle": "zakladatelka centra",
@@ -102,6 +86,920 @@
         "description": "Procedury probíhají v samostatných komfortních kabinetech, což zajišťuje maximální pohodlí a soukromí pro každého klienta"
       }
     ]
+  },
+  "about": {
+    "title": "O centru",
+    "heroAlt": "O centru Footura",
+    "heroDescription": "FOOTURA— tým úzce specializovaných specialistů v oblasti péče o nohy, pracující pod vedením Natálie Rotarové, expertky s 18letými zkušenostmi",
+    "heroSubDescription": "Naše centrum nabízí profesionální komplexní péči o nohy a nehty s využitím inovativních technologií v oblasti podologie.",
+    "mission": "Naše mise je vrátit lehkost pohybu,\nvždyť pohyb je základem života,\nkterý začíná zdravými nohami",
+    "booking": "Rezervovat",
+    "description1": "Naše podologické centrum poskytuje komplexní řešení jak pro odstranění akutních problémů nehtů a nohou, tak pro prevenci jejich rozvoje. Snažíme se minimalizovat riziko komplikací v budoucnu, nabízíme široké spektrum služeb — od řešení konkrétních lokálních problémů až po pravidelnou péči o nohy.",
+    "description2": "V případě odhalení hlubších nebo systémových patologií naši specialisté směrují pacienty k profilovým expertům — chirurgům, dermatologům, ortopedům, flebologům atd. Po dokončení/během základní léčby pacienti pokračují v pozorování a podpůrné péči v našem centru.",
+    "approachTitle": "Komplexní přístup",
+    "approachDescription": "Poskytujeme kompletní spektrum služeb péče o nehty a kůži nohou, včetně:",
+    "services": [
+      "Přístrojová hygienická pedikúra",
+      "Podologické ošetření nohou a nehtů",
+      "Ošetření trhlin, lokálních hyperkeratóz, drátovitých mozolů",
+      "Korekce zarostlých a deformovaných nehtů",
+      "Preventivní ošetření nohou a nehtů klientů s diagnózou diabetes mellitus",
+      "Ošetření nehtů postižených houbovou infekcí a následná obnova ve spolupráci s externím dermatologem",
+      "Vedení klienta/rehabilitace po operaci nehtového aparátu ve spolupráci s chirurgem",
+      "Peeling a masáž nohou"
+    ],
+    "standardsTitle": "Světové standardy ve vašem městě",
+    "standardsText": "Jsme oficiálními zástupci systému Unibrace, což nám umožňuje používat moderní a bezpečné technologie korekce nehtové ploténky.",
+    "standardsSubText": "Jsme tým profesionálů, který se neustále zdokonaluje, navštěvuje největší mezinárodní výstavy, semináře a konference. Aktivně se účastníme profesionálních akcí, přebíráme pokrokové zkušenosti a zavádíme je do naší práce, abychom našim klientům poskytovali nejlepší řešení.",
+    "qualificationTitle": "Kvalifikace",
+    "qualificationText": "Naši specialisté pravidelně potvrzují svou kvalifikaci na mezinárodní úrovni. Diplomy a certifikáty slouží jako záruka profesionality a vysokých standardů služeb.",
+    "viewCertificates": "Zobrazit všechny certifikáty",
+    "certificate": "Certifikát"
+  },
+  "workResults": {
+    "title": "Výsledky práce",
+    "problemName": "NÁZEV PROBLÉMU",
+    "before": "Před",
+    "after": "Po",
+    "description": "Spolupráce s chirurgem.\nObnovení nehtové ploténky po úrazu"
+  },
+  "reviews": {
+    "client": "KLIENT",
+    "reviews": [
+      {
+        "name": "Alina",
+        "status": "KLIENT",
+        "text": "Dnes jsem byla u mistrů Kristiny na pedikúře podruhé. Mistr Kristina je skutečně mistr svého oboru. Doporučuji všem. Pracuje velmi pečlivě a snaží se udělat svou práci na 100%. A také velmi příjemná dívka a dává užitečné rady pro péči o nohy."
+      },
+      {
+        "name": "Eugene Butch",
+        "status": "KLIENT",
+        "text": "Vynikající profesionálka Natálie za dva měsíce vyléčila můj nehet, u kterého jsem si myslel, že je nemožné vrátit ho do plně zdravého stavu. Doporučuji ji všem."
+      }
+    ]
+  },
+  "team": {
+    "learnMore": "Více informací",
+    "members": [
+      {
+        "name": "Natálie Rotarová",
+        "title": "Zakladatelka centra, podolog, instruktor a autor kurzů",
+        "description": "Expertka s mnohaletou praxí, specializující se na složité případy zarostlých a deformovaných nehtů, stejně jako na post-chirurgickou rehabilitaci nehtového aparátu. Používá všechny konzervativní znalosti v oblasti ortonyxie. Spolupracuje s lékaři úzké specializace pro dosažení efektivního výsledku léčby. V profesi od roku 2007.",
+        "services": [
+          "Pooperační léčba a kontrola",
+          "Léčba zarostlého nehtu",
+          "Použití nehtových plotének",
+          "Nehtová protetika (metoda Arkady)",
+          "Podologická konzultace a léčba"
+        ]
+      },
+      {
+        "name": "Diana Stepičeva",
+        "title": "Podolog",
+        "description": "Vyznačuje se profesionalitou v práci s případy zarostlých a deformovaných nehtů, používá konzervativní metodiky ortonyxie. Je otevřená neustálému zdokonalování profesních dovedností a rozšiřování znalostí v oblasti podologie. V profesi od roku 2017.",
+        "services": [
+          "Léčba zarostlého nehtu",
+          "Použití nehtových plotének",
+          "Nehtová protetika",
+          "Léčba trhlin, mozolů a kuřích ok",
+          "Podologická konzultace a léčba"
+        ]
+      },
+      {
+        "name": "Elena Pavlova",
+        "title": "Specialista na pedikúru a manikúru",
+        "description": "Profesionálka s širokým spektrem dovedností a zkušeností v ošetření složitých případů nohou a nehtů. Zvláštní dovednosti se projevují v ošetření hyperkeratóz, trhlin, mozolů a korekci deformovaných nehtů.\n\nJediná specialistka v našem centru, která poskytuje službu masáže nohou pro obnovení lehkosti a zlepšení celkového pocitu pohody.\nV profesi od roku 2016.",
+        "services": [
+          "Přístrojová pedikúra a manikúra",
+          "SPA pedikúra a manikúra s masáží",
+          "Léčba trhlin, mozolů a kuřích ok",
+          "Léčba houbových infekcí nehtů (onychomykóza)",
+          "Použití nehtových plotének (Titanová nit)"
+        ]
+      },
+      {
+        "name": "Kristina Sidorčuk",
+        "title": "Specialista na pedikúru se základy podologie",
+        "description": "Orientuje se na práci se složitou nohou, korekci deformovaných a zarostlých nehtů, včetně metod ortonyxie. Prohlubuje své znalosti a aktivně se zdokonaluje v podologickém směru. V profesi od roku 2018.",
+        "services": [
+          "Přístrojová pedikúra",
+          "Léčba zarostlého nehtu",
+          "Léčba trhlin, mozolů a kuřích ok",
+          "Léčba houbových infekcí nehtů (onychomykóza)",
+          "Použití nehtových plotének"
+        ]
+      },
+      {
+        "name": "Marianna Špajlo",
+        "title": "Specialista na pedikúru se základy podologie",
+        "description": "Specialistka s hlubokými znalostmi a vybroušenými dovednostmi v oblasti fundamentálního ošetření nohou a nehtů, která v současné době zvyšuje kvalifikaci v úzce zaměřených tématech podologie, zavádí získané znalosti a dovednosti do praxe. V profesi od roku 2017.",
+        "services": [
+          "Přístrojová pedikúra",
+          "Léčba trhlin, mozolů a kuřích ok",
+          "Léčba houbových infekcí nehtů (onychomykóza)",
+          "Použití nehtových plotének",
+          "Podologická léčba"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "podology": {
+      "title": "Podologie",
+      "titleEn": "Podology",
+      "description": "Profesionální diagnostika, prevence a korekce stavů nohou a nehtů"
+    },
+    "pedicure": {
+      "title": "Pedikúra",
+      "description": "Preventivní přístrojové ošetření nohou a nehtů"
+    },
+    "booking": "Online rezervace",
+    "description": "Ve FOOTURA spojujeme klinický přístup a šetrnou estetiku, abychom bezpečně a efektivně řešili péči o nohy a nehty.",
+    "categories": [
+      {
+        "id": "primary-consultation",
+        "title": "Primární vyšetření",
+        "description": "Profesionální komplexní diagnostika, korekce a ošetření nohou a nehtů s použitím inovativních technologií v oblasti podologie.",
+        "image": "/images/services/image-101-1.png",
+        "items": [
+          {
+            "title": "Konzultace",
+            "description": "Detailní sběr anamnézy a analýza stavu nohou a nehtů, určení možných příčin problému a výběr individuálních metod korekce. Varianty komplexního plánu řešení problému a prevence. Při nutnosti/přítomnosti komplikací - odeslání k odbornému specialistovi (ortoped, dermatolog, endokrinolog, flebolog, chirurg)."
+          },
+          {
+            "title": "Primární vyšetření",
+            "description": "Primární konzultace a analýza stavu nohou a nehtů, zjištění možných příčin problému a výběr individuální metody korekce. Lokální profesionální ošetření problémové oblasti. Doporučení k domácí péči, hygieně a prevenci."
+          }
+        ]
+      },
+      {
+        "id": "podological-treatment",
+        "title": "Podologické ošetření",
+        "description": "Profesionální komplexní diagnostika, korekce a ošetření nohou a nehtů s použitím inovativních technologií v oblasti podologie.",
+        "image": "/images/services/image-101-3.png",
+        "items": [
+          {
+            "title": "Podologické ošetření (komplex)",
+            "description": "Přístrojové ošetření nohou a nehtů, zahrnující ošetření hyperkeratóz, mozolů, trhlin a deformovaných nehtů, onychodystrofií (onychogrypóza apod.), výběr prostředků pro domácí použití."
+          },
+          {
+            "title": "Podologické ošetření nehtů",
+            "description": "Přístrojové ošetření nehtů s přítomností nějakých onychodystrofií nebo deformací, doporučení k výběru prostředků pro domácí použití a prevenci recidiv."
+          },
+          {
+            "title": "Ošetření onychogrypózy",
+            "description": "Přístrojové ošetření hypertrofovaných a ztluštělých nehtů, doporučení k péči."
+          },
+          {
+            "title": "Ošetření nohou se syndromem diabetické nohy",
+            "description": "Kontrola stavu, přístrojové ošetření a péče pro prevenci komplikací."
+          }
+        ]
+      },
+      {
+        "id": "ingrown-nail",
+        "title": "Zarostlý nehet",
+        "description": "Procedura zaměřená na odstranění nepohodlí, prevenci komplikací a obnovení fyziologicky správného růstu nehtové ploténky.",
+        "image": "/images/services/image-101-4.png",
+        "items": [
+          {
+            "title": "Ošetření zarostlého nehtu",
+            "description": "Delikátní odstranění zarostlého segmentu nehtové ploténky atraumatické pro okolní tkáně, antiseptické ošetření a prevence infekčních komplikací. Při přítomnosti zánětu - první pomoc s aplikací antiseptických a regeneračních preparátů."
+          },
+          {
+            "title": "Kontrola",
+            "description": "Po provedení ošetření zarostlého nehtu je důležitou etapou pravidelný prohlídka a monitoring stavu nehtové ploténky a околоnehtových valíků s cílem včasného zjištění možných komplikací."
+          },
+          {
+            "title": "Prevence recidiv",
+            "description": "Pro prevenci opětovných komplikací a obnovení normálního růstu nehtové ploténky se provádí komplexní prevence recidiv: instalace korekčních systémů, instruktáž k tejpování okolo nehtových valíků pro udržení správné anatomické formy, doporučení k správnému stříhání nehtů, výběru obuvi a dodržování osobní hygieny."
+          },
+          {
+            "title": "",
+            "description": "Včasné profesionální ošetření umožňuje vyhnout se chirurgickému zásahu a přispívá k bezbolestné obnově a růstu nehtové ploténky. Komplexní přístup pomáhá minimalizovat riziko recidiv a zajišťuje dlouhodobý výsledek.",
+            "isBold": true
+          }
+        ]
+      },
+      {
+        "id": "orthonyxia",
+        "title": "Ortonyxie",
+        "description": "Metoda korekce deformace nehtové ploténky, používaná i při zarostlém nehtu (onychokryptóza) a jiných patologických změnách jeho formy.",
+        "image": "/images/services/image.png",
+        "items": [
+          {
+            "title": "Korekční systém UniBrace",
+            "description": "Inovativní metoda korekce deformací a zarostlých nehtových plotének, hypertrofií nehtových valíků spojených se změnou formy nehtu. Systém UniBrace představuje individuálně vyráběnou elastickou sponku, která se fixuje na povrch nehtové ploténky bez nutnosti invazivního zásahu. Díky vysoké biokompatibilitě a absenci traumatizace je UniBrace bezpečnou a efektivní alternativou chirurgických metod léčby. Systém je vhodný pro klienty všech věků, včetně lidí s diabetickou nohou."
+          },
+          {
+            "title": "Korekční systém Titanová nit",
+            "description": "Inovativní metoda ortonyxie určená pro bezbolestnou korekci deformací nehtové ploténky, včetně zarostlého nehtu (onychokryptóza). Systém \"Titanová nit\" je atraumatická alternativa chirurgických metod léčby, nevyžaduje anestezii a hospitalizaci. Tato metoda zajišťuje efektivní korekci formy nehtu, snižuje bolestivý syndrom, obnovuje přirozenou formu nehtu."
+          },
+          {
+            "title": "Rekonstrukce nehtové ploténky metodou Arkada (Arkada's Cube)",
+            "description": "Inovativní podologická metodika zaměřená na obnovení formy a struktury nehtu při jeho deformaci, zarostlém (onychokryptóza), traumatickém poškození nebo částečném odstranění. Metoda Kuba Arkada (Arkada's Cube) je založena na použití speciálního materiálu, který se nanáší na nehtovou ploténku a modeluje s aplikací unikátního fixátoru - Kuba Arkada. Aktivně se používá v podologii a je efektivní alternativou chirurgických metod korekce zarostlých a deformovaných nehtů."
+          },
+          {
+            "title": "Rekonstrukce nehtové ploténky pomocí akrylové vložky",
+            "description": "Technologie v oblasti ortonyxie používaná pro obnovení formy a struktury nehtu při jeho deformaci, doplnění defektu nebo poškození. Akrylová vložka představuje umělou ploténku vyrobenou z akrylového materiálu, který se modeluje přímo na nehtu. Vložka se upevňuje na nehtovou ploténku, koriguje její formu, doplňuje defekt při jeho přítomnosti, posiluje nestabilní úseky."
+          },
+          {
+            "title": "",
+            "description": "Metodiku ortonyxie předepisuje specialista s ohledem na anatomické zvláštnosti nehtové ploténky, stupeň deformace a související faktory. Proces obnovy má individuální charakter a vyžaduje pravidelnou kontrolu a korekci s periodicitou 4-6 týdnů.",
+            "isBold": true
+          }
+        ]
+      },
+      {
+        "id": "corns-calluses",
+        "title": "Mozoly a kořenové mozoly",
+        "description": "Procedura zaměřená na bezbolestné odstranění mozolů, snížení bolestivého syndromu a posouzení faktorů přispívajících k jejich opakovanému výskytu.",
+        "image": "/images/services/image-101-5.png",
+        "items": [
+          {
+            "title": "Konzultace",
+            "description": "Diagnostika příčin vzniku mozolů, doporučení k výběru obuvi, odeslání k ortopedovi při porušení biomechaniky nohy."
+          },
+          {
+            "title": "Ošetření mozolu/kořenového mozolu s odlehčovacím obvazem",
+            "description": "Přístrojové ošetření mozolů, předepsání preparátů pro regeneraci, naložení odlehčovacího obvazu a doporučení k prevenci recidiv."
+          }
+        ]
+      },
+      {
+        "id": "cracks-hyperkeratosis",
+        "title": "Trhliny a hyperkeratóza",
+        "description": "Profesionální přístrojové a léčebné ošetření trhlin a hyperkeratóz nohou pro obnovení integrity kůže a prevenci komplikací. Používají se metody čištění, dezinfekce, aplikace regeneračních prostředků a speciálních obvazů. Komplexní přístup zajišťuje rychlé hojení a prevenci recidiv.",
+        "image": "/images/services/image-101-7.png",
+        "items": [
+          {
+            "title": "Ošetření trhlin",
+            "description": "Přístrojové ošetření povrchových trhlin, doporučení k péči a aplikaci regeneračních prostředků. Při nutnosti - odeslání k odbornému specialistovi."
+          },
+          {
+            "title": "Ošetření hlubokých (epidermo-dermálních) trhlin s okluzním/odlehčovacím obvazem",
+            "description": "Přístrojové a antiseptické ošetření hlubokých trhlin, aplikace regeneračních preparátů a speciálního obvazu pro ochranu a urychlení hojení."
+          },
+          {
+            "title": "Ošetření hyperkeratózy",
+            "description": "Přístrojové broušení a odstranění zrohovatělých úseků hyperkeratózy, doporučení k péči, aplikaci prostředků pro změkčení a prevenci opětovného tvoření."
+          }
+        ]
+      },
+      {
+        "id": "onychomycosis",
+        "title": "Onychomykóza (houbové infekce nehtů)",
+        "description": "Společný přístup podologa a dermatologa pro efektivní a bezpečnou léčbu houbových postižení nehtů.",
+        "image": "/images/services/image-101-1.png",
+        "items": [
+          {
+            "title": "Konzultace podologa",
+            "description": "Sběr anamnézy, varianty komplexního plánu řešení problému, odeslání k dermatologovi pro upřesnění diagnózy a výběr protikožichové terapie."
+          },
+          {
+            "title": "Ošetření postižených nehtů",
+            "description": "Pravidelné měsíční přístrojové ošetření postižených úseků nehtové ploténky pro efektivní léčbu, kontrola dynamiky a doporučení k péči."
+          },
+          {
+            "title": "Prevence recidiv",
+            "description": "Doporučení k používání preventivních preparátů, hygieně a životnímu stylu. Instalace korekčních systémů při přítomnosti deformace pro urychlení obnovy a prevenci opětovného postižení."
+          },
+          {
+            "title": "",
+            "description": "Taková spolupráce a komplexní přístup přispívá k šetrnější léčbě a korekci nehtu, urychluje proces obnovy a výrazně snižuje rizika recidiv.",
+            "isBold": true
+          }
+        ]
+      },
+      {
+        "id": "dermatologist-collaboration",
+        "title": "Spolupráce s dermatologem",
+        "description": "Procedura zaměřená na komplexní diagnostiku a stanovení taktiky práce při podezření na mykózy nohou a nehtů v rámci interakce se souvisejícím specialistou.",
+        "image": "/images/services/image-101-8.png",
+        "items": [
+          {
+            "title": "Diagnostika a plánování péče",
+            "description": "Při přítomnosti příznaků houbové nebo jiné dermatologické patologie nohou se provádí sběr anamnézy, vizuální posouzení tkání a určení taktiky dalších kroků. Odeslání na konzultaci k dermatologovi nebo odběr materiálu pro laboratorní analýzu."
+          },
+          {
+            "title": "Konzultace dermatologa",
+            "description": "Stanovení přesné diagnózy bez předběžného ošetření postižených úseků, výběr protikožichové nebo jiné cílené terapie. Po předepsání léčby se pacient vrací pro pravidelná profesionální ošetření a korekci anatomické formy nehtů při nutnosti."
+          },
+          {
+            "title": "Prevence recidiv",
+            "description": "Vypracování individuálního programu prevence:\n• Instruktáž k osobní hygieně nohou a nehtů\n• Doporučení k sušení a dezinfekci obuvi\n• Výběr specializovaných prostředků k péči\n• Plán kontrolních prohlídek a profesionálních procedur\n\nV případě deformací nehtových plotének po terapii se provádí korekce s použitím speciálních systémů."
+          },
+          {
+            "title": "",
+            "description": "Zvláštní podmínky přípravy k diagnostice: za 1-1,5 měsíce před odběrem analýzy vyloučit aplikaci vnějších protikožichových prostředků (kapky, masti, krémy, laky) pro věrohodnost laboratorních výsledků.",
+            "isBold": true
+          }
+        ]
+      },
+      {
+        "id": "surgeon-collaboration",
+        "title": "Spolupráce s chirurgem",
+        "description": "Předoperační a pooperační vedení klienta.",
+        "image": "/images/services/image-101-9.png",
+        "items": [
+          {
+            "title": "Konzultace podologa",
+            "description": "Detailní sběr anamnézy a analýza stavu nohou a nehtů, určení možných příčin problému a výběr individuálních metod korekce. Varianty komplexního plánu řešení problému a prevence. Při indikacích/přítomnosti komplikací - odeslání k odbornému specialistovi-chirurgovi."
+          },
+          {
+            "title": "Předoperační příprava nehtové ploténky",
+            "description": "Profesionální ošetření nehtu a okolonehtových valíků s cílem snížení zánětu, snížení bakteriální zátěže a vytvoření optimálních podmínek pro následný chirurgický zásah."
+          },
+          {
+            "title": "Pooperační kontrola",
+            "description": "Profesionální ošetření nehtu a okolonehtových valíků pro odstranění keratotických útvarů s aplikací antiseptických a regeneračních preparátů. Individuální doporučení k péči a životnímu stylu pro urychlení obnovy. Při nutnosti - instalace korekčních systémů pro správný růst nehtové ploténky a prevenci recidiv."
+          },
+          {
+            "title": "Prevence recidiv",
+            "description": "Pro prevenci opětovných komplikací a obnovení normálního růstu nehtové ploténky se provádí komplexní prevence recidiv:\n• instalace korekčních systémů pro normalizaci polohy nehtu\n• instruktáž k tejpování okolonehtových valíků pro podporu anatomické formy\n• výběr optimální obuvi pro rovnoměrné rozložení zátěže\n• doporučení k dodržování osobní hygieny a životnímu stylu"
+          },
+          {
+            "title": "",
+            "description": "Taková spolupráce a komplexní přístup přispívá k efektivní korekci patologie, urychluje proces obnovy a výrazně snižuje rizika recidiv.",
+            "isBold": true
+          }
+        ]
+      },
+      {
+        "id": "foot-diagnosis-insoles",
+        "title": "Diagnostika nohy a výroba individuálních anatomických vložek",
+        "description": "Diagnostika nohy pomocí přístroje 3D Scanner umožňuje získat přesné informace o funkčním stavu nohou, odhaluje různé patologie a odchylky.",
+        "image": "/images/services/image-101-10.png",
+        "items": [
+          {
+            "title": "Analýza klenby nohy",
+            "description": "Určuje se výška a forma příčné a podélné klenby, což pomáhá odhalit ploché nohy a jiné deformace."
+          },
+          {
+            "title": "Rozložení zátěže",
+            "description": "Hodnotí se rovnoměrnost rozložení tlaku na nohu při chůzi, což pomáhá diagnostikovat přetížení jednotlivých úseků a předcházet bolestem nebo rozvoji onemocnění."
+          },
+          {
+            "title": "Poloha prstů",
+            "description": "Pomáhá odhalit deformace, jako je \"halux valgus\" (odklon palce), \"kladívkové prsty\" a jiné anomálie."
+          },
+          {
+            "title": "Stav plantární fascie a vazů",
+            "description": "Skenování umožňuje objevit patní ostruhu, plantární fasciitidu a jiná onemocnění měkkých tkání nohy."
+          },
+          {
+            "title": "Tlak na paty a přední část nohy",
+            "description": "Analýza tlumení nohy pomáhá odhalit poruchy, které mohou vést k bolestivým syndromům a chronickým patologiím."
+          },
+          {
+            "title": "",
+            "description": "Na základě získaných údajů vyrábíme individuální anatomické vložky, které korigují zjištěné patologie, snižují zátěž na problémové úseky nohou a předcházejí rozvoji onemocnění.",
+            "isBold": true
+          }
+        ]
+      },
+      {
+        "id": "pedicure",
+        "title": "Pedikúra",
+        "description": "Profesionální preventivní ošetření nohou a nehtů s použitím přístrojových technik.",
+        "image": "/images/services/service-image.png",
+        "items": [
+          {
+            "title": "Přístrojová pedikúra",
+            "description": "Profesionální hygiena nohou a nehtů pomocí speciálních frézek, je prevencí tvoření hlubokých trhlin, mozolů, deformací nehtů a jiných patologií."
+          },
+          {
+            "title": "SPA-pedikúra",
+            "description": "Přístrojová pedikúra, peeling a masáž nohou, zajišťující hluboké čištění, zvlhčení a zlepšení krevního oběhu."
+          },
+          {
+            "title": "Relax-pedikúra",
+            "description": "Přístrojová pedikúra s masáží nohou pro zlepšení krevního oběhu, uvolnění napětí a únavy."
+          },
+          {
+            "title": "Hygienické ošetření nehtů",
+            "description": "Profesionální ošetření nehtové ploténky a okolonehtových valíků pro prevenci tvoření mozolů, deformací a jiných onychodystrofií."
+          },
+          {
+            "title": "Peeling",
+            "description": "Olupování zrohovatělých buněk a změkčení kůže nohou, čištění úseků nepodléhajících přístrojovému ošetření."
+          },
+          {
+            "title": "Stříhání nehtů",
+            "description": "Bezpečné zkracování nehtů, prevence zarostlých. Doporučeno po korekci zarostlého nebo deformovaného nehtu, když je samostatná péče ztížená."
+          }
+        ]
+      },
+      {
+        "id": "manicure",
+        "title": "Manikúra",
+        "description": "Profesionální ošetřovací ošetření nehtů a kůže rukou s aplikací moderních přístrojových a kombinovaných technik.",
+        "image": "/images/services/image-101-11.png",
+        "items": [
+          {
+            "title": "Manikúra",
+            "description": "Profesionální komplexní péče o nehty a kůži rukou."
+          },
+          {
+            "title": "Obnovení nehtů",
+            "description": "Komplexní péče o poškozené nehty, obnovení jejich struktury a formy po umělých pokrytích, popáleninách, traumatech."
+          },
+          {
+            "title": "SPA-manikúra",
+            "description": "Přístrojová manikúra, peeling a uvolňující masáž, zajišťující hluboké čištění, zvlhčení a zlepšení krevního oběhu."
+          },
+          {
+            "title": "Studený parafín",
+            "description": "Intenzivně zvlhčující a vyživující procedura, odstraňující suchost a olupování kůže rukou."
+          }
+        ]
+      },
+      {
+        "id": "children-services",
+        "title": "Dětské služby",
+        "description": "Delikátní preventivní ošetření nohou a nehtů u dětí s použitím bezpečných technik a individuálním přístupem ke každému malému klientovi.",
+        "image": "/images/services/image-101-12.png",
+        "items": [
+          {
+            "title": "Dětská pedikúra",
+            "description": "Šetrné ošetření nehtů a kůže nohou s ohledem na věkové zvláštnosti, prevence zarostlých nehtů, doporučení k péči."
+          },
+          {
+            "title": "Dětská manikúra",
+            "description": "Delikátní ošetření nehtů a okolonehtových valíků s důrazem na jejich zdraví a správný růst. Doporučeno při onychofagii (návyk kousat nehty), přítomnosti zanozcích, suchosti nebo podráždění."
+          },
+          {
+            "title": "Ošetření zarostlých nehtů u dětí",
+            "description": "Bezbolestné a atraumatické ošetření zarostlého segmentu nehtové ploténky, první pomoc při zánětu a doporučení k prevenci recidiv a péči."
+          }
+        ]
+      }
+    ]
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Služby",
+      "description": "Naše centrum nabízí komplexní řešení problémů a prevenci onemocnění nohou a nehtů, minimalizuje riziko komplikací a zajišťuje pravidelnou péči."
+    },
+    "groups": {
+      "goToServices": "Přejít na služby",
+      "categories": [
+        {
+          "title": "Podologie",
+          "description": "profesionální komplexní diagnostika, korekce a ošetření nohou a nehtů s použitím inovativních technologií v oblasti podologie"
+        },
+        {
+          "title": "Pedikúra",
+          "description": "profesionální preventivní ošetření nohou a nehtů s použitím přístrojových technik"
+        },
+        {
+          "title": "Manikúra",
+          "description": "profesionální ošetřovací ošetření nehtů a kůže rukou s aplikací moderních přístrojových a kombinovaných technik"
+        },
+        {
+          "title": "Dětské služby",
+          "description": "delikátní preventivní ošetření nohou a nehtů u dětí s použitím bezpečných technik a individuálním přístupem ke každému malému klientovi"
+        }
+      ]
+    }
+  },
+  "serviceBlock": {
+    "bookButton": "Rezervovat"
+  },
+  "nataliaPage": {
+    "hero": {
+      "title": "O Natálii Rotarové",
+      "description": "Natálie Rotarová je uznávanou odbornicí v oblasti péče o nohy s 18letými praktickými zkušenostmi, zakladatelkou a vedoucí podologického centra FOOTURA, autorkou unikátních vzdělávacích metodik a inspirujícím příkladem pro specialisty, kteří se snaží dosáhnout nejvyšších standardů v profesi."
+    },
+    "experience": {
+      "title": "Zkušenosti a cesta k úspěchu",
+      "description": "Natálie je specialistka v oblasti péče o nohy s mnohaletými praktickými zkušenostmi. Za 7 let práce v České republice úspěšně potvrdila svou kvalifikaci otevřením vyhledávaného centra. Neustálý profesní rozvoj, zavádění moderních technologií a individuální přístup ke každému klientovi zajišťují vysokou kvalitu služeb a bezchybnou pověst centra."
+    },
+    "education": {
+      "title": "VZDĚLÁNÍ",
+      "items": [
+        {
+          "year": "2006",
+          "institution": "Základní kurz pedikúry a manikúry",
+          "degree": "Certifikát",
+          "city": "Jekatěrinburg"
+        },
+        {
+          "year": "2008",
+          "institution": "Přístrojové ošetření nohou a nehtů podle německé technologie Gerlach",
+          "degree": "Specializovaný kurz",
+          "city": "Jekatěrinburg"
+        },
+        {
+          "year": "2010",
+          "institution": "Beauty konference, EXPO",
+          "degree": "Účast na konferenci",
+          "city": "Moskva"
+        },
+        {
+          "year": "2013",
+          "institution": "RGSU (Ruská státní sociální univerzita)",
+          "degree": "Specializace \"Specialista na sociální práci\", Bakalář",
+          "city": "Moskva"
+        },
+        {
+          "year": "2014",
+          "institution": "Ortonyxie - svorka Ross Fraser",
+          "degree": "Specializovaný kurz",
+          "city": "Jekatěrinburg"
+        },
+        {
+          "year": "2016",
+          "institution": "Protézování/obnova nehtů Gehwol Gel, Gehwolnageimasse, BS-nagel, Unguisan. Ortonyxie 3TO",
+          "degree": "Komplexní školení",
+          "city": "Jekatěrinburg"
+        },
+        {
+          "year": "2017",
+          "institution": "Ortonyxie - Titanová nit",
+          "degree": "Specializovaný kurz",
+          "city": "Jekatěrinburg"
+        },
+        {
+          "year": "2018",
+          "institution": "Kurzy dalšího vzdělávání: Zarostlý a deformovaný nehet, 3TO Axel Pelster. Lymfatický systém dolních končetin, Kostšembski Petr. Mykologie v podologii. Základy ortopedie, Šlykov K. A. Syndrom diabetické nohy, Bregovskij V. B. Rány a ranný proces, Jerovjenkov R. L.",
+          "degree": "Kurzy dalšího vzdělávání",
+          "city": "Moskva"
+        },
+        {
+          "year": "2019",
+          "institution": "Mezinárodní konference, vědecko-praktické fórum \"Podologie a medicína\". Ortonyxie Unibrace System 1. stupeň. Konference \"Medical Side of Podology\" Wrocław-Polsko",
+          "degree": "Konference a praktické kurzy",
+          "city": "Moskva, Wrocław"
+        },
+        {
+          "year": "2020",
+          "institution": "Anamnéza a plán podologické terapie v praxi podologa, Dieter Baumann. Kurz podologie. Karlova univerzita, 3. lékařská fakulta. Kurz \"Nehtová kosmetologie (chemie přípravků)\", Vitalij Solomonov",
+          "degree": "Mezinárodní kurzy podologie",
+          "city": "Německo, Praha, USA"
+        },
+        {
+          "year": "2022",
+          "institution": "Ortonyxie Unibrace System 2. stupeň. Kurz metody Kub Arkada. Kurz instruktora systému UniBrace",
+          "degree": "Pokročilé kurzy a instruktorská příprava",
+          "city": "Wrocław"
+        },
+        {
+          "year": "2024",
+          "institution": "Webinář «Pacienti s cukrovkou v praxi specialisty paramedicínské pedikúry». Mezinárodní podologická konference",
+          "degree": "Moderní metodiky a konference",
+          "city": "Německo"
+        }
+      ]
+    },
+    "practice": {
+      "title": "PRAXE",
+      "items": [
+        {
+          "year": "2008 – 2025",
+          "activities": [
+            {
+              "name": "Soukromá praxe",
+              "place": "Jekatěrinburg/ Praha"
+            }
+          ]
+        },
+        {
+          "year": "od 2018",
+          "activities": [
+            {
+              "name": "Autorka kurzů dalšího vzdělávání pro specialisty na pedikúru/podology a stáže"
+            }
+          ]
+        },
+        {
+          "year": "2022",
+          "activities": [
+            {
+              "name": "Organizátorka kurzu s lékařem-chirurgem Nikolenko R. «Spolupráce chirurga a podologa»"
+            },
+            {
+              "name": "Založila Centrum podologie",
+              "place": "Praha"
+            }
+          ]
+        },
+        {
+          "year": "2024 – 2025",
+          "activities": [
+            {
+              "name": "Organizátorka webináře s lékařem-endokrinologem Udovičenko Olegem «Pacienti s cukrovkou v praxi specialisty paramedicínské pedikúry»",
+              "place": "Izrael"
+            },
+            {
+              "name": "Účastnice výstav BeautyForum Prague s firmou Podoland a zástupkyně systému UniBrace",
+              "place": "Praha"
+            }
+          ]
+        }
+      ]
+    },
+    "achievements": {
+      "subtitle": "ÚSPĚCHY A POVĚST",
+      "description": "Pod vedením Natálie získalo centrum Footura bezchybnou pověst. Služby a profesionalita specialistů centra přitahují pacienty nejen z České republiky, ale i ze sousedních zemí",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Doporučení klinik",
+          "description": "Klienty k Natálii směrují lékaři z nemocnic, klinik a soukromých praxí."
+        },
+        {
+          "number": "02",
+          "title": "Spolupráce s lékaři",
+          "description": "Centrum úspěšně spolupracuje s chirurgy, dermatology, ortopedy a diabetology, přijímá klienty na rehabilitaci a následnou péči po operačních zákrocích."
+        },
+        {
+          "number": "03",
+          "title": "Vysoký standard služeb",
+          "description": "Unikátní organizace obchodních procesů a vysoká úroveň služeb učinily centrum Footura orientačním bodem ve své oblasti."
+        }
+      ]
+    },
+    "expertise": {
+      "title": "Praktické základy\na mezinárodní\nzkušenosti",
+      "subtitle": "Všechny metodiky a řešení jsou založeny na:",
+      "points": [
+        "Mnohaletá praktická práce. To umožňuje efektivně řešit široké spektrum úkolů.",
+        "Zkušenosti předních mezinárodních odborníků. Natálie navštěvuje mezinárodní semináře a konference, komunikuje s uznávanými specialisty a studuje jejich přístupy.",
+        "Integrace nových znalostí s vlastními zkušenostmi. Všechny získané dovednosti procházejí adaptací skrze profesionální pohled a přístup Natálie."
+      ],
+      "conclusion": "Tak se rodí autorská praxe Natálie Rotarové, spojující pokročilé technologie a hluboké porozumění práci v této oblasti. Takový přístup se stal základem vysoké profesionality a pověsti."
+    },
+    "school": {
+      "title": "ŠKOLA FOOTURA",
+      "description": "Natálie Rotarová není jen praktickým odborníkem, ale i inspirujícím učitelem. Ve své škole sdílí zkušenosti s začínajícími i zkušenými specialisty, pomáhá jim dosáhnout profesních výšin. Autorské vzdělávací programy Natálie kombinují teorii, praxi a individuální přístup, kladou zvláštní důraz na procvičování praktických dovedností.",
+      "button": "Více o škole"
+    },
+    "mission": {
+      "subtitle": "MISE A FILOSOFIE",
+      "mission": "Zdravé nohy jsou základem pohybu, a pohyb je život"
+    },
+    "whyChoose": {
+      "title": "Proč si vybrat Natálii?",
+      "points": [
+        {
+          "number": "01",
+          "text": "Neustálé zdokonalování profesních dovedností a přístupů"
+        },
+        {
+          "number": "02",
+          "text": "Individuální práce s každým klientem a studentem"
+        },
+        {
+          "number": "03",
+          "text": "Spolupráce s lékařskými zařízeními a soukromými praxemi"
+        },
+        {
+          "number": "04",
+          "text": "Všechny metodiky a řešení jsou ověřené a vybroušené na základě mnohaletých praktických zkušeností"
+        }
+      ]
+    }
+  },
+  "schoolPage": {
+    "hero": {
+      "badge": "ONLINE\nOFFLINE",
+      "title": "Prakticky orientované\nvzděláváni s prvky\nklinické podologie",
+      "button": "Zobrazit kurzy"
+    },
+    "about": {
+      "badge": "O ŠKOLE",
+      "description": "Škola podologie FOOTURA jsou profesionální kurzy péče o nohy založené na moderní praxi a metodikách. Kurz je určen pro paramedicínské specialisty poskytující preventivní služby v oblasti zdraví a korekce stavů nohou na pomezí medicíny a podologie."
+    },
+    "lector": {
+      "badge": "O LEKTOROVI",
+      "title": "Natálie Rotarová — odbornice s 18letými zkušenostmi v podologii, vedoucí podologického centra Footura a autorka unikátních vzdělávacích metodik",
+      "button": "Více o lektorovi"
+    },
+    "benefits": {
+      "title": "Co získáte",
+      "items": [
+        {
+          "title": "Certifikát školy Footura",
+          "description": "Certifikát o dalším vzdělávání na téma \"Zarostlý nehet\""
+        },
+        {
+          "title": "Profesionální materiály",
+          "description": "Tištěné učebné materiály, seznam doporučených nástrojů a přípravků"
+        }
+      ],
+      "detailsButton": "Více o kurzu",
+      "purchaseButton": "Koupit kurz"
+    },
+    "advantages": {
+      "title": "Výhody školy Footura",
+      "items": [
+        "Certifikované vzdělávání",
+        "Praktické zaměření",
+        "Moderní technologie",
+        "Individuální přístup"
+      ]
+    },
+    "reviews": {
+      "navigationLabels": {
+        "previous": "Předchozí recenze",
+        "next": "Další recenze",
+        "goTo": "Přejít na recenzi"
+      },
+      "items": [
+        {
+          "id": "review-1",
+          "name": "Natálie Voroninová",
+          "role": "podolog",
+          "text": "Chci poděkovat podologickému centru za profesionalitu a kvalitní služby! Obrátila jsem se s problémem zarostlého nehtu, který mě trápil několik měsíců. Lékař podrobně vysvětlil příčinu, navrhl účinnou léčbu a dal doporučení ...",
+          "link": "odkaz na recenzi"
+        },
+        {
+          "id": "review-2",
+          "name": "Olga Ivanovová",
+          "role": "podolog",
+          "text": "Chci poděkovat podologickému centru za profesionalitu a kvalitní služby! Obrátila jsem se s problémem zarostlého nehtu, který mě trápil několik měsíců. Lékař podrobně vysvětlil příčinu, navrhl účinnou léčbu a dal doporučení ...",
+          "link": "odkaz na recenzi"
+        },
+        {
+          "id": "review-3",
+          "name": "Alina",
+          "role": "klient",
+          "text": "Dnes jsem byla u mistrové Kristiny na pedikúře podruhé. Mistrová Kristina je opravdu mistr svého oboru. Doporučuji všem. Pracuje velmi pečlivě a snaží se udělat svou práci na 100%. Je také velmi příjemná dívka a dává užitečné rady pro péči.",
+          "link": "odkaz na recenzi"
+        }
+      ]
+    },
+    "courses": [
+      {
+        "id": "ingrown-nail",
+        "overview": {
+          "type": "OFFLINE KURZ",
+          "title": "Zarostlý\nnehet",
+          "description": "Vhodné pro specialisty s jakoukoliv úrovní zkušeností.\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 4-5 hodin",
+          "prices": [
+            {
+              "name": "Skupinový formát",
+              "price": "6 000 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "01",
+          "noButton": false
+        },
+        "description": {
+          "text": "Kurz \"Zarostlý nehet\" pokrývá všechny aspekty práce s tímto problémem: od diagnostiky po úplnou obnovu. Naučíte se příčiny vzniku, různé metody korekce a preventivní opatření. Praktická cvičení zahrnují práci se skutečnými klienty pod vedením zkušených mentorů. Kurz je navržen pro specialisty všech úrovní přípravy.",
+          "image": "/images/school/course-ingrown.png"
+        },
+        "plan": {
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Teoretická část: anatomie nehtu, příčiny zarůstání"
+            },
+            {
+              "number": "02", 
+              "title": "Diagnostika a klasifikace stadií zarostlého nehtu"
+            },
+            {
+              "number": "03",
+              "title": "Nástroje a materiály pro korekci"
+            },
+            {
+              "number": "04",
+              "title": "Praktické metody korekce na modelech"
+            },
+            {
+              "number": "05",
+              "title": "Poprocedurální péče a doporučení pro klienta"
+            }
+          ]
+        }
+      },
+      {
+        "id": "unibrace",
+        "overview": {
+          "type": "OFFLINE KURZ",
+          "title": "Titanové\nvlákno\nUnibrace",
+          "description": "Naučte se inovativní metodiku korekce zarostlého nehtu pomocí titanového vlákna.\nIndividuální výuka\nDélka: 3-4 hodiny",
+          "prices": [
+            {
+              "name": "Individuální formát",
+              "price": "8 000 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "02",
+          "noButton": false
+        },
+        "description": {
+          "text": "Osvojte si revoluční techniku korekce zarostlého nehtu pomocí titanového vlákna Unibrace. Tato metoda zajišťuje maximální pohodlí pro klienta a dlouhodobý výsledek. Kurz zahrnuje teoretickou přípravu, demonstraci techniky a rozsáhlou praxi pod dohledem experta.",
+          "image": "/images/school/course-unibrace.png"
+        },
+        "plan": {
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Úvod do technologie Unibrace"
+            },
+            {
+              "number": "02",
+              "title": "Indikace a kontraindikace k použití"
+            },
+            {
+              "number": "03",
+              "title": "Technika instalace titanového vlákna"
+            },
+            {
+              "number": "04",
+              "title": "Praktická práce na modelech"
+            },
+            {
+              "number": "05",
+              "title": "Poprocedurální péče a kontrola"
+            }
+          ]
+        }
+      },
+      {
+        "id": "individual-training",
+        "overview": {
+          "type": "ONLINE KURZ",
+          "title": "Individuální\nvýuka",
+          "description": "Osobní program výuky přizpůsobený vašim potřebám a úrovni přípravy.\nFormát: videokonference\nDélka: dle dohody",
+          "prices": [
+            {
+              "name": "1 hodina individuální výuky",
+              "price": "2 000 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "03",
+          "noButton": false
+        },
+        "description": {
+          "text": "Individuální výuka je osobní přístup k vašemu profesnímu rozvoji. Program se plně přizpůsobuje vašim cílům, současné úrovni znalostí a specifice práce. Možnost studia jakýchkoliv směrů podologie s individuálním rozvrhem hodin.",
+          "image": "/images/school/course-individual-training.png"
+        },
+        "plan": {
+          "hasPlan": false,
+          "items": []
+        }
+      },
+      {
+        "id": "webinar-pathologies",
+        "overview": {
+          "type": "ONLINE WEBINÁŘ",
+          "title": "Patologie\nnohy",
+          "description": "Interaktivní webinář o rozšířených patologiích nohy a metodách jejich korekce.\nDélka: 2 hodiny\nS certifikátem",
+          "prices": [
+            {
+              "name": "Účast na webináři",
+              "price": "1 500 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "04",
+          "noButton": false
+        },
+        "description": {
+          "text": "Komplexní přehled nejčastěji se vyskytujících patologií nohy. Naučte se diagnostické znaky, metody prevence a korekce. Webinář zahrnuje skutečné klinické případy a interaktivní diskusi s expertem.",
+          "image": "/images/school/course-pathologies.png"
+        },
+        "plan": {
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Anatomie a fyziologie nohy"
+            },
+            {
+              "number": "02",
+              "title": "Klasifikace patologií nohy"
+            },
+            {
+              "number": "03",
+              "title": "Diagnostické metody"
+            },
+            {
+              "number": "04",
+              "title": "Metody korekce a prevence"
+            },
+            {
+              "number": "05",
+              "title": "Rozbor klinických případů"
+            }
+          ]
+        }
+      }
+    ],
+    "coursePlanTitle": "Program kurzu"
   },
   "footer": {
     "about": "O centru podologie",

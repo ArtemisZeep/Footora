@@ -1,4 +1,9 @@
+"use client";
+
 import React from "react";
+import { motion } from 'framer-motion';
+import Link from "next/link";
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from "./team.module.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -21,12 +26,19 @@ const CheckIcon = () => (
 const ServicesList = ({ services }: { services: string[] }) => (
   <div className={styles.servicesGrid}>
     {services.map((service, index) => (
-      <div key={index} className={styles.serviceItem}>
+      <motion.div 
+        key={index} 
+        className={styles.serviceItem}
+        initial={{ opacity: 0, x: -8 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.35, delay: index * 0.04 }}
+      >
         <div className={styles.serviceCheck}>
           <CheckIcon />
         </div>
         <span className={styles.serviceText}>{service}</span>
-      </div>
+      </motion.div>
     ))}
   </div>
 );
@@ -40,6 +52,7 @@ const TeamMember = ({
   imageAlt,
   isReversed = false,
   showButton = false,
+  buttonText = "",
   backgroundClass = "bgLightgray",
 }: {
   name: string;
@@ -50,20 +63,25 @@ const TeamMember = ({
   imageAlt: string;
   isReversed?: boolean;
   showButton?: boolean;
+  buttonText?: string;
   backgroundClass?: string;
 }) => (
   <section className={`${styles.teamSection} ${styles[backgroundClass]}`}>
     <div className="container">
-      <div
+      <motion.div
         className={`${styles.teamContent} ${isReversed ? styles.teamContentReversed : ""}`}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
       >
         {/* Image */}
-        <div className={styles.teamImage}>
+        <motion.div className={styles.teamImage} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
           <img src={imageSrc} alt={imageAlt} className={styles.teamPhoto} />
-        </div>
+        </motion.div>
 
         {/* Content */}
-        <div className={styles.teamInfo}>
+        <motion.div className={styles.teamInfo} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}>
           <h2 className={styles.teamName}>{name}</h2>
 
           <p className={styles.teamTitle}>{title}</p>
@@ -74,121 +92,61 @@ const TeamMember = ({
 
           <p className={styles.teamDescription}>{description}</p>
 
-          {showButton && <button className={styles.teamButton}>Подробнее</button>}
-        </div>
-      </div>
+          {showButton && (
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+              <Link href="/natalia" className={styles.teamButton}>
+                {buttonText}
+              </Link>
+            </motion.div>
+          )}
+        </motion.div>
+      </motion.div>
     </div>
   </section>
 );
 
 export default function TeamPage() {
-  const nataliaServices = [
-    "Послеоперационное лечение и контроль",
-    "Лечение вросшего ногтя",
-    "Применение ногтевых пластин",
-    "Ногтевая протетика (метод Arkady)",
-    "Подологическая консультация и лечение",
+  const { t, tData } = useLanguage();
+  
+  const teamMembers = tData('team.members') as Array<{
+    name: string;
+    title: string;
+    description: string;
+    services: string[];
+  }> || [];
+
+  const buttonText = t('team.learnMore');
+
+  const imageUrls = [
+    "https://api.builder.io/api/v1/image/assets/TEMP/b8f2facd3cc9db08b050911179ac0f94bf3b1196?width=838",
+    "https://api.builder.io/api/v1/image/assets/TEMP/34e569de84f0691dcb3c41f64282bcadfdaadfab?width=838",
+    "https://api.builder.io/api/v1/image/assets/TEMP/ca4f7eae59b616ad96e5d00ae7180bbb04753304?width=838",
+    "https://api.builder.io/api/v1/image/assets/TEMP/8bed7758a5f60f641d2334b4cb92bf3994881c20?width=836",
+    "https://api.builder.io/api/v1/image/assets/TEMP/425827757dcb741c69d7633d451a2dea7ee50b89?width=838"
   ];
 
-  const dianaServices = [
-    "Лечение вросшего ногтя",
-    "Применение ногтевых пластин",
-    "Ногтевая протетика",
-    "Лечение трещин, мозолей и куриных глаз",
-    "Подологическая консультация и лечение",
-  ];
-
-  const elenaServices = [
-    "Аппаратный педикюр и маникюр",
-    "SPA педикюр и маникюр с массажем",
-    "Лечение трещин, мозолей и куриных глаз",
-    "Лечение грибковых инфекций ногтей (онихомикоз)",
-    "Применение ногтевых пластин (Титановая нить)",
-  ];
-
-  const kristinaServices = [
-    "Аппаратный педикюр",
-    "Лечение вросшего ногтя",
-    "Лечение трещин, мозолей и куриных глаз",
-    "Лечение грибковых инфекций ногтей (онихомикоз)",
-    "Применение ногтевых пластин",
-  ];
-
-  const mariannaServices = [
-    "Аппаратный педикюр",
-    "Лечение трещин, мозолей и куриных глаз",
-    "Лечение грибковых инфекций ногтей (онихомикоз)",
-    "Применение ногтевых пластин",
-    "Подологическое лечение",
-  ];
+  const backgroundClasses = ["bgGradient", "bgWhite", "bgLightgray", "bgWhite", "bgLightgray"];
+  const isReversedArray = [true, false, true, false, true];
 
   return (
     <>
       <Header />
       <main className="min-h-screen">
-        {/* Natalia - Founder */}
-        <TeamMember
-          name="Наталия Ротарь"
-          title="Основательница центра, подолог, инструктор и автор курсов"
-          description="Эксперт с многолетней практикой, специализирующийся на сложных случаях вросших и деформированных ногтей, а также пост-хирургической реабилитацией ногтевого аппарата. Применяет все консервативные знания в области ортониксии. Сотрудничает с врачам узкой специализации для достижения эффективного результата лечения. В профессии с 2007 года."
-          services={nataliaServices}
-          imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/b8f2facd3cc9db08b050911179ac0f94bf3b1196?width=838"
-          imageAlt="Наталия Ротарь"
-          showButton={true}
-          backgroundClass="bgGradient"
-          isReversed={true}
-        />
-
-        {/* Diana - Podologist */}
-        <TeamMember
-          name="Диана Степичева"
-          title="Подолог"
-          description="Отличается профессионлизмом в работе со случаями вросших и деформированных ногтей, используя консервативные методики ортониксии. Открыта к постоянному совершенствованию профессиональных навыков и расширению знаний в сфере подологии. В профессии с 2017 года."
-          services={dianaServices}
-          imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/34e569de84f0691dcb3c41f64282bcadfdaadfab?width=838"
-          imageAlt="Диана Степичева"
-          
-          backgroundClass="bgWhite"
-        />
-
-        {/* Elena - Pedicure and Manicure Specialist */}
-        <TeamMember
-          name="Елена Павлова"
-          title="Специалист по педикюру и маникюру"
-          description={`Профессионал с широким спектром навыков и опыта в обработке сложных случаев стоп и ногтей. Особые навыки проявляются в обработке гиперкератозов, трещин, мозолей и коррекции деформированных ногтей. Особые навыки проявляются в обработке гиперкератозов, трещин, мозолей и коррекции деформированных ногтей.
-
-Единственный специалист в нашем центре, который предоставляет услугу массажа стоп для восстановления легкости и улучшения общего самочувствия.
-В профессии с 2016 года.`}
-          services={elenaServices}
-          imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/ca4f7eae59b616ad96e5d00ae7180bbb04753304?width=838"
-          imageAlt="Елена Павлова"
-          backgroundClass="bgLightgray"
-          isReversed={true}
-        />
-
-        {/* Kristina - Pedicure with Podology Basics */}
-        <TeamMember
-          name="Кристина Сидорчук"
-          title="Специалист по педикюру с основами подологии"
-          description="Ориентирована на работу со сложной стопой, коррекцией деформированных и врастающих ногтей, включая методы ортониксии. Углубляет свои знания и активно совершенствуется в подологическом направлении. В профессии с 2018 года."
-          services={kristinaServices}
-          imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/8bed7758a5f60f641d2334b4cb92bf3994881c20?width=836"
-          imageAlt="Кристина Сидорчук"
-          
-          backgroundClass="bgWhite"
-        />
-
-        {/* Marianna - Pedicure with Podology Basics */}
-        <TeamMember
-          name="Марианна Шпайло"
-          title="Специалист по педикюру с основами подологии"
-          description="Специалист с глубокими знаниями и отточенными навыками в области фундаментальной обработки стоп и ногтей, который в настоящее время повышает квалификацию по узконаправленным темам подологии, внедряя полученные знания и навыки в практику. В профессии с 2017 года."
-          services={mariannaServices}
-          imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/425827757dcb741c69d7633d451a2dea7ee50b89?width=838"
-          imageAlt="Марианна Шпайло"
-          backgroundClass="bgLightgray"
-          isReversed={true}
-        />
+        {teamMembers.map((member, index) => (
+          <TeamMember
+            key={index}
+            name={member.name}
+            title={member.title}
+            description={member.description}
+            services={member.services}
+            imageSrc={imageUrls[index]}
+            imageAlt={member.name}
+            showButton={index === 0} // Only show button for Natalia (first member)
+            buttonText={buttonText}
+            backgroundClass={backgroundClasses[index]}
+            isReversed={isReversedArray[index]}
+          />
+        ))}
       </main>
       <Footer />
     </>

@@ -3,9 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './SchoolAbout.module.css';
 
 export default function SchoolAbout() {
+  const { t } = useLanguage();
   const { ref, isInView } = useInView({ threshold: 0.3 });
 
   return (
@@ -17,7 +19,7 @@ export default function SchoolAbout() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          О ШКОЛЕ
+          {t('schoolPage.about.badge')}
         </motion.div>
         <motion.p 
           className={styles.description}
@@ -25,7 +27,7 @@ export default function SchoolAbout() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Школа подологии FOOTURA — это профессиональные курсы по уходу за стопами, основанные на современной практике и методиках. Курс разработан для парамедицинских специалистов, оказывающих профилактические услуги в области здоровья и коррекции состояний стопы на стыке медицины и подологии.
+          {t('schoolPage.about.description')}
         </motion.p>
       </div>
     </section>

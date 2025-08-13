@@ -2,9 +2,23 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './SchoolHero.module.css';
 
 export default function SchoolHero() {
+  const { t } = useLanguage();
+  
+  // Функция плавного скролла к overviewSection
+  const scrollToOverview = () => {
+    const element = document.getElementById('overviewSection');
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,26 +51,25 @@ export default function SchoolHero() {
           <motion.div 
             className={styles.badge}
             variants={itemVariants}
-          >
-            ОНЛАЙН<br />ОФФЛАЙН
-          </motion.div>
+            dangerouslySetInnerHTML={{
+              __html: t('schoolPage.hero.badge').replace(/\n/g, '<br />')
+            }}
+          />
           <motion.h1 
             className={styles.title}
             variants={itemVariants}
-          >
-            Практико-ориентированное
-            <br />
-            обучение с элементами
-            <br />
-            клинической подологии
-          </motion.h1>
+            dangerouslySetInnerHTML={{
+              __html: t('schoolPage.hero.title').replace(/\n/g, '<br />')
+            }}
+          />
           <motion.button 
             className={styles.enrollBtn}
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={scrollToOverview}
           >
-            Посмотреть курсы
+            {t('schoolPage.hero.button')}
           </motion.button>
         </motion.div>
       </div>

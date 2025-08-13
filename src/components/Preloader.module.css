@@ -1,0 +1,107 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #0b1211;
+  display: grid;
+  place-items: center;
+  z-index: 99999;
+  overflow: hidden;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.bgVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.2) brightness(0.35);
+}
+
+.tint {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.08), rgba(0,0,0,0.65));
+}
+
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.logo {
+  position: relative;
+  display: grid;
+  gap: 28px;
+  align-items: center;
+  justify-items: center;
+}
+
+.arc {
+  width: min(64vw, 540px);
+  height: min(18vw, 160px);
+  -webkit-mask-image: var(--mask-url);
+  mask-image: var(--mask-url);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  background: linear-gradient(90deg, #b8c8ba 0%, #8fa29b 50%, #b8c8ba 100%);
+  opacity: 0;
+  transform-origin: center;
+  animation: drawArc 1100ms cubic-bezier(.22,.9,.22,1) 150ms forwards;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: min(1.6vw, 14px);
+}
+
+.letter {
+  width: min(8.6vw, 78px);
+  height: min(9.6vw, 86px);
+  -webkit-mask-image: var(--mask-url);
+  mask-image: var(--mask-url);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.0) 20%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.0) 80%)
+      0 0 / 220% 100% no-repeat,
+    var(--base);
+  opacity: 0;
+  transform: translateY(16px) scale(.9);
+  animation:
+    letterIn 620ms cubic-bezier(.22,.9,.22,1) var(--delay) forwards,
+    shine 1600ms ease calc(var(--delay) + 350ms) forwards;
+}
+
+@keyframes drawArc {
+  0% { opacity: 0; transform: scaleX(.92) translateY(10px); filter: blur(6px); }
+  50% { opacity: 1; transform: scaleX(1) translateY(0); filter: blur(0); }
+  100% { opacity: 1; }
+}
+
+@keyframes letterIn {
+  0% { opacity: 0; transform: translateY(16px) scale(.9); filter: blur(8px); }
+  70% { opacity: 1; transform: translateY(-1px) scale(1.04); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes shine {
+  0% { background-position: -120% 0, 0 0; }
+  100% { background-position: 120% 0, 0 0; }
+}
+
+@media (max-width: 480px) {
+  .logo { gap: 18px; }
+  .letter { width: min(10vw, 56px); height: min(11vw, 62px); }
+}
+
+

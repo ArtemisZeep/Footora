@@ -87,6 +87,10 @@
   color: #ffffff;
   cursor: pointer;
   transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .detailsBtn:hover {

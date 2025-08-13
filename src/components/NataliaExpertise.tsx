@@ -1,22 +1,13 @@
+"use client";
+
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './NataliaExpertise.module.css';
 
-interface ExpertisePoint {
-  text: string;
-}
-
-const expertisePoints: ExpertisePoint[] = [
-  {
-    text: 'Многолетняя практическая работа. Это позволяет эффективно решать широкий спектр задач.'
-  },
-  {
-    text: 'Опыт ведущих международных экспертов. Наталия посещает международные семинары и конференции, общается с признанными специалистами и изучает их подходы.'
-  },
-  {
-    text: 'Интеграция новых знаний с собственным опытом. Все полученные навыки проходят адаптацию через профессиональный взгляд и подход Наталии.'
-  }
-];
-
 export default function NataliaExpertise() {
+  const { t, tArray } = useLanguage();
+  
+  const expertisePoints = tArray('nataliaPage.expertise.points') || [];
+  
   return (
     <section className={styles.expertiseSection}>
       <div className={styles.container}>
@@ -24,9 +15,7 @@ export default function NataliaExpertise() {
           {/* Левая колонка с заголовком и изображением */}
           <div className={styles.leftColumn}>
             <h2 className={styles.title}>
-              Практическая основа<br />
-              и международный<br />
-              опыт
+              {t('nataliaPage.expertise.title')}
             </h2>
             <div className={styles.imageContainer}></div>
           </div>
@@ -34,22 +23,22 @@ export default function NataliaExpertise() {
           {/* Правая колонка с контентом */}
           <div className={styles.rightColumn}>
             <div className={styles.topContent}>
-              <h3 className={styles.subtitle}>Все методики и решения основаны на:</h3>
+              <h3 className={styles.subtitle}>{t('nataliaPage.expertise.subtitle')}</h3>
               
               <div className={styles.pointsList}>
-                {expertisePoints.map((point, index) => (
+                {expertisePoints.map((pointText, index) => (
                   <div key={index} className={styles.point}>
                     <div className={styles.checkIcon}>
                       <img src="/images/Arr_ex.png" alt="Check" width="20" height="20" />
                     </div>
-                    <p className={styles.pointText}>{point.text}</p>
+                    <p className={styles.pointText}>{pointText}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <p className={styles.conclusion}>
-              Так рождается авторская практика Наталии Ротарь, объединяющая передовые технологии и глубинное понимание работы в данной области. Такой подход стал основой высокого профессионализма и репутации.
+              {t('nataliaPage.expertise.conclusion')}
             </p>
           </div>
         </div>

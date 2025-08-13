@@ -3,10 +3,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './SchoolAdvantages.module.css';
 
 export default function SchoolAdvantages() {
+  const { t, tArray } = useLanguage();
   const { ref, isInView } = useInView({ threshold: 0.2 });
+  
+  const advantagesItems = tArray('schoolPage.advantages.items') || [];
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -29,59 +33,33 @@ export default function SchoolAdvantages() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          Преимущества школы Footura
+          {t('schoolPage.advantages.title')}
         </motion.h2>
         
         <div className={styles.advantagesGrid}>
-          {/* Сертифицированное обучение */}
-          <motion.div 
-            className={`${styles.advantageCard} ${styles.solidCard}`}
-            variants={cardVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            custom={0.1}
-            whileHover={{ scale: 1.02 }}
-          >
-            <h3 className={styles.cardTitle}>Сертифицированное обучение</h3>
-          </motion.div>
+          {advantagesItems.map((item, index) => {
+            const cardStyleMap = [
+              `${styles.advantageCard} ${styles.solidCard}`,
+              `${styles.advantageCard} ${styles.imageCard} ${styles.practicalCard}`,
+              `${styles.advantageCard} ${styles.imageCard} ${styles.techCard} ${styles.techOrder}`,
+              `${styles.advantageCard} ${styles.solidCard} ${styles.individualOrder}`
+            ];
 
-          {/* Практическая направленность */}
-          <motion.div 
-            className={`${styles.advantageCard} ${styles.imageCard} ${styles.practicalCard}`}
-            variants={cardVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            custom={0.2}
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className={styles.imageOverlay}></div>
-            <h3 className={styles.cardTitle}>Практическая направленность</h3>
-          </motion.div>
-
-          {/* Современные технологии */}
-          <motion.div 
-            className={`${styles.advantageCard} ${styles.imageCard} ${styles.techCard} ${styles.techOrder}`}
-            variants={cardVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            custom={0.3}
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className={styles.imageOverlay}></div>
-            <h3 className={styles.cardTitle}>Современные технологии</h3>
-          </motion.div>
-
-          {/* Индивидуальный подход */}
-          <motion.div 
-            className={`${styles.advantageCard} ${styles.solidCard} ${styles.individualOrder}`}
-            variants={cardVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            custom={0.4}
-            whileHover={{ scale: 1.02 }}
-          >
-            <h3 className={styles.cardTitle}>Индивидуальный подход</h3>
-          </motion.div>
+            return (
+              <motion.div 
+                key={index}
+                className={cardStyleMap[index] || `${styles.advantageCard} ${styles.solidCard}`}
+                variants={cardVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                custom={0.1 + (index * 0.1)}
+                whileHover={{ scale: 1.02 }}
+              >
+                {(index === 1 || index === 2) && <div className={styles.imageOverlay}></div>}
+                <h3 className={styles.cardTitle}>{item}</h3>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

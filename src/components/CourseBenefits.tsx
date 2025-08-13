@@ -47,7 +47,7 @@ export default function CourseBenefits() {
         </div>
 
         <div className={styles.buttonGroup}>
-          <button className={styles.detailsBtn}>Подробнее о курсе</button>
+          <a href="#course-details" className={styles.detailsBtn}>Подробнее о курсе</a>
           <button className={styles.purchaseBtn}>
             Купить курс
             <svg width="44" height="12" viewBox="0 0 44 12" fill="none">

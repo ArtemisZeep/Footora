@@ -226,10 +226,11 @@ height: 100%;
     padding-right: 0;
   }
   .imageCol {
-    width: 100%;
+    width: 50%;
     min-width: 0;
     height: auto;
     margin-top: 32px;
+    justify-content: center;
   }
   .image {
     width: 100%;
@@ -307,13 +308,13 @@ height: 100%;
     margin-right: -70px; /* Компенсируем padding контейнера */
     width: 490px; /* Увеличиваем ширину для лучшего эффекта */
     min-width: 490px;
-    height: 470px;
+    height: 530px;
     overflow: hidden;
   }
   
   .variant2 .image {
     width: 490px;
-    height: 470px;
+    height: 530px;
     object-fit: cover;
     object-position: center;
   }

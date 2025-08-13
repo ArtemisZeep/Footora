@@ -1,5 +1,6 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './NataliaEducation.module.css';
 
 interface EducationItem {
@@ -8,87 +9,24 @@ interface EducationItem {
   degree: string;
   city: string;
 }
-
-const educationData: EducationItem[] = [
-  {
-    year: '2006',
-    institution: 'Базовый курс по педикюру и маникюру',
-    degree: 'Сертификат',
-    city: 'Екатеринбург'
-  },
-  {
-    year: '2008',
-    institution: 'Аппаратная обработка стоп и ногтей по немецкой технологии Gerlach',
-    degree: 'Специализированный курс',
-    city: 'Екатеринбург'
-  },
-  {
-    year: '2010',
-    institution: 'Beauty - конференция, ЭКСПО',
-    degree: 'Участие в конференции',
-    city: 'Москва'
-  },
-  {
-    year: '2013',
-    institution: 'РГСУ (Российский Государственный Социальный Университет)',
-    degree: 'Специализация "Специалист по социальной работе", Бакалавр',
-    city: 'Москва'
-  },
-  {
-    year: '2014',
-    institution: 'Ортониксия - скоба Росса Фрезера',
-    degree: 'Специализированный курс',
-    city: 'Екатеринбург'
-  },
-  {
-    year: '2016',
-    institution: 'Протезирование/восстановление ногтей Gehwol Gel, Gehwolnageimasse, BS-nagel, Unguisan. Ортониксия 3ТО',
-    degree: 'Комплексное обучение',
-    city: 'Екатеринбург'
-  },
-  {
-    year: '2017',
-    institution: 'Ортониксия - Титановая нить',
-    degree: 'Специализированный курс',
-    city: 'Екатеринбург'
-  },
-  {
-    year: '2018',
-    institution: 'Курсы повышения квалификации: Вросший и деформированный ноготь, 3TO Аксель Пельстер. Лимфотическая система нижних конечностей, Костшембский Петр. Микология в подологии. Основы ортопедии, Шлыков К. А. Синдром диабетической стопы, Бреговский В. Б. Раны и раневой процесс, Еровенков Р. Л.',
-    degree: 'Курсы повышения квалификации',
-    city: 'Москва'
-  },
-  {
-    year: '2019',
-    institution: 'Международные Конференции, научно - практический форум "Подология и медицина". Ортониксия Unibrace System 1 ступень. Конференция "Medical Side of Podology" Wroclaw-Poland',
-    degree: 'Конференции и практические курсы',
-    city: 'Москва, Вроцлав'
-  },
-  {
-    year: '2020',
-    institution: 'Анамнез и план подологической терапии в практике подолога, Дитер Бауманн. Курс Подологии. Карлов университет, 3. Лечебный факультет. Курс "Ногтевая косметология (химия препаратов)", Виталий Соломонов',
-    degree: 'Международные курсы подологии',
-    city: 'Германия, Прага, США'
-  },
-  {
-    year: '2022',
-    institution: 'Ортониксия Unibrace System 2 ступень. Курс метода Куб Аркада. Курс инструктора системы UniBrace',
-    degree: 'Продвинутые курсы и инструкторская подготовка',
-    city: 'Вроцлав'
-  },
-  {
-    year: '2024',
-    institution: 'Вебинар «Пациенты с сахарным диабетом в практике специалиста парамедицинского педикюра». Международная подологическая конференция',
-    degree: 'Современные методики и конференции',
-    city: 'Германия'
-  }
-];
-
 export default function NataliaEducation() {
+  const { t, tData } = useLanguage();
+  
+  const educationData = useMemo(() => {
+    return tData('nataliaPage.education.items') as EducationItem[] || [];
+  }, [tData]);
+  
   const [activeIndex, setActiveIndex] = useState(3); // 2013 по умолчанию
   const [visibleCount, setVisibleCount] = useState(5); // Количество видимых элементов на таймлайне
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [displayedEducation, setDisplayedEducation] = useState(educationData[3]);
+  const [displayedEducation, setDisplayedEducation] = useState<EducationItem | null>(null);
+
+  // Инициализируем displayedEducation когда данные загружаются
+  useEffect(() => {
+    if (educationData.length > 0 && !displayedEducation) {
+      setDisplayedEducation(educationData[3] || educationData[0]);
+    }
+  }, [educationData, displayedEducation]);
 
   // Отслеживаем размер экрана для адаптивности
   useEffect(() => {
@@ -108,23 +46,30 @@ export default function NataliaEducation() {
 
   // Обрабатываем смену активного элемента с анимацией
   useEffect(() => {
-    if (displayedEducation !== educationData[activeIndex]) {
-      setIsTransitioning(true);
-      
-      // Через 300ms (время исчезновения) обновляем контент
-      setTimeout(() => {
-        setDisplayedEducation(educationData[activeIndex]);
-        setIsTransitioning(false);
-      }, 300);
+    if (educationData.length > 0 && activeIndex < educationData.length) {
+      const currentEducation = educationData[activeIndex];
+      if (currentEducation && displayedEducation !== currentEducation) {
+        setIsTransitioning(true);
+        
+        // Через 300ms (время исчезновения) обновляем контент
+        setTimeout(() => {
+          setDisplayedEducation(currentEducation);
+          setIsTransitioning(false);
+        }, 300);
+      }
     }
-  }, [activeIndex]);
+  }, [activeIndex, educationData]);
 
   const handlePrevious = () => {
-    setActiveIndex(prev => prev > 0 ? prev - 1 : educationData.length - 1);
+    if (educationData.length > 0) {
+      setActiveIndex(prev => prev > 0 ? prev - 1 : educationData.length - 1);
+    }
   };
 
   const handleNext = () => {
-    setActiveIndex(prev => prev < educationData.length - 1 ? prev + 1 : 0);
+    if (educationData.length > 0) {
+      setActiveIndex(prev => prev < educationData.length - 1 ? prev + 1 : 0);
+    }
   };
 
   const handleYearClick = (index: number) => {
@@ -160,9 +105,11 @@ export default function NataliaEducation() {
   return (
     <section className={styles.educationSection}>
       <div className={styles.container}>
-        <h2 className={styles.title}>ОБРАЗОВАНИЕ</h2>
+        <h2 className={styles.title}>{t('nataliaPage.education.title')}</h2>
         
-        <div className={styles.timelineSection}>
+        {educationData.length > 0 && (
+          <>
+            <div className={styles.timelineSection}>
           {/* Левая стрелка */}
           <button className={styles.arrowButton} onClick={handlePrevious}>
             <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
@@ -209,12 +156,16 @@ export default function NataliaEducation() {
           </button>
         </div>
 
-        {/* Описание активного образования */}
-        <div className={`${styles.educationDescription} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`}>
-          <h3 className={styles.institutionName}>{displayedEducation.institution}</h3>
-          <p className={styles.degreeInfo}>{displayedEducation.degree}</p>
-          <p className={styles.cityInfo}>{displayedEducation.city}</p>
-        </div>
+            {/* Описание активного образования */}
+            {displayedEducation && (
+              <div className={`${styles.educationDescription} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`}>
+                <h3 className={styles.institutionName}>{displayedEducation.institution}</h3>
+                <p className={styles.degreeInfo}>{displayedEducation.degree}</p>
+                <p className={styles.cityInfo}>{displayedEducation.city}</p>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </section>
   );

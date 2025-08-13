@@ -1,6 +1,11 @@
+"use client";
+
+import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './SchoolLector.module.css';
 
 export default function SchoolLector() {
+  const { t } = useLanguage();
   return (
     <section className={styles.lectorSection}>
       <div className={styles.container}>
@@ -12,11 +17,13 @@ export default function SchoolLector() {
           />
         </div>
         <div className={styles.textCol}>
-          <div className={styles.badge}>О ЛЕКТОРЕ</div>
+          <div className={styles.badge}>{t('schoolPage.lector.badge')}</div>
           <h2 className={styles.title}>
-            Наталия Ротарь — эксперт с 18-летним опытом в подологии, руководитель подологического центра Footura и автор уникальных обучающих методик
+            {t('schoolPage.lector.title')}
           </h2>
-          <button className={styles.detailsBtn}>Подробнее о лекторе</button>
+          <Link href="/natalia" className={styles.detailsBtn}>
+            {t('schoolPage.lector.button')}
+          </Link>
         </div>
       </div>
     </section>

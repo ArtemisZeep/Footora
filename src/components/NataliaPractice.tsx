@@ -1,3 +1,6 @@
+"use client";
+
+import { useLanguage } from '@/contexts/LanguageContext';
 import styles from './NataliaPractice.module.css';
 
 interface Activity {
@@ -10,56 +13,15 @@ interface PracticeItem {
   activities: Activity[];
 }
 
-const practiceData: PracticeItem[] = [
-  {
-    year: '2008 – 2025',
-    activities: [
-      {
-        name: 'Частная практика',
-        place: 'Екатеринбург/ Прага'
-      }
-    ]
-  },
-  {
-    year: 'c 2018',
-    activities: [
-      {
-        name: 'Автор курсов повышения квалификации для специалистов по педикюру/подологов и стажировок'
-      }
-    ]
-  },
-  {
-    year: '2022',
-    activities: [
-      {
-        name: 'Организатор курса с врачом-хирургом Николенко Р. «Сотрудничество хирурга и подолога»'
-      },
-      {
-        name: 'Основала Центр Подологии',
-        place: 'Прага'
-      }
-    ]
-  },
-  {
-    year: '2024 – 2025',
-    activities: [
-      {
-        name: 'Организатор вебинара с врачом-эндокринологом Удовиченко Олегом «Пациенты с сахарным диабетом в практике специалиста парамедицинского педикюра»',
-        place: 'Израиль'
-      },
-      {
-        name: 'Участница Выставок BeautyForum Prague с компанией Podoland и представитель системы UniBrace',
-        place: 'Прага'
-      }
-    ]
-  }
-];
-
 export default function NataliaPractice() {
+  const { t, tData } = useLanguage();
+  
+  const practiceData = tData('nataliaPage.practice.items') as PracticeItem[] || [];
+  
   return (
     <section className={styles.practiceSection}>
       <div className={styles.container}>
-        <h2 className={styles.title}>ПРАКТИКА</h2>
+        <h2 className={styles.title}>{t('nataliaPage.practice.title')}</h2>
         
         <div className={styles.practiceList}>
           {practiceData.map((item, index) => (
