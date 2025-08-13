@@ -8,8 +8,10 @@ import aboutStyles from '../../styles/About.module.css';
 import CertificatesPopup, { Certificate } from '@/components/CertificatesPopup';
 import WorkResultsBlock from '@/components/WorkResultsBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AboutPage() {
+  const { t, tArray } = useLanguage();
   const [isMobileHero, setIsMobileHero] = useState(false);
   const [isMobilePopup, setIsMobilePopup] = useState(false);
 
@@ -30,17 +32,17 @@ export default function AboutPage() {
     {
       src: '/images/Tezza-2723.png',
       orientation: 'vertical',
-      alt: 'Сертификат 1',
+      alt: `${t('about.certificate')} 1`,
     },
     {
       src: '/images/Tezza-7138.png',
       orientation: 'vertical',
-      alt: 'Сертификат 2',
+      alt: `${t('about.certificate')} 2`,
     },
     {
       src: '/images/Tezza-4150 1.png',
       orientation: 'horizontal',
-      alt: 'Сертификат 3',
+      alt: `${t('about.certificate')} 3`,
     },
   ];
 
@@ -94,7 +96,7 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <Image
           src={isMobileHero ? "/images/hero_about_mob.png" : "/images/hero_about.png"}
-          alt="О центре Footura"
+          alt={t('about.heroAlt')}
           fill
           className={styles.bgImage}
           priority
@@ -104,18 +106,18 @@ export default function AboutPage() {
       <section className={aboutStyles.aboutHero}>
         <div className={aboutStyles.aboutHeroContent}>
           <div className={aboutStyles.aboutHeroText}>
-            <h2 className={aboutStyles.aboutHeroTitle}>О центре</h2>
+            <h2 className={aboutStyles.aboutHeroTitle}>{t('about.title')}</h2>
             <div className={aboutStyles.aboutHeroDescription}>
-              FOOTURA— команда узкопрофильных специалистов в области ухода за стопами, работающая под руководством Натальи Ротарь, эксперта с 18-летним опытом
+              {t('about.heroDescription')}
             </div>
             <div className={aboutStyles.aboutHeroSubDescription}>
-              Наш центр предлагает профессиональный комплексный уход за стопами и ногтями с использованием инновационных технологий в области подологии.
+              {t('about.heroSubDescription')}
             </div>
           </div>
           <div className={aboutStyles.aboutHeroImage}>
             <Image
               src="/images/about1.png"
-              alt="О центре Footura фото"
+              alt={t('about.heroAlt')}
               fill
               sizes="(max-width: 1440px) 100vw, 641px"
               priority
@@ -126,43 +128,39 @@ export default function AboutPage() {
       <section className={aboutStyles.missionSection}>
         <div className={aboutStyles.missionContent}>
           <div className={aboutStyles.missionText}>
-            Наша миссия – возвращать легкость движения, <br />ведь движение – это основа жизни, <br />которая начинается со здоровых ног
+            {t('about.mission').split('\n').map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                {index < t('about.mission').split('\n').length - 1 && <br />}
+              </React.Fragment>
+            ))}
           </div>
           <button className={aboutStyles.missionButton}>
-            Записаться
+            {t('about.booking')}
           </button>
         </div>
       </section>
       <section className={aboutStyles.descriptionSection}>
         <div className={aboutStyles.descriptionContent}>
           <div className={aboutStyles.descriptionText}>
-            Наш подологический центр предоставляет комплексные решения как для устранения острых проблем ногтей и стоп, так и для профилактики их развития. Мы стремимся минимизировать риск осложнений в будущем, предлагая широкий спектр услуг — от решения конкретных локальных проблем до регулярного ухода за стопами.
+            {t('about.description1')}
           </div>
           <div className={aboutStyles.descriptionTextSecond}>
-            В случае выявления более глубоких или системных патологий наши специалисты направляют пациентов к профильным экспертам — хирургам, дерматологам, ортопедам, флебологам и т.д. По завершении/вовремя основного лечения пациенты продолжают наблюдение и поддерживающий уход в нашем центре.
+            {t('about.description2')}
           </div>
         </div>
       </section>
       <section className={aboutStyles.approachSection}>
         <div className={aboutStyles.approachContent}>
           <h2 className={aboutStyles.approachTitle}>
-            Комплексный подход
+            {t('about.approachTitle')}
           </h2>
           <div className={aboutStyles.approachDescription}>
-            Мы предоставляем полный спектр услуг ухода за ногтями и кожей стоп, включая:
+            {t('about.approachDescription')}
           </div>
           <div className={aboutStyles.approachList}>
             <ul className={aboutStyles.approachListUl}>
-              {[
-                'Аппаратный гигиенический педикюр',
-                'Подологическая обработка стоп и ногтей',
-                'Обработка трещин, локальных гиперкератозов, стрежневых мозолей',
-                'Коррекция вросших и деформированных ногтей',
-                'Профилактическая обработка стоп и ногтей клиентов с диагнозом сахарный диабет',
-                'Обработка ногтей пораженных грибковой инфекцией и последующее восстановление в сотрудничестве со сторонним дерматологом',
-                'Ведение клиента/реабилитация после операции на ногтевом аппарате в сотрудничестве с хирургом',
-                'Пилинг и массаж стоп',
-              ].map((text, i) => (
+              {tArray('about.services').map((text, i) => (
                 <li key={i} className={aboutStyles.approachListItem}>
                   <span className={aboutStyles.approachListItemText}>{text}</span>
                   <span className={aboutStyles.approachListItemNumber}>{String(i+1).padStart(2, '0')}</span>
@@ -176,7 +174,7 @@ export default function AboutPage() {
         <div className={aboutStyles.standardsContent}>
           <div className={aboutStyles.standardsLeft}>
             <h2 className={aboutStyles.standardsTitle}>
-              Мировые стандарты в вашем городе
+              {t('about.standardsTitle')}
             </h2>
             <div className={aboutStyles.standardsImage}>
               <Image src="/images/unibrace.png" alt="Unibrace" fill />
@@ -184,10 +182,10 @@ export default function AboutPage() {
           </div>
           <div className={aboutStyles.standardsRight}>
             <div className={aboutStyles.standardsText}>
-              Мы являемся официальными представителями системы Unibrace, что позволяет нам применять современные и безопасные технологии коррекции ногтевой пластины.
+              {t('about.standardsText')}
             </div>
             <div className={aboutStyles.standardsSubText}>
-              Мы — команда профессионалов, которая постоянно совершенствуется, посещая крупнейшие международные выставки, семинары и конференции. Мы активно участвуем в профессиональных событиях, перенимаем передовой опыт и внедряем его в свою работу, чтобы предоставлять нашим клиентам лучшие решения.
+              {t('about.standardsSubText')}
             </div>
           </div>
         </div>
@@ -196,24 +194,24 @@ export default function AboutPage() {
         <div className={aboutStyles.qualificationContent}>
           <div className={aboutStyles.qualificationLeft}>
             <h2 className={aboutStyles.qualificationTitle}>
-              Квалификация
+              {t('about.qualificationTitle')}
             </h2>
             <div className={aboutStyles.qualificationText}>
-              Наши Специалисты регулярно подтверждают свою квалификацию на международном уровне. Дипломы и сертификаты служат гарантией профессионализма и высоких стандартов обслуживания.
+              {t('about.qualificationText')}
             </div>
             <button
               className={aboutStyles.qualificationButton}
               onClick={openPopup}
             >
-              Посмотреть все сертификаты
+              {t('about.viewCertificates')}
             </button>
           </div>
           <div className={aboutStyles.qualificationRight}>
             <div className={aboutStyles.certificateImage}>
-              <Image src="/images/Tezza-2723.png" alt="Сертификат 1" fill />
+              <Image src="/images/Tezza-2723.png" alt={`${t('about.certificate')} 1`} fill />
             </div>
             <div className={aboutStyles.certificateImageSecond}>
-              <Image src="/images/Tezza-7138.png" alt="Сертификат 2" fill />
+              <Image src="/images/Tezza-7138.png" alt={`${t('about.certificate')} 2`} fill />
             </div>
           </div>
         </div>
