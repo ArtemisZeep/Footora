@@ -82,13 +82,42 @@ export default function ReviewsBlock() {
       </AnimatePresence>
       {/* Точки-пагинация */}
       <div className={styles.pagination}>
-        {Array.from({ length: pageCount }).map((_, i) => (
-          <motion.span 
-            key={i} 
-            className={`${styles.paginationDot} ${i === page ? styles.active : styles.inactive}`}
-            whileHover={{ scale: 1.2 }}
-          />
-        ))}
+        {windowWidth <= 480 ? (
+          // Показываем максимум 5 точек на мобильных
+          (() => {
+            const maxDots = 5;
+            const totalPages = pageCount;
+            let startPage = Math.max(0, page - Math.floor(maxDots / 2));
+            let endPage = Math.min(totalPages, startPage + maxDots);
+            
+            // Корректируем если не хватает точек в конце
+            if (endPage - startPage < maxDots) {
+              startPage = Math.max(0, endPage - maxDots);
+            }
+            
+            return Array.from({ length: endPage - startPage }).map((_, i) => {
+              const pageIndex = startPage + i;
+              return (
+                <motion.span 
+                  key={pageIndex} 
+                  className={`${styles.paginationDot} ${pageIndex === page ? styles.active : styles.inactive}`}
+                  whileHover={{ scale: 1.2 }}
+                  onClick={() => setPage(pageIndex)}
+                />
+              );
+            });
+          })()
+        ) : (
+          // Показываем все точки на больших экранах
+          Array.from({ length: pageCount }).map((_, i) => (
+            <motion.span 
+              key={i} 
+              className={`${styles.paginationDot} ${i === page ? styles.active : styles.inactive}`}
+              whileHover={{ scale: 1.2 }}
+              onClick={() => setPage(i)}
+            />
+          ))
+        )}
       </div>
       {/* Стрелки */}
       <div className={styles.arrowsContainer}>

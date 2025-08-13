@@ -166,6 +166,10 @@
   transform: scale(1.2);
 }
 
+.paginationDot:active {
+  transform: scale(0.9);
+}
+
 .paginationDot.active {
   background: #B8C8BA;
   transform: scale(1.1);
