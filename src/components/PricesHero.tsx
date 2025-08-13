@@ -20,7 +20,12 @@ const PricesHero: React.FC = () => {
             ))}
           </h1>
           <div className={styles.buttonContainer}>
-            <Link href="/booking" className={styles.bookingButton}>
+            <Link 
+              href="https://n766508.alteg.io/company/720417/personal/select-services?_gl=1*15h3pye*_ga*MTAyNjk3MTQ4MC4xNzI5MDAzODQy*_ga_2WY57VWNET*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.*_ga_L53TRF9G65*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.&o=m-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.bookingButton}
+            >
               <span className={styles.buttonText}>{t('pricesPage.hero.booking')}</span>
             </Link>
           </div>

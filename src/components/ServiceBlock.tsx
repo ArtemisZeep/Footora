@@ -90,7 +90,7 @@ export default function ServiceBlock({
                 <motion.p className={styles.description} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.05 }}>{description}</motion.p>
                 <div className={styles.buttonsRow}>
                   {signUpUrl && (
-                    <motion.a href={signUpUrl} className={styles.signUpBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.bookButton')}</motion.a>
+                    <motion.a href={signUpUrl} target="_blank" rel="noopener noreferrer" className={styles.signUpBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.bookButton')}</motion.a>
                   )}
                   {detailsUrl && (
                     <motion.a href={detailsUrl} className={styles.detailsBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>Подробнее</motion.a>
@@ -111,7 +111,7 @@ export default function ServiceBlock({
                 <motion.p className={styles.description} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.05 }}>{description}</motion.p>
                 <div className={styles.buttonsRow}>
                   {signUpUrl && (
-                    <motion.a href={signUpUrl} className={styles.signUpBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.bookButton')}</motion.a>
+                    <motion.a href={signUpUrl} target="_blank" rel="noopener noreferrer" className={styles.signUpBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.bookButton')}</motion.a>
                   )}
                   {detailsUrl && (
                     <motion.a href={detailsUrl} className={styles.detailsBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>Подробнее</motion.a>

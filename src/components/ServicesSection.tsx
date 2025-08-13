@@ -38,15 +38,20 @@ const ServiceCard = ({
       <div className={`${styles.cardContent} ${textPosition === "left" ? styles.cardContentLeft : styles.cardContentRight}`}>
         <h3 className={styles.cardTitle}>{title}</h3>
         <p className={styles.cardDescription}>{description}</p>
-        <button 
+        <a 
+          href="https://n766508.alteg.io/company/720417/personal/select-services?_gl=1*15h3pye*_ga*MTAyNjk3MTQ4MC4xNzI5MDAzODQy*_ga_2WY57VWNET*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.*_ga_L53TRF9G65*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.&o=m-1"
+          target="_blank"
+          rel="noopener noreferrer"
           className={styles.cardButton}
           style={{ 
             borderColor: buttonColor, 
-            color: buttonColor 
+            color: buttonColor,
+            textDecoration: 'none',
+            display: 'inline-block'
           }}
         >
           {buttonText}
-        </button>
+        </a>
       </div>
     </div>
   );

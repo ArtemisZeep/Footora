@@ -10,7 +10,9 @@ const OnlineBookingButton: React.FC = () => {
 
   return (
     <Link
-      href="/#booking"
+      href="https://n766508.alteg.io/company/720417/personal/select-services?_gl=1*15h3pye*_ga*MTAyNjk3MTQ4MC4xNzI5MDAzODQy*_ga_2WY57VWNET*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.*_ga_L53TRF9G65*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.&o=m-1"
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={t('hero.onlineBooking')}
       className={styles.fab}
     >
