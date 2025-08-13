@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { reviewsData, getReviewsByLanguage } from '@/data/reviewsData';
+import { reviewsData } from '@/data/reviewsData';
 import styles from './ReviewsBlock.module.css';
 
 function Avatar({ photo }: { photo: string | null }) {
@@ -24,19 +24,15 @@ export default function ReviewsBlock() {
   const { language } = useLanguage();
   const [page, setPage] = useState(0);
   
-  // Получаем отзывы для текущего языка
-  const currentLanguage = language as 'ru' | 'cs' | 'en';
-  const languageReviews = getReviewsByLanguage(currentLanguage);
-  
-  // Если нет отзывов для текущего языка, показываем все отзывы
-  const reviews = languageReviews.length > 0 ? languageReviews : reviewsData;
+  // Показываем все отзывы независимо от языка
+  const reviews = reviewsData;
   
   // Сбрасываем страницу при смене языка
   React.useEffect(() => {
     setPage(0);
   }, [language]);
   
-  const perPage = 2;
+  const perPage = 3;
   const pageCount = Math.ceil(reviews.length / perPage);
   const start = page * perPage;
   const visible = reviews.slice(start, start + perPage);
