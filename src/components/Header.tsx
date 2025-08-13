@@ -66,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
             {/* Right Navigation */}
             <div className={styles.rightNav}>
               <Link href="/school" className={styles.navLink}>{t('nav.school')}</Link>
-              <span className={styles.navLink} style={{cursor: 'not-allowed', opacity: 0.6}}>Магазин</span>
+              <span className={styles.navLink} style={{cursor: 'not-allowed', opacity: 0.6}}>{t('nav.shop')}</span>
               <Link href="#contacts" className={styles.navLink}>{t('nav.contacts')}</Link>
               
               <div className={styles.langSwitcher}>
@@ -140,7 +140,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                     <Link href="/prices" onClick={closeMenu}>{t('nav.prices')}</Link>
                     <Link href="/natalia" onClick={closeMenu}>{t('nav.natalia')}</Link>
                     <Link href="/school" onClick={closeMenu}>{t('nav.school')}</Link>
-                    <span style={{cursor: 'not-allowed', opacity: 0.6, padding: '10px 0', display: 'block'}}>Магазин</span>
+                    <span style={{cursor: 'not-allowed', opacity: 0.6, padding: '10px 0', display: 'block'}}>{t('nav.shop')}</span>
                     <Link href="#contacts" onClick={closeMenu}>{t('nav.contacts')}</Link>
                   </div>
                   
