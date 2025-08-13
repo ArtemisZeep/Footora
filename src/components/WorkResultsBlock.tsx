@@ -58,7 +58,6 @@ export default function WorkResultsBlock() {
                 alt={`До лечения - ${currentCase?.title}`} 
                 fill 
               />
-              <div className={styles.photoLabel}>До</div>
             </motion.div>
             <motion.div 
               key={`after-${currentIndex}`}
@@ -72,7 +71,6 @@ export default function WorkResultsBlock() {
                 alt={`После лечения - ${currentCase?.title}`} 
                 fill 
               />
-              <div className={styles.photoLabel}>После</div>
             </motion.div>
           </div>
         </div>

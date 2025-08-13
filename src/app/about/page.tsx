@@ -227,12 +227,7 @@ export default function AboutPage() {
           onPrev={() => setPopupIndex(getPrevIndex(popupIndex))}
         />
       </section>
-      <BeforeAfterBlock 
-        title="Результаты нашей работы"
-        subtitle="Примеры успешного лечения и восстановления наших пациентов"
-        maxItems={6}
-        showFilters={true}
-      />
+      <WorkResultsBlock />
       <ReviewsBlock />
       <Footer />
     </main>
