@@ -20,19 +20,27 @@
 }
 
 .reviewCard {
-  width: 639px;
+  width: 420px;
   min-height: 317px;
   padding: 30px 25px;
   box-sizing: border-box;
   position: relative;
-}
-
-.leftCard {
   background: #CAD3E6;
+  transition: opacity 0.4s ease, transform 0.3s ease;
 }
 
-.rightCard {
+.reviewCard:first-child {
+  opacity: 0.7;
+}
+
+.reviewCard:nth-child(2) {
+  opacity: 1;
   background: #F5F5F5;
+}
+
+.reviewCard:last-child {
+  opacity: 0.5;
+  background: #E8E8E8;
 }
 
 .reviewHeader {
@@ -99,16 +107,20 @@
 
 .reviewLink {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 21px;
   color: #506888;
-  text-decoration: none;
-  transition: color 0.2s;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+  margin-top: auto;
+  padding-top: 10px;
+  cursor: pointer;
 }
 
 .reviewLink:hover {
   color: #334258;
+  text-decoration: none;
 }
 
 .navigation {
@@ -314,5 +326,101 @@
   .indicator {
     width: 12px;
     height: 12px;
+  }
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 480px) {
+  .reviewsSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .reviewsContent {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .reviewCard {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    min-height: 200px;
+    margin: 0;
+    opacity: 1 !important;
+    background: #CAD3E6 !important;
+  }
+
+  .reviewCard:first-child,
+  .reviewCard:nth-child(2),
+  .reviewCard:last-child {
+    opacity: 1 !important;
+    background: #CAD3E6 !important;
+  }
+
+  .reviewHeader {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .reviewerName {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .reviewerRole {
+    font-size: 11px;
+  }
+
+  .reviewText {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .reviewLink {
+    font-size: 12px;
+  }
+
+  .navigation {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-top: 25px;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .navButton {
+    width: 32px;
+    height: 10px;
+  }
+
+  .navButton svg {
+    width: 32px;
+    height: 10px;
+  }
+
+  .indicators {
+    margin-top: 20px;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
   }
 }
