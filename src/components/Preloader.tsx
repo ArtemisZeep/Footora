@@ -6,16 +6,25 @@ import styles from './Preloader.module.css';
 const LETTERS = ['F', 'O', 'O', 'T', 'U', 'R', 'A'] as const;
 
 export default function Preloader() {
-  // Определяем нужно ли показывать прелоадер СИНХРОННО до первого рендера,
-  // чтобы не было «мигания» при обновлении страницы в рамках одной сессии.
-  const [isActive, setIsActive] = React.useState<boolean>(() => {
-    if (typeof window === 'undefined') return false;
-    return sessionStorage.getItem('preloader-shown') !== '1';
-  });
+  const [mounted, setMounted] = React.useState(false);
+  const [isActive, setIsActive] = React.useState<boolean>(false);
   const [isFading, setIsFading] = React.useState(false);
 
+  // Устанавливаем mounted только после монтирования на клиенте
   React.useEffect(() => {
-    if (!isActive) return; // уже решили не показывать — ничего не делаем
+    setMounted(true);
+  }, []);
+
+  // Определяем нужно ли показывать прелоадер только после монтирования
+  React.useEffect(() => {
+    if (!mounted) return;
+    
+    const shouldShow = sessionStorage.getItem('preloader-shown') !== '1';
+    setIsActive(shouldShow);
+  }, [mounted]);
+
+  React.useEffect(() => {
+    if (!isActive || !mounted) return; // уже решили не показывать — ничего не делаем
 
     // Показываем только один раз за сессию
     sessionStorage.setItem('preloader-shown', '1');
@@ -50,9 +59,10 @@ export default function Preloader() {
       clearTimeout(hardTimeout);
       document.body.style.overflow = originalOverflow;
     };
-  }, []);
+  }, [isActive, mounted]);
 
-  if (!isActive) return null;
+  // Не рендерим ничего до монтирования на клиенте
+  if (!mounted || !isActive) return null;
 
   return (
     <div className={`${styles.overlay} ${isFading ? styles.fadeOut : ''}`} aria-hidden>

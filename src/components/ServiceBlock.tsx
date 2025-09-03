@@ -93,7 +93,7 @@ export default function ServiceBlock({
                     <motion.a href={signUpUrl} target="_blank" rel="noopener noreferrer" className={styles.signUpBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.bookButton')}</motion.a>
                   )}
                   {detailsUrl && (
-                    <motion.a href={detailsUrl} className={styles.detailsBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>Подробнее</motion.a>
+                    <motion.a href={detailsUrl} className={styles.detailsBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.detailsButton')}</motion.a>
                   )}
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function ServiceBlock({
                     <motion.a href={signUpUrl} target="_blank" rel="noopener noreferrer" className={styles.signUpBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.bookButton')}</motion.a>
                   )}
                   {detailsUrl && (
-                    <motion.a href={detailsUrl} className={styles.detailsBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>Подробнее</motion.a>
+                    <motion.a href={detailsUrl} className={styles.detailsBtn} whileHover={buttonWhile.hover} whileTap={buttonWhile.tap}>{t('serviceBlock.detailsButton')}</motion.a>
                   )}
                 </div>
               </div>

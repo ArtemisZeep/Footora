@@ -1,0 +1,23 @@
+  // Сертификаты: пример
+  const certificates: Certificate[] = [
+    {
+      src: '/images/Tezza-2723.png',
+      orientation: 'vertical',
+      alt: `${t('about.certificate')} 1`,
+    },
+    {
+      src: '/images/Tezza-7138.png',
+      orientation: 'vertical',
+      alt: `${t('about.certificate')} 2`,
+    },
+    {
+      src: '/images/Tezza-4150 1.png',
+      orientation: 'horizontal',
+      alt: `${t('about.certificate')} 3`,
+    },
+    {
+      src: '/images/Cert_es.png',
+      orientation: 'vertical',
+      alt: `${t('about.certificate')} 4`,
+    },
+  ];

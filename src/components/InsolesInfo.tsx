@@ -2,7 +2,7 @@ import styles from './InsolesInfo.module.css';
 
 export default function InsolesInfo() {
   return (
-    <section className={styles.infoSection}>
+    <section id="insoles-details" className={styles.infoSection}>
       <div className={styles.container}>
         <div className={styles.imageCol}>
           <img 

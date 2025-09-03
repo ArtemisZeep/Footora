@@ -176,3 +176,4 @@ export const beforeAfterStats = {
     restoration: beforeAfterData.filter(item => item.category === 'restoration').length,
   }
 };
+

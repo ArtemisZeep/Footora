@@ -9,6 +9,7 @@
 
 .container {
   padding: 59px 70px;
+  padding-bottom: 30px;
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -131,6 +132,46 @@
   color: var(--color-white);
 }
 
+/* Developer Section */
+.developerSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(245, 245, 245, 0.1);
+}
+
+.developerLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.developerLink:hover {
+  opacity: 0.8;
+}
+
+.developerText {
+  color: #B8C8BA;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 12px;
+}
+
+.zeepLogo {
+  height: 20px;
+  width: auto;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  filter: brightness(0) invert(1);
+}
+
+.developerLink:hover .zeepLogo {
+  opacity: 0.8;
+}
+
 
 
 @media (max-width: 1200px) {
@@ -142,7 +183,28 @@
 /* Responsive Design */
 @media (max-width: 900px) {
   .mainGrid {
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .contactSection {
+    align-items: center;
+  }
+  
+  .companyInfo {
+    text-align: center;
+  }
+  
+  .bottomSection {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .developerSection {
+    margin-top: 15px;
+    padding-top: 15px;
   }
 }
 

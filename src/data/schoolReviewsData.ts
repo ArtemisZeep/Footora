@@ -55,3 +55,4 @@ console.log('School reviews loaded:', {
   en: schoolReviewsStats.byLanguage.en,
   ua: schoolReviewsStats.byLanguage.ua
 });
+

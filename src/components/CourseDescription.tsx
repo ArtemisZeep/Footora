@@ -102,7 +102,12 @@ export default function CourseDescription({
             </div>
             <div className={styles.textColumn}>
               <p className={styles.descriptionText}>
-                {currentCourse.description.text}
+                {currentCourse.description.text.split('\n').map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index < currentCourse.description.text.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
           </motion.div>

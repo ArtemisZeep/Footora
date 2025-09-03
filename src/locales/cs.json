@@ -221,11 +221,11 @@
         "title": "Zakladatelka centra, podolog, instruktor a autor kurzů",
         "description": "Expertka s mnohaletou praxí, specializující se na složité případy zarostlých a deformovaných nehtů, stejně jako na post-chirurgickou rehabilitaci nehtového aparátu. Používá všechny konzervativní znalosti v oblasti ortonyxie. Spolupracuje s lékaři úzké specializace pro dosažení efektivního výsledku léčby. V profesi od roku 2007.",
         "services": [
-          "Pooperační léčba a kontrola",
-          "Léčba zarostlého nehtu",
-          "Použití nehtových plotének",
+          "Pooperační ošetření a kontrola",
+          "Ošetření zarostlého nehtu",
+          "Aplikace nehtových rovnátek",
           "Nehtová protetika (metoda Arkady)",
-          "Podologická konzultace a léčba"
+          "Podologická konzultace a ošetření"
         ]
       },
       {
@@ -233,23 +233,23 @@
         "title": "Podolog",
         "description": "Vyznačuje se profesionalitou v práci s případy zarostlých a deformovaných nehtů, používá konzervativní metodiky ortonyxie. Je otevřená neustálému zdokonalování profesních dovedností a rozšiřování znalostí v oblasti podologie. V profesi od roku 2017.",
         "services": [
-          "Léčba zarostlého nehtu",
-          "Použití nehtových plotének",
+          "Ošetření zarostlého nehtu",
+          "Aplikace nehtových rovnátek",
           "Nehtová protetika",
-          "Léčba trhlin, mozolů a kuřích ok",
-          "Podologická konzultace a léčba"
+          "Ošetření prasklin, mozolů a kuřích ok",
+          "Podologická konzultace a ošetření"
         ]
       },
       {
         "name": "Elena Pavlova",
-        "title": "Specialista na pedikúru a manikúru",
+        "title": "Specialista na pedikúru a manikúru s základy podologie",
         "description": "Profesionálka s širokým spektrem dovedností a zkušeností v ošetření složitých případů nohou a nehtů. Zvláštní dovednosti se projevují v ošetření hyperkeratóz, trhlin, mozolů a korekci deformovaných nehtů.\n\nJediná specialistka v našem centru, která poskytuje službu masáže nohou pro obnovení lehkosti a zlepšení celkového pocitu pohody.\nV profesi od roku 2016.",
         "services": [
           "Přístrojová pedikúra a manikúra",
           "SPA pedikúra a manikúra s masáží",
-          "Léčba trhlin, mozolů a kuřích ok",
-          "Léčba houbových infekcí nehtů (onychomykóza)",
-          "Použití nehtových plotének (Titanová nit)"
+          "Ošetření prasklin, mozolů a kuřích ok",
+          "Ošetření mykotických nehtů (onychomykóza)",
+          "Aplikace nehtových rovnátek (Titanová nit)"
         ]
       },
       {
@@ -258,10 +258,10 @@
         "description": "Orientuje se na práci se složitou nohou, korekci deformovaných a zarostlých nehtů, včetně metod ortonyxie. Prohlubuje své znalosti a aktivně se zdokonaluje v podologickém směru. V profesi od roku 2018.",
         "services": [
           "Přístrojová pedikúra",
-          "Léčba zarostlého nehtu",
-          "Léčba trhlin, mozolů a kuřích ok",
-          "Léčba houbových infekcí nehtů (onychomykóza)",
-          "Použití nehtových plotének"
+          "Ošetření zarůstajícího nehtu",
+          "Ošetření prasklin, mozolů a kuřích ok",
+          "Ošetření mykotických nehtů (onychomykóza)",
+          "Aplikace nehtových rovnátek"
         ]
       },
       {
@@ -270,10 +270,10 @@
         "description": "Specialistka s hlubokými znalostmi a vybroušenými dovednostmi v oblasti fundamentálního ošetření nohou a nehtů, která v současné době zvyšuje kvalifikaci v úzce zaměřených tématech podologie, zavádí získané znalosti a dovednosti do praxe. V profesi od roku 2017.",
         "services": [
           "Přístrojová pedikúra",
-          "Léčba trhlin, mozolů a kuřích ok",
-          "Léčba houbových infekcí nehtů (onychomykóza)",
-          "Použití nehtových plotének",
-          "Podologická léčba"
+          "Ošetření prasklin, mozolů a kuřích ok",
+          "Ošetření mykotických nehtů (onychomykóza)",
+          "Aplikace nehtových rovnátek",
+          "Podologické ošetření"
         ]
       }
     ]
@@ -639,7 +639,16 @@
     }
   },
   "serviceBlock": {
+    "bookButton": "Rezervovat",
+    "detailsButton": "Podrobněji"
+  },
+  "insolesPage": {
+    "hero": {
+      "badge": "NOVÁ SLUŽBA",
+      "title": "Diagnostika nohy\na výroba\nindividuálních\nanatomických vložek",
+      "detailsButton": "Více o službě",
     "bookButton": "Rezervovat"
+    }
   },
   "nataliaPage": {
     "hero": {
@@ -721,7 +730,7 @@
         },
         {
           "year": "2024",
-          "institution": "Webinář «Pacienti s cukrovkou v praxi specialisty paramedicínské pedikúry». Mezinárodní podologická konference",
+          "institution": "Mezinárodní podologická konference",
           "degree": "Moderní metodiky a konference",
           "city": "Německo"
         }
@@ -932,23 +941,47 @@
           "items": [
             {
               "number": "01",
-              "title": "Teoretická část: anatomie nehtu, příčiny zarůstání"
+              "title": "Pojem zarostlého a deformovaného nehtu"
             },
             {
               "number": "02", 
-              "title": "Diagnostika a klasifikace stadií zarostlého nehtu"
+              "title": "Příčiny zarůstání nehtu"
             },
             {
               "number": "03",
-              "title": "Nástroje a materiály pro korekci"
+              "title": "Stadia zarůstání nehtu"
             },
             {
               "number": "04",
-              "title": "Praktické metody korekce na modelech"
+              "title": "Stadia hojení rány"
             },
             {
               "number": "05",
-              "title": "Poprocedurální péče a doporučení pro klienta"
+              "title": "Materiály a prostředky pro poskytnutí první pomoci"
+            },
+            {
+              "number": "06",
+              "title": "Příklady našich prací ve spolupráci s chirurgem"
+            },
+            {
+              "number": "07",
+              "title": "Ortonyxie jako pomoc při řešení problému zarostlého nehtu"
+            },
+            {
+              "number": "08",
+              "title": "Algoritmus práce"
+            },
+            {
+              "number": "09",
+              "title": "Domácí doporučení"
+            },
+            {
+              "number": "10",
+              "title": "Fotografie našich prací před/po"
+            },
+            {
+              "number": "11",
+              "title": "Praktická demonstrace na modelu"
             }
           ]
         }
@@ -957,12 +990,12 @@
         "id": "unibrace",
         "overview": {
           "type": "OFFLINE KURZ",
-          "title": "Titanové\nvlákno\nUnibrace",
+          "title": "Titanové\nvlákno",
           "description": "Naučte se inovativní metodiku korekce zarostlého nehtu pomocí titanového vlákna.\nIndividuální výuka\nDélka: 3-4 hodiny",
           "prices": [
             {
-              "name": "Individuální formát",
-              "price": "8 000 Kč"
+              "name": "",
+              "price": "6 000 Kč"
             }
           ],
           "courseLink": "#course-details",
@@ -979,37 +1012,86 @@
           "items": [
             {
               "number": "01",
-              "title": "Úvod do technologie Unibrace"
+              "title": "Věda ortonyxie"
             },
             {
               "number": "02",
-              "title": "Indikace a kontraindikace k použití"
+              "title": "Co je titanové vlákno"
             },
             {
               "number": "03",
-              "title": "Technika instalace titanového vlákna"
+              "title": "Síla působení"
             },
             {
               "number": "04",
-              "title": "Praktická práce na modelech"
+              "title": "S jakými problémy pracuje titanové vlákno"
             },
             {
               "number": "05",
-              "title": "Poprocedurální péče a kontrola"
+              "title": "Kontraindikace"
+            },
+            {
+              "number": "06",
+              "title": "Příslušenství/instrumenty pro práci"
+            },
+            {
+              "number": "07",
+              "title": "Metody instalace"
+            },
+            {
+              "number": "08",
+              "title": "Algoritmus práce"
+            },
+            {
+              "number": "09",
+              "title": "Výsledky před/po"
+            },
+            {
+              "number": "10",
+              "title": "Časté chyby v práci s titanovým vláknem"
+            },
+            {
+              "number": "11",
+              "title": "Demonstrace metody"
+            },
+            {
+              "number": "12",
+              "title": "Praktická cvičení"
             }
           ]
+        },
+        "benefits": {
+          "title": "Co získáte",
+          "items": [
+            {
+              "icon": "certificate",
+              "title": "Certifikát školy Footura",
+              "description": "Certifikát o zvýšení kvalifikace na téma \"Titanové vlákno\""
+            },
+            {
+              "icon": "materials",
+              "title": "Profesionální materiály",
+              "description": "Tištěné učební materiály, seznam doporučených nástrojů a přípravků"
+            }
+          ],
+          "detailsButton": "Podrobněji o kurzu",
+          "purchaseButton": "Koupit kurz"
         }
       },
       {
-        "id": "individual-training",
+        "id": "unibrace-step1",
         "overview": {
-          "type": "ONLINE KURZ",
-          "title": "Individuální\nvýuka",
-          "description": "Osobní program výuky přizpůsobený vašim potřebám a úrovni přípravy.\nFormát: videokonference\nDélka: dle dohody",
+          "type": "OFFLINE KURZ",
+          "title": "UniBrace\nStupeň 1",
+          "description": "Vhodné pro specialisty s jakýmikoli zkušenostmi\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 5-6 hodin",
           "prices": [
             {
-              "name": "1 hodina individuální výuky",
-              "price": "2 000 Kč"
+              "name": "Skupinový formát",
+              "price": "550 €"
+            },
+            {
+              "name": "Individuální formát",
+              "price": "650 €"
             }
           ],
           "courseLink": "#course-details",
@@ -1018,24 +1100,86 @@
           "noButton": false
         },
         "description": {
-          "text": "Individuální výuka je osobní přístup k vašemu profesnímu rozvoji. Program se plně přizpůsobuje vašim cílům, současné úrovni znalostí a specifice práce. Možnost studia jakýchkoliv směrů podologie s individuálním rozvrhem hodin.",
-          "image": "/images/school/course-individual-training.png"
+          "text": "Kurz UniBrace Stupeň 1 představuje hloubkové studium moderních metod korekce zarostlého nehtu pomocí inovativního systému UniBrace. Tento kurz je ideální pro specialisty, kteří chtějí zvládnout pokročilé technologie v oblasti podologie a ortonyxie.",
+          "image": "/images/school/course-unibrace-step1.png"
         },
         "plan": {
-          "hasPlan": false,
-          "items": []
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Věda ortonyxie"
+            },
+            {
+              "number": "02",
+              "title": "Seznámení s UniBrace"
+            },
+            {
+              "number": "03",
+              "title": "Síla působení"
+            },
+            {
+              "number": "04",
+              "title": "S jakými problémy pracuje UniBrace"
+            },
+            {
+              "number": "05",
+              "title": "Příslušenství/instrumenty pro práci"
+            },
+            {
+              "number": "06",
+              "title": "Metody instalace"
+            },
+            {
+              "number": "07",
+              "title": "Algoritmus práce"
+            },
+            {
+              "number": "08",
+              "title": "Výsledky před/po"
+            },
+            {
+              "number": "09",
+              "title": "Demonstrace metody"
+            },
+            {
+              "number": "10",
+              "title": "Praktická cvičení na trenažérech"
+            }
+          ]
+        },
+        "benefits": {
+          "title": "co dostanete",
+          "items": [
+            {
+              "icon": "certificate",
+              "title": "certifikát školy Footura",
+              "description": "Oficiální poznávací certifikát od výrobce UniBrace"
+            },
+            {
+              "icon": "materials",
+              "title": "profesionální materiály",
+              "description": "tištěné výukové materiály, seznam doporučených nástrojů a léků"
+            }
+          ],
+          "detailsButton": "více o kurzu",
+          "purchaseButton": "koupit kurz"
         }
       },
       {
-        "id": "webinar-pathologies",
+        "id": "unibrace-step2",
         "overview": {
-          "type": "ONLINE WEBINÁŘ",
-          "title": "Patologie\nnohy",
-          "description": "Interaktivní webinář o rozšířených patologiích nohy a metodách jejich korekce.\nDélka: 2 hodiny\nS certifikátem",
+          "type": "OFFLINE KURZ",
+          "title": "UniBrace\nStupeň 2",
+          "description": "Vhodné pro specialisty, kteří absolvovali kurz UniBrace stupeň 1\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 5-6 hodin",
           "prices": [
             {
-              "name": "Účast na webináři",
-              "price": "1 500 Kč"
+              "name": "Skupinový formát",
+              "price": "550 €"
+            },
+            {
+              "name": "Individuální formát",
+              "price": "650 €"
             }
           ],
           "courseLink": "#course-details",
@@ -1044,33 +1188,448 @@
           "noButton": false
         },
         "description": {
-          "text": "Komplexní přehled nejčastěji se vyskytujících patologií nohy. Naučte se diagnostické znaky, metody prevence a korekce. Webinář zahrnuje skutečné klinické případy a interaktivní diskusi s expertem.",
-          "image": "/images/school/course-pathologies.png"
+          "text": "Kurz UniBrace Stupeň 2 představuje pokročilou úroveň výuky práce se systémem UniBrace. Tento kurz je určen pro specialisty, kteří již zvládli základní dovednosti a jsou připraveni na studium složitých případů a pokročilých technik.",
+          "image": "/images/school/course-unibrace-step2.png"
         },
         "plan": {
           "hasPlan": true,
           "items": [
             {
               "number": "01",
-              "title": "Anatomie a fyziologie nohy"
+              "title": "Věda ortonyxie"
             },
             {
               "number": "02",
-              "title": "Klasifikace patologií nohy"
+              "title": "Seznámení s UniBrace"
             },
             {
               "number": "03",
-              "title": "Diagnostické metody"
+              "title": "Síla působení"
             },
             {
               "number": "04",
-              "title": "Metody korekce a prevence"
+              "title": "S jakými problémy pracuje UniBrace"
             },
             {
               "number": "05",
-              "title": "Rozbor klinických případů"
+              "title": "Příslušenství/instrumenty pro práci"
+            },
+            {
+              "number": "06",
+              "title": "Metody instalace"
+            },
+            {
+              "number": "07",
+              "title": "Algoritmus práce"
+            },
+            {
+              "number": "08",
+              "title": "Výsledky před/po"
+            },
+            {
+              "number": "09",
+              "title": "Fotodemonstrační a rozbor připravených 20 případů práce s UniBrace"
+            },
+            {
+              "number": "10",
+              "title": "Analýza případů s kolegy, otázky - odpovědi, coffee break"
+            },
+            {
+              "number": "11",
+              "title": "Demonstrace metody instalace na modelu"
+            },
+            {
+              "number": "12",
+              "title": "Praktická cvičení na modelech"
             }
           ]
+        },
+        "benefits": {
+          "title": "co dostanete",
+          "items": [
+            {
+              "icon": "certificate",
+              "title": "certifikát školy Footura",
+              "description": "Oficiální poznávací certifikát od výrobce UniBrace"
+            },
+            {
+              "icon": "materials",
+              "title": "profesionální materiály",
+              "description": "tištěné výukové materiály, seznam doporučených nástrojů a léků"
+            }
+          ],
+          "detailsButton": "více o kurzu",
+          "purchaseButton": "koupit kurz"
+        }
+      },
+      {
+        "id": "prosthetics",
+        "overview": {
+          "type": "OFFLINE KURZ",
+          "title": "Protéza",
+          "description": "Vhodné pro specialisty s jakoukoliv zkušeností\nVýuka v mini-skupině do 4 lidí\nDélka kurzu: 5-6 hodin",
+          "prices": [
+            {
+              "name": "Skupinový formát",
+              "price": "5 000 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "05",
+          "noButton": false
+        },
+        "description": {
+          "text": "Kurz protézování nehtové ploténky je určen pro specialisty, kteří se chtějí naučit moderní metody obnovy poškozených nebo chybějících nehtů. Naučte se materiály, techniky a algoritmy práce pro dosažení esteticky atraktivního a funkčního výsledku.",
+          "image": "/images/school/course-prosthetics.png"
+        },
+        "plan": {
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Pojem protézování"
+            },
+            {
+              "number": "02",
+              "title": "Příčiny narušení celistvosti nehtové ploténky"
+            },
+            {
+              "number": "03",
+              "title": "Komplikace při absenci nehtové ploténky"
+            },
+            {
+              "number": "04",
+              "title": "Indikace k protézování"
+            },
+            {
+              "number": "05",
+              "title": "Kontraindikace"
+            },
+            {
+              "number": "06",
+              "title": "Materiály pro protézování"
+            },
+            {
+              "number": "07",
+              "title": "Algoritmus práce"
+            },
+            {
+              "number": "08",
+              "title": "Foto našich případů před/po"
+            },
+            {
+              "number": "09",
+              "title": "Doporučení"
+            },
+            {
+              "number": "10",
+              "title": "Praktická cvičení na trenažérech"
+            }
+          ]
+        },
+        "benefits": {
+          "title": "Co získáte",
+          "items": [
+            {
+              "icon": "certificate",
+              "title": "Certifikát školy Footura",
+              "description": "Certifikát o zvýšení kvalifikace na téma \"Protézování\""
+            },
+            {
+              "icon": "materials",
+              "title": "Profesionální materiály",
+              "description": "Tištěné učební materiály, seznam doporučených nástrojů a přípravků"
+            }
+          ],
+          "detailsButton": "Podrobněji o kurzu",
+          "purchaseButton": "Koupit kurz"
+        }
+      },
+      {
+        "id": "author-methodology",
+        "overview": {
+          "type": "OFFLINE KURZ",
+          "title": "Autorská metodika\nzpracování nohy",
+          "description": "Vhodné pro specialisty s jakoukoliv zkušeností\nVýuka v mini-skupině do 4 lidí\nDélka kurzu: 5-6 hodin",
+          "prices": [
+            {
+              "name": "Skupinový formát",
+              "price": "8 000 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "06",
+          "noButton": false
+        },
+        "description": {
+          "text": "Unikátní kurz autorské metodiky zpracování nohy, vyvinuté na základě mnohaletých zkušeností. Naučte se exkluzivní techniky, algoritmy práce a sadu speciálních nástrojů. Získejte praktické dovednosti práce s onycholýzou a dalšími složitými případy.",
+          "image": "/images/school/course-author-methodology.png"
+        },
+        "plan": {
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Algoritmus práce"
+            },
+            {
+              "number": "02",
+              "title": "Sada nástrojů pro autorskou techniku"
+            },
+            {
+              "number": "03",
+              "title": "Demonstrace metody"
+            },
+            {
+              "number": "04",
+              "title": "Praktická cvičení na modelech"
+            },
+            {
+              "number": "05",
+              "title": "BONUS Algoritmy práce s onycholýzou"
+            }
+          ]
+        },
+        "benefits": {
+          "title": "Co získáte",
+          "items": [
+            {
+              "icon": "certificate",
+              "title": "Certifikát školy Footura",
+              "description": "Certifikát o zvýšení kvalifikace na téma \"Autorská metodika zpracování nohy\""
+            },
+            {
+              "icon": "materials",
+              "title": "Profesionální materiály",
+              "description": "Tištěné učební materiály, seznam doporučených nástrojů a přípravků"
+            }
+          ],
+          "detailsButton": "Podrobněji o kurzu",
+          "purchaseButton": "Koupit kurz"
+        }
+      },
+      {
+        "id": "individual-training",
+        "overview": {
+          "type": "OFFLINE KURZ",
+          "title": "Individuální\nvýuka",
+          "description": "Délka kurzu: 8 hodin\nDatum konání: dle dohody",
+          "prices": [
+            {
+              "name": "Individuální formát",
+              "price": "15 000 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "07",
+          "noButton": false
+        },
+        "description": {
+          "text": "Praktické procvičení dovedností na vybraná témata:\n \nKurz „Titanová nit“\n \nKurz „Zarostlý nehet“\n \nKurz na vybrané téma (např. ošetření trhlin, mozolů, deformovaných nehtů atd.)",
+          "image": "/images/school/course-individual.png"
+        },
+        "plan": {
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Kurz \"zarostlý nehet\" 2x"
+            },
+            {
+              "number": "02",
+              "title": "Kurz Titanové vlákno 2x"
+            },
+            {
+          "number": "03",
+              "title": "Protézování 2x"
+            },
+            {
+              "number": "04",
+              "title": "UniBrace 1 a 2 stupeň"
+            },
+            {
+              "number": "05",
+              "title": "Autorská technika zpracování nohy"
+            },
+            {
+              "number": "06",
+              "title": "Kurz \"Praktik\"\n(zpracování prasklin, mozolů, deformovaných nehtů, onycholýzy)"
+            }
+          ]
+        },
+        "benefits": {
+          "title": "Co získáte",
+          "items": [
+            {
+              "icon": "certificate",
+              "title": "Certifikát školy Footura",
+              "description": "Oficiální poznávací certifikát od výrobce UniBrace"
+            },
+            {
+              "icon": "materials",
+              "title": "Profesionální materiály",
+              "description": "Tištěné učební materiály, seznam doporučených nástrojů a přípravků"
+            }
+          ],
+          "detailsButton": "Podrobněji o kurzu",
+          "purchaseButton": "Koupit kurz"
+        }
+      },
+      {
+        "id": "dermatologist-collaboration",
+        "overview": {
+          "type": "ONLINE SEMINÁŘ",
+          "title": "Spolupráce dermatologa\na podologa/specialisty\nna pedikúru",
+          "description": "14. června 2025, 10:00 (Praha)\nDélka: 4 hodiny\nJazyk: ruský",
+          "prices": [
+            {
+              "name": "Účast na semináři",
+              "price": "3 000 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "08",
+          "noButton": false
+        },
+        "description": {
+          "text": "Řečníci:\n \nIrina Afanasieva: dermatoveneroložka (Lékařská univerzita, Astana), absolvovala nostrifikaci a aprobaci v České republice. Pracovní zkušenosti v FNKV, Canadian Medical, RP Clinic v Praze\n \nNatalia Rotar – podolog, autorka kurzů pro pedikéry/podology, zakladatelka centra podologie v Praze.",
+          "image": "/images/school/seminar-collaboration.png"
+        },
+        "plan": {
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Onychomykózy (mykotická postižení nehtů)"
+            },
+            {
+              "number": "02",
+              "title": "Dermatomykózy"
+      },
+      {
+              "number": "03",
+              "title": "Bradavice"
+            },
+            {
+              "number": "04",
+              "title": "Onycholystrofie"
+            },
+            {
+              "number": "05",
+              "title": "Benigní novotvary"
+            },
+            {
+              "number": "06",
+              "title": "Melanom v praxi specialisty na pedikúru/ podologa"
+            },
+            {
+              "number": "07",
+              "title": "Otázky - odpovědi"
+            }
+          ]
+        },
+        "benefits": {
+          "title": "Co získáte",
+          "items": [
+            {
+              "icon": "knowledge",
+              "title": "Aktuální znalosti o kožních a nehtových onemocněních, se kterými se setkávají specialisté pedikúry",
+              "description": ""
+            },
+            {
+              "icon": "communication",
+              "title": "Živá komunikace s dermato-venerologem: rozbor reálných případů, odpovědi na otázky",
+              "description": ""
+            },
+            {
+              "icon": "referral",
+              "title": "Pochopení, kdy je nutné směrovat klienta k lékaři",
+              "description": ""
+            },
+            {
+              "icon": "certificate",
+              "title": "Jmenný certifikát účastníka semináře",
+              "description": ""
+            }
+          ],
+          "detailsButton": "Podrobněji o kurzu",
+          "purchaseButton": "Koupit kurz"
+        }
+      },
+      {
+        "id": "diabetes-patients",
+        "overview": {
+          "type": "WEBINÁŘ",
+          "title": "Pacienti s cukrovkou\nv praxi specialisty\nparamedicínské pedikúry",
+          "description": "Délka: 8-10 hodin (2 dny)\nFormát: Interaktivní webinář",
+          "prices": [
+            {
+              "name": "Účast na webináři",
+              "price": "3 000 Kč"
+            }
+          ],
+          "courseLink": "#course-details",
+          "purchaseLink": "#purchase",
+          "number": "09",
+          "noButton": false
+        },
+        "description": {
+          "text": "Odborníci\n \nOleg Udovichenko – doktor lékařských věd, endokrinolog v ordinaci pro diabetickou nohu (Haifa)\n \nNatalia Rotar – podolog, vedoucí centra podologie (Praha), autorka vzdělávacích programů",
+          "image": "/images/school/webinar-diabetes.png"
+        },
+        "plan": {
+          "hasPlan": true,
+          "items": [
+            {
+              "number": "01",
+              "title": "Co by měl specialista na pedikúru vědět o cukrovce?"
+            },
+            {
+              "number": "02",
+              "title": "Co je to syndrom diabetické nohy (SDN / Diabetic Foot)?"
+            },
+            {
+              "number": "03",
+              "title": "Jak správně posoudit riziko rozvoje SDN a proč není vždy spojené s úrovní cukru?"
+            },
+            {
+              "number": "04",
+              "title": "Jak rozlišit nohy s vysokým rizikem komplikací od nízkého nebo mírného?"
+            },
+            {
+              "number": "05",
+              "title": "Efektivní metody péče a prevence pro pacienty vysokého rizika"
+            },
+            {
+              "number": "06",
+              "title": "Jak se vyhnout chybám: správné a nesprávné ošetření nohou při cukrovce"
+            },
+            {
+              "number": "07",
+              "title": "Praktická doporučení a odpovědi na otázky"
+            }
+          ]
+        },
+        "benefits": {
+          "title": "Co získáte",
+          "items": [
+            {
+              "icon": "certificate",
+              "title": "Jmenný certifikát od školy Footura",
+              "description": ""
+            },
+            {
+              "icon": "materials",
+              "title": "Přístup k záznamu webináře na 2 měsíce",
+              "description": ""
+            }
+          ],
+          "detailsButton": "Podrobněji o kurzu",
+          "purchaseButton": "Koupit kurz"
         }
       }
     ],
@@ -1312,6 +1871,7 @@
     "school": "Škola Footura",
     "blog": "Blog",
     "copyright": "© 2025 All Right Reserved",
-    "privacy": "Zásady ochrany osobních údajů"
+    "privacy": "Zásady ochrany osobních údajů",
+    "developedBy": "Vyvinuto:"
   }
 }

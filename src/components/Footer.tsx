@@ -37,9 +37,8 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
               <FooterLink href="/services">{t('footer.services')}</FooterLink>
               <FooterLink href="/prices">{t('footer.prices')}</FooterLink>
               <FooterLink href="/natalia">{t('footer.natalia')}</FooterLink>
-              <FooterLink href="/insoles">{t('footer.insoles')}</FooterLink>
               <FooterLink href="/school">{t('footer.school')}</FooterLink>
-              <FooterLink href="/blog">{t('footer.blog')}</FooterLink>
+              {/* <FooterLink href="/blog">{t('footer.blog')}</FooterLink> */}
             </nav>
           </div>
           
@@ -63,6 +62,23 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
           <Link href="/privacy" className={styles.privacyLink}>
             {t('footer.privacy')}
           </Link>
+        </div>
+        
+        {/* Developer Section */}
+        <div className={styles.developerSection}>
+          <a 
+            href="https://zeepdesign.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={styles.developerLink}
+          >
+            <span className={styles.developerText}>{t('footer.developedBy')}</span>
+            <img 
+              src="/images/logo_developer.png" 
+              alt="ZEEP Design Studio" 
+              className={styles.zeepLogo}
+            />
+          </a>
         </div>
       </div>
     </footer>

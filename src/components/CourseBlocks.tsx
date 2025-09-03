@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import CourseOverview from './CourseOverview';
 import CourseDescription from './CourseDescription';
 import CoursePlan from './CoursePlan';
+import CourseBenefits from './CourseBenefits';
 
 interface CoursePrice {
   name: string;
@@ -81,6 +82,12 @@ export default function CourseBlocks() {
         coursesData={coursesData}
       />
       <CoursePlan 
+        currentCourseIndex={currentCourseIndex} 
+        direction={direction}
+        isAnimating={isAnimating}
+        coursesData={coursesData}
+      />
+      <CourseBenefits 
         currentCourseIndex={currentCourseIndex} 
         direction={direction}
         isAnimating={isAnimating}

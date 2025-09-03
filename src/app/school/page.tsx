@@ -6,7 +6,7 @@ import SchoolHero from '../../components/SchoolHero';
 import SchoolAbout from '../../components/SchoolAbout';
 import SchoolLector from '../../components/SchoolLector';
 import CourseBlocks from '../../components/CourseBlocks';
-import SchoolBenefits from '../../components/SchoolBenefits';
+
 import SchoolAdvantages from '../../components/SchoolAdvantages';
 import SchoolReviews from '../../components/SchoolReviews';
 
@@ -19,7 +19,6 @@ export default function SchoolPage() {
         <SchoolAbout />
         <SchoolLector />
         <CourseBlocks />
-        <SchoolBenefits />
         <SchoolAdvantages />
         <SchoolReviews />
       </main>

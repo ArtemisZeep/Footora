@@ -20,10 +20,13 @@
 }
 
 .benefitsGrid {
-  display: flex;
-  justify-content: center;
-  gap: 107px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 107px;
   margin-bottom: 90px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .benefitItem {
@@ -43,6 +46,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.iconImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .benefitContent {
@@ -137,10 +146,9 @@
   }
   
   .benefitsGrid {
-    flex-direction: column;
-    gap: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px;
     margin-bottom: 60px;
-    align-items: center;
   }
   
   .benefitItem {
@@ -151,6 +159,11 @@
   .benefitIcon {
     min-width: 80px;
     height: 80px;
+  }
+  
+  .iconImage {
+    width: 50px;
+    height: 50px;
   }
   
   .benefitTitle {
@@ -196,6 +209,7 @@
   }
   
   .benefitsGrid {
+    grid-template-columns: 1fr;
     gap: 40px;
     margin-bottom: 40px;
   }
@@ -211,6 +225,11 @@
     min-width: 70px;
     height: 70px;
     align-self: center;
+  }
+  
+  .iconImage {
+    width: 40px;
+    height: 40px;
   }
   
   .benefitContent {

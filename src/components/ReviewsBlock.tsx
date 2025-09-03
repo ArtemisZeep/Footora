@@ -62,7 +62,12 @@ export default function ReviewsBlock() {
               <div className={styles.reviewHeader}>
                 <Avatar photo={null} />
                 <div className={styles.clientInfo}>
-                  <div className={styles.clientName}>{review.name}</div>
+                  <div className={styles.clientName}>
+                    {review.name === 'Клиент' ? 
+                      (review.language === 'ru' ? 'Клиент' : review.language === 'cs' ? 'Klient' : 'Client') : 
+                      review.name
+                    }
+                  </div>
                   <div className={styles.clientStatus}>
                     {review.language === 'ru' ? 'клиент' : review.language === 'cs' ? 'klient' : 'client'}
                   </div>

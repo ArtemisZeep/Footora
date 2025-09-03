@@ -44,6 +44,11 @@ export default function AboutPage() {
       orientation: 'horizontal',
       alt: `${t('about.certificate')} 3`,
     },
+    {
+      src: '/images/Cert_es.png',
+      orientation: 'vertical',
+      alt: `${t('about.certificate')} 4`,
+    },
   ];
 
   // Состояния попапа

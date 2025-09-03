@@ -181,7 +181,7 @@ export default function CourseOverview({
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        Подробнее о курсе
+                        Подробнее
                       </motion.a>
                     )}
                     <motion.button 
