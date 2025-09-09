@@ -9,10 +9,11 @@ import ServiceGroups from '../../components/ServiceGroups';
 import ServiceBlock from '../../components/ServiceBlock';
 import ClientJsonLd from '../../components/ClientJsonLd';
 import { createMedicalServiceSchema } from '../../lib/jsonLd';
+import SEOHead from '../../components/SEOHead';
 
 export default function ServicesPage() {
   const { tData } = useLanguage();
-  
+
   const servicesCategories = tData('services.categories') as Array<{
     id: string;
     title: string;
@@ -113,6 +114,13 @@ export default function ServicesPage() {
 
   return (
     <>
+      <SEOHead 
+        title="Услуги подолога - Лечение стоп и ногтей в Праге | Footura"
+        description="Полный спектр подологических услуг: лечение вросших ногтей, грибка, медицинский педикюр, коррекция деформаций стоп. Запись онлайн."
+        keywords="услуги подолога, лечение вросших ногтей, медицинский педикюр, грибок ногтей, коррекция стопы"
+        canonicalUrl="/services"
+      />
+
       {/* Добавляем JSON-LD схемы для каждой основной услуги */}
       {servicesSchemas.map((schema, index) => (
         <ClientJsonLd 
@@ -121,7 +129,7 @@ export default function ServicesPage() {
           id={`medical-service-${index}`} 
         />
       ))}
-      
+
       <Header />
       <main>
         <ServicesHero />

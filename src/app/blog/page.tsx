@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import BlogHero from '../../components/BlogHero';
@@ -8,6 +9,10 @@ import { SanitySiteSettings } from '../../types/sanity';
 import { urlFor } from '../../lib/sanity';
 import { getPublishedArticles } from '../../lib/blogApi';
 import styles from './blog.module.css';
+import { pageMetadata } from '../../lib/metadata';
+
+// Динамические метатеги для страницы блога
+export const metadata: Metadata = pageMetadata.blog;
 
 // Функция для получения настроек сайта с основной статьей
 async function getSiteSettings(): Promise<SanitySiteSettings | null> {

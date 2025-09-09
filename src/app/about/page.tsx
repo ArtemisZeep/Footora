@@ -9,11 +9,18 @@ import CertificatesPopup, { Certificate } from '@/components/CertificatesPopup';
 import WorkResultsBlock from '@/components/WorkResultsBlock';
 import ReviewsBlock from '@/components/ReviewsBlock';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEOHead from '../../components/SEOHead';
 
 export default function AboutPage() {
   const { t, tArray } = useLanguage();
   const [isMobileHero, setIsMobileHero] = useState(false);
   const [isMobilePopup, setIsMobilePopup] = useState(false);
+  const [showCertificates, setShowCertificates] = useState(false);
+  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+
+  useEffect(() => {
+    document.title = t('about.title');
+  }, [t]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -98,6 +105,12 @@ export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col">
       <Header />
+      <SEOHead
+        title="О центре подологии Footura - Профессиональный уход за стопами"
+        description="Узнайте о центре подологии Footura в Праге. Наша миссия - профессиональный уход за здоровьем ваших стоп с использованием современных методик."
+        keywords="центр подологии, footura, о нас, подология прага, команда подологов"
+        canonicalUrl="/about"
+      />
       <section className={styles.hero}>
         <video
           autoPlay

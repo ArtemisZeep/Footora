@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import IntroSection from '@/components/IntroSection';
@@ -10,6 +11,10 @@ import AboutFounderSection from '@/components/AboutFounderSection';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import { createMedicalBusinessSchema } from '@/lib/jsonLd';
+import { pageMetadata } from '@/lib/metadata';
+
+// Динамические метатеги для главной страницы
+export const metadata: Metadata = pageMetadata.home;
 
 export default async function Home() {
   // Структурированные данные для медицинского центра
