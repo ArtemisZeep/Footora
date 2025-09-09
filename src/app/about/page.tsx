@@ -15,8 +15,8 @@ export default function AboutPage() {
   const { t, tArray } = useLanguage();
   const [isMobileHero, setIsMobileHero] = useState(false);
   const [isMobilePopup, setIsMobilePopup] = useState(false);
-  const [showCertificates, setShowCertificates] = useState(false);
-  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+  // const [showCertificates, setShowCertificates] = useState(false);
+  // const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
 
   useEffect(() => {
     document.title = t('about.title');

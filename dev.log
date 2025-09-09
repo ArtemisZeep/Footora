@@ -1,0 +1,26 @@
+
+> my-app@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.3.5 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.76:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Compiled middleware in 94ms
+ ✓ Ready in 866ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1323ms
+ GET / 200 in 1525ms
+ GET / 200 in 74ms
+ ⚠ Found a change in next.config.js. Restarting the server to apply the changes...
+   ▲ Next.js 15.3.5 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.76:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Compiled middleware in 76ms
+ ✓ Ready in 790ms
+[?25h

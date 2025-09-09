@@ -5,8 +5,6 @@ import InsolesHero from '../../components/InsolesHero';
 import InsolesInfo from '../../components/InsolesInfo';
 import AnalysisBlock from '../../components/AnalysisBlock';
 import { pageMetadata } from '../../lib/metadata';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import RelatedPages from '../../components/RelatedPages';
 
 // Динамические метатеги для страницы изготовления стелек
 export const metadata: Metadata = pageMetadata.insoles;
@@ -18,19 +16,11 @@ export default function InsolesPage() {
     <>
       <Header />
       <main>
-        {/* Breadcrumbs БЕЗ нарушения стилей */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <Breadcrumbs currentPage="insoles" />
-        </div>
-
         <InsolesHero />
         <InsolesInfo />
         {analysisBlocks.map((blockNumber) => (
           <AnalysisBlock key={blockNumber} blockNumber={blockNumber} />
         ))}
-        
-        {/* Связанные страницы */}
-        <RelatedPages currentPage="insoles" />
       </main>
       <Footer />
     </>

@@ -10,8 +10,6 @@ import ServiceBlock from '../../components/ServiceBlock';
 import ClientJsonLd from '../../components/ClientJsonLd';
 import { createMedicalServiceSchema } from '../../lib/jsonLd';
 import SEOHead from '../../components/SEOHead';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import RelatedPages from '../../components/RelatedPages';
 
 export default function ServicesPage() {
   const { tData } = useLanguage();
@@ -147,19 +145,11 @@ export default function ServicesPage() {
       <main>
         <ServicesHero />
         
-        {/* Добавляем Breadcrumbs БЕЗ нарушения стилей */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <Breadcrumbs currentPage="services" />
-        </div>
-        
         <ServiceGroups />
         
         {Object.entries(serviceGroups).map(([sectionId, indices]) =>
           renderServiceSection(sectionId, indices)
         )}
-        
-        {/* Добавляем связанные страницы */}
-        <RelatedPages currentPage="services" />
       </main>
       <Footer />
     </>

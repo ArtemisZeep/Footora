@@ -13,8 +13,6 @@ import NataliaMission from '../../components/NataliaMission';
 import NataliaWhyChoose from '../../components/NataliaWhyChoose';
 import ClientJsonLd from '../../components/ClientJsonLd';
 import { createMedicalProfessionalSchema } from '../../lib/jsonLd';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import RelatedPages from '../../components/RelatedPages';
 import SEOHead from '../../components/SEOHead';
 
 export default function NataliaPage() {
@@ -47,11 +45,6 @@ export default function NataliaPage() {
       
       <Header />
       <main>
-        {/* Breadcrumbs БЕЗ нарушения стилей */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-          <Breadcrumbs currentPage="natalia" />
-        </div>
-
         <NataliaHero />
         <NataliaExperience />
         <NataliaEducation />
@@ -61,9 +54,6 @@ export default function NataliaPage() {
         <NataliaSchool />
         <NataliaMission />
         <NataliaWhyChoose />
-        
-        {/* Связанные страницы */}
-        <RelatedPages currentPage="natalia" />
       </main>
       <Footer />
     </>

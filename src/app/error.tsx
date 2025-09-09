@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import styles from './not-found.module.css'
+import styles from '../styles/not-found.module.css'
 
 export default function Error({
   error,

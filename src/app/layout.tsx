@@ -44,6 +44,8 @@ export default function RootLayout({
         {/* DNS prefetch для внешних ресурсов */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//mc.yandex.ru" />
         
         {/* Preconnect для критических ресурсов */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,6 +54,44 @@ export default function RootLayout({
         {/* Preload критических изображений - НЕ ТРОГАЕМ critical.css! */}
         <link rel="preload" as="image" href="/images/logo_footura.png" />
         <link rel="preload" as="image" href="/images/hero-bg.jpg" />
+        
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4XYF0R04SD"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-4XYF0R04SD');
+            `,
+          }}
+        />
+        
+        {/* Yandex Metrika */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(m,e,t,r,i,k,a){
+                m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+              })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104088996', 'ym');
+              
+              ym(104088996, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+            `,
+          }}
+        />
+        <noscript>
+          <div>
+            <img 
+              src="https://mc.yandex.ru/watch/104088996" 
+              style={{position:'absolute', left:'-9999px'}} 
+              alt="" 
+            />
+          </div>
+        </noscript>
         
         {/* Критические стили - НЕ ИЗМЕНЯЕМ! */}
         <link 

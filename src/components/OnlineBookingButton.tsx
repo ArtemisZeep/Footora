@@ -4,9 +4,14 @@ import Link from 'next/link';
 import React from 'react';
 import styles from '../styles/OnlineBookingButton.module.css';
 import { useLanguage } from '../contexts/LanguageContext';
+import { trackBookingClick } from '../lib/analytics';
 
 const OnlineBookingButton: React.FC = () => {
   const { t } = useLanguage();
+
+  const handleBookingClick = () => {
+    trackBookingClick();
+  };
 
   return (
     <Link
@@ -15,6 +20,7 @@ const OnlineBookingButton: React.FC = () => {
       rel="noopener noreferrer"
       aria-label={t('hero.onlineBooking')}
       className={styles.fab}
+      onClick={handleBookingClick}
     >
       <span className={styles.text}>{t('hero.onlineBooking')}</span>
     </Link>
