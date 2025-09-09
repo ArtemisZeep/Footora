@@ -99,13 +99,16 @@ export default function AboutPage() {
     <main className="flex min-h-screen flex-col">
       <Header />
       <section className={styles.hero}>
-        <Image
-          src={isMobileHero ? "/images/hero_about_mob.png" : "/images/hero_about.png"}
-          alt={t('about.heroAlt')}
-          fill
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className={styles.bgImage}
-          priority
-        />
+          poster={isMobileHero ? "/images/hero_about_mob.png" : "/images/hero_about.png"}
+        >
+          <source src="/video/hero_main.mp4" type="video/mp4" />
+        </video>
         <div className={styles.content}></div>
       </section>
       <section className={aboutStyles.aboutHero}>

@@ -15,7 +15,13 @@
     "title": "Zdravé nohy jsou pohyb,\na pohyb je život",
     "learnMore": "Zjistit více",
     "booking": "Rezervovat",
-    "onlineBooking": "Online\nrezervace"
+    "onlineBooking": "Online\nrezervace",
+    "newService": {
+      "title": "NOVÁ SLUŽBA",
+      "subtitle": "Diagnostika chodidel\na výroba individuálních\nanatomických vložek",
+      "learnMore": "Zjistit více",
+      "bookNow": "Rezervovat"
+    }
   },
   "intro": {
     "subtitle": "Vítejte ve světě zdravých nohou",
@@ -647,7 +653,99 @@
       "badge": "NOVÁ SLUŽBA",
       "title": "Diagnostika nohy\na výroba\nindividuálních\nanatomických vložek",
       "detailsButton": "Více o službě",
-    "bookButton": "Rezervovat"
+      "bookButton": "Rezervovat"
+    },
+    "info": {
+      "imageAlt": "Diagnostické zařízení pro nohy",
+      "title": "Proč je důležitá\npřesná diagnostika\nnohy?",
+      "description": "Funkční stav nohy přímo ovlivňuje zdraví celého pohybového aparátu, stejně jako stav kůže a nehtů. Mnoho povrchových problémů — kuří oka, zarůstající nehty, deformace prstů — nejsou primární, ale jsou důsledkem skrytých poruch biomechaniky nohy. Moderní diagnostika na 3D přístroji umožňuje přesně tyto poruchy určit a vybrat účinnou korekci."
+    },
+    "analysis": {
+      "block1": {
+        "title": "Analýza klenby nohy (podélná a příčná klenba)",
+        "leftSection": {
+          "title": "POKUD SE NEODHALÍ PORUCHY",
+          "description": "Rozvoj podélné nebo příčné plochosti vede k nesprávnému rozložení tlaku, což způsobuje:",
+          "bulletPoints": {
+            "0": "Kuří oka a mozoly, zejména v oblasti pod hlavičkami nártních kostí.",
+            "1": "Kořenové mozoly vznikající v zónách neustálého přetížení.",
+            "2": "Onycholýza (odlupování nehtu) kvůli deformaci nehtového lůžka.",
+            "3": "Zarůstající nehty jako důsledek utlačování prstů při nesprávném postavení nohy."
+          }
+        },
+        "rightSection": {
+          "title": "CO DĚLÁ 3D PŘÍSTROJ",
+          "description": "Určuje typ klenby a stupeň její deformace, což umožňuje vyrobit individuální vložky, které přerozdělují zatížení a snižují traumatizaci měkkých tkání."
+        }
+      },
+      "block2": {
+        "title": "Rozložení zátěže na nohu",
+        "leftSection": {
+          "title": "PROBLÉMY KONTAKTU NOHY S POVRCHEM",
+          "description": "Nesprávné rozložení tlaku při chůzi a stání vede k:",
+          "bulletPoints": {
+            "0": "Mozolům v oblasti paty kvůli nadměrnému tlaku na zadní část nohy.",
+            "1": "Kuří okům pod prsty v důsledku přetížení přední části.",
+            "2": "Deformaci nehtových destiček kvůli neustálému utlačování.",
+            "3": "Bolesti v kloubech a vazech nohy při dlouhodobém zatížení."
+          }
+        },
+        "rightSection": {
+          "title": "MAPA TLAKU",
+          "description": "Vytváří vizuální mapu rozložení tlaku na nohu, ukazuje zóny přetížení a nedostatečného zatížení, což umožňuje přesně určit problémové oblasti a vyrobit vložky se správným přerozdělením zátěže."
+        }
+      },
+      "block3": {
+        "title": "Poloha prstů a kloubů",
+        "leftSection": {
+          "title": "POKUD SE NEODHALÍ PORUCHY",
+          "description": "Poruchy v poloze prstů a kloubů vedou k:",
+          "bulletPoints": {
+            "0": "Bolesti a únavě v oblasti prstů při chůzi a stání.",
+            "1": "Vzniku mozolů a kuřích ok mezi prsty kvůli tření.",
+            "2": "Omezení pohyblivosti malých kloubů nohy.",
+            "3": "Nesprávnému přerozdělení zátěže na přední část nohy."
+          }
+        },
+        "rightSection": {
+          "title": "CO DĚLÁ 3D PŘÍSTROJ",
+          "description": "Odhaluje počáteční stádia odchylky prstů od normální polohy, umožňuje vybrat ortopedickou korekci a vyhnout se zhoršení deformací v budoucnu."
+        }
+      },
+      "block4": {
+        "title": "Stav plantární fascie a vazů",
+        "leftSection": {
+          "title": "POKUD SE NEODHALÍ PORUCHY",
+          "description": "Patologie chodidlové fascie a vazů vedou k:",
+          "bulletPoints": {
+            "0": "Poškození a záněty chodidlové fascie.",
+            "1": "Bolesti v patě a přední části nohy při zatížení.",
+            "2": "Zvýšení rizika rozvoje plantární fascitidy.",
+            "3": "Snížení tlumící funkce nohy."
+          }
+        },
+        "rightSection": {
+          "title": "CO DĚLÁ 3D PŘÍSTROJ",
+          "description": "Diagnostikuje změny chodidlové fascie a vazů, pomáhá včas nařídit korekci před rozvojem chronické bolesti."
+        }
+      },
+      "block5": {
+        "title": "Tlak na patu a přední část nohy",
+        "leftSection": {
+          "title": "POKUD SE NEODHALÍ PORUCHY",
+          "description": "Porucha tlumících funkcí nohy vede k:",
+          "bulletPoints": {
+            "0": "Nadměrné zatížení paty a přední části nohy způsobující únavu a bolest.",
+            "1": "Zvýšené riziko vzniku patní ostruhy.",
+            "2": "Poranění a poškození měkkých tkání nohy.",
+            "3": "Chronická přetížení zhoršují rovnoměrné rozložení tlaku."
+          }
+        },
+        "rightSection": {
+          "title": "CO DĚLÁ 3D PŘÍSTROJ",
+          "description": "Analyzuje rozložení tlaku na patu a přední část nohy, umožňuje opravit vložky pro rovnoměrné přerozdělení zátěže."
+        }
+      }
     }
   },
   "nataliaPage": {
@@ -733,6 +831,12 @@
           "institution": "Mezinárodní podologická konference",
           "degree": "Moderní metodiky a konference",
           "city": "Německo"
+        },
+        {
+          "year": "2025",
+          "institution": "Instituto Superior de Estudios Psicológicos",
+          "degree": "Online kurz podologie: diagnostika a léčba onemocnění nohou",
+          "city": "Španělsko"
         }
       ]
     },
@@ -778,6 +882,9 @@
             {
               "name": "Účastnice výstav BeautyForum Prague s firmou Podoland a zástupkyně systému UniBrace",
               "place": "Praha"
+            },
+            {
+              "name": "Organizátorka semináře s lékařkou-dermatoveneroložkou Afanasieva Irina «Dermatologická onemocnění nohou a nehtů v praxi specialisty paramedicínské pedikúry»"
             }
           ]
         }
@@ -920,7 +1027,7 @@
         "overview": {
           "type": "OFFLINE KURZ",
           "title": "Zarostlý\nnehet",
-          "description": "Vhodné pro specialisty s jakoukoliv úrovní zkušeností.\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 4-5 hodin",
+          "description": "",
           "prices": [
             {
               "name": "Skupinový formát",
@@ -933,7 +1040,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Kurz \"Zarostlý nehet\" pokrývá všechny aspekty práce s tímto problémem: od diagnostiky po úplnou obnovu. Naučíte se příčiny vzniku, různé metody korekce a preventivní opatření. Praktická cvičení zahrnují práci se skutečnými klienty pod vedením zkušených mentorů. Kurz je navržen pro specialisty všech úrovní přípravy.",
+          "text": "Vhodné pro specialisty s jakoukoliv úrovní zkušeností.\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 4-5 hodin",
           "image": "/images/school/course-ingrown.png"
         },
         "plan": {
@@ -991,10 +1098,10 @@
         "overview": {
           "type": "OFFLINE KURZ",
           "title": "Titanové\nvlákno",
-          "description": "Naučte se inovativní metodiku korekce zarostlého nehtu pomocí titanového vlákna.\nIndividuální výuka\nDélka: 3-4 hodiny",
+          "description": "",
           "prices": [
             {
-              "name": "",
+              "name": "Skupinový formát",
               "price": "6 000 Kč"
             }
           ],
@@ -1004,7 +1111,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Osvojte si revoluční techniku korekce zarostlého nehtu pomocí titanového vlákna Unibrace. Tato metoda zajišťuje maximální pohodlí pro klienta a dlouhodobý výsledek. Kurz zahrnuje teoretickou přípravu, demonstraci techniky a rozsáhlou praxi pod dohledem experta.",
+          "text": "Vhodné pro specialisty s jakoukoliv úrovní zkušeností.\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 5-6 hodin",
           "image": "/images/school/course-unibrace.png"
         },
         "plan": {
@@ -1083,7 +1190,7 @@
         "overview": {
           "type": "OFFLINE KURZ",
           "title": "UniBrace\nStupeň 1",
-          "description": "Vhodné pro specialisty s jakýmikoli zkušenostmi\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 5-6 hodin",
+          "description": "",
           "prices": [
             {
               "name": "Skupinový formát",
@@ -1100,7 +1207,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Kurz UniBrace Stupeň 1 představuje hloubkové studium moderních metod korekce zarostlého nehtu pomocí inovativního systému UniBrace. Tento kurz je ideální pro specialisty, kteří chtějí zvládnout pokročilé technologie v oblasti podologie a ortonyxie.",
+          "text": "Vhodné pro specialisty s jakoukoliv úrovní zkušeností.\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 5-6 hodin",
           "image": "/images/school/course-unibrace-step1.png"
         },
         "plan": {
@@ -1171,7 +1278,7 @@
         "overview": {
           "type": "OFFLINE KURZ",
           "title": "UniBrace\nStupeň 2",
-          "description": "Vhodné pro specialisty, kteří absolvovali kurz UniBrace stupeň 1\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 5-6 hodin",
+          "description": "",
           "prices": [
             {
               "name": "Skupinový formát",
@@ -1188,7 +1295,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Kurz UniBrace Stupeň 2 představuje pokročilou úroveň výuky práce se systémem UniBrace. Tento kurz je určen pro specialisty, kteří již zvládli základní dovednosti a jsou připraveni na studium složitých případů a pokročilých technik.",
+          "text": "Vhodné pro specialisty, kteří absolvovali kurz UniBrace stupeň 1\nVýuka v mini-skupině do 5 lidí\nDélka kurzu: 5-6 hodin",
           "image": "/images/school/course-unibrace-step2.png"
         },
         "plan": {
@@ -1267,7 +1374,7 @@
         "overview": {
           "type": "OFFLINE KURZ",
           "title": "Protéza",
-          "description": "Vhodné pro specialisty s jakoukoliv zkušeností\nVýuka v mini-skupině do 4 lidí\nDélka kurzu: 5-6 hodin",
+          "description": "",
           "prices": [
             {
               "name": "Skupinový formát",
@@ -1280,7 +1387,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Kurz protézování nehtové ploténky je určen pro specialisty, kteří se chtějí naučit moderní metody obnovy poškozených nebo chybějících nehtů. Naučte se materiály, techniky a algoritmy práce pro dosažení esteticky atraktivního a funkčního výsledku.",
+          "text": "Vhodné pro specialisty s jakoukoliv zkušeností\nVýuka v mini-skupině do 4 lidí\nDélka kurzu: 5-6 hodin",
           "image": "/images/school/course-prosthetics.png"
         },
         "plan": {
@@ -1351,7 +1458,7 @@
         "overview": {
           "type": "OFFLINE KURZ",
           "title": "Autorská metodika\nzpracování nohy",
-          "description": "Vhodné pro specialisty s jakoukoliv zkušeností\nVýuka v mini-skupině do 4 lidí\nDélka kurzu: 5-6 hodin",
+          "description": "",
           "prices": [
             {
               "name": "Skupinový formát",
@@ -1364,7 +1471,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Unikátní kurz autorské metodiky zpracování nohy, vyvinuté na základě mnohaletých zkušeností. Naučte se exkluzivní techniky, algoritmy práce a sadu speciálních nástrojů. Získejte praktické dovednosti práce s onycholýzou a dalšími složitými případy.",
+          "text": "Vhodné pro specialisty s jakoukoliv zkušeností\nVýuka v mini-skupině do 4 lidí\nDélka kurzu: 5-6 hodin",
           "image": "/images/school/course-author-methodology.png"
         },
         "plan": {
@@ -1415,7 +1522,7 @@
         "overview": {
           "type": "OFFLINE KURZ",
           "title": "Individuální\nvýuka",
-          "description": "Délka kurzu: 8 hodin\nDatum konání: dle dohody",
+          "description": "",
           "prices": [
             {
               "name": "Individuální formát",
@@ -1428,7 +1535,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Praktické procvičení dovedností na vybraná témata:\n \nKurz „Titanová nit“\n \nKurz „Zarostlý nehet“\n \nKurz na vybrané téma (např. ošetření trhlin, mozolů, deformovaných nehtů atd.)",
+          "text": "Délka kurzu: 8 hodin\nDatum konání: dle dohody\n\nPraktické procvičení dovedností na vybraná témata:\n\n✓ Kurz \"Titanová nit\"\n✓ Kurz \"Zarostlý nehet\"\n✓ Kurz na vybrané téma (např. ošetření trhlin, mozolů, deformovaných nehtů atd.)\n\nDélka kurzu: 8 hodin\nDatum konání: dle dohody",
           "image": "/images/school/course-individual.png"
         },
         "plan": {
@@ -1483,7 +1590,7 @@
         "overview": {
           "type": "ONLINE SEMINÁŘ",
           "title": "Spolupráce dermatologa\na podologa/specialisty\nna pedikúru",
-          "description": "14. června 2025, 10:00 (Praha)\nDélka: 4 hodiny\nJazyk: ruský",
+          "description": "",
           "prices": [
             {
               "name": "Účast na semináři",
@@ -1496,7 +1603,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Řečníci:\n \nIrina Afanasieva: dermatoveneroložka (Lékařská univerzita, Astana), absolvovala nostrifikaci a aprobaci v České republice. Pracovní zkušenosti v FNKV, Canadian Medical, RP Clinic v Praze\n \nNatalia Rotar – podolog, autorka kurzů pro pedikéry/podology, zakladatelka centra podologie v Praze.",
+          "text": "Řečníci:\n \nIrina Afanasieva — dermatoveneroložka (Lékařská univerzita, Astana), absolvovala nostrifikaci a aprobaci v České republice. Pracovní zkušenosti v FNKV, Canadian Medical, RP Clinic v Praze\n \nNatalia Rotar — podolog, autorka kurzů pro pedikéry/podology, zakladatelka centra podologie v Praze.\n\nDélka: 4 hodiny\nJazyk: ruský",
           "image": "/images/school/seminar-collaboration.png"
         },
         "plan": {
@@ -1565,7 +1672,7 @@
         "overview": {
           "type": "WEBINÁŘ",
           "title": "Pacienti s cukrovkou\nv praxi specialisty\nparamedicínské pedikúry",
-          "description": "Délka: 8-10 hodin (2 dny)\nFormát: Interaktivní webinář",
+          "description": "",
           "prices": [
             {
               "name": "Účast na webináři",
@@ -1578,7 +1685,7 @@
           "noButton": false
         },
         "description": {
-          "text": "Odborníci\n \nOleg Udovichenko – doktor lékařských věd, endokrinolog v ordinaci pro diabetickou nohu (Haifa)\n \nNatalia Rotar – podolog, vedoucí centra podologie (Praha), autorka vzdělávacích programů",
+          "text": "Odborníci\n \nOleg Udovichenko – doktor lékařských věd, endokrinolog v ordinaci pro diabetickou nohu (Haifa)\n \nNatalia Rotar – podolog, vedoucí centra podologie (Praha), autorka vzdělávacích programů\n\nDélka: 8–10 hodin (2 dny)\nFormát: Interaktivní webinář",
           "image": "/images/school/webinar-diabetes.png"
         },
         "plan": {

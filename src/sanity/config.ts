@@ -19,9 +19,13 @@ export const sanityConfig = defineConfig({
   // Настройки для интеграции в основной сайт
   basePath: '/blogmaker',
 
-  // CORS настройки
+  // CORS настройки для продакшена
   cors: {
-    allowOrigins: ['http://localhost:3000', 'https://localhost:3000'],
+    allowOrigins: [
+      'http://localhost:3000', 
+      'https://localhost:3000',
+      'https://footura.cz'
+    ],
   },
 
   // API настройки
@@ -33,8 +37,8 @@ export const sanityConfig = defineConfig({
   // Настройки предпросмотра документов
   document: {
     productionUrl: async (prev, { document }) => {
-      if (document._type === 'article' && document.slug?.current) {
-        return `http://localhost:3000/article/${document.slug.current}`
+      if (document && typeof document === 'object' && '_type' in document && document._type === 'article' && 'slug' in document && document.slug && typeof document.slug === 'object' && 'current' in document.slug && document.slug.current) {
+        return `https://footura.cz/article/${document.slug.current}`
       }
       return prev
     }

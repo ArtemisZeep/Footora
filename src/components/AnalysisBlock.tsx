@@ -1,4 +1,7 @@
+"use client";
+
 import styles from './AnalysisBlock.module.css';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export interface AnalysisBlockData {
   number: string;
@@ -15,23 +18,43 @@ export interface AnalysisBlockData {
 }
 
 interface AnalysisBlockProps {
-  data: AnalysisBlockData;
+  blockNumber: number;
 }
 
-export default function AnalysisBlock({ data }: AnalysisBlockProps) {
+export default function AnalysisBlock({ blockNumber }: AnalysisBlockProps) {
+  const { t } = useLanguage();
+  
+  const getBulletPoints = (): string[] => {
+    const points: string[] = [];
+    let index = 0;
+    while (true) {
+      try {
+        const point = t(`insolesPage.analysis.block${blockNumber}.leftSection.bulletPoints.${index}`);
+        if (point === `insolesPage.analysis.block${blockNumber}.leftSection.bulletPoints.${index}`) {
+          break; // Если перевод не найден, останавливаемся
+        }
+        points.push(point);
+        index++;
+      } catch {
+        break;
+      }
+    }
+    return points;
+  };
+
   return (
     <section className={styles.analysisSection}>
       <div className={styles.container}>
-        <div className={styles.numberBadge}>{data.number}</div>
-        <h2 className={styles.mainTitle}>{data.title}</h2>
+        <div className={styles.numberBadge}>{blockNumber.toString().padStart(2, '0')}</div>
+        <h2 className={styles.mainTitle}>{t(`insolesPage.analysis.block${blockNumber}.title`)}</h2>
         
         <div className={styles.content}>
           <div className={styles.leftColumn}>
-            <h3 className={styles.leftTitle}>{data.leftSection.title}</h3>
-            <p className={styles.leftDescription}>{data.leftSection.description}</p>
+            <h3 className={styles.leftTitle}>{t(`insolesPage.analysis.block${blockNumber}.leftSection.title`)}</h3>
+            <p className={styles.leftDescription}>{t(`insolesPage.analysis.block${blockNumber}.leftSection.description`)}</p>
             
             <ul className={styles.bulletList}>
-              {data.leftSection.bulletPoints.map((point, index) => (
+              {getBulletPoints().map((point: string, index: number) => (
                 <li key={index} className={styles.bulletItem}>
                   <span className={styles.bulletDot}></span>
                   <span className={styles.bulletText}>{point}</span>
@@ -42,8 +65,8 @@ export default function AnalysisBlock({ data }: AnalysisBlockProps) {
           
           <div className={styles.rightColumn}>
             <div className={styles.rightCard}>
-              <h3 className={styles.rightTitle}>{data.rightSection.title}</h3>
-              <p className={styles.rightDescription}>{data.rightSection.description}</p>
+              <h3 className={styles.rightTitle}>{t(`insolesPage.analysis.block${blockNumber}.rightSection.title`)}</h3>
+              <p className={styles.rightDescription}>{t(`insolesPage.analysis.block${blockNumber}.rightSection.description`)}</p>
             </div>
           </div>
         </div>

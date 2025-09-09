@@ -1,0 +1,109 @@
+.notFoundContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.errorCode {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #6b73ff;
+  margin-bottom: 1rem;
+  line-height: 1;
+  text-shadow: 0 4px 8px rgba(107, 115, 255, 0.3);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #718096;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.homeButton,
+.servicesButton {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.homeButton {
+  background: #6b73ff;
+  color: white;
+}
+
+.homeButton:hover {
+  background: #5a63d8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(107, 115, 255, 0.3);
+}
+
+.servicesButton {
+  background: transparent;
+  color: #6b73ff;
+  border: 2px solid #6b73ff;
+}
+
+.servicesButton:hover {
+  background: #6b73ff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(107, 115, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .errorCode {
+    font-size: 6rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .homeButton,
+  .servicesButton {
+    width: 100%;
+    max-width: 300px;
+  }
+} 

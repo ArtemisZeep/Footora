@@ -7,6 +7,8 @@ import ArticleContent from '../../../components/ArticleContent';
 import { client, queries } from '../../../lib/sanity';
 import { convertSanityArticle } from '../../../lib/sanityAdapter';
 import { sampleArticle } from '../../../data/articleData';
+import JsonLd from '../../../components/JsonLd';
+import { createArticleSchema } from '../../../lib/jsonLd';
 
 interface ArticlePageProps {
   params: {
@@ -45,8 +47,20 @@ const ArticlePage: React.FC<ArticlePageProps> = async ({ params }) => {
     notFound();
   }
 
+  // Создаем JSON-LD схему для статьи
+  const articleSchema = createArticleSchema({
+    title: article.title,
+    description: article.description,
+    author: article.author,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt, // Можно добавить поле modifiedAt в будущем
+    url: `https://footura.cz/article/${slug}`,
+    ...(article.heroImage?.src && { image: article.heroImage.src })
+  });
+
   return (
     <>
+      <JsonLd data={articleSchema} />
       <Header />
       <main>
         <ArticleHero

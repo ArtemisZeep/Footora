@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin and private pages
+Disallow: /blogmaker/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important files
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Sitemap will be auto-generated
+# Sitemap: https://footura.cz/sitemap.xml 

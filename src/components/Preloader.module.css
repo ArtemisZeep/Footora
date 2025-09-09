@@ -38,8 +38,8 @@
 }
 
 .arc {
-  width: min(64vw, 540px);
-  height: min(18vw, 160px);
+  width: 838px;
+  height: 316px;
   -webkit-mask-image: var(--mask-url);
   mask-image: var(--mask-url);
   -webkit-mask-repeat: no-repeat;
