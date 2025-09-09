@@ -13,17 +13,20 @@ import NataliaMission from '../../components/NataliaMission';
 import NataliaWhyChoose from '../../components/NataliaWhyChoose';
 import ClientJsonLd from '../../components/ClientJsonLd';
 import { createMedicalProfessionalSchema } from '../../lib/jsonLd';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import RelatedPages from '../../components/RelatedPages';
+import SEOHead from '../../components/SEOHead';
 
 export default function NataliaPage() {
   // Структурированные данные для медицинского специалиста
   const nataliaInfo = {
     name: "Наталия Ротарь",
     jobTitle: "Подолог, основатель центра Footura",
-    description: "Признанная экспертка в области ухода за стопами с 18-летними практическими опытом. Основательница и директор подологического центра FOOTURA, автор уникальных образовательных методик.",
+    description: "Ведущий подолог и основатель центра Footura. Опытный специалист в области подологии и медицинского педикюра с международным образованием.",
     experience: "18 лет",
     qualifications: [
       "РГСУ (Российский Государственный Социальный Университет)",
-      "Карлов университет, 3. Лечебный факультет",
+      "Карлов университет, 3. Лечебный факультет", 
       "UniBrace System - курс инструктора",
       "Международные подологические конференции"
     ]
@@ -33,9 +36,22 @@ export default function NataliaPage() {
 
   return (
     <>
-      <ClientJsonLd data={medicalProfessionalSchema} id="natalia-professional" />
+      <SEOHead
+        title="Наталия Ротарь - Ведущий подолог Footura | Образование и опыт"
+        description="Познакомьтесь с Наталией Ротарь - основателем центра Footura. Опыт работы, образование, сертификации в области подологии и медицинского педикюра."
+        keywords="наталия ротарь, подолог прага, основатель footura, образование подолога, опыт работы"
+        canonicalUrl="/natalia"
+      />
+
+      <ClientJsonLd data={medicalProfessionalSchema} />
+      
       <Header />
       <main>
+        {/* Breadcrumbs БЕЗ нарушения стилей */}
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <Breadcrumbs currentPage="natalia" />
+        </div>
+
         <NataliaHero />
         <NataliaExperience />
         <NataliaEducation />
@@ -45,6 +61,9 @@ export default function NataliaPage() {
         <NataliaSchool />
         <NataliaMission />
         <NataliaWhyChoose />
+        
+        {/* Связанные страницы */}
+        <RelatedPages currentPage="natalia" />
       </main>
       <Footer />
     </>

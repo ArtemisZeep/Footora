@@ -1,191 +1,143 @@
 // Утилиты для оптимизации изображений
+import { ImageProps } from 'next/image';
 
-export interface ImageConfig {
-  width: number;
-  height: number;
-  sizes: string;
-  priority?: boolean;
-  quality?: number;
-  placeholder?: 'blur' | 'empty';
-  blurDataURL?: string;
-}
-
-// Предустановленные конфигурации для разных типов изображений
-export const imageConfigs = {
-  // Hero изображения - критические, полный экран
+// Конфигурация размеров изображений для разных устройств
+export const imageSizes = {
+  // Размеры для разных типов изображений
   hero: {
-    sizes: '100vw',
-    priority: true,
-    quality: 90,
+    mobile: 768,
+    tablet: 1024,
+    desktop: 1920
   },
-  
-  // Логотипы - небольшие, точные размеры
+  card: {
+    mobile: 350,
+    tablet: 400,
+    desktop: 500
+  },
+  thumbnail: {
+    mobile: 150,
+    tablet: 200,
+    desktop: 250
+  },
   logo: {
-    sizes: '(max-width: 768px) 100px, 120px',
-    priority: false,
-    quality: 95,
-  },
-  
-  // Карточки услуг - адаптивные размеры
-  serviceCard: {
-    sizes: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px',
-    priority: false,
-    quality: 85,
-  },
-  
-  // Изображения статей - средние размеры
-  article: {
-    sizes: '(max-width: 768px) 100vw, 800px',
-    priority: false,
-    quality: 80,
-  },
-  
-  // Портреты команды - квадратные
-  portrait: {
-    sizes: '(max-width: 768px) 50vw, 300px',
-    priority: false,
-    quality: 85,
-  },
-  
-  // Сертификаты - большие изображения документов
-  certificate: {
-    sizes: '(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 600px',
-    priority: false,
-    quality: 90,
-  },
-  
-  // Иконки - маленькие, точные размеры
-  icon: {
-    sizes: '(max-width: 768px) 20px, 24px',
-    priority: false,
-    quality: 95,
-  },
-  
-  // Фоновые изображения - полная ширина
-  background: {
-    sizes: '100vw',
-    priority: false,
-    quality: 75,
-  },
-} as const;
+    mobile: 120,
+    tablet: 150,
+    desktop: 200
+  }
+};
 
-// Функция для получения оптимального размера изображения
-export function getImageConfig(type: keyof typeof imageConfigs, customConfig?: Partial<ImageConfig>): ImageConfig {
-  const baseConfig = imageConfigs[type];
-  
-  return {
-    width: 800,
-    height: 600,
-    ...baseConfig,
-    ...customConfig,
+// Генерация sizes атрибута для responsive изображений
+export const generateSizes = (type: keyof typeof imageSizes) => {
+  const sizes = imageSizes[type];
+  return `(max-width: 768px) ${sizes.mobile}px, (max-width: 1024px) ${sizes.tablet}px, ${sizes.desktop}px`;
+};
+
+// Оптимизированные настройки для Next.js Image
+export const getOptimizedImageProps = (
+  src: string,
+  alt: string,
+  type: keyof typeof imageSizes,
+  options?: Partial<ImageProps>
+): Partial<ImageProps> => {
+  const baseProps: Partial<ImageProps> = {
+    src,
+    alt,
+    sizes: generateSizes(type),
+    quality: 85, // Оптимальное соотношение качество/размер
+    priority: type === 'hero', // Hero изображения загружаются с приоритетом
+    placeholder: 'blur',
+    blurDataURL: generateBlurDataURL(imageSizes[type].mobile, imageSizes[type].mobile),
+    ...options
   };
-}
 
-// Функция для создания blur placeholder
-export function createBlurDataURL(width: number, height: number): string {
-  const canvas = typeof window !== 'undefined' && document.createElement('canvas');
+  // Устанавливаем размеры в зависимости от типа
+  const typeSize = imageSizes[type];
+  baseProps.width = typeSize.desktop;
+  baseProps.height = Math.round(typeSize.desktop * 0.6); // Соотношение 5:3
+
+  return baseProps;
+};
+
+// Генерация blur placeholder
+export const generateBlurDataURL = (width: number, height: number): string => {
+  const canvas = typeof window !== 'undefined' ? document.createElement('canvas') : null;
   if (!canvas) {
-    // Fallback для SSR
-    return `data:image/svg+xml;base64,${btoa(
+    // Fallback для SSR - простой base64 blur
+    return `data:image/svg+xml;base64,${Buffer.from(
       `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#f0f0f0"/>
-            <stop offset="100%" style="stop-color:#e0e0e0"/>
+          <linearGradient id="g">
+            <stop stop-color="#f4f4f4" offset="0%"/>
+            <stop stop-color="#e0e0e0" offset="100%"/>
           </linearGradient>
         </defs>
-        <rect width="100%" height="100%" fill="url(#gradient)"/>
+        <rect width="100%" height="100%" fill="url(#g)"/>
       </svg>`
-    )}`;
+    ).toString('base64')}`;
   }
   
   canvas.width = width;
   canvas.height = height;
   const ctx = canvas.getContext('2d');
+  if (!ctx) return '';
   
-  if (ctx) {
-    // Создаем градиент для placeholder
-    const gradient = ctx.createLinearGradient(0, 0, width, height);
-    gradient.addColorStop(0, '#f0f0f0');
-    gradient.addColorStop(1, '#e0e0e0');
-    
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, width, height);
-  }
+  // Создаем простой градиент для blur эффекта
+  const gradient = ctx.createLinearGradient(0, 0, width, height);
+  gradient.addColorStop(0, '#f4f4f4');
+  gradient.addColorStop(1, '#e0e0e0');
+  
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, width, height);
   
   return canvas.toDataURL();
-}
+};
 
-// Функция для определения приоритета изображения на основе позиции
-export function getImagePriority(isAboveFold: boolean, isCritical: boolean = false): boolean {
-  return isAboveFold || isCritical;
-}
+// Preload критических изображений
+export const preloadImage = (src: string, as: 'image' = 'image') => {
+  if (typeof window === 'undefined') return;
+  
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = as;
+  link.href = src;
+  document.head.appendChild(link);
+};
 
-// Функция для оптимизации путей к изображениям
-export function optimizeImageSrc(src: string): string {
-  // Если изображение уже оптимизировано Next.js, возвращаем как есть
-  if (src.startsWith('/_next/image')) {
-    return src;
+// Lazy loading для некритических изображений
+export const createIntersectionObserver = (
+  callback: (entries: IntersectionObserverEntry[]) => void,
+  options?: IntersectionObserverInit
+) => {
+  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+    return null;
   }
-  
-  // Для локальных изображений убеждаемся что путь правильный
-  if (src.startsWith('/images/')) {
-    return src;
-  }
-  
-  // Для внешних изображений возвращаем без изменений
-  if (src.startsWith('http')) {
-    return src;
-  }
-  
-  // Добавляем /images/ если путь относительный
-  return `/images/${src}`;
-}
 
-// Типы размеров для различных breakpoint'ов
-export const breakpoints = {
-  mobile: '(max-width: 768px)',
-  tablet: '(max-width: 1024px)',
-  desktop: '(min-width: 1025px)',
-} as const;
+  return new IntersectionObserver(callback, {
+    rootMargin: '50px', // Начинаем загрузку за 50px до появления
+    threshold: 0.1,
+    ...options
+  });
+};
 
-// Функция для создания sizes строки на основе breakpoint'ов
-export function createSizesString(sizesMap: Record<string, string>): string {
-  const sizes = [];
-  
-  if (sizesMap.mobile) {
-    sizes.push(`${breakpoints.mobile} ${sizesMap.mobile}`);
-  }
-  
-  if (sizesMap.tablet) {
-    sizes.push(`${breakpoints.tablet} ${sizesMap.tablet}`);
-  }
-  
-  // Desktop размер всегда последний без media query
-  sizes.push(sizesMap.desktop || sizesMap.default || '100vw');
-  
-  return sizes.join(', ');
-}
+// Список критических изображений для preload
+export const criticalImages = [
+  '/images/logo.svg',
+  '/images/hero-background.jpg',
+  '/images/natalia-hero.jpg'
+];
 
-// Предустановленные размеры для популярных случаев
-export const commonSizes = {
-  fullWidth: '100vw',
-  halfWidth: createSizesString({
-    mobile: '100vw',
-    tablet: '50vw',
-    desktop: '50vw'
-  }),
-  thirdWidth: createSizesString({
-    mobile: '100vw',
-    tablet: '50vw', 
-    desktop: '33vw'
-  }),
-  fixed300: createSizesString({
-    mobile: '100vw',
-    desktop: '300px'
-  }),
-  fixed600: createSizesString({
-    mobile: '100vw',
-    desktop: '600px'
-  }),
-} as const; 
+// WebP поддержка
+export const supportsWebP = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  
+  const canvas = document.createElement('canvas');
+  return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+};
+
+// Конвертация URL для WebP если поддерживается
+export const getWebPUrl = (originalUrl: string): string => {
+  if (!supportsWebP()) return originalUrl;
+  
+  // Простая логика конвертации - в реальном проекте может быть сложнее
+  return originalUrl.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+}; 

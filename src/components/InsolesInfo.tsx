@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import styles from './InsolesInfo.module.css';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -11,14 +10,10 @@ export default function InsolesInfo() {
     <section id="insoles-details" className={styles.infoSection}>
       <div className={styles.container}>
         <div className={styles.imageCol}>
-          <Image 
+          <img 
             src="/images/insoles/diagnostic-device.png" 
             alt={t('insolesPage.info.imageAlt')}
-            width={600}
-            height={400}
             className={styles.image}
-            priority={false}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
           />
         </div>
         <div className={styles.textCol}>

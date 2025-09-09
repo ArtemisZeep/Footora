@@ -10,6 +10,8 @@ import ServiceBlock from '../../components/ServiceBlock';
 import ClientJsonLd from '../../components/ClientJsonLd';
 import { createMedicalServiceSchema } from '../../lib/jsonLd';
 import SEOHead from '../../components/SEOHead';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import RelatedPages from '../../components/RelatedPages';
 
 export default function ServicesPage() {
   const { tData } = useLanguage();
@@ -82,9 +84,18 @@ export default function ServicesPage() {
 
   const renderServiceSection = (sectionId: string, indices: number[]) => (
     <div id={sectionId} key={sectionId}>
+      {/* Добавляем якорные ссылки для SEO */}
+      {sectionId === 'podology' && <div id="podology" style={{ paddingTop: '80px', marginTop: '-80px' }} />}
       {indices.map((index) => {
         const service = servicesCategories[index];
         if (!service) return null;
+
+        // Добавляем якорные ссылки для ключевых услуг
+        let anchorId = '';
+        if (service.id === 'ingrown-nail') anchorId = 'ingrown-nail';
+        if (service.id === 'medical-pedicure') anchorId = 'medical-pedicure';
+        if (service.id === 'fungus-treatment') anchorId = 'fungus-treatment';
+        if (service.id === 'foot-diagnosis-insoles') anchorId = 'foot-analysis';
 
         // Determine layout based on index
         const isReversed = reversedConfig[index] ?? (index % 2 === 0); // Use config or fallback to even indices
@@ -95,18 +106,20 @@ export default function ServicesPage() {
         const isFootDiagnosisService = service.id === 'foot-diagnosis-insoles';
         
         return (
-          <ServiceBlock
-            key={service.id}
-            title={service.title}
-            description={service.description}
-            image={service.image}
-            signUpUrl={isFootDiagnosisService ? undefined : "https://n766508.alteg.io/company/720417/personal/select-services?_gl=1*15h3pye*_ga*MTAyNjk3MTQ4MC4xNzI5MDAzODQy*_ga_2WY57VWNET*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.*_ga_L53TRF9G65*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.&o=m-1"}
-            detailsUrl={isFootDiagnosisService ? "/insoles" : undefined}
-            isReversed={isReversed}
-            variant={variant}
-            isPhotoLeft={isPhotoLeft}
-            items={service.items}
-          />
+          <div key={service.id}>
+            {anchorId && <div id={anchorId} style={{ paddingTop: '80px', marginTop: '-80px' }} />}
+            <ServiceBlock
+              title={service.title}
+              description={service.description}
+              image={service.image}
+              signUpUrl={isFootDiagnosisService ? undefined : "https://n766508.alteg.io/company/720417/personal/select-services?_gl=1*15h3pye*_ga*MTAyNjk3MTQ4MC4xNzI5MDAzODQy*_ga_2WY57VWNET*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.*_ga_L53TRF9G65*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.&o=m-1"}
+              detailsUrl={isFootDiagnosisService ? "/insoles" : undefined}
+              isReversed={isReversed}
+              variant={variant}
+              isPhotoLeft={isPhotoLeft}
+              items={service.items}
+            />
+          </div>
         );
       })}
     </div>
@@ -134,11 +147,19 @@ export default function ServicesPage() {
       <main>
         <ServicesHero />
         
+        {/* Добавляем Breadcrumbs БЕЗ нарушения стилей */}
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <Breadcrumbs currentPage="services" />
+        </div>
+        
         <ServiceGroups />
         
         {Object.entries(serviceGroups).map(([sectionId, indices]) =>
           renderServiceSection(sectionId, indices)
         )}
+        
+        {/* Добавляем связанные страницы */}
+        <RelatedPages currentPage="services" />
       </main>
       <Footer />
     </>

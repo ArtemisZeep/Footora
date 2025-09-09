@@ -1,24 +1,29 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from '../styles/Hero.module.css';
-import { getImageConfig, commonSizes } from '@/lib/imageOptimization';
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const totalSlides = 2;
 
-  // Auto-switch slides every 8 seconds
+  // Auto-scroll every 40 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide(prev => prev === 0 ? 1 : 0);
-    }, 8000);
+      setCurrentSlide(prev => (prev + 1) % totalSlides);
+    }, 40000); // 40 seconds
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleDotClick = (index: number) => {
+    setCurrentSlide(index);
+  };
 
   // Animation variants
   const containerVariants = {
@@ -26,45 +31,35 @@ const HeroSection: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.5
-      }
-    }
-  };
-
-  const logoVariants = {
-    hidden: { opacity: 0, y: -30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1.2
+        delayChildren: 0.3,
+        staggerChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
-      opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.8
-      }
+      opacity: 1,
+      transition: { duration: 0.6 }
     }
   };
 
-  // Slide variants for smooth transitions
+  const logoVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.8 }
+    }
+  };
+
   const slideVariants = {
     enter: { opacity: 0 },
     center: { opacity: 1 },
     exit: { opacity: 0 }
   };
-
-  // Получаем оптимизированные конфигурации изображений
-  const heroImageConfig = getImageConfig('hero', { width: 1920, height: 1080 });
-  const logoConfig = getImageConfig('logo', { width: 180, height: 60 });
-  const backgroundConfig = getImageConfig('background', { width: 1920, height: 1080 });
 
   return (
     <section className={styles.hero}>
@@ -81,8 +76,7 @@ const HeroSection: React.FC = () => {
           alt="Footura - центр подологии"
           fill
           className={styles.bgImage}
-          priority={heroImageConfig.priority}
-          sizes={commonSizes.fullWidth}
+          priority
         />
         
         <motion.div 
@@ -98,10 +92,8 @@ const HeroSection: React.FC = () => {
             <Image 
               src="/images/logo_part.svg" 
               alt="Footura logo" 
-              width={logoConfig.width}
-              height={logoConfig.height}
+              fill
               className="object-contain"
-              sizes={logoConfig.sizes}
             />
           </motion.div>
 
@@ -116,17 +108,32 @@ const HeroSection: React.FC = () => {
             className={styles.buttons}
             variants={itemVariants}
           >
-            <button className={styles.primaryButton}>
-              {t('hero.primaryButton')}
-            </button>
-            <button className={styles.secondaryButton}>
-              {t('hero.secondaryButton')}
-            </button>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link href="/about" className={`${styles.button} ${styles.buttonOutline}`}>
+                {t('hero.learnMore')}
+              </Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link 
+                href="https://n766508.alteg.io/company/720417/personal/select-services?_gl=1*15h3pye*_ga*MTAyNjk3MTQ4MC4xNzI5MDAzODQy*_ga_2WY57VWNET*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.*_ga_L53TRF9G65*MTczNDE3NTk5NC4zLjAuMTczNDE3NTk5NC42MC4wLjA.&o=m-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.button} ${styles.buttonPrimary}`}
+              >
+                {t('hero.booking')}
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* Second slide - new content */}
+      {/* Second slide - new service with adaptive arc */}
       <motion.div
         className={`${styles.slide} ${currentSlide === 1 ? styles.slideActive : ''}`}
         variants={slideVariants}
@@ -136,11 +143,9 @@ const HeroSection: React.FC = () => {
       >
         <Image
           src="/images/background_2_hero.png"
-          alt="Footura - профессиональная подология"
+          alt="Диагностика стопы"
           fill
           className={styles.bgImage}
-          priority={backgroundConfig.priority}
-          sizes={commonSizes.fullWidth}
         />
         
         <motion.div 
@@ -150,62 +155,71 @@ const HeroSection: React.FC = () => {
           animate={currentSlide === 1 ? "visible" : "hidden"}
         >
           <motion.div 
-            className={styles.logoSecond}
+            className={`${styles.logo} ${styles.logo2}`}
             variants={logoVariants}
           >
             <Image 
               src="/images/logo_2_hero.png" 
-              alt="Footura logo" 
-              width={200}
-              height={80}
+              alt="Новая услуга" 
+              fill
               className="object-contain"
-              priority={false}
-              quality={95}
-              sizes="(max-width: 768px) 150px, 200px"
             />
           </motion.div>
 
           <motion.h1 
-            className={styles.titleSecond}
+            className={styles.title}
             variants={itemVariants}
           >
-            {t('hero.titleSecond')}
+            {t('hero.newService.title')}
           </motion.h1>
 
           <motion.p 
-            className={styles.descriptionSecond}
+            className={styles.subtitle}
             variants={itemVariants}
           >
-            {t('hero.descriptionSecond')}
+            {t('hero.newService.subtitle')}
           </motion.p>
 
           <motion.div 
-            className={styles.buttonsSecond}
+            className={styles.buttons}
             variants={itemVariants}
           >
-            <button className={styles.primaryButtonSecond}>
-              {t('hero.primaryButtonSecond')}
-            </button>
-            <button className={styles.secondaryButtonSecond}>
-              {t('hero.secondaryButtonSecond')}
-            </button>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link href="/insoles" className={`${styles.button} ${styles.buttonOutline}`}>
+                {t('hero.newService.learnMore')}
+              </Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link href="/insoles" className={`${styles.button} ${styles.buttonAccent}`}>
+                {t('hero.newService.bookNow')}
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* Slide indicators */}
-      <div className={styles.indicators}>
-        <button 
-          className={`${styles.indicator} ${currentSlide === 0 ? styles.active : ''}`}
-          onClick={() => setCurrentSlide(0)}
-          aria-label="Перейти к первому слайду"
-        />
-        <button 
-          className={`${styles.indicator} ${currentSlide === 1 ? styles.active : ''}`}
-          onClick={() => setCurrentSlide(1)}
-          aria-label="Перейти ко второму слайду"
-        />
-      </div>
+      {/* Navigation dots */}
+      <motion.div 
+        className={styles.pagination}
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {[0, 1].map((index) => (
+          <button
+            key={index}
+            className={`${styles.dot} ${currentSlide === index ? styles.dotActive : ''}`}
+            onClick={() => handleDotClick(index)}
+            aria-label={`Перейти к слайду ${index + 1}`}
+          />
+        ))}
+      </motion.div>
     </section>
   );
 };
