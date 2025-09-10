@@ -31,6 +31,11 @@
   align-items: flex-start;
 }
 
+/* Ensure images and inline elements can center nicely */
+.logoSection, .navigationSection, .contactSection, .legalSection, .bottomSection {
+  width: 100%;
+}
+
 .logoImage {
   width: 200px;
   height: auto;
@@ -102,6 +107,7 @@
   font-weight: 300;
   line-height: 14px;
   text-align: right;
+  width: 100%;
 }
 
 /* Bottom Section */
@@ -180,6 +186,81 @@
   }
 }
 
+/* Tablet styles (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 40px 30px;
+  }
+  
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .logoSection {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logoImage {
+    width: 180px;
+    margin: 0 auto;
+  }
+  
+  .navigationSection {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navLinks {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contactSection {
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .address {
+    font-size: 28px;
+    line-height: 28px;
+    text-align: center;
+  }
+  
+  .phone,
+  .email {
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+  }
+  
+  .legalSection {
+    text-align: center;
+  }
+  
+  .companyInfo {
+    text-align: center;
+    font-size: 13px;
+  }
+  
+  .bottomSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .copyrightText,
+  .privacyLink {
+    text-align: center;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .mainGrid {
@@ -211,41 +292,86 @@
 @media (max-width: 768px) {
   .container {
     padding: 40px 20px;
+    text-align: center;
+    align-items: center;
   }
   
   .mainGrid {
     grid-template-columns: 1fr;
     gap: 32px;
     margin-bottom: 32px;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .logoSection {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
   .logoImage {
     width: 150px;
+    margin: 0 auto;
+  }
+  
+  .navigationSection {
+    justify-content: center !important;
+    text-align: center;
+  }
+  
+  .navLinks {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .navLink {
+    text-align: center;
   }
   
   .contactSection {
     gap: 16px;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
   }
   
   .address {
     font-size: 24px;
     line-height: 24px;
+    text-align: center;
   }
   
   .phone,
   .email {
     font-size: 22px;
     line-height: 22px;
+    text-align: center;
+  }
+  
+  .legalSection {
+    text-align: center;
   }
   
   .companyInfo {
-    text-align: left;
+    text-align: center;
   }
   
   .bottomSection {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center !important;
+    justify-content: center !important;
     gap: 16px;
+    text-align: center;
+  }
+  
+  .copyrightText {
+    text-align: center;
+  }
+  
+  .privacyLink {
+    text-align: center;
   }
 }
 

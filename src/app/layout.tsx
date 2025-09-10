@@ -147,6 +147,7 @@ export default function RootLayout({
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            gap: 20px;
           }
           [class*="leftNav"], [class*="rightNav"] {
             display: flex !important;
@@ -375,17 +376,98 @@ export default function RootLayout({
             position: relative;
           }
           
+          @media (min-width: 1025px) and (max-width: 1200px) {
+            /* Header tablet/Small desktop layout */
+            [class*="desktopNav"] {
+              display: grid !important;
+              grid-template-columns: 1fr auto 1fr !important;
+              align-items: center !important;
+              width: 100% !important;
+            }
+            [class*="centerLogo"] {
+              position: static !important;
+              left: auto !important;
+              transform: none !important;
+              justify-self: center !important;
+              z-index: 1 !important;
+            }
+            [class*="leftNav"] { justify-self: start !important; gap: 20px !important; flex-wrap: nowrap !important; }
+            [class*="rightNav"] { justify-self: end !important; gap: 20px !important; flex-wrap: nowrap !important; }
+            [class*="navLink"], [class*="dropdownBtn"], [class*="langButton"] { font-size: 14px !important; }
+            [class*="centerLogo"] img { width: 100px !important; height: 28px !important; }
+          }
+
+          @media (min-width: 769px) and (max-width: 1024px) {
+            /* Use mobile-style header on tablets */
+            [class*="desktopNav"] { display: none !important; }
+            [class*="mobileNav"] { display: flex !important; }
+            [class*="mobileMenu"] { display: block !important; }
+            [class*="navbar"] { height: 80px !important; }
+
+            /* Footer tablet centering */
+            footer [class*="container"] {
+              padding: 40px 30px !important;
+            }
+            [class*="mainGrid"] {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+              text-align: center !important;
+              justify-items: center !important;
+              align-items: center !important;
+            }
+            footer [class*="logoImage"] { 
+              width: 180px !important;
+              margin: 0 auto !important; 
+            }
+            footer [class*="logoSection"],
+            footer [class*="navigationSection"],
+            footer [class*="contactSection"],
+            footer [class*="legalSection"],
+            footer [class*="bottomSection"] {
+              justify-content: center !important;
+              align-items: center !important;
+              text-align: center !important;
+              width: 100% !important;
+            }
+            footer [class*="navLinks"] { align-items: center !important; }
+            footer [class*="bottomSection"] { flex-direction: column !important; gap: 12px !important; }
+            footer [class*="companyInfo"] { text-align: center !important; font-size: 13px !important; }
+            footer [class*="address"] { font-size: 28px !important; text-align: center !important; }
+            footer [class*="phone"], footer [class*="email"] { font-size: 24px !important; text-align: center !important; }
+          }
+
           @media (max-width: 768px) {
             [class*="desktopNav"] { display: none !important; }
             [class*="mobileNav"] { display: flex !important; }
             [class*="mobileMenu"] { display: block !important; }
+
+            /* Footer mobile centering */
             [class*="mainGrid"] {
               grid-template-columns: 1fr !important;
               gap: 30px !important;
+              justify-items: center !important;
+              align-items: center !important;
+              text-align: center !important;
             }
             footer [class*="container"] {
               padding: 30px 20px !important;
+              align-items: center !important;
+              text-align: center !important;
             }
+            footer [class*="logoImage"] { margin: 0 auto !important; }
+            footer [class*="logoSection"],
+            footer [class*="navigationSection"],
+            footer [class*="contactSection"],
+            footer [class*="legalSection"],
+            footer [class*="bottomSection"] {
+              justify-content: center !important;
+              align-items: center !important;
+              text-align: center !important;
+              width: 100% !important;
+            }
+            footer [class*="navLinks"] { align-items: center !important; }
+            footer [class*="bottomSection"] { flex-direction: column !important; }
+            footer [class*="companyInfo"] { text-align: center !important; }
           }
         `}</style>
         

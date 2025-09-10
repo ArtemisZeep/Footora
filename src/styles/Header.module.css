@@ -376,9 +376,32 @@
   }
 }
 
-@media (max-width: 1200px) {
+/* Tablet landscape and small desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .desktopNav { display: none; }
+  .mobileNav { display: flex; }
+  .navbar { height: 80px; }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .desktopNav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+  }
   .leftNav, .rightNav {
     gap: 24px;
+  }
+  .leftNav { justify-self: start; }
+  .rightNav { justify-self: end; }
+  .centerLogo {
+    position: static;
+    left: auto;
+    transform: none;
+    justify-self: center;
+    z-index: 1;
   }
   .navLink, .dropdownBtn, .langButton {
     font-size: 15px;
