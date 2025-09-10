@@ -239,6 +239,9 @@ export default function RootLayout({
             background-color: #283433 !important;
             width: 100%;
           }
+          footer[class*="footer"][class*="schoolVariant"] {
+            background-color: #33435C !important;
+          }
           footer [class*="container"] {
             padding: 59px 70px 30px;
             max-width: 1440px;

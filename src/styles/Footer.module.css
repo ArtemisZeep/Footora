@@ -3,8 +3,8 @@
   width: 100%;
 }
 
-.schoolVariant {
-  background-color: #33435C;
+.footer.schoolVariant {
+  background-color: #33435C !important;
 }
 
 .container {
