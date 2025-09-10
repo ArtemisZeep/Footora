@@ -67,7 +67,7 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
         {/* Developer Section */}
         <div className={styles.developerSection}>
           <a 
-            href="https://zeepdesign.com" 
+            href="https://zeepdesign.tech" 
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.developerLink}
