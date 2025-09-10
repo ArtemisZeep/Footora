@@ -16,10 +16,8 @@ export default function ServiceGroups() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const categoriesData = tData('servicesPage.groups.categories') as Array<{
-    title: string;
-    description: string;
-  }> || [];
+  const categoriesData = tData('servicesPage.groups.categories');
+  const validCategoriesData = Array.isArray(categoriesData) ? categoriesData : [];
 
   const buttonText = t('servicesPage.groups.goToServices');
 
@@ -28,7 +26,7 @@ export default function ServiceGroups() {
   const buttonColors = ['lightGreen', 'lightGreen', 'lightGreen', 'green'];
   const textColors = ['white', 'white', 'white', 'darkGreen'];
 
-  const services = categoriesData.map((category, index) => ({
+  const services = validCategoriesData.map((category: any, index: number) => ({
     title: category.title,
     description: category.description,
     color: colors[index],
