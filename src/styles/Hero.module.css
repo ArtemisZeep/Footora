@@ -54,6 +54,8 @@
   
 }
 .logo2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
   width: 838px;
   height: 316px;
 }
@@ -183,6 +185,8 @@
     height: 225px;
   }
   .logo2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
     width: 400px;
     height: 151px;
   }
@@ -233,13 +237,15 @@
   }
 
   .logo {
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 20px;
     width: 240px;
     height: 135px;
   }
 
   .logo2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
     width: 240px;
     height: 91px;
   }
@@ -299,6 +305,8 @@
   }
 
   .logo2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
     width: 200px;
     height: 76px;
   }
