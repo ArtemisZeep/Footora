@@ -46,16 +46,8 @@
 }
 
 .logo {
-  margin-top: 123px;
-  margin-bottom: 35px;
-  position: relative;
-  width: 637px;
-  height: 356px;
-  
-}
-.logo2 {
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 100px !important;
+    margin-bottom: 20px !important;
   width: 838px;
   height: 316px;
 }
@@ -179,14 +171,8 @@
 
 
   .logo {
-    margin-top: 60px;
-    margin-bottom: 25px;
-    width: 400px;
-    height: 225px;
-  }
-  .logo2 {
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 100px !important;
+    margin-bottom: 20px !important;
     width: 400px;
     height: 151px;
   }
@@ -237,15 +223,15 @@
   }
 
   .logo {
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 100px !important;
+    margin-bottom: 20px !important;
     width: 240px;
     height: 135px;
   }
 
   .logo2 {
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 100px !important;
+    margin-bottom: 20px !important;
     width: 240px;
     height: 91px;
   }
@@ -298,15 +284,8 @@
 
 
   .logo {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    width: 200px;
-    height: 115px;
-  }
-
-  .logo2 {
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 100px !important;
+    margin-bottom: 20px !important;
     width: 200px;
     height: 76px;
   }
