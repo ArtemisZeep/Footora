@@ -11,6 +11,9 @@ import ReviewsBlock from '@/components/ReviewsBlock';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '../../components/SEOHead';
 
+// Отключаем статическую генерацию для этой страницы
+export const dynamic = 'force-dynamic';
+
 export default function AboutPage() {
   const { t, tArray } = useLanguage();
   const [isMobileHero, setIsMobileHero] = useState(false);
@@ -33,6 +36,10 @@ export default function AboutPage() {
     
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Безопасное получение списка услуг
+  const aboutServices = tArray('about.services');
+  const validAboutServices = Array.isArray(aboutServices) ? aboutServices : [];
 
   // Сертификаты: пример
   const certificates: Certificate[] = [
@@ -186,7 +193,7 @@ export default function AboutPage() {
           </div>
           <div className={aboutStyles.approachList}>
             <ul className={aboutStyles.approachListUl}>
-              {tArray('about.services').map((text, i) => (
+              {validAboutServices.map((text, i) => (
                 <li key={i} className={aboutStyles.approachListItem}>
                   <span className={aboutStyles.approachListItemText}>{text}</span>
                   <span className={aboutStyles.approachListItemNumber}>{String(i+1).padStart(2, '0')}</span>

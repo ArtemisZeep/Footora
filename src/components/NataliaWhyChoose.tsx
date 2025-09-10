@@ -11,7 +11,8 @@ interface WhyChoosePoint {
 export default function NataliaWhyChoose() {
   const { t, tData } = useLanguage();
   
-  const whyChooseData = tData('nataliaPage.whyChoose.points') as WhyChoosePoint[] || [];
+  const whyChooseData = tData('nataliaPage.whyChoose.points') as WhyChoosePoint[];
+  const validWhyChooseData = Array.isArray(whyChooseData) ? whyChooseData : [];
   
   return (
     <section className={styles.whyChooseSection}>
@@ -24,7 +25,7 @@ export default function NataliaWhyChoose() {
           <h2 className={styles.title}>{t('nataliaPage.whyChoose.title')}</h2>
           
           <div className={styles.pointsGrid}>
-            {whyChooseData.map((point, index) => (
+            {validWhyChooseData.map((point, index) => (
               <div key={index} className={styles.point}>
                 <div className={styles.pointNumber}>{point.number}</div>
                 <p className={styles.pointText}>{point.text}</p>

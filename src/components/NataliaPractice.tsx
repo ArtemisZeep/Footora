@@ -16,7 +16,8 @@ interface PracticeItem {
 export default function NataliaPractice() {
   const { t, tData } = useLanguage();
   
-  const practiceData = tData('nataliaPage.practice.items') as PracticeItem[] || [];
+  const practiceData = tData('nataliaPage.practice.items') as PracticeItem[];
+  const validPracticeData = Array.isArray(practiceData) ? practiceData : [];
   
   return (
     <section className={styles.practiceSection}>
@@ -24,7 +25,7 @@ export default function NataliaPractice() {
         <h2 className={styles.title}>{t('nataliaPage.practice.title')}</h2>
         
         <div className={styles.practiceList}>
-          {practiceData.map((item, index) => (
+          {validPracticeData.map((item, index) => (
             <div key={index} className={styles.practiceItem}>
               <div className={styles.separator}></div>
               <div className={styles.content}>

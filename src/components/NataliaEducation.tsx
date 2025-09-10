@@ -13,7 +13,8 @@ export default function NataliaEducation() {
   const { t, tData } = useLanguage();
   
   const educationData = useMemo(() => {
-    return tData('nataliaPage.education.items') as EducationItem[] || [];
+    const data = tData('nataliaPage.education.items') as EducationItem[];
+    return Array.isArray(data) ? data : [];
   }, [tData]);
   
   const [activeIndex, setActiveIndex] = useState(3); // 2013 по умолчанию

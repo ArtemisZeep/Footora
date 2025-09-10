@@ -29,6 +29,9 @@ const nextConfig = {
   
   // Output standalone для Docker
   output: 'standalone',
+  experimental: {
+    runtime: 'nodejs',
+  },
   
   // Headers для оптимизации
   async headers() {

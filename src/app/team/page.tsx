@@ -8,6 +8,9 @@ import styles from "./team.module.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+// Отключаем статическую генерацию для этой страницы
+export const dynamic = 'force-dynamic';
+
 const CheckIcon = () => (
   <svg
     width="25"
@@ -113,7 +116,9 @@ export default function TeamPage() {
     title: string;
     description: string;
     services: string[];
-  }> || [];
+  }>;
+  
+  const validTeamMembers = Array.isArray(teamMembers) ? teamMembers : [];
 
   const buttonText = t('team.learnMore');
 
@@ -132,7 +137,7 @@ export default function TeamPage() {
     <>
       <Header />
       <main className="min-h-screen">
-        {teamMembers.map((member, index) => (
+        {validTeamMembers.map((member, index) => (
           <TeamMember
             key={index}
             name={member.name}

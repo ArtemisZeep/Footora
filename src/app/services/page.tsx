@@ -11,6 +11,9 @@ import ClientJsonLd from '../../components/ClientJsonLd';
 import { createMedicalServiceSchema } from '../../lib/jsonLd';
 import SEOHead from '../../components/SEOHead';
 
+// Отключаем статическую генерацию для этой страницы
+export const dynamic = 'force-dynamic';
+
 export default function ServicesPage() {
   const { tData } = useLanguage();
 
@@ -24,7 +27,9 @@ export default function ServicesPage() {
       description: string;
       isBold?: boolean;
     }>;
-  }> || [];
+  }>;
+  
+  const validServicesCategories = Array.isArray(servicesCategories) ? servicesCategories : [];
 
   // Основные услуги для JSON-LD схемы
   const mainServices = [
@@ -85,7 +90,7 @@ export default function ServicesPage() {
       {/* Добавляем якорные ссылки для SEO */}
       {sectionId === 'podology' && <div id="podology" style={{ paddingTop: '80px', marginTop: '-80px' }} />}
       {indices.map((index) => {
-        const service = servicesCategories[index];
+        const service = validServicesCategories[index];
         if (!service) return null;
 
         // Добавляем якорные ссылки для ключевых услуг

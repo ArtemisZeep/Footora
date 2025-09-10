@@ -6,7 +6,8 @@ import styles from './NataliaExpertise.module.css';
 export default function NataliaExpertise() {
   const { t, tArray } = useLanguage();
   
-  const expertisePoints = tArray('nataliaPage.expertise.points') || [];
+  const expertisePoints = tArray('nataliaPage.expertise.points');
+  const validExpertisePoints = Array.isArray(expertisePoints) ? expertisePoints : [];
   
   return (
     <section className={styles.expertiseSection}>
@@ -26,7 +27,7 @@ export default function NataliaExpertise() {
               <h3 className={styles.subtitle}>{t('nataliaPage.expertise.subtitle')}</h3>
               
               <div className={styles.pointsList}>
-                {expertisePoints.map((pointText, index) => (
+                {validExpertisePoints.map((pointText, index) => (
                   <div key={index} className={styles.point}>
                     <div className={styles.checkIcon}>
                       <img src="/images/Arr_ex.png" alt="Check" width="20" height="20" />
