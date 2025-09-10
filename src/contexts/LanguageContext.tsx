@@ -53,6 +53,11 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
   // Функция для получения перевода по ключу
   const t = (key: string): string => {
+    // Если переводы еще не загружены, возвращаем пустую строку
+    if (!translations || Object.keys(translations).length === 0) {
+      return '';
+    }
+    
     const keys = key.split('.');
     let value: any = translations;
     
@@ -60,15 +65,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        return key; // Возвращаем ключ если перевод не найден
+        return ''; // Возвращаем пустую строку если перевод не найден
       }
     }
     
-    return typeof value === 'string' ? value : key;
+    return typeof value === 'string' ? value : '';
   };
 
   // Функция для получения массива переводов
   const tArray = (key: string): string[] => {
+    // Если переводы еще не загружены, возвращаем пустой массив
+    if (!translations || Object.keys(translations).length === 0) {
+      return [];
+    }
+    
     const keys = key.split('.');
     let value: any = translations;
     
@@ -76,15 +86,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        return []; // Возвращаем пустой массив если перевод не найден
+        return [];
       }
     }
     
     return Array.isArray(value) ? value : [];
   };
 
-  // Функция для получения любых данных
+  // Функция для получения объекта переводов
   const tData = (key: string): any => {
+    // Если переводы еще не загружены, возвращаем пустой объект
+    if (!translations || Object.keys(translations).length === 0) {
+      return {};
+    }
+    
     const keys = key.split('.');
     let value: any = translations;
     
@@ -92,11 +107,11 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        return null; // Возвращаем null если перевод не найден
+        return {};
       }
     }
     
-    return value;
+    return value || {};
   };
 
   return (
