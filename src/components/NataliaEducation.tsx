@@ -13,7 +13,7 @@ export default function NataliaEducation() {
   const { t, tData } = useLanguage();
   
   const educationData = useMemo(() => {
-    const data = tData('nataliaPage.education.items') as EducationItem[];
+    const data = tData('nataliaPage.education.items');
     return Array.isArray(data) ? data : [];
   }, [tData]);
   

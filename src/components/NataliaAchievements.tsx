@@ -12,7 +12,8 @@ interface AchievementCard {
 export default function NataliaAchievements() {
   const { t, tData } = useLanguage();
   
-  const achievementsData = tData('nataliaPage.achievements.cards') as AchievementCard[] || [];
+  const achievementsData = tData('nataliaPage.achievements.cards') as AchievementCard[];
+  const validAchievementsData = Array.isArray(achievementsData) ? achievementsData : [];
   
   return (
     <section className={styles.achievementsSection}>
@@ -25,7 +26,7 @@ export default function NataliaAchievements() {
         </div>
         
         <div className={styles.cardsGrid}>
-          {achievementsData.map((card, index) => (
+          {validAchievementsData.map((card, index) => (
             <div key={index} className={styles.achievementCard}>
               <div className={styles.cardNumber}>{card.number}</div>
               <h4 className={styles.cardTitle}>{card.title}</h4>
