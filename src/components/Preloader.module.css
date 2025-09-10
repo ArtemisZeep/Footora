@@ -54,10 +54,33 @@
   animation: drawArc 1100ms cubic-bezier(.22,.9,.22,1) 150ms forwards;
 }
 
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .arc {
+    width: 320px;
+    height: 120px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .arc {
+    width: 280px;
+    height: 105px;
+  }
+}
+
 .wordmark {
   display: flex;
   align-items: center;
   gap: min(1.6vw, 14px);
+}
+
+/* Мобильные устройства - уменьшаем gap */
+@media (max-width: 768px) {
+  .wordmark {
+    gap: min(2vw, 8px);
+  }
 }
 
 .letter {
@@ -82,6 +105,22 @@
     shine 1600ms ease calc(var(--delay) + 350ms) forwards;
 }
 
+/* Мобильные устройства - уменьшаем буквы */
+@media (max-width: 768px) {
+  .letter {
+    width: min(10vw, 45px);
+    height: min(11vw, 50px);
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .letter {
+    width: min(12vw, 38px);
+    height: min(13vw, 42px);
+  }
+}
+
 @keyframes drawArc {
   0% { opacity: 0; transform: scaleX(.92) translateY(10px); filter: blur(6px); }
   50% { opacity: 1; transform: scaleX(1) translateY(0); filter: blur(0); }
@@ -97,11 +136,6 @@
 @keyframes shine {
   0% { background-position: -120% 0, 0 0; }
   100% { background-position: 120% 0, 0 0; }
-}
-
-@media (max-width: 480px) {
-  .logo { gap: 18px; }
-  .letter { width: min(10vw, 56px); height: min(11vw, 62px); }
 }
 
 
