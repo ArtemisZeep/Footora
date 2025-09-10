@@ -15,6 +15,9 @@ import ClientJsonLd from '../../components/ClientJsonLd';
 import { createMedicalProfessionalSchema } from '../../lib/jsonLd';
 import SEOHead from '../../components/SEOHead';
 
+// Отключаем статическую генерацию для этой страницы
+export const dynamic = 'force-dynamic';
+
 export default function NataliaPage() {
   // Структурированные данные для медицинского специалиста
   const nataliaInfo = {
