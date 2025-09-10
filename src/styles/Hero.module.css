@@ -46,14 +46,8 @@
 }
 
 .logo {
-  margin-top: 123px;
-  margin-bottom: 35px;
-  position: relative;
-  width: 637px;
-  height: 356px;
-  
-}
-.logo2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
   width: 838px;
   height: 316px;
 }
@@ -177,12 +171,8 @@
 
 
   .logo {
-    margin-top: 60px;
-    margin-bottom: 25px;
-    width: 400px;
-    height: 225px;
-  }
-  .logo2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
     width: 400px;
     height: 151px;
   }
