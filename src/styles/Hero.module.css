@@ -46,10 +46,19 @@
 }
 
 .logo {
+  position: relative;
     margin-top: 40px;
     margin-bottom: 20px;
   width: 838px;
   height: 316px;
+}
+/* Ensure nested next/image with fill stays within logo box */
+.logo :global(img),
+.logo2 :global(img) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
@@ -171,10 +180,15 @@
 
 
   .logo {
+    position: relative;
     margin-top: 40px;
     margin-bottom: 20px;
     width: 400px;
     height: 151px;
+  }
+
+  .logo2 {
+    position: relative;
   }
 
 
@@ -223,6 +237,7 @@
   }
 
   .logo {
+    position: relative;
     margin-top: 100px;
     margin-bottom: 20px;
     width: 240px;
@@ -230,6 +245,7 @@
   }
 
   .logo2 {
+    position: relative;
     width: 240px;
     height: 91px;
   }
@@ -282,6 +298,7 @@
 
 
   .logo {
+    position: relative;
     margin-top: 100px;
     margin-bottom: 15px;
     width: 200px;
@@ -289,6 +306,7 @@
   }
 
   .logo2 {
+    position: relative;
     width: 200px;
     height: 76px;
   }
