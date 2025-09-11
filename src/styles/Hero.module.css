@@ -47,7 +47,7 @@
 
 .logo {
   position: relative;
-    margin-top: 40px;
+    margin-top: 130px;
     margin-bottom: 20px;
   width: 838px;
   height: 316px;
@@ -140,7 +140,7 @@
 .pagination {
   position: absolute;
   bottom: 32px;
-  left: 50%;
+  left: calc(50% - 18px);
   transform: translateX(-50%);
   display: flex;
   z-index: 20;
@@ -181,7 +181,7 @@
 
   .logo {
     position: relative;
-    margin-top: 40px;
+    margin-top: 130px;
     margin-bottom: 20px;
     width: 400px;
     height: 151px;
