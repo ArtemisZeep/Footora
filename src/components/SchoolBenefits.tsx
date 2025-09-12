@@ -27,6 +27,8 @@ export default function SchoolBenefits() {
     })
   };
 
+  const bookingUrl = "https://n773742.alteg.io/company/720417/activity/select?_gl=1*1stj87e*_ga*NzgyNDMyMzA5LjE3NTIyMzkzMTc.*_ga_2WY57VWNET*czE3NTc2MjQ1MDgkbzMwJGcxJHQxNzU3NjI0NTM0JGozNCRsMCRoMA..*_ga_L53TRF9G65*czE3NTc2MjQ1MDgkbzMwJGcxJHQxNzU3NjI0NTM0JGozNCRsMCRoMA..&o=m2092015act2025-09-11";
+
   return (
     <section className={styles.benefitsSection} ref={ref}>
       <div className={styles.container}>
@@ -85,7 +87,10 @@ export default function SchoolBenefits() {
                 <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#FFFFFF" strokeWidth="1.6"/>
               </svg>
           </motion.a>
-          <motion.button 
+          <motion.a 
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.purchaseBtn}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -94,7 +99,7 @@ export default function SchoolBenefits() {
             <svg width="44" height="12" viewBox="0 0 44 12" fill="none">
                 <path d="M1 6L43 6M43 6L38 1M43 6L38 11" stroke="#506888" strokeWidth="1.6"/>
               </svg>
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>
