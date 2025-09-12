@@ -174,6 +174,7 @@ export default function RootLayout({
           [class*="logoImage"] {
             height: 40px;
             width: auto;
+            object-fit: contain;
           }
           
           /* Dropdown Menu Styles */
@@ -498,7 +499,7 @@ export default function RootLayout({
       </head>
       <body>
         <LanguageProvider>
-          <Preloader />
+          {/* <Preloader /> */}
           {children}
           <OnlineBookingButton />
         </LanguageProvider>
