@@ -48,10 +48,10 @@ vážíme si toho, že jste se rozhodli nás navštívit, připravili jsme pro V
 3.2 Zákazník souhlasí se zpracováním těchto svých osobních údajů: jméno a příjmení, adresa bydliště, příp. doručovací adresa, adresa elektronické pošty, telefonní číslo a dalších údajů, které uvedl v objednávce - např. v sekci poznámka, atp. (dále společně vše jen jako „osobní údaje").
 3.3 Zákazník souhlasí se zpracováním osobních údajů Centrem, a to pro účely realizace práv a povinností ze smlouvy o poskytnutí služeb a pro účely vedení uživatelského účtu, je-li tento zřízen.
 3.4 Zákazník potvrzuje, že poskytnuté osobní údaje jsou přesné a že byl poučen o tom, že se jedná o dobrovolné poskytnutí osobních údajů.
-3.5 V případě, že by se Zákazník domníval, že Centrum provádí zpracování jeho osobních údajů, které je v rozporu s ochranou soukromého a osobního života Zákazníka nebo v rozporu se zákonem, zejména jsou-li osobní údaje nepřesné s ohledem na účel jejich zpracování, může:
+3.5 V případě, že by se Zákazník domníval, že Centrum provádí zpracování jeho osobních údajů, které je v rozporu s ochranou soukromého a osobního života Zákazníka nebo v rozporu se zákonem, zejména jsou-li osobní údaje nepřesné s ohledem на účel jejich zpracování, může:
 a) požádat Centrum o vysvětlení,
 b) požadovat, aby Centrum odstranilo takto vzniklý stav.
-3.6 Požádá-li Zákazník o informaci o zpracování svých osobních údajů, je mu Centrum povinno tuto informaci předat. Centrum má právo za poskytnutí informace podle předchozí věty požadovat přiměřenou úhradu nepřevyšující náklady nezbytné na poskytnutí informace.
+3.6 Požádá-li Zákazník o informaci o zpracování svých osobních údajů, je mu Centrum povinno tuto informaci předat. Centrum má práво za poskytnutí informace podle předchozí věty požadovat přiměřenou úhradu nepřevyšující náklady nezbytné na poskytnutí informace.
 3.7 Zákazník má právo svůj souhlas se zpracováním osobních údajů odvolat, a to písemnou formou na adrese sídla Centra. Odvolání souhlasu je účinné okamžikem jeho doručení Centru. Zákazník má dále práva dle § 21 zákona č. 101/2000 Sb., tj. zejména právo přístupu k údajům, které se jej týkají, a právo je opravit, zablokovat nebo požadovat jejich likvidaci, jakož i právo na omluvu, peněžní zadostiučinění nebo peněžitou náhradu, bylo-li jednáním Centra porušeno právo subjektu údajů na lidskou důstojnost, osobní čest, dobrou pověst či právo na ochranu jména.
 
 4.⁠ ⁠ZÁVĚREČNÁ USTANOVENÍ
@@ -61,64 +61,63 @@ b) požadovat, aby Centrum odstranilo takto vzniklý stav.
 
 OBCHODNÍ PODMÍNKY - KURZY
 Vážení klienti,
-vážíme si toho, že jste se rozhodli zapojit se do naších kurzů. Připravili jsme pro Vás následující obchodní podmínky:
+vážíme si toho, že jste се rozhodli zapojit se do naších kurzů. Připravili jsme pro Vás následující obchodní podmínky:
 
 1.⁠ ⁠ÚVOD
 
 1.1 Tyto obchodní podmínky (dále jen „OP") upravují vztahy mezi smluvními stranami smlouvy uzavřené prostřednictvím internetového obchodu footura.cz.
-1.2 S těmito obchodními podmínkami má objednatel kurzu možnost se seznámit před odesláním své objednávky a je na ně dostatečně předem upozorněn.
-1.3 Objednatel podáním objednávky potvrzuje, že se seznámil s těmito OP, a že s nimi výslovně souhlasí, a to ve znění platném a účinném v momentě odeslání objednávky.
+1.2 S těmito obchodními podmínkami má objednatel kurzu možnost se seznámit před odesláním své objednávky a je на ně dostatečně předem upozorněn.
+1.3 Objednatel podáním objednávky potvrzuje, že se seznámил с těmito OP, a že с ними výslovně souhlasí, a to ve znění platném a účinném v momentě odeslání objednávky.
 1.4 Poskytovatelem kurzu a provozovatelem webových stránek footura.cz je Nataliia Rotar se sídlem Praha - Pitkovice, Pýchavková - 282/7, PSČ 10400, ÍCO 06883869, email: info@footura.cz, (dale jen "Poskutovatel")
-1.5 Objednatelem se rozumí fyzická nebo právnická osoba, která se přihlásila na kurzy a zaplatila cenu kurzu prostřednictvím webových stránek footura.cz (dále jen „objednatel").
+1.5 Objednatelem se rozumí fyzická nebo právnická osoba, která се přihlásila на kurzy a zaplatila cenu kurzu prostřednictvím webových stránek footura.cz (dále jen „objednatel").
 1.6 Poskytovatel se zavazuje, že pro objednatele ve stanoveném termínu provede kurzy (dále jen „kurzy").
-1.7 Objednatel prohlašuje, že se účastní kurzů v rámci své podnikatelské činnosti, neboť kurzy jsou určeny pro zdokonalení profesní a podnikatelské činnosti. Toto prohlášení platí, i pokud objednatel nemá živnostenské nebo jiné obdobné oprávnění, neboť účastní se kurzu se záměrem provozování své podnikatelské činnosti. Pokud tomu tak není, je objednatel povinen tuto skutečnost oznámit Poskytovateli nejpozději před uhrazením ceny kurzu, aby Poskytovatel mohl zaslat poučení o spotřebitelských právech objednatele.
-1.8 Objednávkou se dle těchto obchodních podmínek rozumí rezervace kurzu na webových stránkách Poskytovatele footura.cz (dále jen „objednávka").
-1.9 Termínem kurzu se rozumí den a čas, na který se objednatel přihlásil na webových stránkách Poskytovatele footura.cz.
-1.10 Úhradou ceny kurzu objednatel ještě jednou potvrzuje, že souhlasí s těmito obchodními podmínkami pro pořádání kurzů.
-1.11 Objednáním služby (osobně, telefonicky, e-mailem, SMS) projevuje objednatel svůj souhlas s těmito obchodními podmínkami.
+1.7 Objednatel prohlašuje, že se účastní курзů v rámci své podnikatelské činnosti, neboť курзы jsou určeny pro zdokonalení profesní a podnikatelské činnosti. Toto prohlášení platí, i pokud objednatel nemá živnostenské nebo jiné obdobné oprávnění, neboť účastní се kurzu se záměrem provozování své podnikatelské činnosti. Pokud tomu tak není, je objednatel povinen tuto skutečnost oznámit Poskytovateli nejpozději před uhrazením ceny курзу, aby Poskytovatel mohl zaslat poučení o spotřebitelských právech objednatele.
+1.8 Objednávkou se dle těchto obchodních podmínek rozumí rezervace курзу na webových stránkách Poskytovatele footura.cz (dále jen „objednávka").
+1.9 Termínem курзу se rozumí den a čas, на který se objednatel přihlásil на webových stránkách Poskytovatele footura.cz.
+1.10 Úhradou ceny курзу objednatel ještě jednou potvrzuje, že souhlasí s těmito obchodními podmínkami pro pořádání курзů.
+1.11 Обjednáním služby (osobně, telefonicky, e-mailem, SMS) projevuje objednatel svůj souhlas s těmitо obchodními podmínkami.
 1.12 Nesouhlasí-li objednatel s obchodními podmínkami, má možnost služeb nevyužít.
 
-OBJEDNÁVKA KURZŮ, UZAVŘENÍ A UKONČENÍ SMLOUVY
+OBJEDNÁVКА KURZŮ, UZAVŘЕНÍ A UKONČENÍ SMLOUVY
 
-1.13 Objednávka objednatele učiněná prostřednictvím internetového obchodu footura.cz nebo prostřednictvím telefonu je závazným návrhem objednatele na uzavření smlouvy o účasti objednatele na kurzech Provozovatele ve vybraném objednatelem termínu.
-1.14 Provozovatel potvrdí neprodleně přijetí objednávky prostřednictvím emailu na emailovou adresu uvedenou objednatelem v objednávce. Po zaslání potvrzení smlouva se považuje za uzavřenou.
-1.15 Provozovatel si vyhrazuje právo ve výjimečných případech, zrušit nebo přesunout provedení kurzu ze stanoveného termínu na termín jiný. Například z důvodu nemoci, výpadku el. energie apod. Pokud by tato situace nastala Provozovatel bude objednatele kontaktovat v nejbližším možném termínu a sdělí náhradní termín kurzů.
-1.16 Objednatel bere na vědomí, že v případě jeho neúčasti na kurzu v jim zvoleným v objednávce termínu, nemá nárok na vracení zaplacené ceny kurzů, a zejména, nikoliv však výlučně z důvodu potřeby uhradit Provozovateli náhradu zmeškaného času a škody včetně ušlého zisku.
-1.17 Objednatel má právo zrušit objednávku nejpozději 7 dní před termínem jim vybraného termínu kurzu. V případě pozdějšího zrušení objednávky uhrazená kupní cena kurzů se nevrací a započítává se na storno poplatek, který v tomto případě činí 100 % ceny kurzu. Storno poplatek představuje paušální plnění včetně případné náhrady škody bez přímé souvislosti s jakoukoliv službou poskytovanou za protiplnění.
-1.18 Objednatel je povinen v průběhu kurzu dbát na pokyny Poskytovatele.
-1.19 Objednatel je povinen před zahájením kurzu informovat Poskytovatele o případných zdravotních omezeních (alergie apod.), kterými trpí a které je třeba zohlednit v průběhu kurzů.
+1.13 Objednávka objedнatele učiněná prostřednictvím internetového obchodu footura.cz nebo prostřednictvím telefonu je závazným návrhem objedнatele на uzavření smlouvy o účasti objedнatele на курzech Provozovatele ve vybraném objedнatelem termínu.
+1.14 Provozovatel potvrdí neprodleně přijetí objednávky prostřednictвím emailu на emailovou adresu uvedenou objedнatelem v objednávce. Po zaslání potvrzení smlouva se považuje za uzavřenou.
+1.15 Provozovatel si vyhrazuje právo ve výjimečných případech, zrušit nebo přesunout provedení курзу ze stanoveného termínu на termín jiný. Například z důvodu nemoci, výpadku el. energie apod. Pokud by tato situace nastala Provozovatel bude objedнatele kontaktovat v nejbližším možném termínu a sdělí náhradní termín курзů.
+1.16 Objedнatel bere на vědomí, že v případě jeho neúčasti на курзу v jim zvoleným v objednávce termínu, nemá nárok на vracení zaplacené ceny курзů, a zejména, nikoliv však výlučně z důvodu potřeby uhradit Provozovateli náhradu zmešканého času a škody včetně ušлého zisku.
+1.17 Обjedнatel má právo zrušit objednávku nejpozději 7 dní před termínem jim vybraného termínu курзу. V případě pozdějšího zrušení objednávky uhrazená kupní cena курзů se nevrací a započítává се на storno poplatek, který v tomto případě činí 100 % ceny курзу. Storno poplatek představuje paušální plnění вčetně případné náhrady škody bez přímé souvislosti s jakoukoliv službou poskytovanou за protiplnění.
+1.18 Обjedнatel je povinen v průběhu курзу dbát на pokyny Poskytovatele.
+1.19 Обjedнatel je povinen před zahájením курзу informovat Poskytovatele о případných zdravotních omezeních (alergie apod.), kterými trpí a které je třeba zohlednit v průběhu курзů.
 
 REKLAMACE
 
-1.20 V případě, že objednatel má dotazy nebo připomínky ke kurzů, je povinen o tomto informovat Poskytovatele písemně na emailu info@footura.cz a včas, „bez zbytečného odkladu" a vyžádat si případné vysvětlení, nebo nápravu. Na jakékoliv reklamace bez předchozího postupu a zejména až v době, blížící se ukončení kurzu nebude brán ze strany poskytovatele zřetel.
-1.21 Důvodem reklamace nemohou být skutečnosti, které byly objednateli známy před vznikem smluvního vztahu, např. místo výuky, cena za výuku a podobně.
-1.22 Důvodem pro reklamaci také není, pokud informace, přednesené Poskytovatelem na kurzů byli objednateli ještě před tím známy.
+1.20 V případě, že objedнatel má dotazy nebo připomínky ke курзů, je povinen o tomto informovat Poskytovatele písemně на emailu info@footura.cz a včas, „bez zbytečného odkladu" a vyžádat si případné vysvětlení, nebo nápravu. На jakékoliv reklamace bez předchozího postupu a zejména až v době, blížící se ukončení курзу nebude brán ze strany poskytovatele zřetel.
+1.21 Důvodem reklamace nemohou být skutečnosti, které byly objedнateli známy před vznikem smluvního vztahu, např. místo výuky, cena за výuku a podobně.
+1.22 Důvodem pro reklamaci také není, pokud informace, přednesené Poskytovatelem на курзů byli objedнateli ještě před tím známy.
 
 OCHRANA OSOBNÍCH ÚDAJŮ
 
-1.23 Ochrana osobních údajů objednatele je poskytována zákonem č. 101/2000 Sb., o ochraně osobních údajů, ve znění pozdějších předpisů.
-1.24 Objednatel souhlasí se zpracováním těchto svých osobních údajů: jméno a příjmení, adresa bydliště, příp. doručovací adresa, adresa elektronické pošty, telefonní číslo a dalších údajů, které uvedl v objednávce - např. v sekci poznámka, atp. (dále společně vše jen jako „osobní údaje").
-1.25 Objednatel souhlasí se zpracováním osobních údajů Poskytovatelem, a to pro účely realizace práv a povinností ze smlouvy o poskytnutí služeb a pro účely vedení uživatelského účtu, je-li tento zřízen.
-1.26 Objednatel potvrzuje, že poskytnuté osobní údaje jsou přesné a že byl poučen o tom, že se jedná o dobrovolné poskytnutí osobních údajů.
-1.27 V případě, že by se objednatel domníval, že Poskytovatel provádí zpracování jeho osobních údajů, které je v rozporu s ochranou soukromého a osobního života objednatele nebo v rozporu se zákonem, zejména jsou-li osobní údaje nepřesné s ohledem na účel jejich zpracování, může:
-a) požádat Poskytovatele o vysvětlení,
-b) požadovat, aby Poskytovatel odstranil takto vzniklý stav.
-1.28 Požádá-li objednatel o informaci o zpracování svých osobních údajů, je mu Poskytovatel povinen tuto informaci předat. Poskytovatel má právo za poskytnutí informace podle předchozí věty požadovat přiměřenou úhradu nepřevyšující náklady nezbytné na poskytnutí informace.
-1.29 Objednatel má právo svůj souhlas se zpracováním osobních údajů odvolat, a to písemnou formou na adrese sídla Poskytovatele. Odvolání souhlasu je účinné okamžikем его doručení Poskytovateli. Objednatel má dále práva dle § 21 zákona č. 101/2000 Sb., tj. zejména právo přístupu k údajům, které se jej týkají, a právo je opravit, zablokovat nebo požadovat jejich likvidaci, jakož i právo na omluvu, peněžní zadостiučinění nebo peněžitou náhradu, bylo-li jednáním Poskytovatele porušeno právo subjektu údajů na lidskou důstojnost, osobní čest, dobrou pověst či právo na ochranu jména.
+1.23 Ochrana osobních údajů objedнatele je poskytována zákonem č. 101/2000 Sb., o ochraně osobních údajů, ve znění pozdějších předpisů.
+1.24 Objedнatel souhlasí se zpracováním těchto svých osobních údajů: jméno a příjmení, adresa bydliště, příp. doručovací adresa, adresa elektronické pošty, telefonní číslo a dalších údajů, které uvedl v objednávce - např. v sekci poznámка, atp. (dále společně vše jen jako „osobní údaje").
+1.25 Обjedнatel souhlasí se zpracováním osobních údajů Poskytovatelem, a to pro účely realizace práv a povinností ze smlouvy о poskytnutí služeb a pro účely vedení uživatelského účtu, je-li tento zřízen.
+1.26 Обjedнatel potvrzuje, že poskytnuté osobní údaje jsou přesné a že byl poučen о tom, že se jedná о dobrovolné poskytnutí osobních údajů.
+1.27 V případě, že бы se objedнatel domníval, že Poskytovatel provádí zpracování jeho osobních údajů, které je v rozporu с ochranou soukromého a osobního života objedнatele nebo v rozporu se zákonem, zejména jsou-li osobní údaje nepřesné s ohledem на účel jejich zpracování, může:
+a) požádat Poskytovatele о vysvětlení,
+b) požadovat, aby Poskytovatel odstranil такто vzniklý stav.
+1.28 Požádá-li objedнatel о informaci о zpracování svých osobních údajů, je mu Poskytovatel povinen tuto informaci předat. Poskytovatel má právo за poskytnutí informace podle předchozí věty požadovat přiměřenou úhradu nepřevyšující náklady nezbytné на poskytnutí informace.
+1.29 Обjedнatel má právo svůj souhlas se zpracováním osobních údajů odvolat, a то písemnou formou на adrese sídla Poskytovatele. Отvolání souhlasu je účinné okamžikем jeho doručení Poskytovateli. Обjedнatel má dále práva dle § 21 zákona č. 101/2000 Sb., tj. zejména právo přístupu к údajům, které се jej týkají, a právo je opravit, zablokovat nebo požadovat jejich ликvidaci, jakož i právo на omluvu, peněžní zadostiučinění nebo peněžitou náhradu, bylo-li jednáním Poskytovatele порušeno právo subjektu údajů на lidskou důstojnost, osobní čest, dobrou pověst či právo на ochranu jména.
 
 ZÁVĚREČNÁ USTANOVENÍ
 
-1.30 Veškeré texty, ilustrace, grafika a fotografie obsažené v materiálech a na internetových stránkách Poskytovatele a dalších, prezentované na kurzech podléhají autorským právům a nesmí být kopírovány nebo používány dále bez výslovného písemného souhlasu Poskytovatele.
-1.31 Na kurzech je zakázáno fotit, pořizovat jakékoli video nebo audio nahrávky.
+1.30 Veškeré texty, ilustrace, grafika a fotografie obsažené v materiálech a на internetových stránkách Poskytovatele a dalších, prezentované на курzech podléhají autorským právům a nesmí být копírovány nebo používány dále без výslovného písemného souhlasu Poskytovatele.
+1.31 На курzech je zakázáno fotit, pořizovat jakékoli video nebo audio nahrávky.
 1.32 Fotografie použité v informačních a marketingových materiálech jsou pouze informační a mohou se ve skutečnosti lišit.
-1.33 Objednatel účastí na kurzu souhlasí s pořizováním obrazové a zvukové dokumentace a zveřejňováním k marketingovým účelům Poskytovatele. Pokud objednatel s tímto pořizováním a zveřejňováním nesouhlasí písemně požádá o nepořizování a nezveřejňování zvukové a obrazové dokumentace před zahájením kurzu.
-1.34 V případě zrušení kurzu ze strany Poskytovatele bude uhrazená částка ceny kurzu vrácena na účet objednatele nejpozději do 14 dní od data zrušení kurzu.
-1.35 Právní vztahy výslovně neupravené těmito obchodními podmínkami se řídí příslušnými ustanoveními zák. č. 89/2012 Sb., občanský zákoník, jakož i předpisy souvisejícími, vše ve znění předpisů aktuálních ke dni zadání objednávky.
+1.33 Обjedнatel účastí на курzu souhlasí s pořizováním obrazové a zvukové dokumentace a zveřejňováním к marketingovým účелům Poskytovatele. Pokud objedнatel s tímto pořizováním a zveřejňováním nesouhlasí písemně požádá о nepořizování a nezveřejňování zvukové a obrazové dokumentace před zahájením курзу.
+1.34 V případě zrušení курзу ze strany Poskytovatele bude uhrazená částka ceny курзу vrácena на účet objedнatele nejpozději до 14 dní od data zrušení курзу.
+1.35 Právní vztahy výslovně neupravené těmitо obchodními podmínkami se řídí příslušnými ustanoveními zák. č. 89/2012 Sb., občanský zákoník, jakož i předpisy souvisejícími, vše ve znění předpisů aktuálních ke dni zadání objednávky.
 1.36 Obchodní podmínky se řídí právním řádem České republiky.
 
 Obchodní podmínky platné od 2022 (OP)`;
 
-// Полный перевод на русский язык
 const ruFullText = `УСЛОВИЯ ОКАЗАНИЯ УСЛУГ — УСЛУГИ
 Уважаемые клиенты,
 мы ценим, что вы выбрали наш центр. Ниже приведены условия оказания услуг:

@@ -19,7 +19,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f6f7f6;
+  background: linear-gradient(180deg, #f6f7f6 0%, #ffffff 100%);
+  padding: 24px 16px;
+  padding-top: 150px;
+  box-sizing: border-box;
 }
 
 .heroTitle {
@@ -27,22 +30,87 @@
   font-family: 'Tenor Sans', sans-serif;
   font-size: 36px;
   text-align: center;
-  margin: 40px 0;
+  margin: 16px 0 6px;
+}
+
+.heroSubtitle {
+  color: #6b6f6b;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 8px;
 }
 
 .container {
-  max-width: 940px;
+  max-width: 1040px;
   width: 100%;
   margin: 0 auto;
   padding: 24px 20px 48px;
   box-sizing: border-box;
 }
 
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: 96px;
+  background: #ffffff;
+  border: 1px solid #e6ebe6;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.tocTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #3a3d3a;
+  margin: 0 0 8px;
+}
+
+.tocList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tocList li {
+  margin: 6px 0;
+}
+
+.tocLink {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.tocLink:hover {
+  text-decoration: underline;
+}
+
+.contentCard {
+  background: #ffffff;
+  border: 1px solid #e6ebe6;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
 .content {
   color: #2d2d2d;
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   font-size: 16px;
+}
+
+.sectionTitle {
+  font-family: 'Tenor Sans', sans-serif;
+  color: #1e1e1e;
+  font-size: 24px;
+  margin: 0 0 12px;
 }
 
 .content h2 {
@@ -78,10 +146,27 @@
   margin: 16px 0;
 }
 
+.backTop {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.backTop:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 1025px) {
+  .contentGrid {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .heroTitle {
     font-size: 28px;
-    margin: 28px 0;
+    margin: 12px 0 4px;
   }
   .container {
     padding: 16px 16px 36px;

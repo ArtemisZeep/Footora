@@ -195,6 +195,14 @@
 /* Удаляю глобальные скобки */
 .brackets, .leftBracket, .rightBracket { display: none !important; }
 
+@media (min-width: 1500px) {
+.bgWrap {
+  position: relative;
+  width: 100%;
+  height: 1385px;
+  overflow: hidden;
+}
+}
 /* Адаптивность для скобок */
 @media (max-width: 1024px) {
   .benefitDescription{
