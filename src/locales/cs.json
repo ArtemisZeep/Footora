@@ -1980,5 +1980,41 @@
     "copyright": "© 2025 All Right Reserved",
     "privacy": "Zásady ochrany osobních údajů",
     "developedBy": "Vyvinuto:"
+  },
+  "privacy": {
+    "content": {
+      "title": "Obchodní podmínky",
+      "validity": "Obchodní podmínky platné od 2022"
+    },
+    "services": {
+      "title": "OBCHODNÍ PODMÍNKY - SLUŽBY",
+      "intro": "Vážení klienti, vážíme si toho, že jste se rozhodli nás navštívit, připravili jsme pro Vás následující obchodní podmínky:",
+      "sections": [
+        {
+          "title": "1. ÚVOD",
+          "items": [
+            {
+              "number": "1.1",
+              "text": "Tyto obchodní podmínky (dále jen „OP") upravují vztahy mezi smluvními stranami smlouvy uzavřené prostřednictvím internetových stránek footura.cz."
+            }
+          ]
+        }
+      ]
+    },
+    "courses": {
+      "title": "OBCHODNÍ PODMÍNKY - KURZY", 
+      "intro": "Vážení klienti, vážíme si toho, že jste se rozhodli zapojit se do naších kurzů. Připravili jsme pro Vás následující obchodní podmínky:",
+      "sections": [
+        {
+          "title": "1. ÚVOD",
+          "items": [
+            {
+              "number": "1.1",
+              "text": "Tyto obchodní podmínky (dále jen „OP") upravují vztahy mezi smluvními stranami smlouvy uzavřené prostřednictvím internetového obchodu footura.cz."
+            }
+          ]
+        }
+      ]
+    }
   }
 }

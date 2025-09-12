@@ -35,7 +35,17 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     const loadTranslations = async () => {
       try {
         const translationsModule = await import(`../locales/${language}.json`);
-        setTranslations(translationsModule.default);
+        let allTranslations = translationsModule.default;
+        
+        // Загружаем дополнительные переводы для privacy
+        try {
+          const privacyModule = await import(`../locales/privacy-${language}.json`);
+          allTranslations = { ...allTranslations, ...privacyModule.default };
+        } catch (privacyError) {
+          console.warn('Privacy translations not found for language:', language);
+        }
+        
+        setTranslations(allTranslations);
       } catch (error) {
         console.error('Error loading translations:', error);
         // Fallback на пустой объект если файл не найден

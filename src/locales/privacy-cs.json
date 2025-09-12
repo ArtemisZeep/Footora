@@ -1,0 +1,93 @@
+{
+  "privacy": {
+    "content": {
+      "title": "Obchodní podmínky",
+      "validity": "Obchodní podmínky platné od 2022"
+    },
+    "services": {
+      "title": "OBCHODNÍ PODMÍNKY - SLUŽBY",
+      "intro": "Vážení klienti, vážíme si toho, že jste se rozhodli nás navštívit, připravili jsme pro Vás následující obchodní podmínky:",
+      "sections": [
+        {
+          "title": "1. ÚVOD",
+          "items": [
+            {
+              "number": "1.1",
+              "text": "Tyto obchodní podmínky (dále jen \"OP\") upravují vztahy mezi smluvními stranami smlouvy uzavřené prostřednictvím internetových stránek footura.cz."
+            },
+            {
+              "number": "1.2", 
+              "text": "S těmito obchodními podmínkami má zákazník možnost se seznámit před odesláním své objednávky a je na ně dostatečně předem upozorněn."
+            },
+            {
+              "number": "1.3",
+              "text": "Zákazník podáním (zadáním) objednávky prostřednictvím internetových stránek footura.cz potvrzuje, že se seznámil s těmito OP, a že s nimi výslovně souhlasí, a to ve znění platném a účinném v momentě odeslání objednávky."
+            },
+            {
+              "number": "1.4",
+              "text": "Prodávajícím a provozovatelem webových stránek footura.cz a také celého Centra jsou Nataliia Rotar se sídlem Praha - Pitkovice, Pýchavková - 282/7, PSČ 10400, ÍCO 06883869, email: info@footura.cz (společně dále je \"Centrum\")"
+            },
+            {
+              "number": "1.5",
+              "text": "Naše Centrum poskytuje podologické a pedikérské služby a prodej na základě platného živnostenského oprávnění a dokladů osvědčujících odbornou způsobilost k vykonávaným činnostem (dále jen „služby")."
+            }
+          ]
+        },
+        {
+          "title": "2. OBJEDNÁVKA, UZAVŘENÍ A UKONČENÍ SMLOUVY",
+          "items": [
+            {
+              "number": "2.1",
+              "text": "Rezervace služeb učiněná prostřednictvím online v rezervačním systému internetového obchodu footura.cz nebo telefonicky je závazným návrhem zákazníka na uzavření smlouvy o poskytnutí služeb s Centrem."
+            },
+            {
+              "number": "2.2",
+              "text": "Centrum potvrdí přijetí objednávky prostřednictvím emailu na emailovou adresu uvedenou zákazníkem v objednávce. Po zaslání potvrzení smlouva se považuje za uzavřenou."
+            }
+          ]
+        },
+        {
+          "title": "3. OCHRANA OSOBNÍCH ÚDAJŮ",
+          "items": [
+            {
+              "number": "3.1",
+              "text": "Ochrana osobních údajů zákazníka je poskytována zákonem č. 101/2000 Sb., o ochraně osobních údajů, ve znění pozdějších předpisů."
+            },
+            {
+              "number": "3.2",
+              "text": "Zákazník souhlasí se zpracováním těchto svých osobních údajů: jméno a příjmení, adresa bydliště, příp. doručovací adresa, adresa elektronické pošty, telefonní číslo a dalších údajů, které uvedl v objednávce."
+            }
+          ]
+        }
+      ]
+    },
+    "courses": {
+      "title": "OBCHODNÍ PODMÍNKY - KURZY",
+      "intro": "Vážení klienti, vážíme si toho, že jste se rozhodli zapojit se do naších kurzů. Připravili jsme pro Vás následující obchodní podmínky:",
+      "sections": [
+        {
+          "title": "1. ÚVOD",
+          "items": [
+            {
+              "number": "1.1",
+              "text": "Tyto obchodní podmínky (dále jen „OP") upravují vztahy mezi smluvními stranami smlouvy uzavřené prostřednictvím internetového obchodu footura.cz."
+            },
+            {
+              "number": "1.2",
+              "text": "S těmito obchodními podmínkami má objednatel kurzu možnost se seznámit před odesláním své objednávky a je na ně dostatečně předem upozorněn."
+            }
+          ]
+        },
+        {
+          "title": "2. OBJEDNÁVKA KURZŮ",
+          "items": [
+            {
+              "number": "2.1",
+              "text": "Objednávka objednatele učiněná prostřednictvím internetového obchodu footura.cz nebo prostřednictvím telefonu je závazným návrhem objednatele na uzavření smlouvy."
+            }
+          ]
+        }
+      ]
+    }
+  }
+} 
